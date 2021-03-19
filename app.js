@@ -12,7 +12,7 @@ var indexRouter = require('./routes/index');
 
 
 var app = express();
-var port = 3000
+var PORT = 3000
 
 
 
@@ -159,7 +159,7 @@ function dbmanager() {
 
 
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+app.listen(PORT, () => {
+  console.log(`Example app listening at http://localhost:${PORT}`)
 })
 module.exports = app;
