@@ -6,7 +6,8 @@ var logger = require('morgan');
 
 
 
-var indexRouter = require('./routes/index');
+var homePageRouter = require('./routes/homePage');
+var loginRegisterRouter = require('./routes/loginRegister');
 
 
 
@@ -26,7 +27,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use('/', homePageRouter);
+app.use('/', loginRegisterRouter);
 
 
 // catch 404 and forward to error handler
@@ -49,33 +51,31 @@ app.use(function (err, req, res, next) {
 
 
 
+// const { Sequelize, DataTypes, Model } = require('sequelize');
+// const sequelize = new Sequelize('expressjsdb', 'postgres', '1234567890', {
+//   host: 'localhost',
+//   dialect: 'postgres'
+// });
 
 
 
+// class User extends Model { }
 
-const { Sequelize, DataTypes, Model } = require('sequelize');
-const sequelize = new Sequelize('expressjsdb', 'postgres', '1234567890', {
-  host: 'localhost',
-  dialect: 'postgres'
-});
+// User.init(
+//   {
+//     firstName: { type: DataTypes.STRING, allowNull: false },
+//     lastName: { type: DataTypes.STRING }
+//   },
+//   { sequelize, modelName: 'User', timestamps: false }
+// );
 
-class User extends Model { }
-
-User.init(
-  {
-    firstName: { type: DataTypes.STRING, allowNull: false },
-    lastName: { type: DataTypes.STRING }
-  },
-  { sequelize, modelName: 'User', timestamps: false }
-);
-
-function dbmanager() {
-  User.sync({ force: true });
-  console.log('da tao db');
-  // User.drop();
-  // console.log('da xoa db');
-}
-
+// function dbmanager() {
+//   User.sync({ force: true });
+//   console.log('da tao db');
+//   // User.drop();
+//   // console.log('da xoa db');
+// }
+// dbmanager();
 
 // khoi tao doi tuong va luu doi tuong duoc tach rieng lam 2 buoc
 // const tai = User.build({ firstName: 'minh', lastName: 'tai' });
@@ -83,7 +83,10 @@ function dbmanager() {
 // tai.save();
 
 //khoi tao doi tuong va luu doi tuong duoc gom chung thanh 1 buoc
-// const tai = User.create({firstName:'minh',lastName:'tai'});
+// const tai = User.create({ firstName: 'minh', lastName: 'tai' });
+// console.log(tai);
+
+
 
 
 //xoa doi tuong khoi database
