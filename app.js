@@ -1,4 +1,4 @@
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -9,6 +9,7 @@ var logger = require('morgan');
 
 var homePageRouter = require('./routes/homePage');
 var loginRegisterRouter = require('./routes/loginRegister');
+var webhookRouter = require('./routes/webhook');
 
 
 
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homePageRouter);
 app.use('/', loginRegisterRouter);
+app.use('/webhook', webhookRouter);
 
 
 // catch 404 and forward to error handler
