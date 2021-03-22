@@ -25,8 +25,11 @@ head
   link(rel='stylesheet' href='stylesheets/material-design-iconic-font.min.css')
   // Main css
   link(rel='stylesheet' href='stylesheets/loginPage.css')
+  link(rel='stylesheet' href='stylesheets/bootstrap.min.css')
 .main
   // Sing in  Form
+  if error
+    .alert.alert-warning(role='alert') #{error}
   section.signup
     .container
       .signup-content
@@ -36,21 +39,21 @@ head
             .form-group
               label(for='name')
                 i.zmdi.zmdi-account.material-icons-name
-              input#name(type='text' name='name' placeholder='Your Name')
+              input#name(type='text' name='name' placeholder='Your Name' autocomplete="off")
             .form-group
               label(for='email')
                 i.zmdi.zmdi-email
-              input#email(type='email' name='email' placeholder='Your Email')
+              input#email(type='email' name='email' placeholder='Your Email' autocomplete="off")
             .form-group
               label(for='pass')
                 i.zmdi.zmdi-lock
-              input#pass(type='password' name='pass' placeholder='Password')
+              input#pass(type='password' name='password' placeholder='Password')
             .form-group
               label(for='re-pass')
                 i.zmdi.zmdi-lock-outline
-              input#re_pass(type='password' name='re_pass' placeholder='Repeat your password')
+              input#re_pass(type='password' name='re_password' placeholder='Repeat your password')
             .form-group
-              input#agree-term.agree-term(type='checkbox' name='agree-term')
+              input#agree-term.agree-term(type='checkbox' name='agreeterm')
               label.label-agree-term(for='agree-term')
                 span
                   span

@@ -5,4 +5,5 @@ let loginRegister = require('../controllers/loginRegisterPage')
 router.get('/login', loginRegister.get_loginPage);
 router.post('/login', loginRegister.post_loginPage);
 router.get('/register', loginRegister.get_registerPage);
+router.post('/register', loginRegister.post_registerPage);
 module.exports = router;
