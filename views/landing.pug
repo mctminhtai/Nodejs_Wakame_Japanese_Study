@@ -1,8 +1,0 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
-  form(action="/", method="post") 
-    input(type="email", name="lead_email",placeholder="Enter email", autocomplete="off")
-    button(type="submit") Submit

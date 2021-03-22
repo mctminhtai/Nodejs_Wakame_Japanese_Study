@@ -33,3 +33,13 @@ exports.post_registerPage = function (req, res, next) {
         })
     }
 }
+exports.get_test = function (req, res, next) {
+    users = []
+    models.User.findAll({ attributes: ['fullName', 'email'] }).then((all) => {
+        all.forEach((item, index) => {
+            users.push(item.dataValues);
+        })
+        res.render('test', { users: users });
+    });
+
+}
