@@ -10,8 +10,8 @@ exports.post_webhook = function (req, res, next) {
         body.entry.forEach(function (entry) {
             let webhook_event = entry.messaging[0];
             let sender_psid = webhook_event.sender.id;
-            console.log(typeof (sender_psid));
-            console.log('Sender PSID: ' + sender_psid);
+            //console.log(typeof (sender_psid));
+            //console.log('Sender PSID: ' + sender_psid);
             if (webhook_event.message) {
                 handleMessage(sender_psid, webhook_event.message);
             } else if (webhook_event.postback) {
@@ -72,7 +72,7 @@ function handleMessage(sender_psid, received_message) {
     console.log(received_message);
     if (received_message.text) {
         response = {
-            "text": "Cảm ơn bạn đã nhắn tin đến cho WAKAME, chúng mình sẽ phản hồi sớm nhất có thể."
+            "text": received_message.text
         }
     } else if (received_message.attachments) {
         let attachment_url = received_message.attachments[0].payload.url;
@@ -102,8 +102,7 @@ function handleMessage(sender_psid, received_message) {
             }
         }
     }
-    //callSendAPI(sender_psid, response);
-    callSendAPI(sender_psid, received_message);
+    callSendAPI(sender_psid, response);
 }
 
 function handlePostback(sender_psid, received_postback) {
