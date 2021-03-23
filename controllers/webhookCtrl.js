@@ -69,6 +69,7 @@ function findUIDwaitroom(UID) {
 }
 function handleMessage(sender_psid, received_message) {
     let response;
+    console.log(received_message);
     if (received_message.text) {
         response = {
             "text": "Cảm ơn bạn đã nhắn tin đến cho WAKAME, chúng mình sẽ phản hồi sớm nhất có thể."
