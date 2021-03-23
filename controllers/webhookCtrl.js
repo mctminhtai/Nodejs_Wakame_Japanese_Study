@@ -77,20 +77,13 @@ function handleMessage(sender_psid, received_message) {
     } else if (received_message.attachments) {
         let attachment_url = received_message.attachments[0].payload.url;
         response = {
-            "attachments": [{
+            "attachments": {
                 "type": "image",
                 "payload": {
                     "url": attachment_url,
                     "is_reusable": true
                 }
-            },
-            {
-                "type": "image",
-                "payload": {
-                    "url": attachment_url,
-                    "is_reusable": true
-                }
-            }]
+            }
         }
     }
     callSendAPI(sender_psid, response);
