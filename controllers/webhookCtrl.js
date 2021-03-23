@@ -29,6 +29,7 @@ exports.get_webhook = function (req, res, next) {
     //     UID = UID + 1;
     //     models.WaitingRoom.create({ UID: UID });
     // }
+    res.send('OK');
     models.WaitingRoom.findAll({ attributes: ['UID'] }).then((all) => {
         all.forEach((item) => {
             waitRoom.push(item.dataValues.UID);
@@ -69,7 +70,7 @@ function findUIDwaitroom(UID) {
 }
 function handleMessage(sender_psid, received_message) {
     let response;
-    console.log(received_message.attachments[0].payload);
+    //console.log(received_message.attachments[0].payload);
     if (received_message.text) {
         response = {
             "text": received_message.text
