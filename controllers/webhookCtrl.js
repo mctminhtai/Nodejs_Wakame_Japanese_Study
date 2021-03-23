@@ -1,6 +1,8 @@
 const request = require('request');
+const models = require('../models');
 const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABADJDr1qPE26Yh2JXHzfYeS1H8tPXc64g5TZBV2hgoEitqUZBc0ZA3ztgQRX670Rw1fKZBxN23NfqTV1zOTZA3RntZCOmubkZClQxqdqkMEntfMjW5bWV6safhxbA7IdqlwovyOKn1ZAyKdIDY8A7QdAec3sFdZA0TN0d8NA1sv3C559OJdPZAeQdEZD"
-
+let chatRoom = {};
+let waitRoom = [];
 exports.post_webhook = function (req, res, next) {
     let body = req.body;
     if (body.object === 'page') {
@@ -21,6 +23,16 @@ exports.post_webhook = function (req, res, next) {
     }
 }
 exports.get_webhook = function (req, res, next) {
+    models.WaitingRoom.findAll({ attributes: ['UID'] }).then((all) => {
+        all.forEach((item) => {
+            waitRoom.push(item.dataValues.UID);
+        });
+    });
+    models.ChattingRoom.findAll({ attributes: ['UID', 'PID'] }).then((all) => {
+        all.forEach((item) => {
+            chatRoom[item.dataValues.UID] = item.dataValues.PID;
+        });
+    });
     let VERIFY_TOKEN = "minhtai"
     let mode = req.query['hub.mode'];
     let token = req.query['hub.verify_token'];
