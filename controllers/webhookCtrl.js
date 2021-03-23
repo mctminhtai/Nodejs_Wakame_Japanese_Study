@@ -1,8 +1,9 @@
 const request = require('request');
 const models = require('../models');
 const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABADJDr1qPE26Yh2JXHzfYeS1H8tPXc64g5TZBV2hgoEitqUZBc0ZA3ztgQRX670Rw1fKZBxN23NfqTV1zOTZA3RntZCOmubkZClQxqdqkMEntfMjW5bWV6safhxbA7IdqlwovyOKn1ZAyKdIDY8A7QdAec3sFdZA0TN0d8NA1sv3C559OJdPZAeQdEZD"
-let chatRoom = {};
+let chatRoom = { 2463540117037048: "2463540117037049", 2463540117037049: "2463540117037048" };
 let waitRoom = [];
+
 exports.post_webhook = function (req, res, next) {
     let body = req.body;
     if (body.object === 'page') {
@@ -23,6 +24,11 @@ exports.post_webhook = function (req, res, next) {
     }
 }
 exports.get_webhook = function (req, res, next) {
+    // let UID = 2463540117037048;
+    // for (let i = 0; i < 10; i++) {
+    //     UID = UID + 1;
+    //     models.WaitingRoom.create({ UID: UID });
+    // }
     models.WaitingRoom.findAll({ attributes: ['UID'] }).then((all) => {
         all.forEach((item) => {
             waitRoom.push(item.dataValues.UID);
@@ -47,7 +53,20 @@ exports.get_webhook = function (req, res, next) {
         }
     }
 }
-
+function findUIDchatroom(UID) {
+    if (chatRoom[UID]) {
+        return true;
+    }
+    return false;
+}
+function findUIDwaitroom(UID) {
+    waitRoom.forEach((item, index) => {
+        if (item == UID) {
+            return index;
+        }
+    });
+    return false;
+}
 function handleMessage(sender_psid, received_message) {
     let response;
     if (received_message.text) {
