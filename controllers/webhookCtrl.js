@@ -10,7 +10,7 @@ exports.post_webhook = function (req, res, next) {
 
             // Gets the body of the webhook event
             let webhook_event = entry.messaging[0];
-            console.log(webhook_event);
+            //console.log(webhook_event);
 
             // Get the sender PSID
             let sender_psid = webhook_event.sender.id;
@@ -69,7 +69,19 @@ function handleMessage(sender_psid, received_message) {
         // Create the payload for a basic text message
         response = {
             //"text": `You sent the message: "${received_message.text}". Now send me an image!`
-            "text": "Cảm ơn bạn đã nhắn tin đến cho WAKAME, chúng mình sẽ phản hồi sớm nhất có thể."
+            //"text": "Cảm ơn bạn đã nhắn tin đến cho WAKAME, chúng mình sẽ phản hồi sớm nhất có thể."
+            "text": "Pick a color:",
+            "quick_replies": [
+                {
+                    "content_type": "text",
+                    "title": "Red",
+                    "payload": "<POSTBACK_PAYLOAD>"
+                }, {
+                    "content_type": "text",
+                    "title": "Green",
+                    "payload": "<POSTBACK_PAYLOAD>"
+                }
+            ]
         }
     } else if (received_message.attachments) {
 
