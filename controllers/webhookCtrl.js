@@ -69,19 +69,19 @@ function handleMessage(sender_psid, received_message) {
         // Create the payload for a basic text message
         response = {
             //"text": `You sent the message: "${received_message.text}". Now send me an image!`
-            //"text": "Cảm ơn bạn đã nhắn tin đến cho WAKAME, chúng mình sẽ phản hồi sớm nhất có thể."
-            "text": "Pick a color:",
-            "quick_replies": [
-                {
-                    "content_type": "text",
-                    "title": "Red",
-                    "payload": "<POSTBACK_PAYLOAD>"
-                }, {
-                    "content_type": "text",
-                    "title": "Green",
-                    "payload": "<POSTBACK_PAYLOAD>"
-                }
-            ]
+            "text": "Cảm ơn bạn đã nhắn tin đến cho WAKAME, chúng mình sẽ phản hồi sớm nhất có thể."
+            // "text": "Pick a color:",
+            // "quick_replies": [
+            //     {
+            //         "content_type": "text",
+            //         "title": "Red",
+            //         "payload": "<POSTBACK_PAYLOAD>"
+            //     }, {
+            //         "content_type": "text",
+            //         "title": "Green",
+            //         "payload": "<POSTBACK_PAYLOAD>"
+            //     }
+            // ]
         }
     } else if (received_message.attachments) {
 
@@ -147,7 +147,7 @@ function callSendAPI(sender_psid, response) {
 
     // Send the HTTP request to the Messenger Platform
     request({
-        "uri": "https://graph.facebook.com/v6.0/me/messages",
+        "uri": "https://graph.facebook.com/v10.0/me/messages",
         "qs": { "access_token": PAGE_ACCESS_TOKEN },
         "method": "POST",
         "json": request_body
