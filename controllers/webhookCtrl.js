@@ -69,7 +69,7 @@ function findUIDwaitroom(UID) {
 }
 function handleMessage(sender_psid, received_message) {
     let response;
-    console.log(received_message);
+    console.log(received_message.attachments[0].payload);
     if (received_message.text) {
         response = {
             "text": received_message.text
