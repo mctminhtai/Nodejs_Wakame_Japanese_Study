@@ -1,10 +1,13 @@
 const request = require('request');
+const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABADJDr1qPE26Yh2JXHzfYeS1H8tPXc64g5TZBV2hgoEitqUZBc0ZA3ztgQRX670Rw1fKZBxN23NfqTV1zOTZA3RntZCOmubkZClQxqdqkMEntfMjW5bWV6safhxbA7IdqlwovyOKn1ZAyKdIDY8A7QdAec3sFdZA0TN0d8NA1sv3C559OJdPZAeQdEZD"
+
 exports.post_webhook = function (req, res, next) {
     let body = req.body;
     if (body.object === 'page') {
         body.entry.forEach(function (entry) {
             let webhook_event = entry.messaging[0];
             let sender_psid = webhook_event.sender.id;
+            console.log(typeof (sender_psid));
             console.log('Sender PSID: ' + sender_psid);
             if (webhook_event.message) {
                 handleMessage(sender_psid, webhook_event.message);
@@ -32,26 +35,12 @@ exports.get_webhook = function (req, res, next) {
         }
     }
 }
-const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABADJDr1qPE26Yh2JXHzfYeS1H8tPXc64g5TZBV2hgoEitqUZBc0ZA3ztgQRX670Rw1fKZBxN23NfqTV1zOTZA3RntZCOmubkZClQxqdqkMEntfMjW5bWV6safhxbA7IdqlwovyOKn1ZAyKdIDY8A7QdAec3sFdZA0TN0d8NA1sv3C559OJdPZAeQdEZD"
 
 function handleMessage(sender_psid, received_message) {
     let response;
     if (received_message.text) {
         response = {
-            //"text": `You sent the message: "${received_message.text}". Now send me an image!`
             "text": "Cảm ơn bạn đã nhắn tin đến cho WAKAME, chúng mình sẽ phản hồi sớm nhất có thể."
-            // "text": "Pick a color:",
-            // "quick_replies": [
-            //     {
-            //         "content_type": "text",
-            //         "title": "Red",
-            //         "payload": "<POSTBACK_PAYLOAD>"
-            //     }, {
-            //         "content_type": "text",
-            //         "title": "Green",
-            //         "payload": "<POSTBACK_PAYLOAD>"
-            //     }
-            // ]
         }
     } else if (received_message.attachments) {
         let attachment_url = received_message.attachments[0].payload.url;
