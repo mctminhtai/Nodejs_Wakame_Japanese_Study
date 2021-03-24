@@ -96,7 +96,7 @@ function handleMessage(UID, received_message) {
     if (findUIDchatroom(UID)) {
         PID = chatRoom[UID]; // lay PID cua ban chat
         if (received_message.attachments) {
-            console.log(received_message.attachments);
+            console.log(received_message.attachments.length);
             received_message.attachments.forEach((item, index) => {
                 response = genResponse(received_message, index);
                 return callSendAPI(PID, response);
