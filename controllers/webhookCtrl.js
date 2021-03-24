@@ -108,7 +108,7 @@ function handleMessage(UID, received_message) {
             return callSendAPI(PID, response);
         }
     } else {
-        // console.log('co qua day 1');
+        console.log('co qua day 1');
 
         newwaitRoom = findUIDwaitroom(UID);
         waitRoom = newwaitRoom;
