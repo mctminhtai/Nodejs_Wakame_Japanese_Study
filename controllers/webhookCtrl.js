@@ -108,7 +108,7 @@ function handleMessage(UID, received_message) {
             return callSendAPI(PID, response);
         }
     } else {
-        console.log('co qua day 1');
+        console.log('co qua day 1', waitRoom, chatRoom);
 
         newwaitRoom = findUIDwaitroom(UID);
         waitRoom = newwaitRoom;
@@ -122,6 +122,7 @@ function handleMessage(UID, received_message) {
                 console.log('co qua day 4', waitRoom);
                 return callSendAPI(UID, response);
             } else {
+                console.log('co qua day 5', waitRoom, chatRoom);
                 PID = waitRoom[Math.floor(Math.random() * waitRoom.length)];
                 chatRoom[UID] = PID;
                 chatRoom[PID] = UID;
