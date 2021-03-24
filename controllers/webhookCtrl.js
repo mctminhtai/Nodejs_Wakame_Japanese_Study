@@ -92,7 +92,13 @@ function genResponse(received_message, i = 0) {
 function handleMessage(sender_psid, received_message) {
     console.log(received_message);
     let response = genResponse(received_message);
-    callSendAPI(sender_psid, response);
+    if (received_message.attachments) {
+        received_message.attachments.forEach((item, index) => {
+            response = genResponse(received_message, index);
+            return callSendAPI(sender_psid, response);
+        });
+    }
+    return callSendAPI(sender_psid, response);
 }
 
 function handlePostback(sender_psid, received_postback) {
