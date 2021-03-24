@@ -4,6 +4,7 @@ const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABADJDr1qPE26Yh2JXHzfYeS1H8tPXc64g5TZBV2
 let chatRoom = {};
 let waitRoom = [];
 //key kich hoat bot: $iXQt@Z87Y0u
+//key quay lai phong cho: !f5If2qKHpCw
 exports.post_webhook = function (req, res, next) {
     let body = req.body;
     if (body.object === 'page') {
@@ -88,6 +89,16 @@ function handleMessage(UID, received_message) {
     let response = genResponse(received_message);
     if (findUIDchatroom(UID)) {
         PID = chatRoom[UID]; // lay PID cua ban chat
+        if (received_message.text == "!f5If2qKHpCw") {
+            waitRoom.push(UID);
+            waitRoom.push(PID);
+            delete chatRoom.PID;
+            delete chatRoom.UID;
+            response = genResponse(received_message, 0, "bạn đã được đưa về phòng chờ");
+            callSendAPI(UID, response);
+            response = genResponse(received_message, 0, "bạn đã bị người kia từ chối trò chuyện, bạn sẽ phải quay lại phòng chờ");
+            callSendAPI(PID, response);
+        }
         if (received_message.attachments) {
             // console.log(received_message.attachments.length);
             received_message.attachments.forEach((item, index) => {
