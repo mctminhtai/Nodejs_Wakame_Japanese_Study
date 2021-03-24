@@ -68,7 +68,7 @@ function findUIDwaitroom(UID) {
     });
     return false;
 }
-function handleMessage(sender_psid, received_message) {
+function genResponse(received_message, i = 0) {
     let response;
     //console.log(received_message.attachments[0].payload);
     if (received_message.text) {
@@ -76,7 +76,7 @@ function handleMessage(sender_psid, received_message) {
             "text": received_message.text
         }
     } else if (received_message.attachments) {
-        let attachment_url = received_message.attachments[0].payload.url;
+        let attachment_url = received_message.attachments[i].payload.url;
         response = {
             "attachment": {
                 "type": "image",
@@ -87,6 +87,11 @@ function handleMessage(sender_psid, received_message) {
             }
         }
     }
+    return response;
+}
+function handleMessage(sender_psid, received_message) {
+    console.log(received_message);
+    let response = genResponse(received_message);
     callSendAPI(sender_psid, response);
 }
 
