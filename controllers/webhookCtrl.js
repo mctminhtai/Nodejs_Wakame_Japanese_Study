@@ -3,7 +3,7 @@ const models = require('../models');
 const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABADJDr1qPE26Yh2JXHzfYeS1H8tPXc64g5TZBV2hgoEitqUZBc0ZA3ztgQRX670Rw1fKZBxN23NfqTV1zOTZA3RntZCOmubkZClQxqdqkMEntfMjW5bWV6safhxbA7IdqlwovyOKn1ZAyKdIDY8A7QdAec3sFdZA0TN0d8NA1sv3C559OJdPZAeQdEZD"
 let chatRoom = {};
 let waitRoom = [];
-
+//key kich hoat bot: $iXQt@Z87Y0u
 exports.post_webhook = function (req, res, next) {
     let body = req.body;
     if (body.object === 'page') {
@@ -103,7 +103,7 @@ function handleMessage(UID, received_message) {
 
         newwaitRoom = findUIDwaitroom(UID);
         waitRoom = newwaitRoom;
-        if (received_message.text == "bat dau chat thoi") {
+        if (received_message.text == "$iXQt@Z87Y0u") {
             // console.log('co qua day 2');
             // console.log("do dai cua wairoom", waitRoom.length, waitRoom);
             if (waitRoom.length < 1) {
