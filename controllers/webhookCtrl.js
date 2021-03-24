@@ -118,6 +118,7 @@ function handleMessage(UID, received_message) {
         if (received_message.text == "$iXQt@Z87Y0u") {
             // console.log('co qua day 2');
             // console.log("do dai cua wairoom", waitRoom.length, waitRoom);
+            console.log("check loi phong cho khong co ai", waitRoom, chatRoom);
             if (waitRoom.length < 1) {
                 // console.log('co qua day 3');
                 response = genResponse(received_message, 0, "phòng chờ không có ai, App sẽ giữ bạn tại phòng chờ cho tới khi có người khác tới");
