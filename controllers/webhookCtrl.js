@@ -125,7 +125,6 @@ function handleMessage(UID, received_message) {
             console.log(waitRoom, chatRoom);
         }
     }
-    callSendAPI(UID, response);
 }
 
 function handlePostback(sender_psid, received_postback) {
