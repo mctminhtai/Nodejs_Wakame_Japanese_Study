@@ -1,8 +1,7 @@
 const request = require('request');
 const models = require('../models');
 const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABADJDr1qPE26Yh2JXHzfYeS1H8tPXc64g5TZBV2hgoEitqUZBc0ZA3ztgQRX670Rw1fKZBxN23NfqTV1zOTZA3RntZCOmubkZClQxqdqkMEntfMjW5bWV6safhxbA7IdqlwovyOKn1ZAyKdIDY8A7QdAec3sFdZA0TN0d8NA1sv3C559OJdPZAeQdEZD"
-let chatRoom = {};
-let waitRoom = ["2463540117037048"];
+
 
 exports.post_webhook = function (req, res, next) {
     let body = req.body;
@@ -97,6 +96,8 @@ function genResponse(received_message, i = 0, mess = "") {
     return response;
 }
 function handleMessage(UID, received_message) {
+    let chatRoom = {};
+    let waitRoom = ["2463540117037048"];
     console.log(UID);
     console.log(received_message);
     console.log(waitRoom, chatRoom);
