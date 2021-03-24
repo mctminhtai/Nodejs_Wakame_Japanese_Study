@@ -118,9 +118,10 @@ function handleMessage(UID, received_message) {
         waitRoom = findUIDwaitroom();
         if (received_message.text == "bat dau chat thoi") {
             console.log('co qua day 2');
+            console.log("do dai cua wairoom", waitRoom.length)
             if (waitRoom.length < 1) {
-                response = genResponse(received_message, 0, "phong cho khong con ai");
                 console.log('co qua day 3');
+                response = genResponse(received_message, 0, "phong cho khong con ai");
                 return callSendAPI(UID, response);
             }
             PID = waitRoom[Math.floor(Math.random() * waitRoom.length)];
