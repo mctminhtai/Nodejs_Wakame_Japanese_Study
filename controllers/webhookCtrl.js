@@ -114,6 +114,8 @@ function handleMessage(UID, received_message) {
             if (waitRoom.length < 1) {
                 console.log('co qua day 3');
                 response = genResponse(received_message, 0, "phong cho khong con ai");
+                waitRoom.push(UID);
+                console.log('co qua day 4', waitRoom);
                 return callSendAPI(UID, response);
             }
             PID = waitRoom[Math.floor(Math.random() * waitRoom.length)];
