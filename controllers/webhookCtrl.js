@@ -61,14 +61,19 @@ function findUIDchatroom(UID) {
     return false;
 }
 function findUIDwaitroom(UID) {
-    waitRoom.forEach((item, index) => {
-        if (item == UID) {
-            console.log(`item: ${item} va UID la ${UID}`);
-            console.log(typeof (item), typeof (UID));
-            return index;
-        }
+    // waitRoom.forEach((item, index) => {
+    //     if (item == UID) {
+    //         console.log(`item: ${item} va UID la ${UID}`);
+    //         console.log(typeof (item), typeof (UID));
+    //         return index;
+    //     } else {
+    //         return false;
+    //     }
+    // });
+    let newwaitRoom = waitRoom.filter((item) => {
+        return item != UID;
     });
-    return false;
+    return newwaitRoom;
 }
 function genResponse(received_message, i = 0, mess = "") {
     let response;
@@ -110,9 +115,7 @@ function handleMessage(UID, received_message) {
     } else {
         console.log('co qua day 1');
         console.log(findUIDwaitroom(UID));
-        if (findUIDwaitroom(UID)) {
-            waitRoom.splice(findUIDwaitroom(UID), 1);
-        }
+        waitRoom = findUIDwaitroom();
         if (received_message.text == "bat dau chat thoi") {
             console.log('co qua day 2');
             if (waitRoom.length < 1) {
