@@ -108,7 +108,7 @@ function handleMessage(UID, received_message) {
             // console.log("do dai cua wairoom", waitRoom.length, waitRoom);
             if (waitRoom.length < 1) {
                 // console.log('co qua day 3');
-                response = genResponse(received_message, 0, "phong cho khong con ai");
+                response = genResponse(received_message, 0, "phòng chờ không có ai, App sẽ giữ bạn tại phòng chờ cho tới khi có người khác tới");
                 waitRoom.push(UID);
                 // console.log('co qua day 4', waitRoom);
                 return callSendAPI(UID, response);
@@ -121,6 +121,9 @@ function handleMessage(UID, received_message) {
                 waitRoom = newwaitRoom;
                 newwaitRoom = findUIDwaitroom(PID);
                 waitRoom = newwaitRoom;
+                response = genResponse(received_message, 0, "bạn đã được ghép thành công");
+                callSendAPI(UID, response);
+                callSendAPI(PID, response);
                 // console.log(waitRoom, chatRoom);
             }
         }
