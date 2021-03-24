@@ -106,12 +106,16 @@ function handleMessage(UID, received_message) {
             return callSendAPI(PID, response);
         }
     } else {
+        console.log('co qua day 1');
         if (findUIDwaitroom(UID)) {
+            console.log(findUIDwaitroom(UID));
             waitRoom.splice(findUIDwaitroom(UID), 1);
         }
         if (received_message.text == "bat dau chat thoi") {
+            console.log('co qua day 2');
             if (waitRoom.length < 1) {
                 response = genResponse(received_message, 0, "phong cho khong con ai");
+                console.log('co qua day 3');
                 return callSendAPI(UID, response);
             }
             PID = waitRoom[Math.floor(Math.random() * waitRoom.length)];
