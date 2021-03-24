@@ -1,7 +1,7 @@
 const request = require('request');
 const models = require('../models');
 const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABADJDr1qPE26Yh2JXHzfYeS1H8tPXc64g5TZBV2hgoEitqUZBc0ZA3ztgQRX670Rw1fKZBxN23NfqTV1zOTZA3RntZCOmubkZClQxqdqkMEntfMjW5bWV6safhxbA7IdqlwovyOKn1ZAyKdIDY8A7QdAec3sFdZA0TN0d8NA1sv3C559OJdPZAeQdEZD"
-let chatRoom = {};//"2463540117037048": "3384751941597732", "3384751941597732": "2463540117037048"
+let chatRoom = {};
 let waitRoom = [];
 
 exports.post_webhook = function (req, res, next) {
@@ -10,8 +10,6 @@ exports.post_webhook = function (req, res, next) {
         body.entry.forEach(function (entry) {
             let webhook_event = entry.messaging[0];
             let sender_psid = webhook_event.sender.id;
-            //console.log(typeof (sender_psid));
-            //console.log('Sender PSID: ' + sender_psid);
             if (webhook_event.message) {
                 handleMessage(sender_psid, webhook_event.message);
             } else if (webhook_event.postback) {
@@ -24,12 +22,6 @@ exports.post_webhook = function (req, res, next) {
     }
 }
 exports.get_webhook = function (req, res, next) {
-    // let UID = 2463540117037048;
-    // for (let i = 0; i < 10; i++) {
-    //     UID = UID + 1;
-    //     models.WaitingRoom.create({ UID: UID });
-    // }
-    // res.send('OK');
     models.WaitingRoom.findAll({ attributes: ['UID'] }).then((all) => {
         all.forEach((item) => {
             waitRoom.push(item.dataValues.UID);
@@ -68,7 +60,6 @@ function findUIDwaitroom(UID) {
 }
 function genResponse(received_message, i = 0, mess = "") {
     let response;
-    //console.log(received_message.attachments[0].payload);
     if (received_message.text) {
         response = {
             "text": mess || received_message.text
@@ -90,7 +81,7 @@ function genResponse(received_message, i = 0, mess = "") {
 //"2463540117037048"
 //"3384751941597732"
 function handleMessage(UID, received_message) {
-    console.log(UID);
+    // console.log(UID);
     // console.log(received_message);
     // console.log(waitRoom, chatRoom);
     let PID = "";
@@ -98,17 +89,17 @@ function handleMessage(UID, received_message) {
     if (findUIDchatroom(UID)) {
         PID = chatRoom[UID]; // lay PID cua ban chat
         if (received_message.attachments) {
-            console.log(received_message.attachments.length);
+            // console.log(received_message.attachments.length);
             received_message.attachments.forEach((item, index) => {
                 response = genResponse(received_message, index);
-                console.log(response);
+                // console.log(response);
                 return callSendAPI(PID, response);
             });
         } else {
             return callSendAPI(PID, response);
         }
     } else {
-        console.log('co qua day 1', waitRoom, chatRoom);
+        // console.log('co qua day 1', waitRoom, chatRoom);
 
         newwaitRoom = findUIDwaitroom(UID);
         waitRoom = newwaitRoom;
@@ -119,10 +110,10 @@ function handleMessage(UID, received_message) {
                 // console.log('co qua day 3');
                 response = genResponse(received_message, 0, "phong cho khong con ai");
                 waitRoom.push(UID);
-                console.log('co qua day 4', waitRoom);
+                // console.log('co qua day 4', waitRoom);
                 return callSendAPI(UID, response);
             } else {
-                console.log('co qua day 5', waitRoom, chatRoom);
+                // console.log('co qua day 5', waitRoom, chatRoom);
                 PID = waitRoom[Math.floor(Math.random() * waitRoom.length)];
                 chatRoom[UID] = PID;
                 chatRoom[PID] = UID;
@@ -130,7 +121,7 @@ function handleMessage(UID, received_message) {
                 waitRoom = newwaitRoom;
                 newwaitRoom = findUIDwaitroom(PID);
                 waitRoom = newwaitRoom;
-                console.log(waitRoom, chatRoom);
+                // console.log(waitRoom, chatRoom);
             }
         }
     }
