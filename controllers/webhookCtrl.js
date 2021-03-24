@@ -1,7 +1,7 @@
 const request = require('request');
 const models = require('../models');
 const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABADJDr1qPE26Yh2JXHzfYeS1H8tPXc64g5TZBV2hgoEitqUZBc0ZA3ztgQRX670Rw1fKZBxN23NfqTV1zOTZA3RntZCOmubkZClQxqdqkMEntfMjW5bWV6safhxbA7IdqlwovyOKn1ZAyKdIDY8A7QdAec3sFdZA0TN0d8NA1sv3C559OJdPZAeQdEZD"
-let chatRoom = { 2463540117037048: "2463540117037049", 2463540117037049: "2463540117037048" };
+let chatRoom = {};
 let waitRoom = [];
 
 exports.post_webhook = function (req, res, next) {
@@ -68,12 +68,12 @@ function findUIDwaitroom(UID) {
     });
     return false;
 }
-function genResponse(received_message, i = 0) {
+function genResponse(received_message, i = 0, mess = "") {
     let response;
     //console.log(received_message.attachments[0].payload);
     if (received_message.text) {
         response = {
-            "text": received_message.text
+            "text": mess || received_message.text
         }
     } else if (received_message.attachments) {
         let attachment_url = received_message.attachments[i].payload.url;
@@ -89,17 +89,33 @@ function genResponse(received_message, i = 0) {
     }
     return response;
 }
-function handleMessage(sender_psid, received_message) {
+function handleMessage(UID, received_message) {
     console.log(received_message);
+    let PID = "";
     let response = genResponse(received_message);
-    if (received_message.attachments) {
-        received_message.attachments.forEach((item, index) => {
-            response = genResponse(received_message, index);
-            return callSendAPI(sender_psid, response);
-        });
-    } else {
-        return callSendAPI(sender_psid, response);
-    }
+    // if (findUIDchatroom(UID)) {
+    //     PID = chatRoom[UID]; // lay PID cua ban chat
+    //     if (received_message.attachments) {
+    //         received_message.attachments.forEach((item, index) => {
+    //             response = genResponse(received_message, index);
+    //             return callSendAPI(PID, response);
+    //         });
+    //     } else {
+    //         return callSendAPI(PID, response);
+    //     }
+    // } else {
+    //     if (findUIDwaitroom(UID)) {
+    //         waitRoom.splice(findUIDwaitroom(UID));
+    //         if (waitRoom.length < 1) {
+    //             response = genResponse(received_message, 0, "phong cho khong con ai");
+    //             return callSendAPI(UID, response);
+    //         }
+    //         PID = waitRoom[Math.floor(Math.random() * waitRoom.length)];
+    //     }
+    //     chatRoom[UID] = PID;
+    //     chatRoom[PID] = UID;
+    // }
+    callSendAPI(UID, response);
 }
 
 function handlePostback(sender_psid, received_postback) {
