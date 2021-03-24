@@ -97,8 +97,9 @@ function handleMessage(sender_psid, received_message) {
             response = genResponse(received_message, index);
             return callSendAPI(sender_psid, response);
         });
+    } else {
+        return callSendAPI(sender_psid, response);
     }
-    return callSendAPI(sender_psid, response);
 }
 
 function handlePostback(sender_psid, received_postback) {
