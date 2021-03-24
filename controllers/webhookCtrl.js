@@ -128,6 +128,8 @@ function handleMessage(UID, received_message) {
                 chatRoom[PID] = UID;
                 newwaitRoom = findUIDwaitroom(UID);
                 waitRoom = newwaitRoom;
+                newwaitRoom = findUIDwaitroom(PID);
+                waitRoom = newwaitRoom;
                 console.log(waitRoom, chatRoom);
             }
         }
