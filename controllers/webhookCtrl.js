@@ -126,6 +126,8 @@ function handleMessage(UID, received_message) {
                 PID = waitRoom[Math.floor(Math.random() * waitRoom.length)];
                 chatRoom[UID] = PID;
                 chatRoom[PID] = UID;
+                newwaitRoom = findUIDwaitroom(UID);
+                waitRoom = newwaitRoom;
                 console.log(waitRoom, chatRoom);
             }
         }
