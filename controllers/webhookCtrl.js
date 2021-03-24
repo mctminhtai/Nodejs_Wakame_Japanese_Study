@@ -88,9 +88,9 @@ function genResponse(received_message, i = 0, mess = "") {
     return response;
 }
 function handleMessage(UID, received_message) {
-    console.log(UID);
-    console.log(received_message);
-    console.log(waitRoom, chatRoom);
+    // console.log(UID);
+    // console.log(received_message);
+    // console.log(waitRoom, chatRoom);
     let PID = "";
     let response = genResponse(received_message);
     if (findUIDchatroom(UID)) {
@@ -104,23 +104,23 @@ function handleMessage(UID, received_message) {
             return callSendAPI(PID, response);
         }
     } else {
-        console.log('co qua day 1');
-        console.log(findUIDwaitroom(UID));
+        // console.log('co qua day 1');
         newwaitRoom = findUIDwaitroom(UID);
         waitRoom = newwaitRoom;
         if (received_message.text == "bat dau chat thoi") {
-            console.log('co qua day 2');
-            console.log("do dai cua wairoom", waitRoom.length, waitRoom);
+            // console.log('co qua day 2');
+            // console.log("do dai cua wairoom", waitRoom.length, waitRoom);
             if (waitRoom.length < 1) {
-                console.log('co qua day 3');
+                // console.log('co qua day 3');
                 response = genResponse(received_message, 0, "phong cho khong con ai");
                 waitRoom.push(UID);
-                console.log('co qua day 4', waitRoom);
+                // console.log('co qua day 4', waitRoom);
                 return callSendAPI(UID, response);
             }
             PID = waitRoom[Math.floor(Math.random() * waitRoom.length)];
             chatRoom[UID] = PID;
             chatRoom[PID] = UID;
+            console.log(waitRoom, chatRoom);
         }
     }
     callSendAPI(UID, response);
