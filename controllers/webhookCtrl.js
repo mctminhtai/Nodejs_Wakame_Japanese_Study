@@ -106,7 +106,8 @@ function handleMessage(UID, received_message) {
         }
     } else {
         if (findUIDwaitroom(UID)) {
-            waitRoom.splice(findUIDwaitroom(UID));
+            waitRoom.splice(findUIDwaitroom(UID), 1);
+            console.log(waitRoom, chatRoom);
         }
         if (received_message.text == "bat dau chat thoi") {
             if (waitRoom.length < 1) {
@@ -118,7 +119,6 @@ function handleMessage(UID, received_message) {
             chatRoom[PID] = UID;
         }
     }
-    console.log(waitRoom, chatRoom);
 }
 
 function handlePostback(sender_psid, received_postback) {
