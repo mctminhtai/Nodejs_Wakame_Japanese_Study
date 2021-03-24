@@ -94,6 +94,7 @@ function handleMessage(UID, received_message) {
             waitRoom.push(PID);
             delete chatRoom.PID;
             delete chatRoom.UID;
+            console.log("kiem tra UID va PID", waitRoom, chatRoom);
             response = genResponse(received_message, 0, "bạn đã được đưa về phòng chờ");
             callSendAPI(UID, response);
             response = genResponse(received_message, 0, "bạn đã bị người kia từ chối trò chuyện, bạn sẽ phải quay lại phòng chờ");
