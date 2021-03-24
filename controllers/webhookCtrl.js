@@ -63,6 +63,8 @@ function findUIDchatroom(UID) {
 function findUIDwaitroom(UID) {
     waitRoom.forEach((item, index) => {
         if (item == UID) {
+            console.log(`item: ${item} va UID la ${UID}`);
+            console.log(typeof (item), typeof (UID));
             return index;
         }
     });
