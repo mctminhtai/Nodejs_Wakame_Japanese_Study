@@ -92,8 +92,8 @@ function handleMessage(UID, received_message) {
         if (received_message.text == "!f5If2qKHpCw") {
             waitRoom.push(UID);
             waitRoom.push(PID);
-            delete chatRoom.PID;
-            delete chatRoom.UID;
+            delete chatRoom[PID];
+            delete chatRoom[UID];
             console.log("kiem tra UID va PID", waitRoom, chatRoom);
             response = genResponse(received_message, 0, "bạn đã được đưa về phòng chờ");
             callSendAPI(UID, response);
