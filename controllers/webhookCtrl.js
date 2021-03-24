@@ -1,7 +1,7 @@
 const request = require('request');
 const models = require('../models');
 const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABADJDr1qPE26Yh2JXHzfYeS1H8tPXc64g5TZBV2hgoEitqUZBc0ZA3ztgQRX670Rw1fKZBxN23NfqTV1zOTZA3RntZCOmubkZClQxqdqkMEntfMjW5bWV6safhxbA7IdqlwovyOKn1ZAyKdIDY8A7QdAec3sFdZA0TN0d8NA1sv3C559OJdPZAeQdEZD"
-let chatRoom = { "2463540117037048": "3384751941597732", "3384751941597732": "2463540117037048" };
+let chatRoom = { "2463540117037048": "3384751941597732", "3384751941597732": "2463540117037048" };//
 let waitRoom = [];
 
 exports.post_webhook = function (req, res, next) {
@@ -118,13 +118,14 @@ function handleMessage(UID, received_message) {
                 // console.log('co qua day 3');
                 response = genResponse(received_message, 0, "phong cho khong con ai");
                 waitRoom.push(UID);
-                // console.log('co qua day 4', waitRoom);
+                console.log('co qua day 4', waitRoom);
                 return callSendAPI(UID, response);
+            } else {
+                PID = waitRoom[Math.floor(Math.random() * waitRoom.length)];
+                chatRoom[UID] = PID;
+                chatRoom[PID] = UID;
+                console.log(waitRoom, chatRoom);
             }
-            PID = waitRoom[Math.floor(Math.random() * waitRoom.length)];
-            chatRoom[UID] = PID;
-            chatRoom[PID] = UID;
-            console.log(waitRoom, chatRoom);
         }
     }
 }
