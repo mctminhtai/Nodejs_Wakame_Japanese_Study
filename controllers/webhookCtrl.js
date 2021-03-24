@@ -92,6 +92,7 @@ function genResponse(received_message, i = 0, mess = "") {
 function handleMessage(UID, received_message) {
     console.log(UID);
     console.log(received_message);
+    console.log(waitRoom, chatRoom);
     let PID = "";
     let response = genResponse(received_message);
     if (findUIDchatroom(UID)) {
@@ -107,7 +108,6 @@ function handleMessage(UID, received_message) {
     } else {
         if (findUIDwaitroom(UID)) {
             waitRoom.splice(findUIDwaitroom(UID), 1);
-            console.log(waitRoom, chatRoom);
         }
         if (received_message.text == "bat dau chat thoi") {
             if (waitRoom.length < 1) {
