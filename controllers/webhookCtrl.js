@@ -1,7 +1,7 @@
 const request = require('request');
 const models = require('../models');
 const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABADJDr1qPE26Yh2JXHzfYeS1H8tPXc64g5TZBV2hgoEitqUZBc0ZA3ztgQRX670Rw1fKZBxN23NfqTV1zOTZA3RntZCOmubkZClQxqdqkMEntfMjW5bWV6safhxbA7IdqlwovyOKn1ZAyKdIDY8A7QdAec3sFdZA0TN0d8NA1sv3C559OJdPZAeQdEZD"
-let chatRoom = { "2463540117037048": "3384751941597732", "3384751941597732": "2463540117037048" };//
+let chatRoom = {};//"2463540117037048": "3384751941597732", "3384751941597732": "2463540117037048"
 let waitRoom = [];
 
 exports.post_webhook = function (req, res, next) {
