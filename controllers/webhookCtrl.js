@@ -107,15 +107,18 @@ function handleMessage(UID, received_message) {
     } else {
         if (findUIDwaitroom(UID)) {
             waitRoom.splice(findUIDwaitroom(UID));
+        }
+        if (received_message.text == "bat dau chat thoi") {
             if (waitRoom.length < 1) {
                 response = genResponse(received_message, 0, "phong cho khong con ai");
                 return callSendAPI(UID, response);
             }
             PID = waitRoom[Math.floor(Math.random() * waitRoom.length)];
+            chatRoom[UID] = PID;
+            chatRoom[PID] = UID;
         }
-        chatRoom[UID] = PID;
-        chatRoom[PID] = UID;
     }
+    console.log(waitRoom, chatRoom);
 }
 
 function handlePostback(sender_psid, received_postback) {
