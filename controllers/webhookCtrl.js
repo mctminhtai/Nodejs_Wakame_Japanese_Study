@@ -99,6 +99,7 @@ function handleMessage(UID, received_message) {
             console.log(received_message.attachments.length);
             received_message.attachments.forEach((item, index) => {
                 response = genResponse(received_message, index);
+                console.log(response);
                 return callSendAPI(PID, response);
             });
         } else {
