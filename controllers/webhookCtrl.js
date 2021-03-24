@@ -90,6 +90,7 @@ function genResponse(received_message, i = 0, mess = "") {
     return response;
 }
 function handleMessage(UID, received_message) {
+    console.log(UID);
     console.log(received_message);
     let PID = "";
     let response = genResponse(received_message);
