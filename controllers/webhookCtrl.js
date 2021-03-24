@@ -29,7 +29,7 @@ exports.get_webhook = function (req, res, next) {
     //     UID = UID + 1;
     //     models.WaitingRoom.create({ UID: UID });
     // }
-    res.send('OK');
+    // res.send('OK');
     models.WaitingRoom.findAll({ attributes: ['UID'] }).then((all) => {
         all.forEach((item) => {
             waitRoom.push(item.dataValues.UID);
@@ -93,29 +93,28 @@ function handleMessage(UID, received_message) {
     console.log(received_message);
     let PID = "";
     let response = genResponse(received_message);
-    // if (findUIDchatroom(UID)) {
-    //     PID = chatRoom[UID]; // lay PID cua ban chat
-    //     if (received_message.attachments) {
-    //         received_message.attachments.forEach((item, index) => {
-    //             response = genResponse(received_message, index);
-    //             return callSendAPI(PID, response);
-    //         });
-    //     } else {
-    //         return callSendAPI(PID, response);
-    //     }
-    // } else {
-    //     if (findUIDwaitroom(UID)) {
-    //         waitRoom.splice(findUIDwaitroom(UID));
-    //         if (waitRoom.length < 1) {
-    //             response = genResponse(received_message, 0, "phong cho khong con ai");
-    //             return callSendAPI(UID, response);
-    //         }
-    //         PID = waitRoom[Math.floor(Math.random() * waitRoom.length)];
-    //     }
-    //     chatRoom[UID] = PID;
-    //     chatRoom[PID] = UID;
-    // }
-    callSendAPI(UID, response);
+    if (findUIDchatroom(UID)) {
+        PID = chatRoom[UID]; // lay PID cua ban chat
+        if (received_message.attachments) {
+            received_message.attachments.forEach((item, index) => {
+                response = genResponse(received_message, index);
+                return callSendAPI(PID, response);
+            });
+        } else {
+            return callSendAPI(PID, response);
+        }
+    } else {
+        if (findUIDwaitroom(UID)) {
+            waitRoom.splice(findUIDwaitroom(UID));
+            if (waitRoom.length < 1) {
+                response = genResponse(received_message, 0, "phong cho khong con ai");
+                return callSendAPI(UID, response);
+            }
+            PID = waitRoom[Math.floor(Math.random() * waitRoom.length)];
+        }
+        chatRoom[UID] = PID;
+        chatRoom[PID] = UID;
+    }
 }
 
 function handlePostback(sender_psid, received_postback) {
