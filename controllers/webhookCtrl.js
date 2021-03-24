@@ -109,6 +109,7 @@ function handleMessage(UID, received_message) {
         }
     } else {
         // console.log('co qua day 1');
+
         newwaitRoom = findUIDwaitroom(UID);
         waitRoom = newwaitRoom;
         if (received_message.text == "bat dau chat thoi") {
