@@ -38,6 +38,7 @@ exports.get_whBackupRestore = function (req, res, next) {
             models.ChattingRoom.sync({ force: true });
         });
         loadOrSave = false;
+        return res.send("OK NHA, DA LOAD ROI NHA");
     } else {
         waitRoom.forEach((item) => {
             models.WaitingRoom.create({ UID: item });
@@ -49,8 +50,8 @@ exports.get_whBackupRestore = function (req, res, next) {
         waitRoom = [];
         chatRoom = {};
         loadOrSave = true;
+        return res.send("OK NHA, DA LUU ROI NHA");
     }
-    return res.send("OK NHA");
 }
 exports.post_webhook = function (req, res, next) {
     let body = req.body;
