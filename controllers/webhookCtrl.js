@@ -141,17 +141,19 @@ function handleMessage(UID, received_message) {
             callSendAPI(UID, response);
             response = genResponse(received_message, 0, "bạn đã bị người kia từ chối trò chuyện, bạn sẽ phải quay lại phòng chờ");
             callSendAPI(PID, response);
-        }
-        if (received_message.attachments) {
-            // console.log(received_message.attachments.length);
-            received_message.attachments.forEach((item, index) => {
-                response = genResponse(received_message, index);
-                // console.log(response);
-                return callSendAPI(PID, response);
-            });
         } else {
-            return callSendAPI(PID, response);
+            if (received_message.attachments) {
+                // console.log(received_message.attachments.length);
+                received_message.attachments.forEach((item, index) => {
+                    response = genResponse(received_message, index);
+                    // console.log(response);
+                    return callSendAPI(PID, response);
+                });
+            } else {
+                return callSendAPI(PID, response);
+            }
         }
+
     } else {
         // console.log('co qua day 1', waitRoom, chatRoom);
         let flag = false;
