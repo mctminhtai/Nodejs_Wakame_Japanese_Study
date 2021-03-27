@@ -71,19 +71,32 @@ exports.post_webhook = function (req, res, next) {
     }
 }
 exports.get_webhook = function (req, res, next) {
-    let VERIFY_TOKEN = "minhtai"
-    let mode = req.query['hub.mode'];
-    let token = req.query['hub.verify_token'];
-    let challenge = req.query['hub.challenge'];
-    if (mode && token) {
-        if (mode === 'subscribe' && token === VERIFY_TOKEN) {
-            console.log('WEBHOOK_VERIFIED');
-            res.status(200).send(challenge);
+    app.get('/webhook', (req, res) => {
 
-        } else {
-            res.sendStatus(403);
+        // Your verify token. Should be a random string.
+        let VERIFY_TOKEN = "ykwa@%bNtzdgTL5BToz%j2z@1rn6Z^Df&Uv8T^rp"
+
+        // Parse the query params
+        let mode = req.query['hub.mode'];
+        let token = req.query['hub.verify_token'];
+        let challenge = req.query['hub.challenge'];
+
+        // Checks if a token and mode is in the query string of the request
+        if (mode && token) {
+
+            // Checks the mode and token sent is correct
+            if (mode === 'subscribe' && token === VERIFY_TOKEN) {
+
+                // Responds with the challenge token from the request
+                console.log('WEBHOOK_VERIFIED');
+                res.status(200).send(challenge);
+
+            } else {
+                // Responds with '403 Forbidden' if verify tokens do not match
+                res.sendStatus(403);
+            }
         }
-    }
+    });
 }
 function findUIDchatroom(UID) {
     if (chatRoom[UID]) {
