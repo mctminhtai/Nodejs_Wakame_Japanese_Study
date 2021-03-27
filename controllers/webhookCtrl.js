@@ -2,9 +2,11 @@ const request = require('request');
 const models = require('../models');
 const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABADJDr1qPE26Yh2JXHzfYeS1H8tPXc64g5TZBV2hgoEitqUZBc0ZA3ztgQRX670Rw1fKZBxN23NfqTV1zOTZA3RntZCOmubkZClQxqdqkMEntfMjW5bWV6safhxbA7IdqlwovyOKn1ZAyKdIDY8A7QdAec3sFdZA0TN0d8NA1sv3C559OJdPZAeQdEZD"
 let chatRoom = {};
-// let chatRoom = {};
+
 let waitRoom = [];
-// let waitRoom = [];
+
+let startkey = "ghép đôi ngẫu nhiên";
+let pausekey = "từ chối";
 //key kich hoat bot: ghepdoingaunhien
 //key quay lai phong cho: tuchoichat
 exports.post_webhook = function (req, res, next) {
@@ -103,7 +105,7 @@ function handleMessage(UID, received_message) {
     let response = genResponse(received_message);
     if (findUIDchatroom(UID)) {
         PID = chatRoom[UID]; // lay PID cua ban chat
-        if (received_message.text == "tuchoichat") {
+        if (received_message.text == pausekey) {
             waitRoom.push(UID);
             waitRoom.push(PID);
             delete chatRoom[PID];
@@ -133,7 +135,7 @@ function handleMessage(UID, received_message) {
         }
         waitRoom = newwaitRoom;
         console.log("check loi phong cho khong co ai 1", waitRoom, chatRoom);
-        if (received_message.text == "ghepdoingaunhien") {
+        if (received_message.text == startkey) {
             // console.log('co qua day 2');
             // console.log("do dai cua wairoom", waitRoom.length, waitRoom);
             console.log("check loi phong cho khong co ai 2", waitRoom, chatRoom);
