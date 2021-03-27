@@ -52,6 +52,18 @@ app.use(function (err, req, res, next) {
 
 
 
+let key = ["bat dau", "Bat dau", "bắt đầu", "Bắt đầu"];
+function searchStr(chuoi, arr) {
+  chuoi = chuoi.trim();
+  let check = arr.indexOf(chuoi);
+  if (check > -1) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(searchStr("bắt đầu", key));
+
 
 
 

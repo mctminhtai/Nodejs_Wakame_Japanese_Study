@@ -1,12 +1,21 @@
 const request = require('request');
 const models = require('../models');
 const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABADJDr1qPE26Yh2JXHzfYeS1H8tPXc64g5TZBV2hgoEitqUZBc0ZA3ztgQRX670Rw1fKZBxN23NfqTV1zOTZA3RntZCOmubkZClQxqdqkMEntfMjW5bWV6safhxbA7IdqlwovyOKn1ZAyKdIDY8A7QdAec3sFdZA0TN0d8NA1sv3C559OJdPZAeQdEZD"
-let chatRoom = {};
+let chatRoom = {
+    '2535433796477660': '2452863994773728',
+    '2452863994773728': '2535433796477660',
+    '4652877738121017': '3384751941597732',
+    '3384751941597732': '4652877738121017',
+    '4122971771067697': '3797147943656064',
+    '3797147943656064': '4122971771067697',
+    '5088775587859142': '3338652242876067',
+    '3338652242876067': '5088775587859142'
+};
 
-let waitRoom = [];
-
-let startkey = "ghép đôi ngẫu nhiên";
-let pausekey = "từ chối";
+let waitRoom = ['3751444224924423', '3315225551909654'];
+let loadOrSave = false;
+let startkey = ["ghép đôi ngẫu nhiên"];
+let pausekey = ["từ chối"];
 //key kich hoat bot: ghepdoingaunhien
 //key quay lai phong cho: tuchoichat
 exports.post_webhook = function (req, res, next) {
@@ -27,7 +36,7 @@ exports.post_webhook = function (req, res, next) {
     }
 }
 exports.get_webhook = function (req, res, next) {
-    if (Object.keys(chatRoom).length == 0 && waitRoom.length == 0) {
+    if (loadOrSave) {
         models.WaitingRoom.findAll({ attributes: ['UID'] }).then((all) => {
             all.forEach((item) => {
                 waitRoom.push(item.dataValues.UID);
@@ -40,6 +49,7 @@ exports.get_webhook = function (req, res, next) {
             models.WaitingRoom.sync({ force: true });
             models.ChattingRoom.sync({ force: true });
         });
+        loadOrSave = false;
     } else {
         waitRoom.forEach((item) => {
             models.WaitingRoom.create({ UID: item });
@@ -48,6 +58,8 @@ exports.get_webhook = function (req, res, next) {
             console.log({ UID: item, PID: chatRoom[item] });
             models.ChattingRoom.create({ UID: item, PID: chatRoom[item] });
         });
+        waitRoom = [];
+        chatRoom = {};
     }
     res.send("OK NHA");
     let VERIFY_TOKEN = "minhtai"
@@ -96,7 +108,15 @@ function genResponse(received_message, i = 0, mess = "") {
     }
     return response;
 }
-
+function searchStr(chuoi, arr) {
+    chuoi = chuoi.trim();
+    let check = arr.indexOf(chuoi);
+    if (check > -1) {
+        return true;
+    } else {
+        return false;
+    }
+}
 function handleMessage(UID, received_message) {
     // console.log(UID);
     // console.log(received_message);
@@ -105,7 +125,7 @@ function handleMessage(UID, received_message) {
     let response = genResponse(received_message);
     if (findUIDchatroom(UID)) {
         PID = chatRoom[UID]; // lay PID cua ban chat
-        if (received_message.text == pausekey) {
+        if (searchStr(received_message.text, pausekey)) {
             waitRoom.push(UID);
             waitRoom.push(PID);
             delete chatRoom[PID];
@@ -135,7 +155,7 @@ function handleMessage(UID, received_message) {
         }
         waitRoom = newwaitRoom;
         console.log("check loi phong cho khong co ai 1", waitRoom, chatRoom);
-        if (received_message.text == startkey) {
+        if (searchStr(received_message.text, startkey)) {
             // console.log('co qua day 2');
             // console.log("do dai cua wairoom", waitRoom.length, waitRoom);
             console.log("check loi phong cho khong co ai 2", waitRoom, chatRoom);
