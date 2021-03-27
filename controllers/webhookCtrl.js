@@ -60,6 +60,7 @@ exports.get_webhook = function (req, res, next) {
         });
         waitRoom = [];
         chatRoom = {};
+        loadOrSave = true;
     }
     res.send("OK NHA");
     let VERIFY_TOKEN = "minhtai"
