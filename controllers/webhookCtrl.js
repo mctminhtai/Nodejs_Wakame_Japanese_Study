@@ -57,7 +57,6 @@ exports.post_webhook = function (req, res, next) {
     let body = req.body;
     console.log(body);
     if (body.object === 'page') {
-        res.status(200).send('EVENT_RECEIVED');
         console.log("check loi http 500");
         body.entry.forEach(function (entry) {
             let webhook_event = entry.messaging[0];
@@ -68,6 +67,7 @@ exports.post_webhook = function (req, res, next) {
                 handlePostback(sender_psid, webhook_event.postback);
             }
         });
+        res.status(200).send('EVENT_RECEIVED');
     } else {
         res.sendStatus(404);
     }
