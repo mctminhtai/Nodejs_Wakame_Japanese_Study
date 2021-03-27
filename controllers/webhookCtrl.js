@@ -12,6 +12,8 @@ let chatRoom = {
     '3338652242876067': '5088775587859142'
 };
 
+
+
 let waitRoom = ['3751444224924423', '3315225551909654'];
 let loadOrSave = false;
 let startkey = ["ghép đôi ngẫu nhiên"];
