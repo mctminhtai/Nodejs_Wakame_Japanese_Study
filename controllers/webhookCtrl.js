@@ -19,8 +19,8 @@ let waitRoom = [
     // '3315225551909654'
 ];
 let loadOrSave = true;
-let startkey = ["ghép đôi ngẫu nhiên"];
-let pausekey = ["từ chối"];
+let startkey = ["ghép đôi ngẫu nhiên", "Ghép đôi ngẫu nhiên"];
+let pausekey = ["từ chối", "Từ chối"];
 //key kich hoat bot: ghepdoingaunhien
 //key quay lai phong cho: tuchoichat
 exports.post_webhook = function (req, res, next) {
