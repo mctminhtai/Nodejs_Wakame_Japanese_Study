@@ -1,18 +1,9 @@
 const request = require('request');
 const models = require('../models');
 const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABADJDr1qPE26Yh2JXHzfYeS1H8tPXc64g5TZBV2hgoEitqUZBc0ZA3ztgQRX670Rw1fKZBxN23NfqTV1zOTZA3RntZCOmubkZClQxqdqkMEntfMjW5bWV6safhxbA7IdqlwovyOKn1ZAyKdIDY8A7QdAec3sFdZA0TN0d8NA1sv3C559OJdPZAeQdEZD"
-let chatRoom = {
-    '2535433796477660': '2452863994773728',
-    '2452863994773728': '2535433796477660',
-    '4652877738121017': '3384751941597732',
-    '3384751941597732': '4652877738121017',
-    '4122971771067697': '3797147943656064',
-    '3797147943656064': '4122971771067697',
-    '5088775587859142': '3338652242876067',
-    '3338652242876067': '5088775587859142'
-};
+let chatRoom = {};
 // let chatRoom = {};
-let waitRoom = ['3751444224924423', '3315225551909654'];
+let waitRoom = [];
 // let waitRoom = [];
 //key kich hoat bot: ghepdoingaunhien
 //key quay lai phong cho: tuchoichat
