@@ -57,6 +57,7 @@ exports.post_webhook = function (req, res, next) {
     let body = req.body;
     console.log(body);
     if (body.object === 'page') {
+        console.log("check loi http 500");
         body.entry.forEach(function (entry) {
             let webhook_event = entry.messaging[0];
             let sender_psid = webhook_event.sender.id;
