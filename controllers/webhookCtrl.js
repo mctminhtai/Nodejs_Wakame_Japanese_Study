@@ -55,12 +55,12 @@ exports.get_whBackupRestore = function (req, res, next) {
 }
 exports.post_webhook = function (req, res, next) {
     let body = req.body;
-    console.log(body);
+    //console.log(body);
     if (body.object === 'page') {
-        console.log("check loi http 500");
+        //console.log("check loi http 500");
         body.entry.forEach(function (entry) {
             let webhook_event = entry.messaging[0];
-            let sender_psid = webhook_event.sender.id || "";
+            let sender_psid = webhook_event.sender.id;
             if (webhook_event.message) {
                 handleMessage(sender_psid, webhook_event.message);
             } else if (webhook_event.postback) {
