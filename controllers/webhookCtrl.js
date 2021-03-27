@@ -67,7 +67,6 @@ exports.get_webhook = function (req, res, next) {
         chatRoom = {};
         loadOrSave = true;
     }
-    res.send("OK NHA");
     let VERIFY_TOKEN = "minhtai"
     let mode = req.query['hub.mode'];
     let token = req.query['hub.verify_token'];
