@@ -192,8 +192,9 @@ function handleMessage(UID, received_message) {
                 // console.log('co qua day 4', waitRoom);
                 return callSendAPI(UID, response);
             } else {
-                // console.log('co qua day 5', waitRoom, chatRoom);
+                //console.log('co qua day 5', waitRoom, chatRoom);
                 PID = waitRoom[Math.floor(Math.random() * waitRoom.length)];
+                console.log('random PID', PID);
                 chatRoom[UID] = PID;
                 chatRoom[PID] = UID;
                 newwaitRoom = findUIDwaitroom(UID);
