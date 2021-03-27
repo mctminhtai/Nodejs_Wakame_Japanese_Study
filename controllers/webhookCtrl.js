@@ -1,8 +1,17 @@
 const request = require('request');
 const models = require('../models');
 const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABADJDr1qPE26Yh2JXHzfYeS1H8tPXc64g5TZBV2hgoEitqUZBc0ZA3ztgQRX670Rw1fKZBxN23NfqTV1zOTZA3RntZCOmubkZClQxqdqkMEntfMjW5bWV6safhxbA7IdqlwovyOKn1ZAyKdIDY8A7QdAec3sFdZA0TN0d8NA1sv3C559OJdPZAeQdEZD"
-let chatRoom = {};
-let waitRoom = [];
+let chatRoom = {
+    '2535433796477660': '2452863994773728',
+    '2452863994773728': '2535433796477660',
+    '4652877738121017': '3384751941597732',
+    '3384751941597732': '4652877738121017',
+    '4122971771067697': '3797147943656064',
+    '3797147943656064': '4122971771067697',
+    '5088775587859142': '3338652242876067',
+    '3338652242876067': '5088775587859142'
+};
+let waitRoom = ['3751444224924423', '3315225551909654'];
 //key kich hoat bot: ghepdoingaunhien
 //key quay lai phong cho: tuchoichat
 exports.post_webhook = function (req, res, next) {
@@ -23,16 +32,28 @@ exports.post_webhook = function (req, res, next) {
     }
 }
 exports.get_webhook = function (req, res, next) {
-    models.WaitingRoom.findAll({ attributes: ['UID'] }).then((all) => {
-        all.forEach((item) => {
-            waitRoom.push(item.dataValues.UID);
+    if (Object.keys(chatRoom).length == 0 && waitRoom.length == 0) {
+        models.WaitingRoom.findAll({ attributes: ['UID'] }).then((all) => {
+            all.forEach((item) => {
+                waitRoom.push(item.dataValues.UID);
+            });
         });
-    });
-    models.ChattingRoom.findAll({ attributes: ['UID', 'PID'] }).then((all) => {
-        all.forEach((item) => {
-            chatRoom[item.dataValues.UID] = item.dataValues.PID;
+        models.ChattingRoom.findAll({ attributes: ['UID', 'PID'] }).then((all) => {
+            all.forEach((item) => {
+                chatRoom[item.dataValues.UID] = item.dataValues.PID;
+            });
+            console.log(waitRoom, chatRoom);
         });
-    });
+    } else {
+        waitRoom.forEach((item) => {
+            models.WaitingRoom.create({ UID: item });
+        });
+        Object.keys(chatRoom).forEach((item) => {
+            console.log({ UID: item, PID: chatRoom[item] });
+            models.ChattingRoom.create({ UID: item, PID: chatRoom[item] });
+        });
+    }
+    res.send("OK NHA");
     let VERIFY_TOKEN = "minhtai"
     let mode = req.query['hub.mode'];
     let token = req.query['hub.verify_token'];
@@ -79,8 +100,7 @@ function genResponse(received_message, i = 0, mess = "") {
     }
     return response;
 }
-//"2463540117037048"
-//"3384751941597732"
+
 function handleMessage(UID, received_message) {
     // console.log(UID);
     // console.log(received_message);
@@ -138,7 +158,7 @@ function handleMessage(UID, received_message) {
                 waitRoom = newwaitRoom;
                 newwaitRoom = findUIDwaitroom(PID);
                 waitRoom = newwaitRoom;
-                response = genResponse(received_message, 0, "bạn đã được ghép thành công");
+                response = genResponse(received_message, 0, "bạn đã được ghép thành công, chào nhau cái đi nà!!");
                 callSendAPI(UID, response);
                 callSendAPI(PID, response);
                 // console.log(waitRoom, chatRoom);

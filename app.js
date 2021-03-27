@@ -55,6 +55,8 @@ app.use(function (err, req, res, next) {
 
 
 
+
+
 // const { Sequelize, DataTypes, Model } = require('sequelize');
 // const sequelize = new Sequelize('expressjsdb', 'postgres', '1234567890', {
 //   host: 'localhost',
