@@ -49,7 +49,7 @@ exports.post_webhook = function (req, res, next) {
         body.entry.forEach(function (entry) {
             let webhook_event = entry.messaging[0];
             let sender_psid = webhook_event.sender.id;
-            //console.log(sender_psid, webhook_event);
+            console.log(sender_psid, webhook_event);
             if (webhook_event.message) {
                 handleMessage(sender_psid, webhook_event.message);
             } else if (webhook_event.postback) {
