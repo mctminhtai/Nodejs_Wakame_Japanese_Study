@@ -64,7 +64,7 @@ exports.post_webhook = function (req, res, next) {
     let body = req.body;
     //console.log(body);
     if (body.object === 'page') {
-        //console.log("check loi http 500");
+        console.log("check loi http 500");
         body.entry.forEach(function (entry) {
             let webhook_event = entry.messaging[0];
             let sender_psid = webhook_event.sender.id;
@@ -180,7 +180,7 @@ function handleMessage(UID, received_message) {
         }
 
     } else {
-        // console.log('co qua day 1', waitRoom, chatRoom);
+        console.log('co qua day 1', waitRoom, chatRoom);
         let flag = false;
         newwaitRoom = findUIDwaitroom(UID);
         if (waitRoom.length > newwaitRoom.length) {
@@ -189,17 +189,17 @@ function handleMessage(UID, received_message) {
         waitRoom = newwaitRoom;
         console.log("check loi phong cho khong co ai 1", waitRoom, chatRoom);
         if (searchStr(received_message.text, startkey)) {
-            // console.log('co qua day 2');
+            console.log('co qua day 2');
             // console.log("do dai cua wairoom", waitRoom.length, waitRoom);
             console.log("check loi phong cho khong co ai 2", waitRoom, chatRoom);
             if (waitRoom.length < 1) {
-                // console.log('co qua day 3');
+                console.log('co qua day 3');
                 response = genResponse(received_message, 0, "phòng chờ không có ai, App sẽ giữ bạn tại phòng chờ cho tới khi có người khác tới");
                 waitRoom.push(UID);
-                // console.log('co qua day 4', waitRoom);
+                console.log('co qua day 4', waitRoom);
                 return callSendAPI(UID, response);
             } else {
-                //console.log('co qua day 5', waitRoom, chatRoom);
+                console.log('co qua day 5', waitRoom, chatRoom);
                 PID = waitRoom[Math.floor(Math.random() * waitRoom.length)];
                 console.log('random PID', PID);
                 chatRoom[UID] = PID;
@@ -211,7 +211,7 @@ function handleMessage(UID, received_message) {
                 response = genResponse(received_message, 0, "bạn đã được ghép thành công, chào nhau cái đi nà!!");
                 callSendAPI(UID, response);
                 callSendAPI(PID, response);
-                // console.log(waitRoom, chatRoom);
+                console.log(waitRoom, chatRoom);
             }
         } else {
             if (flag) {
