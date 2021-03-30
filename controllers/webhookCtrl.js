@@ -120,12 +120,16 @@ function genResponse(received_message, i = 0, mess = "") {
     return response;
 }
 function searchStr(chuoi, arr) {
-    chuoi = chuoi.trim();
-    let check = arr.indexOf(chuoi);
-    if (check > -1) {
-        return true;
-    } else {
+    if (chuoi === undefined) {
         return false;
+    } else {
+        chuoi = chuoi.trim();
+        let check = arr.indexOf(chuoi);
+        if (check > -1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 function handleMessage(UID, received_message) {
