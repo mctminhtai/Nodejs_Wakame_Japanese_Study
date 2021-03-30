@@ -45,11 +45,11 @@ exports.post_webhook = function (req, res, next) {
     let body = req.body;
     //console.log(body);
     if (body.object === 'page') {
-        console.log("check loi http 500");
+        //console.log("check loi http 500");
         body.entry.forEach(function (entry) {
             let webhook_event = entry.messaging[0];
             let sender_psid = webhook_event.sender.id;
-            console.log(sender_psid, webhook_event);
+            //console.log(sender_psid, webhook_event);
             if (webhook_event.message) {
                 handleMessage(sender_psid, webhook_event.message);
             } else if (webhook_event.postback) {
@@ -148,7 +148,7 @@ function handleMessage(UID, received_message) {
             callSendAPI(PID, response);
         } else {
             if (received_message.attachments) {
-                // console.log(received_message.attachments.length);
+                console.log(received_message.attachments);
                 received_message.attachments.forEach((item, index) => {
                     response = genResponse(received_message, index);
                     // console.log(response);
