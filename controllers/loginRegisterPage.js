@@ -1,6 +1,6 @@
 const models = require('../models');
 // const regValidate = require('../validate_func/registerValidate');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 passport.use(new LocalStrategy({
@@ -95,7 +95,7 @@ exports.post_registerPage = function (req, res, next) {
 }
 exports.get_logout = function (req, res, next) {
     req.logout();
-    res.redirect('/login');
+    res.redirect('/');
 }
 exports.get_test = function (req, res, next) {
     users = []
