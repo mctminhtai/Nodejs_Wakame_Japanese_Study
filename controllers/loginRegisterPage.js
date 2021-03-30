@@ -1,45 +1,114 @@
 const models = require('../models');
-const regValidate = require('../validate_func/registerValidate');
+// const regValidate = require('../validate_func/registerValidate');
+const bcrypt = require('bcrypt');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+passport.use(new LocalStrategy({
+    usernameField: 'login_email',
+    passwordField: 'login_password'
+},
+    function (username, password, done) {
+        models.User.findOne({
+            attributes: ['email', 'password', 'id'],
+            where: { email: username }
+        }).then((user) => {
+            bcrypt.compare(password, user.dataValues.password).then((result) => {
+                console.log(result);
+                if (!result) {
+                    return done(null, false);
+                }
+                console.log('kiem tra loi 500', user);
+                return done(null, user);
+            });
+        });
+    }
+));
+passport.serializeUser(function (user, done) {
+    done(null, user.id);
+});
+
+passport.deserializeUser(function (id, done) {
+    models.User.findByPk(id).then((user) => {
+        done(null, user);
+    });
+    // User.findById(id, function (err, user) {
+    //     done(err, user);
+    // });
+});
 exports.get_loginPage = function (req, res, next) {
     res.render('loginPage', { title: 'Express' });
 }
-exports.post_loginPage = function (req, res, next) {
-    return models.User.create({
-        email: req.body.login_email,
-        password: req.body.login_password
-    }).then(lead => {
-        res.redirect('/');
-    }).catch(error => {
-        console.log(error);
-    })
-}
+// exports.post_loginPage = function (req, res, next) {
+//     return models.User.create({
+//         email: req.body.login_email,
+//         password: req.body.login_password
+//     }).then(lead => {
+//         res.redirect('/');
+//     }).catch(error => {
+//         console.log(error);
+//     })
+// }
 exports.get_registerPage = function (req, res, next) {
     res.render('registerPage', { error: '' });
 }
 exports.post_registerPage = function (req, res, next) {
     data = req.body;
-    error = regValidate.valiReg(data);
-    if (error) {
-        res.render('registerPage', { error: error });
-    } else {
-        return models.User.create({
-            fullName: req.body.name,
-            email: req.body.email,
-            password: req.body.password
-        }).then(lead => {
-            res.redirect('/');
-        }).catch(error => {
-            console.log(error);
-        })
-    }
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    models.User.findAll({
+        attributes: ['email'],
+        where: { email: data.email }
+    }).then((allUsers) => {
+        let errors = [];
+        if (allUsers.length > 0) {
+            errors.push("Email này đã tồn tại");
+        }
+        if (!data.name) {
+            errors.push("Username không được để trống");
+        }
+        if (!re.test(data.email)) {
+            errors.push("Email không hợp lệ");
+        }
+        if (data.password != data.re_password) {
+            errors.push("Password1 và password2 không trùng nhau");
+        }
+        if (!data.agreeterm) {
+            errors.push("Bạn chưa đồng ý với các thoả thuận dịch vụ");
+        }
+        console.log('kiem tra loi khong ve home', errors);
+        if (errors.length != 0) {
+            res.render('registerPage', { errors: errors });
+        } else {
+            bcrypt.hash(req.body.password, 10, function (err, hash) {
+                // Store hash in your password DB.
+                models.User.create({
+                    fullName: req.body.name,
+                    email: req.body.email,
+                    password: hash
+                }).then(user => {
+                    res.redirect('/');
+                }).catch(error => {
+                    console.log(error);
+                })
+            });
+        }
+    });
+}
+exports.get_logout = function (req, res, next) {
+    req.logout();
+    res.redirect('/login');
 }
 exports.get_test = function (req, res, next) {
     users = []
-    models.User.findAll({ attributes: ['fullName', 'email'] }).then((all) => {
+    models.User.findAll({ attributes: ['fullName', 'email', 'password'] }).then((all) => {
         all.forEach((item, index) => {
             users.push(item.dataValues);
         })
         res.render('test', { users: users });
     });
-
+    // models.User.findOne({
+    //     attributes: ['email', 'password'],
+    //     where: { email: 'tai@gmail.com' }
+    // }).then((user) => {
+    //     console.log(user.dataValues.email);
+    // })
 }

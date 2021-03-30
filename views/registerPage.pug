@@ -28,8 +28,9 @@ head
   link(rel='stylesheet' href='stylesheets/bootstrap.min.css')
 .main
   // Sing in  Form
-  if error
-    .alert.alert-warning(role='alert') #{error}
+  if errors
+    each error,index in errors
+      .alert.alert-warning(role='alert') #{error}
   section.signup
     .container
       .signup-content
