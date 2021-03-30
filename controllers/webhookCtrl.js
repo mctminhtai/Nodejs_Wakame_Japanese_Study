@@ -1,6 +1,6 @@
 const request = require('request');
 const models = require('../models');
-const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABADJDr1qPE26Yh2JXHzfYeS1H8tPXc64g5TZBV2hgoEitqUZBc0ZA3ztgQRX670Rw1fKZBxN23NfqTV1zOTZA3RntZCOmubkZClQxqdqkMEntfMjW5bWV6safhxbA7IdqlwovyOKn1ZAyKdIDY8A7QdAec3sFdZA0TN0d8NA1sv3C559OJdPZAeQdEZD"
+const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABAFydZB1qSp6a5quB9MvZAg7mOITpWF5gjeCZB3JsFmDxZBZB1zYfVbZAej2JVSqPlaiVXb1c8Y64r8QXV292w6XCiyOeOk4dQa2LlAF4Y6pbbPql6fKl3NxVDNv0N9si80DxeziQo7DpiRYzzmZBahcGfAdKb1LNZBmRW17CEjFDDjF95trXKzIZD"
 let chatRoom = {};
 
 
@@ -148,7 +148,7 @@ function handleMessage(UID, received_message) {
             callSendAPI(PID, response);
         } else {
             if (received_message.attachments) {
-                console.log(received_message.attachments);
+                //console.log(received_message.attachments);
                 received_message.attachments.forEach((item, index) => {
                     response = genResponse(received_message, index);
                     // console.log(response);
