@@ -1,0 +1,535 @@
+doctype html
+head
+  // Required meta tags
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title World Vision
+  // plugin css for this page
+  link(rel='stylesheet' href='./stylesheets/materialdesignicons.min.css')
+  link(rel='stylesheet' href='./stylesheets/aos.css')
+  link(rel='stylesheet' href='./stylesheets/owl.carousel.min.css')
+  link(rel='stylesheet' href='./stylesheets/owl.theme.default.min.css')
+  // End plugin css for this page
+  link(rel='apple-touch-icon' sizes='57x57' href='images/favicon/apple-icon-57x57.png')
+  link(rel='apple-touch-icon' sizes='60x60' href='images/favicon/apple-icon-60x60.png')
+  link(rel='apple-touch-icon' sizes='72x72' href='images/favicon/apple-icon-72x72.png')
+  link(rel='apple-touch-icon' sizes='76x76' href='images/favicon/apple-icon-76x76.png')
+  link(rel='apple-touch-icon' sizes='114x114' href='images/favicon/apple-icon-114x114.png')
+  link(rel='apple-touch-icon' sizes='120x120' href='images/favicon/apple-icon-120x120.png')
+  link(rel='apple-touch-icon' sizes='144x144' href='images/favicon/apple-icon-144x144.png')
+  link(rel='apple-touch-icon' sizes='152x152' href='images/favicon/apple-icon-152x152.png')
+  link(rel='apple-touch-icon' sizes='180x180' href='images/favicon/apple-icon-180x180.png')
+  link(rel='icon' type='image/png' sizes='192x192' href='/android-icon-192x192.png')
+  link(rel='icon' type='image/png' sizes='32x32' href='images/favicon/favicon-32x32.png')
+  link(rel='icon' type='image/png' sizes='96x96' href='images/favicon/favicon-96x96.png')
+  link(rel='icon' type='image/png' sizes='16x16' href='images/favicon/favicon-16x16.png')
+  link(rel='manifest' href='images/favicon/manifest.json')
+  meta(name='msapplication-TileColor' content='#ffffff')
+  meta(name='msapplication-TileImage' content='images/favicon/ms-icon-144x144.png')
+  // inject:css
+  link(rel='stylesheet' href='./stylesheets/style.css')
+  // endinject
+.container-scroller
+  .main-panel
+    header#header
+      .container
+        // partial:partials/_navbar.html
+        nav.navbar.navbar-expand-lg.navbar-light
+          .d-flex.justify-content-between.align-items-center.navbar-top
+            ul.navbar-left
+              li Wed, March 4, 2020
+              li 30&deg;C,London
+            div
+              a.navbar-brand(href='#')
+                img(src='images/logo.svg' alt='')
+            .d-flex
+              ul.navbar-right
+                li
+                  a(href='#') ENGLISH
+                li
+                  a(href='#') ESPA&Ntilde;OL
+              ul.social-media
+                li
+                  a(href='#')
+                    i.mdi.mdi-instagram
+                li
+                  a(href='#')
+                    i.mdi.mdi-facebook
+                li
+                  a(href='#')
+                    i.mdi.mdi-youtube
+                li
+                  a(href='#')
+                    i.mdi.mdi-linkedin
+                li
+                  a(href='#')
+                    i.mdi.mdi-twitter
+          .navbar-bottom-menu
+            button.navbar-toggler(type='button' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+              span.navbar-toggler-icon
+            #navbarSupportedContent.navbar-collapse.justify-content-center.collapse
+              ul.navbar-nav.d-lg-flex.justify-content-between.align-items-center
+                li
+                  button.navbar-close
+                    i.mdi.mdi-close
+                li.nav-item.active
+                  a.nav-link.active(href='index.html') Home
+                li.nav-item
+                  a.nav-link(href='pages/world.html') World
+                li.nav-item
+                  a.nav-link(href='pages/author.html') Magazine
+                li.nav-item
+                  a.nav-link(href='pages/news-post.html') Blog
+                li.nav-item
+                  a.nav-link(href='pages/business.html') Business
+                li.nav-item
+                  a.nav-link(href='pages/sports.html') Sports
+                li.nav-item
+                  a.nav-link(href='pages/art.html') Art
+                li.nav-item
+                  a.nav-link(href='pages/politics.html') Politics
+                li.nav-item
+                  a.nav-link(href='pages/real-estate.html') Real estate
+                li.nav-item
+                  a.nav-link(href='pages/travel.html') Travel
+                li.nav-item
+                  a.nav-link(href='#')
+                    i.mdi.mdi-magnify
+        // partial
+    .container
+      .banner-top-thumb-wrap
+        .d-lg-flex.justify-content-between.align-items-center
+          .d-flex.justify-content-between.mb-3.mb-lg-0
+            div
+              img.banner-top-thumb(src='images/star-magazine-1.jpg' alt='thumb')
+            h5.m-0.font-weight-bold
+              | The morning after: What people
+          .d-flex.justify-content-between.mb-3.mb-lg-0
+            div
+              img.banner-top-thumb(src='images/star-magazine-2.jpg' alt='thumb')
+            h5.m-0.font-weight-bold How Hungary produced the
+          .d-flex.justify-content-between.mb-3.mb-lg-0
+            div
+              img.banner-top-thumb(src='images/star-magazine-3.jpg' alt='thumb')
+            h5.m-0.font-weight-bold
+              | A sleepy island paradise&apos;s most
+          .d-flex.justify-content-between.mb-3.mb-lg-0
+            div
+              img.banner-top-thumb(src='images/star-magazine-4.jpg' alt='thumb')
+            h5.m-0.font-weight-bold
+              | America&apos;s most popular national
+      .row
+        .col-lg-8
+          #main-banner-carousel.owl-carousel.owl-theme
+            .item
+              .carousel-content-wrapper.mb-2
+                .carousel-content
+                  h1.font-weight-bold
+                    | If you wanted to get rich, how would you do it?
+                  h5.font-weight-normal.m-0
+                    | Lorem Ipsum has been the industry&apos;s standard
+                  p.text-color.m-0.pt-2.d-flex.align-items-center
+                    span.fs-10.mr-1 2 hours ago
+                    i.mdi.mdi-bookmark-outline.mr-3
+                    span.fs-10.mr-1 126
+                    i.mdi.mdi-comment-outline
+                .carousel-image
+                  img(src='images/banner.jpg' alt='')
+            .item
+              .carousel-content-wrapper.mb-2
+                .carousel-content
+                  h1.font-weight-bold
+                    | If you wanted to get rich, how would you do it?
+                  h5.font-weight-normal.m-0
+                    | Lorem Ipsum has been the industry&apos;s standard
+                  p.text-color.m-0.pt-2.d-flex.align-items-center
+                    span.fs-10.mr-1 2 hours ago
+                    i.mdi.mdi-bookmark-outline.mr-3
+                    span.fs-10.mr-1 126
+                    i.mdi.mdi-comment-outline
+                .carousel-image
+                  img(src='images/banner_1.jpg' alt='')
+            .item
+              .carousel-content-wrapper.mb-2
+                .carousel-content
+                  h1.font-weight-bold
+                    | If you wanted to get rich, how would you do it?
+                  h5.font-weight-normal.m-0
+                    | Lorem Ipsum has been the industry&apos;s standard
+                  p.text-color.m-0.pt-2.d-flex.align-items-center
+                    span.fs-10.mr-1 2 hours ago
+                    i.mdi.mdi-bookmark-outline.mr-3
+                    span.fs-10.mr-1 126
+                    i.mdi.mdi-comment-outline
+                .carousel-image
+                  img(src='images/banner_2.jpg' alt='')
+            .item
+              .carousel-content-wrapper.mb-2
+                .carousel-content
+                  h1.font-weight-bold
+                    | If you wanted to get rich, how would you do it?
+                  h5.font-weight-normal.m-0
+                    | Lorem Ipsum has been the industry&apos;s standard
+                  p.text-color.m-0.pt-2.d-flex.align-items-center
+                    span.fs-10.mr-1 2 hours ago
+                    i.mdi.mdi-bookmark-outline.mr-3
+                    span.fs-10.mr-1 126
+                    i.mdi.mdi-comment-outline
+                .carousel-image
+                  img(src='images/banner_3.jpg' alt='')
+        .col-lg-4
+          .row
+            .col-sm-6
+              .py-3.border-bottom
+                .d-flex.align-items-center.pb-2
+                  img.img-xs.img-rounded.mr-2(src='images/Profile_1.jpg' alt='thumb')
+                  span.fs-12.text-muted Henry Itondo
+                p.fs-14.m-0.font-weight-medium.line-height-sm
+                  | The Most And Least Visited Countries In The World
+            .col-sm-6
+              .py-3.border-bottom
+                .d-flex.align-items-center.pb-2
+                  img.img-xs.img-rounded.mr-2(src='images/Profile_2.jpg' alt='thumb')
+                  span.fs-12.text-muted Oka Tomoaki
+                p.fs-14.m-0.font-weight-medium.line-height-sm
+                  | The Best Places to Travel in month August
+          .row
+            .col-sm-6
+              .pt-4.pb-4.border-bottom
+                .d-flex.align-items-center.pb-2
+                  img.img-xs.img-rounded.mr-2(src='images/Profile_2.jpg' alt='thumb')
+                  span.fs-12.text-muted Joana Leite
+                p.fs-14.m-0.font-weight-medium.line-height-sm
+                  | Focus On Fun And Challenging Lifetime Activities
+            .col-sm-6
+              .pt-3.pb-4.border-bottom
+                .d-flex.align-items-center.pb-2
+                  img.img-xs.img-rounded.mr-2(src='images/Profile_4.jpg' alt='thumb')
+                  span.fs-12.text-muted Rita Leite
+                p.fs-14.m-0.font-weight-medium.line-height-sm
+                  | Bread Is The Most Widely Consumed Food In The World
+          .row
+            .col-sm-6
+              .pt-4.pb-4
+                .d-flex.align-items-center.pb-2
+                  img.img-xs.img-rounded.mr-2(src='images/Profile_5.jpg' alt='thumb')
+                  span.fs-12.text-muted Jurrien Oldhof
+                p.fs-14.m-0.font-weight-medium.line-height-sm
+                  | What Is Music, And What Does It Mean To Us
+            .col-sm-6
+              .pt-3.pb-4
+                .d-flex.align-items-center.pb-2
+                  img.img-xs.img-rounded.mr-2(src='images/Profile_6.jpg' alt='thumb')
+                  span.fs-12.text-muted Yamaha Toshinobu
+                p.fs-14.m-0.font-weight-medium.line-height-sm
+                  | Is Breakfast The Most Important Meal Of The Day
+      .world-news
+        .row
+          .col-sm-12
+            .d-flex.position-relative.float-left
+              h3.section-title World News
+        .row
+          .col-lg-3.col-sm-6.grid-margin.mb-5.mb-sm-2
+            .position-relative.image-hover
+              img.img-fluid(src='images/travel.jpg' alt='world-news')
+              span.thumb-title TRAVEL
+            h5.font-weight-bold.mt-3
+              | Refugees flood Turkey&apos;s border with Greece
+            p.fs-15.font-weight-normal
+              | Lorem Ipsum has been the industry&apos;s standard dummy text
+            a.font-weight-bold.text-dark.pt-2(href='#') Read Article
+          .col-lg-3.col-sm-6.mb-5.mb-sm-2
+            .position-relative.image-hover
+              img.img-fluid(src='images/news.jpg' alt='world-news')
+              span.thumb-title NEWS
+            h5.font-weight-bold.mt-3
+              | South Korea&rsquo;s Moon Jae-in sworn in vowing address
+            p.fs-15.font-weight-normal
+              | Lorem Ipsum has been the industry&apos;s standard dummy text
+            a.font-weight-bold.text-dark.pt-2(href='#') Read Article
+          .col-lg-3.col-sm-6.mb-5.mb-sm-2
+            .position-relative.image-hover
+              img.img-fluid(src='images/art.jpg' alt='world-news')
+              span.thumb-title ART
+            h5.font-weight-bold.mt-3
+              | These puppies are training to assist in avalanche rescue
+            p.fs-15.font-weight-normal
+              | Lorem Ipsum has been the industry&apos;s standard dummy text
+            a.font-weight-bold.text-dark.pt-2(href='#') Read Article
+          .col-lg-3.col-sm-6.mb-5.mb-sm-2
+            .position-relative.image-hover
+              img.img-fluid(src='images/business.jpg' alt='world-news')
+              span.thumb-title BUSINESS
+            h5.font-weight-bold.mt-3
+              | &apos;Love Is Blind&apos; couple opens up about their first year
+            p.fs-15.font-weight-normal
+              | Lorem Ipsum has been the industry&apos;s standard dummy text
+            a.font-weight-bold.text-dark.pt-2(href='#') Read Article
+      .editors-news
+        .row
+          .col-lg-3
+            .d-flex.position-relative.float-left
+              h3.section-title Popular News
+        .row
+          .col-lg-6.mb-5.mb-sm-2
+            .position-relative.image-hover
+              img.img-fluid(src='images/glob.jpg' alt='world-news')
+              span.thumb-title NEWS
+            h1.font-weight-600.mt-3
+              | Melania Trump speaks about courage at State Department
+            p.fs-15.font-weight-normal
+              | Lorem Ipsum has been the industry&apos;s standard dummy text ever
+              | since the 1500s, when an unknown printer took a galley of type
+              | and
+          .col-lg-6.mb-5.mb-sm-2
+            .row
+              .col-sm-6.mb-5.mb-sm-2
+                .position-relative.image-hover
+                  img.img-fluid(src='images/star-magazine-5.jpg' alt='world-news')
+                  span.thumb-title POLITICS
+                h5.font-weight-600.mt-3
+                  | A look at California&apos;s eerie plane graveyards
+                p.fs-15.font-weight-normal
+                  | Lorem Ipsum has been the industry&apos;s standard dummy text
+              .col-sm-6.mb-5.mb-sm-2
+                .position-relative.image-hover
+                  img.img-fluid(src='images/star-magazine-6.jpg' alt='world-news')
+                  span.thumb-title TRAVEL
+                h5.font-weight-600.mt-3
+                  | The world&apos;s most beautiful racecourses
+                p.fs-15.font-weight-normal
+                  | Lorem Ipsum has been the industry&apos;s standard dummy text
+            .row.mt-3
+              .col-sm-6.mb-5.mb-sm-2
+                .position-relative.image-hover
+                  img.img-fluid(src='images/star-magazine-7.jpg' alt='world-news')
+                  span.thumb-title POLITICS
+                h5.font-weight-600.mt-3
+                  | Japan cancels cherry blossom festivals over virus fears
+                p.fs-15.font-weight-normal
+                  | Lorem Ipsum has been the industry&apos;s standard dummy text
+              .col-sm-6
+                .position-relative.image-hover
+                  img.img-fluid(src='images/star-magazine-8.jpg' alt='world-news')
+                  span.thumb-title TRAVEL
+                h5.font-weight-600.mt-3
+                  | Classic cars reborn as electric vehicles
+                p.fs-15.font-weight-normal
+                  | Lorem Ipsum has been the industry&apos;s standard dummy text
+      .popular-news
+        .row
+          .col-lg-3
+            .d-flex.position-relative.float-left
+              h3.section-title Editor choice
+        .row
+          .col-lg-9
+            .row
+              .col-sm-4.mb-5.mb-sm-2
+                .position-relative.image-hover
+                  img.img-fluid(src='images/star-magazine-9.jpg' alt='world-news')
+                  span.thumb-title LIFESTYLE
+                h5.font-weight-600.mt-3
+                  | The island country that gave Mayor Pete his name
+              .col-sm-4.mb-5.mb-sm-2
+                .position-relative.image-hover
+                  img.img-fluid(src='images/star-magazine-10.jpg' alt='world-news')
+                  span.thumb-title SPORTS
+                h5.font-weight-600.mt-3
+                  | Disney parks expand (good) vegan food options
+              .col-sm-4.mb-5.mb-sm-2
+                .position-relative.image-hover
+                  img.img-fluid(src='images/star-magazine-11.jpg' alt='world-news')
+                  span.thumb-title INTERNET
+                h5.font-weight-600.mt-3
+                  | A hot springs where clothing is optional after dark
+            .row.mt-3
+              .col-sm-4.mb-5.mb-sm-2
+                .position-relative.image-hover
+                  img.img-fluid(src='images/star-magazine-12.jpg' alt='world-news')
+                  span.thumb-title NEWS
+                h5.font-weight-600.mt-3
+                  | Japanese chef carves food into incredible pieces of art
+              .col-sm-4.mb-5.mb-sm-2
+                .position-relative.image-hover
+                  img.img-fluid(src='images/star-magazine-13.jpg' alt='world-news')
+                  span.thumb-title NEWS
+                h5.font-weight-600.mt-3
+                  | The Misanthrope Society: A Taipei bar for people who
+              .col-sm-4.mb-5.mb-sm-2
+                .position-relative.image-hover
+                  img.img-fluid(src='images/star-magazine-14.jpg' alt='world-news')
+                  span.thumb-title TOURISM
+                h5.font-weight-600.mt-3
+                  | From Pakistan to the Caribbean: Curry&apos;s journey
+          .col-lg-3
+            .position-relative.mb-3
+              img.img-fluid(src='images/star-magazine-15.jpg' alt='world-news')
+              .video-thumb.text-muted
+                span
+                  i.mdi.mdi-menu-right
+                | LIVE
+            .row
+              .col-sm-12
+                .d-flex.position-relative.float-left
+                  h3.section-title Latest News
+              .col-sm-12
+                .border-bottom.pb-3
+                  h5.font-weight-600.mt-0.mb-0
+                    | South Korea&rsquo;s Moon Jae-in sworn in vowing address
+                  p.text-color.m-0.d-flex.align-items-center
+                    span.fs-10.mr-1 2 hours ago
+                    i.mdi.mdi-bookmark-outline.mr-3
+                    span.fs-10.mr-1 126
+                    i.mdi.mdi-comment-outline
+              .col-sm-12
+                .border-bottom.pt-4.pb-3
+                  h5.font-weight-600.mt-0.mb-0
+                    | South Korea&rsquo;s Moon Jae-in sworn in vowing address
+                  p.text-color.m-0.d-flex.align-items-center
+                    span.fs-10.mr-1 2 hours ago
+                    i.mdi.mdi-bookmark-outline.mr-3
+                    span.fs-10.mr-1 126
+                    i.mdi.mdi-comment-outline
+              .col-sm-12
+                .border-bottom.pt-4.pb-3
+                  h5.font-weight-600.mt-0.mb-0
+                    | South Korea&rsquo;s Moon Jae-in sworn in vowing address
+                  p.text-color.m-0.d-flex.align-items-center
+                    span.fs-10.mr-1 2 hours ago
+                    i.mdi.mdi-bookmark-outline.mr-3
+                    span.fs-10.mr-1 126
+                    i.mdi.mdi-comment-outline
+              .col-sm-12
+                .pt-4
+                  h5.font-weight-600.mt-0.mb-0
+                    | South Korea&rsquo;s Moon Jae-in sworn in vowing address
+                  p.text-color.m-0.d-flex.align-items-center
+                    span.fs-10.mr-1 2 hours ago
+                    i.mdi.mdi-bookmark-outline.mr-3
+                    span.fs-10.mr-1 126
+                    i.mdi.mdi-comment-outline
+    // main-panel ends
+    // container-scroller ends
+    // partial:partials/_footer.html
+    footer
+      .container
+        .row
+          .col-sm-12
+            .border-top
+          .col-sm-3.col-lg-3
+            ul.footer-vertical-nav
+              li.menu-title
+                a(href='pages/news-post.html') News
+              li
+                a(href='index.html') Home
+              li
+                a(href='pages/world.html') World
+              li
+                a(href='pages/author.html') Magazine
+              li
+                a(href='pages/business.html') Business
+              li
+                a(href='pages/politics.html') Politics
+          .col-sm-3.col-lg-3
+            ul.footer-vertical-nav
+              li.menu-title
+                a(href='pages/world.html') World
+              li
+                a(href='pages/sports.html') Sports
+              li
+                a(href='pages/art.html') Art
+              li
+                a(href='#') Magazine
+              li
+                a(href='pages/real-estate.html') Real estate
+              li
+                a(href='pages/travel.html') Travel
+              li
+                a(href='pages/author.html') Author
+          .col-sm-3.col-lg-3
+            ul.footer-vertical-nav
+              li.menu-title
+                a(href='#') Features
+              li
+                a(href='#') Photography
+              li
+                a(href='#') Video
+              li
+                a(href='pages/news-post.html') Newsletters
+              li
+                a(href='#') Live Events
+              li
+                a(href='#') Stores
+              li
+                a(href='#') Jobs
+          .col-sm-3.col-lg-3
+            ul.footer-vertical-nav
+              li.menu-title
+                a(href='#') More
+              li
+                a(href='#') RSS
+              li
+                a(href='#') FAQ
+              li
+                a(href='#') User Agreement
+              li
+                a(href='#') Privacy
+              li
+                a(href='pages/aboutus.html') About us
+              li
+                a(href='pages/contactus.html') Contact
+        .row
+          .col-sm-12
+            .d-flex.justify-content-between
+              img.footer-logo(src='images/logo.svg' alt='')
+              .d-flex.justify-content-end.footer-social
+                h5.m-0.font-weight-600.mr-3.d-none.d-lg-flex Follow on
+                ul.social-media
+                  li
+                    a(href='#')
+                      i.mdi.mdi-instagram
+                  li
+                    a(href='#')
+                      i.mdi.mdi-facebook
+                  li
+                    a(href='#')
+                      i.mdi.mdi-youtube
+                  li
+                    a(href='#')
+                      i.mdi.mdi-linkedin
+                  li
+                    a(href='#')
+                      i.mdi.mdi-twitter
+        .row
+          .col-sm-12
+            .d-lg-flex.justify-content-between.align-items-center.border-top.mt-5.footer-bottom
+              ul.footer-horizontal-menu
+                li
+                  a(href='#') Terms of Use.
+                li
+                  a(href='#') Privacy Policy.
+                li
+                  a(href='#') Accessibility &amp; CC.
+                li
+                  a(href='#') AdChoices.
+                li
+                  a(href='#') Advertise with us Transcripts.
+                li
+                  a(href='#') License.
+                li
+                  a(href='#') Sitemap
+              p.font-weight-medium
+                | &copy; 2020 
+                a.text-dark(href='https://www.bootstrapdash.com/' target='_blank') @ BootstrapDash
+                | , Inc.All Rights Reserved.
+    // partial
+// inject:js
+script(src='./javascripts/vendor.bundle.base.js')
+// endinject
+// plugin js for this page
+script(src='./javascripts/owl.carousel.min.js')
+// End plugin js for this page
+// Custom js for this page
+script(src='./javascripts/demo.js')
+// End custom js for this page

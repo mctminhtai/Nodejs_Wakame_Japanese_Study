@@ -1,6 +1,235 @@
 doctype html
-html
-  head
-    title= "error"
-  body
-    h1 error
+head
+  // Required meta tags
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title World Vision
+  // plugin css for this page
+  link(rel='stylesheet' href='./stylesheets/materialdesignicons.min.css')
+  link(rel='stylesheet' href='./stylesheets/aos.css/aos.css')
+  link(rel='stylesheet' href='./stylesheets/owl.carousel.min.css')
+  link(rel='stylesheet' href='./stylesheets/owl.theme.default.min.css')
+  // End plugin css for this page
+  link(rel='apple-touch-icon' sizes='57x57' href='images/favicon/apple-icon-57x57.png')
+  link(rel='apple-touch-icon' sizes='60x60' href='images/favicon/apple-icon-60x60.png')
+  link(rel='apple-touch-icon' sizes='72x72' href='images/favicon/apple-icon-72x72.png')
+  link(rel='apple-touch-icon' sizes='76x76' href='images/favicon/apple-icon-76x76.png')
+  link(rel='apple-touch-icon' sizes='114x114' href='images/favicon/apple-icon-114x114.png')
+  link(rel='apple-touch-icon' sizes='120x120' href='images/favicon/apple-icon-120x120.png')
+  link(rel='apple-touch-icon' sizes='144x144' href='images/favicon/apple-icon-144x144.png')
+  link(rel='apple-touch-icon' sizes='152x152' href='images/favicon/apple-icon-152x152.png')
+  link(rel='apple-touch-icon' sizes='180x180' href='images/favicon/apple-icon-180x180.png')
+  link(rel='icon' type='image/png' sizes='192x192' href='/android-icon-192x192.png')
+  link(rel='icon' type='image/png' sizes='32x32' href='images/favicon/favicon-32x32.png')
+  link(rel='icon' type='image/png' sizes='96x96' href='images/favicon/favicon-96x96.png')
+  link(rel='icon' type='image/png' sizes='16x16' href='images/favicon/favicon-16x16.png')
+  link(rel='manifest' href='images/favicon/manifest.json')
+  meta(name='msapplication-TileColor' content='#ffffff')
+  meta(name='msapplication-TileImage' content='images/favicon/ms-icon-144x144.png')
+  // inject:css
+  link(rel='stylesheet' href='./stylesheets/style.css')
+  // endinject
+.container-scroller
+  header#header
+    .container
+      // partial:../partials/_navbar.html
+      nav.navbar.navbar-expand-lg.navbar-light
+        .d-flex.justify-content-between.align-items-center.navbar-top
+          ul.navbar-left
+            li Wed, March 4, 2020
+            li 30&deg;C,London
+          div
+            a.navbar-brand(href='#')
+              img(src='images/logo.svg' alt='')
+          .d-flex
+            ul.navbar-right
+              li
+                a(href='#') ENGLISH
+              li
+                a(href='#') ESPA&Ntilde;OL
+            ul.social-media
+              li
+                a(href='#')
+                  i.mdi.mdi-instagram
+              li
+                a(href='#')
+                  i.mdi.mdi-facebook
+              li
+                a(href='#')
+                  i.mdi.mdi-youtube
+              li
+                a(href='#')
+                  i.mdi.mdi-linkedin
+              li
+                a(href='#')
+                  i.mdi.mdi-twitter
+        .navbar-bottom-menu
+          button.navbar-toggler(type='button' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+          #navbarSupportedContent.navbar-collapse.justify-content-center.collapse
+            ul.navbar-nav.d-lg-flex.justify-content-between.align-items-center
+              li
+                button.navbar-close
+                  i.mdi.mdi-close
+              li.nav-item.active
+                a.nav-link.active(href='../index.html') Home
+              li.nav-item
+                a.nav-link(href='./world.html') World
+              li.nav-item
+                a.nav-link(href='./author.html') Magazine
+              li.nav-item
+                a.nav-link(href='./news-post.html') Blog
+              li.nav-item
+                a.nav-link(href='./business.html') Business
+              li.nav-item
+                a.nav-link(href='./sports.html') Sports
+              li.nav-item
+                a.nav-link(href='./art.html') Art
+              li.nav-item
+                a.nav-link(href='./politics.html') Politics
+              li.nav-item
+                a.nav-link(href='./real-estate.html') Real estate
+              li.nav-item
+                a.nav-link(href='./travel.html') Travel
+              li.nav-item
+                a.nav-link(href='#')
+                  i.mdi.mdi-magnify
+      // partial
+  .container
+    .row
+      .col-sm-12
+        .error-wrap
+          .error-title
+            | 404
+          .error-sub-title
+            | Oops! That Page Can&rsquo;t Be Found.
+          p Maybe Try Using The Search Or Navigate To Homepage.
+          .search-container
+            input(type='text' placeholder='Search..' name='search')
+            button(type='submit')
+              i.mdi.mdi-magnify
+// container-scroller ends
+// partial:../partials/_footer.html
+footer
+  .container
+    .row
+      .col-sm-12
+        .border-top
+      .col-sm-3.col-lg-3
+        ul.footer-vertical-nav
+          li.menu-title
+            a(href='./news-post.html') News
+          li
+            a(href='../index.html') Home
+          li
+            a(href='./world.html') World
+          li
+            a(href='./author.html') Magazine
+          li
+            a(href='./business.html') Business
+          li
+            a(href='./politics.html') Politics
+      .col-sm-3.col-lg-3
+        ul.footer-vertical-nav
+          li.menu-title
+            a(href='./world.html') World
+          li
+            a(href='./sports.html') Sports
+          li
+            a(href='./art.html') Art
+          li
+            a(href='#') Magazine
+          li
+            a(href='./real-estate.html') Real estate
+          li
+            a(href='./travel.html') Travel
+          li
+            a(href='./author.html') Author
+      .col-sm-3.col-lg-3
+        ul.footer-vertical-nav
+          li.menu-title
+            a(href='#') Features
+          li
+            a(href='#') Photography
+          li
+            a(href='#') Video
+          li
+            a(href='./news-post.html') Newsletters
+          li
+            a(href='#') Live Events
+          li
+            a(href='#') Stores
+          li
+            a(href='#') Jobs
+      .col-sm-3.col-lg-3
+        ul.footer-vertical-nav
+          li.menu-title
+            a(href='#') More
+          li
+            a(href='#') RSS
+          li
+            a(href='#') FAQ
+          li
+            a(href='#') User Agreement
+          li
+            a(href='#') Privacy
+          li
+            a(href='./aboutus.html') About us
+          li
+            a(href='./contactus.html') Contact
+    .row
+      .col-sm-12
+        .d-flex.justify-content-between
+          img.footer-logo(src='images/logo.svg' alt='')
+          .d-flex.justify-content-end.footer-social
+            h5.m-0.font-weight-600.mr-3.d-none.d-lg-flex Follow on
+            ul.social-media
+              li
+                a(href='#')
+                  i.mdi.mdi-instagram
+              li
+                a(href='#')
+                  i.mdi.mdi-facebook
+              li
+                a(href='#')
+                  i.mdi.mdi-youtube
+              li
+                a(href='#')
+                  i.mdi.mdi-linkedin
+              li
+                a(href='#')
+                  i.mdi.mdi-twitter
+    .row
+      .col-sm-12
+        .d-lg-flex.justify-content-between.align-items-center.border-top.mt-5.footer-bottom
+          ul.footer-horizontal-menu
+            li
+              a(href='#') Terms of Use.
+            li
+              a(href='#') Privacy Policy.
+            li
+              a(href='#') Accessibility &amp; CC.
+            li
+              a(href='#') AdChoices.
+            li
+              a(href='#') Advertise with us Transcripts.
+            li
+              a(href='#') License.
+            li
+              a(href='#') Sitemap
+          p.font-weight-medium
+            | &copy; 2020 
+            a.text-dark(href='https://www.bootstrapdash.com/' target='_blank') @ BootstrapDash
+            | , Inc.All Rights Reserved.
+// partial
+// inject:js
+script(src='javascripts/vendor.bundle.base.js')
+// endinject
+// plugin js for this page
+script(src='javascripts/aos.js/aos.js')
+script(src='javascripts/owl.carousel.min.js')
+// End plugin js for this page
+// Custom js for this page
+script(src='javascripts/demo.js')
+// End custom js for this page

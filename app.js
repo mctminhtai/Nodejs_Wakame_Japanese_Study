@@ -11,6 +11,7 @@ var passport = require('passport');
 var homePageRouter = require('./routes/homePage');
 var loginRegisterRouter = require('./routes/loginRegister');
 var webhookRouter = require('./routes/webhook');
+var newsPageRouter = require('./routes/newsRoute');
 
 
 
@@ -28,7 +29,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join('public')));
+
 app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -36,6 +38,7 @@ app.use(passport.session());
 
 app.use('/', homePageRouter);
 app.use('/', loginRegisterRouter);
+app.use('/news', newsPageRouter);
 app.use('/webhook', webhookRouter);
 
 
