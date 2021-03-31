@@ -107,10 +107,9 @@ function genResponse(received_message, i = 0, mess = "") {
         }
     } else if (received_message.attachments) {
         let attachment_url = received_message.attachments[i].payload.url;
-        let attachType = received_message.attachments[i].type;
         response = {
             "attachment": {
-                "type": attachType,
+                "type": "image",
                 "payload": {
                     "url": attachment_url,
                     "is_reusable": true

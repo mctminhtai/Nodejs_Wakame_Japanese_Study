@@ -11,7 +11,7 @@ var passport = require('passport');
 var homePageRouter = require('./routes/homePage');
 var loginRegisterRouter = require('./routes/loginRegister');
 var webhookRouter = require('./routes/webhook');
-
+var newsRouter = require('./routes/newsRoute');
 
 
 
@@ -36,7 +36,9 @@ app.use(passport.session());
 
 app.use('/', homePageRouter);
 app.use('/', loginRegisterRouter);
+//app.use('/news', newsRouter);
 app.use('/webhook', webhookRouter);
+
 
 
 // catch 404 and forward to error handler
