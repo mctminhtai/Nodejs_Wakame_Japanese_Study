@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
   // owl carousel script starts
   if ($("#main-banner-carousel").length) {
     $("#main-banner-carousel").owlCarousel({
@@ -23,7 +23,7 @@ $(function() {
   }
 
   // scroll header script here
-  window.onscroll = function() {
+  window.onscroll = function () {
     scrollHeader();
   };
   // Get the header
@@ -40,18 +40,18 @@ $(function() {
   }
 
   // navbar toggler script
-  $(".navbar-toggler").on("click", function() {
+  $(".navbar-toggler").on("click", function () {
     $(".collapse").toggleClass("show");
     $("body").toggleClass("layer-open");
     // $(header).toggleClass("sticky-not");
     $(".navbar-close").show();
   });
-  $(".navbar-close").on("click", function() {
+  $(".navbar-close").on("click", function () {
     $(".collapse").toggleClass("show");
     $(".navbar-close").hide();
     $("body").toggleClass("layer-open");
     // $(header).toggleClass("sticky-not");
-    $(".dark-overlay").click(function() {
+    $(".dark-overlay").click(function () {
       $(".collapse").removeClass("show");
       $("body").removeClass("layer-open");
     });

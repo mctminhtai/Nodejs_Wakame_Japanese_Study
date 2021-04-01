@@ -142,7 +142,7 @@ html,
 body {
   font-family: "Fira Sans", sans-serif;
   font-weight: 400;
-  background-color: #f0fff0;
+  background-color: #ffffff;
   font-size: 16px;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -224,7 +224,7 @@ global styles
 */
 html,
 body {
-  background: #f0fff0;
+  background: #ffffff;
   font-family: "Fira Sans", sans-serif;
 }
 
@@ -346,7 +346,7 @@ header
 */
 
 .background-header {
-  background-color: #f0fff0;
+  background-color: #ffffff;
   height: 80px !important;
   position: fixed !important;
   top: 0px;
@@ -405,7 +405,7 @@ header
   margin-top: 27px;
   margin-left: 5.2%;
   margin-right: 0px;
-  background-color: #f0fff0;
+  background-color: #ffffff;
   padding: 0px 20px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
