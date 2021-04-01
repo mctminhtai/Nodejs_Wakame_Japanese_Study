@@ -12,7 +12,7 @@ var passport = require('passport');
 var homePageRouter = require('./routes/homePage');
 var loginRegisterRouter = require('./routes/loginRegister');
 var webhookRouter = require('./routes/webhook');
-var newsPageRouter = require('./routes/newsRoute');
+
 
 
 
@@ -39,7 +39,7 @@ app.use(passport.session());
 
 app.use('/', homePageRouter);
 app.use('/', loginRegisterRouter);
-app.use('/news', newsPageRouter);
+
 app.use('/webhook', webhookRouter);
 
 

@@ -4,8 +4,8 @@ const bcrypt = require('bcryptjs');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 passport.use(new LocalStrategy({
-    usernameField: 'login_email',
-    passwordField: 'login_password'
+    usernameField: 'email',
+    passwordField: 'password'
 },
     function (username, password, done) {
         models.User.findOne({
@@ -36,7 +36,7 @@ passport.deserializeUser(function (id, done) {
     // });
 });
 exports.get_loginPage = function (req, res, next) {
-    res.render('loginPage', { title: 'Express' });
+    res.render('login', { title: 'Express' });
 }
 // exports.post_loginPage = function (req, res, next) {
 //     return models.User.create({
@@ -49,7 +49,7 @@ exports.get_loginPage = function (req, res, next) {
 //     })
 // }
 exports.get_registerPage = function (req, res, next) {
-    res.render('registerPage', { error: '' });
+    res.render('register', { error: '' });
 }
 exports.post_registerPage = function (req, res, next) {
     data = req.body;
@@ -71,12 +71,9 @@ exports.post_registerPage = function (req, res, next) {
         if (data.password != data.re_password) {
             errors.push("Password1 và password2 không trùng nhau");
         }
-        if (!data.agreeterm) {
-            errors.push("Bạn chưa đồng ý với các thoả thuận dịch vụ");
-        }
-        console.log('kiem tra loi khong ve home', errors);
+        //console.log('kiem tra loi khong ve home', errors);
         if (errors.length != 0) {
-            res.render('registerPage', { errors: errors });
+            res.render('register', { errors: errors });
         } else {
             bcrypt.hash(req.body.password, 10, function (err, hash) {
                 // Store hash in your password DB.
