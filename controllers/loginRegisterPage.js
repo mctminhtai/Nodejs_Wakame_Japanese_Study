@@ -3,7 +3,7 @@ const models = require('../models');
 const bcrypt = require('bcryptjs');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-passport.use(new LocalStrategy({
+passport.use('local.login', new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'
 },
@@ -12,13 +12,46 @@ passport.use(new LocalStrategy({
             attributes: ['email', 'password', 'id'],
             where: { email: username }
         }).then((user) => {
-            bcrypt.compare(password, user.dataValues.password).then((result) => {
-                console.log(result);
-                if (!result) {
-                    return done(null, false);
-                }
-                console.log('kiem tra loi 500', user);
-                return done(null, user);
+            if (user) {
+                bcrypt.compare(password, user.dataValues.password).then((result) => {
+                    console.log(result);
+                    if (!result) {
+                        return done(null, false);
+                    }
+                    //console.log('kiem tra loi 500', user);
+                    return done(null, user);
+                });
+            } else {
+                return done(null, false);
+            }
+        });
+    }
+));
+passport.use('local.signup', new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password',
+    passReqToCallback: true
+},
+    function (req, username, password, done) {
+        models.User.findOne({
+            attributes: ['email', 'password', 'id'],
+            where: { email: username }
+        }).then((user) => {
+            console.log(user);
+            if (user) {
+                return done(null, false);
+            }
+            bcrypt.hash(req.body.password, 10, function (err, hash) {
+                // Store hash in your password DB.
+                models.User.create({
+                    fullName: req.body.name,
+                    email: req.body.email,
+                    password: hash
+                }).then(user => {
+                    return done(null, user);
+                }).catch(error => {
+                    console.log(error);
+                })
             });
         });
     }

@@ -9,6 +9,7 @@ var passport = require('passport');
 
 
 
+
 var homePageRouter = require('./routes/homePage');
 var loginRegisterRouter = require('./routes/loginRegister');
 var webhookRouter = require('./routes/webhook');
@@ -36,7 +37,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join('public')));
-
 app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
