@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 const tags = require('./tags');
-const user = require('./user');
+const user = require('./users');
 module.exports = (sequelize, DataTypes) => {
   class Blogs extends Model {
     /**
@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsTo(models.User, { foreignKey: 'userID', as: 'user' });
-      //this.belongsToMany(tags);
+      this.belongsTo(models.Users, { foreignKey: 'userId', as: 'user' });
+      this.belongsToMany(models.Tags, { through: 'BlogTags', foreignKey: 'blogId', as: 'blogId' });
     }
   };
   Blogs.init({
@@ -29,6 +29,14 @@ module.exports = (sequelize, DataTypes) => {
     content: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    UserId: {
+      type: DataTypes.INTEGER,
+      allowNull: true
     }
   }, {
     sequelize,
