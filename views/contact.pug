@@ -2,7 +2,7 @@ doctype html
 head
   meta(charset='utf-8')
   meta(http-equiv='x-ua-compatible' content='ie=edge')
-  title Courses | Education
+  title Liên hệ | Wakame
   meta(name='description' content='')
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico')
@@ -36,8 +36,8 @@ head
           // Logo
           .col-xl-2.col-lg-2
             .logo
-              a(href='index.html')
-                img(src='assets/img/logo/logo.png' alt='')
+              a(href='/')
+                img(src='assets/img/logo/wakame_logo.svg' alt='' style='width:350px; height:90px;')
           .col-xl-10.col-lg-10
             .menu-wrapper.d-flex.align-items-center.justify-content-end
               // Main-menu
@@ -45,27 +45,27 @@ head
                 nav
                   ul#navigation
                     li.active
-                      a(href='index.html') Home
+                      a(href='/') Trang chủ
                     li
-                      a(href='courses.html') Courses
+                      a(href='/courses') Khóa học
                     li
-                      a(href='about.html') About
+                      a(href='/about') Về chúng tôi
                     li
-                      a(href='#') Blog
+                      a(href='/blog') Blog
                       ul.submenu
                         li
-                          a(href='blog.html') Blog
+                          a(href='/blog') Blog
                         li
-                          a(href='blog_details.html') Blog Details
+                          a(href='/blog_details') Blog Details
                         li
                           a(href='elements.html') Element
                     li
-                      a(href='contact.html') Contact
+                      a(href='/contact' style="color:#ffc107; font-weight:bold") Liên hệ
                     // Button
                     li.button-header.margin-left
-                      a.btn(href='#') Join
+                      a.btn(href='/register') Đăng ký
                     li.button-header
-                      a.btn.btn3(href='login.html') Log in
+                      a.btn.btn3(href='/login') Đăng nhập
           // Mobile Menu
           .col-12
             .mobile_menu.d-block.d-lg-none
@@ -80,14 +80,14 @@ main
           .row
             .col-xl-8.col-lg-11.col-md-12
               .hero__caption.hero__caption2
-                h1(data-animation='bounceIn' data-delay='0.2s') Contact us
+                h1(data-animation='bounceIn' data-delay='0.2s') Thông tin liên hệ
                 // breadcrumb Start
                 nav(aria-label='breadcrumb')
                   ol.breadcrumb
                     li.breadcrumb-item
-                      a(href='index.html') Home
+                      a(href='/') Trang chủ
                     li.breadcrumb-item
-                      a(href='#') Contact
+                      a(href='/contact') Liên hệ
                 // breadcrumb End
   // ?  Contact Area start
   section.contact-section
@@ -198,7 +198,7 @@ main
                     img(alt='' src='https://maps.gstatic.com/mapfiles/api-3/images/google_white5.png' draggable='false' style='position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; user-select: none; border: 0px; padding: 0px; margin: 0px;')
               div(style='background-color: white; padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); box-sizing: border-box; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 300px; height: 180px; position: absolute; left: 315px; top: 150px;')
                 div(style='padding: 0px 0px 10px; font-size: 16px; box-sizing: border-box;') Map Data
-                div(style='font-size: 13px;') Map data &copy;2019 Google
+                div(style='font-size: 13px;') Map data &copy;2021 Google
                 button.gm-ui-hover-effect(draggable='false' title='Close' aria-label='Close' type='button' style='background: none; display: block; border: 0px; margin: 0px; padding: 0px; position: absolute; cursor: pointer; user-select: none; top: 0px; right: 0px; width: 37px; height: 37px;')
                   img(src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23000000%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M19%206.41L17.59%205%2012%2010.59%206.41%205%205%206.41%2010.59%2012%205%2017.59%206.41%2019%2012%2013.41%2017.59%2019%2019%2017.59%2013.41%2012z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E%0A' style='pointer-events: none; display: block; width: 13px; height: 13px; margin: 12px;')
               .gmnoprint(style='z-index: 1000001; position: absolute; right: 166px; bottom: 0px; width: 121px;')
@@ -208,9 +208,9 @@ main
                     div(style='background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;')
                   div(style='position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;')
                     a(style='text-decoration: none; cursor: pointer; display: none;') Map Data
-                    span Map data &copy;2019 Google
+                    span Map data &copy;2021 Google
               .gmnoscreen(style='position: absolute; right: 0px; bottom: 0px;')
-                div(style='font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);') Map data &copy;2019 Google
+                div(style='font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);') Map data &copy;2021 Google
               .gmnoprint.gm-style-cc(draggable='false' style='z-index: 1000001; user-select: none; height: 14px; line-height: 14px; position: absolute; right: 95px; bottom: 0px;')
                 div(style='opacity: 0.7; width: 100%; height: 100%; position: absolute;')
                   div(style='width: 1px;')
@@ -296,43 +296,43 @@ main
         script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap')
       .row
         .col-12
-          h2.contact-title Get in Touch
+          h2.contact-title Gửi tin nhắn
         .col-lg-8
           form#contactForm.form-contact.contact_form(action='contact_process.php' method='post' novalidate='novalidate')
             .row
               .col-12
                 .form-group
-                  textarea#message.form-control.w-100(name='message' cols='30' rows='9' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=' Enter Message')
+                  textarea#message.form-control.w-100(name='message' cols='30' rows='9' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tin nhắn của bạn'" placeholder='Tin nhắn của bạn')
               .col-sm-6
                 .form-group
-                  input#name.form-control.valid(name='name' type='text' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder='Enter your name')
+                  input#name.form-control.valid(name='name' type='text' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tên của bạn'" placeholder='Tên của bạn')
               .col-sm-6
                 .form-group
-                  input#email.form-control.valid(name='email' type='email' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder='Email')
+                  input#email.form-control.valid(name='email' type='email' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email của bạn'" placeholder='Email của bạn')
               .col-12
                 .form-group
-                  input#subject.form-control(name='subject' type='text' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder='Enter Subject')
+                  input#subject.form-control(name='subject' type='text' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'" placeholder='Subject')
             .form-group.mt-3
-              button.button.button-contactForm.boxed-btn(type='submit') Send
+              button.button.button-contactForm.boxed-btn(type='submit') Gửi 
         .col-lg-3.offset-lg-1
           .media.contact-info
             span.contact-info__icon
               i.ti-home
             .media-body
-              h3 Buttonwood, California.
-              p Rosemead, CA 91770
+              h3 TP. Hồ Chí Minh, Việt Nam
+              p ĐH CNTT, ĐHQG-HCM
           .media.contact-info
             span.contact-info__icon
               i.ti-tablet
             .media-body
-              h3 +1 253 565 2365
-              p Mon to Fri 9am to 6pm
+              h3 0123 456 789
+              p Thứ Hai - Thứ Sáu: 9h - 17h
           .media.contact-info
             span.contact-info__icon
               i.ti-email
             .media-body
-              h3 support@colorlib.com
-              p Send us your query anytime!
+              h3 wakameuit@gmail.com
+              p Chúng tôi luôn luôn online!
   // Contact Area End
 footer
   .footer-wrappper.footer-bg
@@ -346,63 +346,66 @@ footer
                 // logo
                 .footer-logo.mb-25
                   a(href='/')
-                    img(src='assets/img/logo/logo2_footer.png' alt='')
+                    img(src='assets/img/logo/wakame_logo.svg' alt='' style='width:300px; height:80px;')
                 .footer-tittle
                   .footer-pera
-                    p The automated process starts as soon as your clothes go into the machine.
+                    p 熱意なしに偉大なことが達成されたことはない。Không có sự vĩ đại nào đạt được nếu không có sự nhiệt tình, nhiệt tâm.
                 // social
                 .footer-social
-                  a(href='https://twitter.com')
+                  a(href='https://twitter.com' target='_blank')
                     i.fab.fa-twitter
-                  a(href='https://facebook.com')
+                  a(href='https://facebook.com' target='_blank')
                     i.fab.fa-facebook-f
-                  a(href='https://www.pinterest.com')
-                    i.fab.fa-pinterest-p
+                  a(href="https://www.youtube.com" target="blank")
+                    i.fab.fa-youtube
+                  a(href="https://www.instagram.com" target="blank")
+                    i.fab.fa-instagram
+                  a(href="https://www.plus.google.com" target="blank")
+                    i.fab.fa-google-plus-g
           .col-xl-2.col-lg-3.col-md-4.col-sm-5
             .single-footer-caption.mb-50
               .footer-tittle
-                h4 Our solutions
+                h4 Về chúng tôi
                 ul
                   li
-                    a(href='#') Design &amp; creatives
+                    a(href='#') Về Wakame
                   li
-                    a(href='#') Telecommunication
+                    a(href='#') Tuyển dụng                
                   li
-                    a(href='#') Restaurant
+                    a(href='#') Điều khoản sử dụng
                   li
-                    a(href='#') Programing
-                  li
-                    a(href='#') Architecture
+                    a(href='#') Chính sách bảo mật 
           .col-xl-2.col-lg-4.col-md-4.col-sm-6
             .single-footer-caption.mb-50
               .footer-tittle
-                h4 Support
+                h4 Hỗ trợ
                 ul
                   li
-                    a(href='#') Design &amp; creatives
+                    a(href='#') Trung tâm trợ giúp
                   li
-                    a(href='#') Telecommunication
+                    a(href='#') Mua khóa học
                   li
-                    a(href='#') Restaurant
+                    a(href='#') Đổi trả &amp; hoàn tiền
                   li
-                    a(href='#') Programing
-                  li
-                    a(href='#') Architecture
+                    a(href='#') Thanh toán
           .col-xl-2.col-lg-3.col-md-4.col-sm-6
             .single-footer-caption.mb-50
               .footer-tittle
-                h4 Company
+                h4 Liên hệ
                 ul
                   li
-                    a(href='#') Design &amp; creatives
+                    i.fa.fa-map-marker-alt(style="color:#ff7b2e") 
+                    a(style="text-decoration:none") &nbsp; Địa chỉ
+                    p ĐH CNTT, ĐHQG-HCM
                   li
-                    a(href='#') Telecommunication
+                    i.fa.fa-phone(style="color:#ff7b2e") 
+                    a(style="text-decoration:none") &nbsp; Điện thoại
+                    p 0123 456 789
                   li
-                    a(href='#') Restaurant
-                  li
-                    a(href='#') Programing
-                  li
-                    a(href='#') Architecture
+                    i.fa.fa-envelope(style="color:#ff7b2e") 
+                    a(style="text-decoration:none") &nbsp; Email
+                    p wakameuit@gmail.com
+
     // footer-bottom area
     .footer-bottom-area
       .container
@@ -411,15 +414,12 @@ footer
             .col-xl-12
               .footer-copy-right.text-center
                 p
-                  // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
                   | Copyright &copy;
                   script.
                     document.write(new Date().getFullYear());
-                  |  All rights reserved | This template is made with 
+                  |  | This template is made with 
                   i.fa.fa-heart(aria-hidden='true')
-                  |  by 
-                  a(href='https://colorlib.com' target='_blank') Colorlib
-                  // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+                  |  by Nhóm 1
     // Footer End
 #back-top
   a(title='Go to Top' href='#')

@@ -2,7 +2,7 @@ doctype html
 head
   meta(charset='utf-8')
   meta(http-equiv='x-ua-compatible' content='ie=edge')
-  title Courses | Education
+  title Trang chủ | Wakame
   meta(name='description' content='')
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='manifest' href='site.webmanifest')
@@ -41,7 +41,7 @@ header
             .col-xl-2.col-lg-2
               .logo
                 a(href='/')
-                  img(src='assets/img/logo/logo.png' alt='')
+                img(src='assets/img/logo/wakame_logo.svg' alt='' style='width:350px; height:90px;')
             .col-xl-10.col-lg-10
               .menu-wrapper.d-flex.align-items-center.justify-content-end
                 // Main-menu
@@ -49,11 +49,11 @@ header
                   nav
                     ul#navigation
                       li.active
-                        a(href='/') Home
+                        a(href='/' style="color:#ffc107; font-weight:bold") Trang chủ
                       li
-                        a(href='/courses') Courses
+                        a(href='/courses') Khóa học
                       li
-                        a(href='/about') About
+                        a(href='/about') Về chúng tôi
                       li
                         a(href='/#') Blog
                         ul.submenu
@@ -64,13 +64,12 @@ header
                           li
                             a(href='/elements') Element
                       li
-                        a(href='/contact') Contact
+                        a(href='/contact') Liên hệ
                       // Button
                       li.button-header.margin-left
-                        a.btn(href='/register') Join
+                        a.btn(href='/register') Đăng ký
                       li.button-header
-                        a.btn.btn3(href='/login') Log in
-            // Mobile Menu
+                        a.btn.btn3(href='/login') Đăng nhập
             .col-12
               .mobile_menu.d-block.d-lg-none
   // Header End
@@ -85,12 +84,12 @@ main
             .col-xl-6.col-lg-7.col-md-12
               .hero__caption
                 h1(data-animation='fadeInLeft' data-delay='0.2s')
-                  | Online learning
+                  | Hệ thống học
                   br
-                  |  platform
+                  |  trực tuyến
                 p(data-animation='fadeInLeft' data-delay='0.4s')
-                  | Build skills with courses, certificates, and degrees online from world-class universities and companies
-                a.btn.hero-btn(href='/register' data-animation='fadeInLeft' data-delay='0.7s') Join for Free
+                  | Nơi phát triển kiến thức ngôn ngữ Nhật, kinh nghiệm thực tế và kỹ năng sống hằng ngày
+                a.btn.hero-btn(href='/register' data-animation='fadeInLeft' data-delay='0.7s') Đăng ký miễn phí
   // ? services-area
   .services-area
     .container
@@ -100,137 +99,207 @@ main
             .features-icon
               img(src='assets/img/icon/icon1.svg' alt='')
             .features-caption
-              h3 60+ UX courses
-              p The automated process all your website tasks.
+              h3 50+ khóa học tiếng Nhật
+              p Bao gồm tài liệu và đề thi JLPT cập nhật thường xuyên.
         .col-lg-4.col-md-6.col-sm-8
           .single-services.mb-30
             .features-icon
               img(src='assets/img/icon/icon2.svg' alt='')
             .features-caption
-              h3 Expert instructors
-              p The automated process all your website tasks.
+              h3 Đội ngũ chuyên gia
+              p Nơi tập trung các chuyên gia hàng đầu trong ngành ngôn ngữ Nhật.
         .col-lg-4.col-md-6.col-sm-8
           .single-services.mb-30
             .features-icon
               img(src='assets/img/icon/icon3.svg' alt='')
             .features-caption
-              h3 Life time access
-              p The automated process all your website tasks.
+              h3 Khóa học trọn đời
+              p Nâng cấp Prenium để được hưởng ưu đãi này.              
   // Courses area start
   .courses-area.section-padding40.fix
     .container
       .row.justify-content-center
         .col-xl-7.col-lg-8
           .section-tittle.text-center.mb-55
-            h2 Our featured courses
-      .courses-actives
-        // Single
-        .properties.pb-20
-          .properties__card
-            .properties__img.overlay1
-              a(href='/#')
-                img(src='assets/img/gallery/featured1.png' alt='')
-            .properties__caption
-              p User Experience
-              h3
-                a(href='/#') Fundamental of UX for Application design
-              p
-                | The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
-              .properties__footer.d-flex.justify-content-between.align-items-center
-                .restaurant-name
-                  .rating
-                    i.fas.fa-star
-                    i.fas.fa-star
-                    i.fas.fa-star
-                    i.fas.fa-star
-                    i.fas.fa-star-half
-                  p
-                    span (4.5)
-                    |  based on 120
-                .price
-                  span $135
-              a.border-btn.border-btn2(href='#') Find out more
-        // Single
-        // Single
-        .properties.pb-20
-          .properties__card
-            .properties__img.overlay1
-              a(href='/#')
-                img(src='assets/img/gallery/featured2.png' alt='')
-            .properties__caption
-              p User Experience
-              h3
-                a(href='/#') Fundamental of UX for Application design
-              p
-                | The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
-              .properties__footer.d-flex.justify-content-between.align-items-center
-                .restaurant-name
-                  .rating
-                    i.fas.fa-star
-                    i.fas.fa-star
-                    i.fas.fa-star
-                    i.fas.fa-star
-                    i.fas.fa-star-half
-                  p
-                    span (4.5)
-                    |  based on 120
-                .price
-                  span $135
-              a.border-btn.border-btn2(href='#') Find out more
-        // Single
-        // Single
-        .properties.pb-20
-          .properties__card
-            .properties__img.overlay1
-              a(href='/#')
-                img(src='assets/img/gallery/featured3.png' alt='')
-            .properties__caption
-              p User Experience
-              h3
-                a(href='/#') Fundamental of UX for Application design
-              p
-                | The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
-              .properties__footer.d-flex.justify-content-between.align-items-center
-                .restaurant-name
-                  .rating
-                    i.fas.fa-star
-                    i.fas.fa-star
-                    i.fas.fa-star
-                    i.fas.fa-star
-                    i.fas.fa-star-half
-                  p
-                    span (4.5)
-                    |  based on 120
-                .price
-                  span $135
-              a.border-btn.border-btn2(href='#') Find out more
-        // Single
-        // Single
-        .properties.pb-20
-          .properties__card
-            .properties__img.overlay1
-              a(href='/#')
-                img(src='assets/img/gallery/featured2.png' alt='')
-            .properties__caption
-              p User Experience
-              h3
-                a(href='/#') Fundamental of UX for Application design
-              p
-                | The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
-              .properties__footer.d-flex.justify-content-between.align-items-center
-                .restaurant-name
-                  .rating
-                    i.fas.fa-star
-                    i.fas.fa-star
-                    i.fas.fa-star
-                    i.fas.fa-star
-                    i.fas.fa-star-half
-                  p
-                    span (4.5)
-                    |  based on 120
-                .price
-                  span $135
-              a.border-btn.border-btn2(href='#') Find out more
+            h2 Các khóa học nổi bật
+      .row
+        .col-lg-4
+          .properties.properties2.mb-30
+            .properties__card
+              .properties__img.overlay1
+                a(href='#')
+                  img(src='assets/img/gallery/course_time.jpg' alt='' style="width:340px;height:280px;margin-top:0")
+              .properties__caption
+                p Nguyễn Thị Hoa
+                h3
+                  a(href='#') Quản lý thời gian hiệu quả
+                p 
+                  |- Thời gian có là “kim cương, vàng, bạc”?
+                  br
+                  |- Bạn đang “làm chủ” thời gian hay đang là “nô lệ”?
+                  br
+                  |- Bạn làm gì với thời gian một ngày 24 tiếng?
+                .properties__footer.d-flex.justify-content-between.align-items-center
+                  .restaurant-name
+                    .rating
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star-half
+                    p
+                      span (4.5)
+                      |  120 đánh giá
+                  .price
+                    span $135
+                a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+        .col-lg-4
+          .properties.properties2.mb-30
+            .properties__card
+              .properties__img.overlay1
+                a(href='#')
+                  img(src='assets/img/gallery/course_giaotiepsocap.jpg' alt='' style="width:340px;height:280px;margin-top:0")
+              .properties__caption
+                p Lê Minh Tài
+                h3
+                  a(href='#') Combo N3-N2-N1
+                p
+                  | - Tiết kiệm chi phí hơn cho bạn. 
+                  br
+                  | - Thời gian học dài hơn 2 lần khoá thường. 
+                  br
+                  | - Các ưu đãi, đặc quyền chỉ có ở gói combo.
+                .properties__footer.d-flex.justify-content-between.align-items-center
+                  .restaurant-name
+                    .rating
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star-half
+                    p
+                      span (4.5)
+                      |  120 đánh giá
+                  .price
+                    span $135
+                a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+        .col-lg-4
+          .properties.properties2.mb-30
+            .properties__card
+              .properties__img.overlay1
+                a(href='#')
+                  img(src='assets/img/gallery/course_flirt.jpg' alt='' style="width:340px;height:280px;margin-top:0")
+              .properties__caption
+                p Phan Lệ
+                h3
+                  a(href='#') Cách tán gái bằng tiếng Nhật
+                p
+                  | Bạn muốn tỏ tình với người thương bằng tiếng Nhật? Hay bạn muốn có một màn tỏ tình khó quên? Vậy đừng bỏ qua khóa học thú vị này của Wakame để biết được những kinh nghiệm tỏ tình hiệu quả nhé!
+                .properties__footer.d-flex.justify-content-between.align-items-center
+                  .restaurant-name
+                    .rating
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star-half
+                    p
+                      span (4.5)
+                      |  120 đánh giá
+                  .price
+                    span $135
+                a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+        .col-lg-4
+          .properties.properties2.mb-30
+            .properties__card
+              .properties__img.overlay1
+                a(href='#')
+                  img(src='assets/img/gallery/course_giaotieptrungcap.jpg' alt='' style="width:340px;height:280px;margin-top:0")
+              .properties__caption
+                p 平山淳子 - Junko Hirayama
+                h3
+                  a(href='#') Giao tiếp tiếng Nhật trung cấp
+                p
+                  | Khóa học phù hợp với những bạn đã đạt chứng chỉ tiếng Nhật sơ cấp, 
+                  | muốn rút ngắn thời gian để du học, giao tiếp và làm việc ở công ty 
+                  | Nhật, ở trường học, hoặc tham gia vào các kỳ thi năng lực tiếng Nhật.
+                .properties__footer.d-flex.justify-content-between.align-items-center
+                  .restaurant-name
+                    .rating
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star-half
+                    p
+                      span (4.5)
+                      |  120 đánh giá
+                  .price
+                    span $135
+                a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+        .col-lg-4
+          .properties.properties2.mb-30
+            .properties__card
+              .properties__img.overlay1
+                a(href='#')
+                  img(src='assets/img/gallery/course_socap.jpg' alt='' style="width:340px;height:280px;margin-top:0")
+              .properties__caption
+                p 平山淳子 - Junko Hirayama
+                h3
+                  a(href='#') Khóa học cấp tốc sơ cấp
+                p
+                  | Khóa học phù hợp với những bạn
+                  | muốn rút ngắn thời gian để du học hay lao động tại Nhật Bản.
+                  | Đảm bảo đủ kiến thức và kỹ năng thi JLPT sơ cấp. 
+                  | Tự tin giao tiếp, tham gia phỏng vấn du học trực tiếp với các trường Nhật Bản.
+                .properties__footer.d-flex.justify-content-between.align-items-center
+                  .restaurant-name
+                    .rating
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star-half
+                    p
+                      span (4.5)
+                      |  120 đánh giá
+                  .price
+                    span $135
+                a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+        .col-lg-4
+          .properties.properties2.mb-30
+            .properties__card
+              .properties__img.overlay1
+                a(href='#')
+                  img(src='assets/img/gallery/course_business.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
+              .properties__caption
+                p Dương Thị Thương
+                h3
+                  a(href='#') Tiếng Nhật thương mại
+                p
+                  | Khóa học dành cho các ứng viên đi làm tại 
+                  | các công ty Nhật bản, Khóa học Giao dịch 
+                  | thương mại qua Email, Khóa học Biên phiên dịch 
+                  | chuyên ngành kinh tế, Khóa học Giao tiếp Tiếng Nhật 
+                  | trong văn phòng. 
+                .properties__footer.d-flex.justify-content-between.align-items-center
+                  .restaurant-name
+                    .rating
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star
+                      i.fas.fa-star-half
+                    p
+                      span (4.5)
+                      |  120 đánh giá
+                  .price
+                    span $135
+                a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+      .row.justify-content-center
+        .col-xl-7.col-lg-8
+          .section-tittle.text-center.mt-40
+            a.border-btn(href='#') Xem thêm
         // Single
   // Courses area End
   // ? About Area-1 Start
@@ -242,27 +311,25 @@ main
         // section tittle
         .section-tittle.section-tittle2.mb-55
           .front-text
-            h2 Learn new skills online with top educators
+            h2 Học nhiều hơn về ngôn ngữ và văn hóa Nhật
             p
-              | The automated process all your website tasks. Discover tools and
-              | techniques to engage effectively with vulnerable children and young
-              | people.
+              | "Tất cả mọi thành công trên đời đều là do luyện tập mà thành."
+              | – Pele –
         .single-features
           .features-icon
             img(src='assets/img/icon/right-icon.svg' alt='')
           .features-caption
-            p Techniques to engage effectively with vulnerable children and young people.
+            p Nội dung học tập cập nhật theo xu hướng hiện đại, cách tiếp cận mới mẻ, thú vị.
         .single-features
           .features-icon
             img(src='assets/img/icon/right-icon.svg' alt='')
           .features-caption
-            p Join millions of people from around the world  learning together.
+            p Tham gia cùng hàng triệu người từ khắp nơi trên thế giới cùng nhau học tập.
         .single-features
           .features-icon
             img(src='assets/img/icon/right-icon.svg' alt='')
           .features-caption
-            p
-              | Join millions of people from around the world learning together. Online learning is as easy and natural.
+            p Học trực tuyến một cách dễ dàng, tiện lợi. Hướng đến mục đích giao tiếp tiếng Nhật tự nhiên nhất.
       .right-content1
         // img
         .right-img
@@ -277,76 +344,77 @@ main
       .row.justify-content-center
         .col-xl-7.col-lg-8
           .section-tittle.text-center.mb-55
-            h2 Explore top subjects
+            h2 Top chủ đề khóa học
       .row
         .col-lg-3.col-md-4.col-sm-6
           .single-topic.text-center.mb-30
             .topic-img
-              img(src='assets/img/gallery/topic1.png' alt='')
+              img(src='assets/img/gallery/manner.png' alt='' style='width:200px; height:200px;')
               .topic-content-box
                 .topic-content
                   h3
-                    a(href='/#') Programing
+                    a(href='#') Công sở
         .col-lg-3.col-md-4.col-sm-6
           .single-topic.text-center.mb-30
             .topic-img
-              img(src='assets/img/gallery/topic2.png' alt='')
+              img(src='assets/img/gallery/du_hoc.jpg' alt='' style='width:200px; height:200px;')
               .topic-content-box
                 .topic-content
                   h3
-                    a(href='/#') Programing
+                    a(href='#') Du học
         .col-lg-3.col-md-4.col-sm-6
           .single-topic.text-center.mb-30
             .topic-img
-              img(src='assets/img/gallery/topic3.png' alt='')
+              img(src='assets/img/gallery/kanji.png' alt='' style='width:200px; height:200px;')
               .topic-content-box
                 .topic-content
                   h3
-                    a(href='/#') Programing
+                    a(href='#') Kanji
         .col-lg-3.col-md-4.col-sm-6
           .single-topic.text-center.mb-30
             .topic-img
-              img(src='assets/img/gallery/topic4.png' alt='')
+              img(src='assets/img/gallery/tu_vung.png' alt='' style='width:200px; height:200px;')
               .topic-content-box
                 .topic-content
                   h3
-                    a(href='/#') Programing
+                    a(href='#') Từ vựng
         .col-lg-3.col-md-4.col-sm-6
           .single-topic.text-center.mb-30
             .topic-img
-              img(src='assets/img/gallery/topic5.png' alt='')
+              img(src='assets/img/gallery/nghe_hieu.jpg' alt='' style='width:200px; height:200px;')
               .topic-content-box
                 .topic-content
                   h3
-                    a(href='/#') Programing
+                    a(href='#') Nghe hiểu
         .col-lg-3.col-md-4.col-sm-6
           .single-topic.text-center.mb-30
             .topic-img
-              img(src='assets/img/gallery/topic6.png' alt='')
+              img(src='assets/img/gallery/doc_hieu.jpg' alt='' style='width:200px; height:200px;')
               .topic-content-box
                 .topic-content
                   h3
-                    a(href='/#') Programing
+                    a(href='#') Đọc hiểu
         .col-lg-3.col-md-4.col-sm-6
           .single-topic.text-center.mb-30
             .topic-img
-              img(src='assets/img/gallery/topic7.png' alt='')
+              img(src='assets/img/gallery/ngu_phap.jpg' alt='' style='width:200px; height:200px;')
               .topic-content-box
                 .topic-content
                   h3
-                    a(href='/#') Programing
+                    a(href='#') Ngữ pháp
         .col-lg-3.col-md-4.col-sm-6
           .single-topic.text-center.mb-30
             .topic-img
-              img(src='assets/img/gallery/topic8.png' alt='')
+              img(src='assets/img/gallery/on_thi.png' alt='' style='width:200px; height:200px;')
               .topic-content-box
                 .topic-content
                   h3
-                    a(href='/#') Programing
+                    a(href='#') Ôn thi
       .row.justify-content-center
         .col-xl-12
           .section-tittle.text-center.mt-20
-            a.border-btn(href='courses') View More Subjects
+            a.border-btn(href='/courses') Xem tất cả
+            i.fa.fa-arrow-right(aria-hidden='true') 
   // top subjects End
   // ? About Area-3 Start
   section.about-area3.fix
@@ -354,31 +422,27 @@ main
       .right-content3
         // img
         .right-img
-          img(src='assets/img/gallery/about3.png' alt='')
+        img(src='assets/img/icon/advantage.png' alt='' style='width:550px; height:300px; margin-top:0px; margin-left: 100px;')
       .left-content3
         // section tittle
         .section-tittle.section-tittle2.mb-20
           .front-text
-            h2 Learner outcomes on courses you will take
+            h2 Lợi ích khi tham gia khóa học
         .single-features
           .features-icon
             img(src='assets/img/icon/right-icon.svg' alt='')
           .features-caption
-            p Techniques to engage effectively with vulnerable children and young people.
+            p Được truy cập vào kho dữ liệu khổng lồ về kiến thức và kinh nghiệm phong phú khác.
         .single-features
           .features-icon
             img(src='assets/img/icon/right-icon.svg' alt='')
           .features-caption
-            p
-              | Join millions of people from around the world
-              | learning together.
+            p Cơ hội tiếp xúc học tập cùng với các chuyên gia ngôn ngữ Nhật hàng đầu trong nước và nước ngoài.
         .single-features
           .features-icon
             img(src='assets/img/icon/right-icon.svg' alt='')
           .features-caption
-            p
-              | Join millions of people from around the world learning together.
-              | Online learning is as easy and natural.
+            p Cơ hội nhận học bổng du học tại các trường đại học nổi tiếng và được giới thiệu việc làm với các công ty có văn hóa Nhật.
   // About Area End
   // ? Team
   section.team-area.section-padding40.fix
@@ -386,43 +450,48 @@ main
       .row.justify-content-center
         .col-xl-7.col-lg-8
           .section-tittle.text-center.mb-55
-            h2 Community experts
+            h2 Đội ngũ chuyên gia
       .team-active
         .single-cat.text-center
           .cat-icon
-            img(src='assets/img/gallery/team1.png' alt='')
+            img(src='assets/img/gallery/MsJunko.jpg' alt='' style='width:200px; height:200px;')
           .cat-cap
             h5
-              a(href='/services') Mr. Urela
-            p The automated process all your website tasks.
+              a(href='services.html') Ms. Junko Hirayama
+            p Kinh nghiệm giảng dạy 10 năm
+            p - Osaka -
         .single-cat.text-center
           .cat-icon
-            img(src='assets/img/gallery/team2.png' alt='')
+            img(src='assets/img/gallery/MsHoa.jpg' alt='' style='width:200px; height:200px;')
           .cat-cap
             h5
-              a(href='/services') Mr. Uttom
-            p The automated process all your website tasks.
+              a(href='services.html') Ms. Nguyễn Thị Hoa
+            p Kinh nghiệm giảng dạy 5 năm
+            p - UIT - 
         .single-cat.text-center
           .cat-icon
-            img(src='assets/img/gallery/team3.png' alt='')
+            img(src='assets/img/gallery/MsLe.jpg' alt='' style='width:200px; height:200px;')
           .cat-cap
             h5
-              a(href='/services') Mr. Shakil
-            p The automated process all your website tasks.
+              a(href='services.html') Ms. Phan Lệ
+            p Kinh nghiệm giảng dạy 5 năm
+            p - UIT - 
         .single-cat.text-center
           .cat-icon
-            img(src='assets/img/gallery/team4.png' alt='')
+            img(src='assets/img/gallery/MsThuong.jpg' alt='' style='width:200px; height:200px;')
           .cat-cap
             h5
-              a(href='/services') Mr. Arafat
-            p The automated process all your website tasks.
+              a(href='services.html') Ms. Dương Thị Thương
+            p Kinh nghiệm giảng dạy 5 năm
+            p - UIT -             
         .single-cat.text-center
           .cat-icon
-            img(src='assets/img/gallery/team3.png' alt='')
+            img(src='assets/img/gallery/MrTai.png' alt='' style='width:200px; height:200px;')
           .cat-cap
             h5
-              a(href='/services') Mr. saiful
-            p The automated process all your website tasks.
+              a(href='services.html') Mr. Lê Minh Tài
+            p Kinh nghiệm du học Nhật 2 năm 
+            p - UIT - 
   // Services End
   // ? About Area-2 Start
   section.about-area2.fix.pb-padding
@@ -430,19 +499,16 @@ main
       .right-content2
         // img
         .right-img
-          img(src='assets/img/gallery/about2.png' alt='')
+          img(src='assets/img/gallery/together.png' alt='' style="width:550px;height:300px;margin-left:150px")
       .left-content2
         // section tittle
         .section-tittle.section-tittle2.mb-20
           .front-text
             h2
-              | Take the next step
-              | toward your personal
-              | and professional goals
-              | with us.
+              | Đồng hành cùng nhau tiến đến đích của bạn
             p
-              | The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.
-            a.btn(href='#') Join now for Free
+              | Đăng ký ngay bây giờ để trải nghiệm các khóa học thú vị của chúng tôi.
+            a.btn(href='#') Đăng ký miễn phí
   // About Area End
 footer
   .footer-wrappper.footer-bg
@@ -456,63 +522,66 @@ footer
                 // logo
                 .footer-logo.mb-25
                   a(href='/')
-                    img(src='assets/img/logo/logo2_footer.png' alt='')
+                    img(src='assets/img/logo/wakame_logo.svg' alt='' style='width:300px; height:80px;')
                 .footer-tittle
                   .footer-pera
-                    p The automated process starts as soon as your clothes go into the machine.
+                    p 熱意なしに偉大なことが達成されたことはない。Không có sự vĩ đại nào đạt được nếu không có sự nhiệt tình, nhiệt tâm.
                 // social
                 .footer-social
-                  a(href='https://twitter.com')
+                  a(href='https://twitter.com' target='_blank')
                     i.fab.fa-twitter
-                  a(href='https://facebook.com')
+                  a(href='https://facebook.com' target='_blank')
                     i.fab.fa-facebook-f
-                  a(href='https://www.pinterest.com')
-                    i.fab.fa-pinterest-p
+                  a(href="https://www.youtube.com" target="blank")
+                    i.fab.fa-youtube
+                  a(href="https://www.instagram.com" target="blank")
+                    i.fab.fa-instagram
+                  a(href="https://www.plus.google.com" target="blank")
+                    i.fab.fa-google-plus-g
           .col-xl-2.col-lg-3.col-md-4.col-sm-5
             .single-footer-caption.mb-50
               .footer-tittle
-                h4 Our solutions
+                h4 Về chúng tôi
                 ul
                   li
-                    a(href='/#') Design &amp; creatives
+                    a(href='#') Về Wakame
                   li
-                    a(href='/#') Telecommunication
+                    a(href='#') Tuyển dụng                
                   li
-                    a(href='/#') Restaurant
+                    a(href='#') Điều khoản sử dụng
                   li
-                    a(href='/#') Programing
-                  li
-                    a(href='/#') Architecture
+                    a(href='#') Chính sách bảo mật 
           .col-xl-2.col-lg-4.col-md-4.col-sm-6
             .single-footer-caption.mb-50
               .footer-tittle
-                h4 Support
+                h4 Hỗ trợ
                 ul
                   li
-                    a(href='/#') Design &amp; creatives
+                    a(href='#') Trung tâm trợ giúp
                   li
-                    a(href='/#') Telecommunication
+                    a(href='#') Mua khóa học
                   li
-                    a(href='/#') Restaurant
+                    a(href='#') Đổi trả &amp; hoàn tiền
                   li
-                    a(href='/#') Programing
-                  li
-                    a(href='/#') Architecture
+                    a(href='#') Thanh toán
           .col-xl-2.col-lg-3.col-md-4.col-sm-6
             .single-footer-caption.mb-50
               .footer-tittle
-                h4 Company
+                h4 Liên hệ
                 ul
                   li
-                    a(href='/#') Design &amp; creatives
+                    i.fa.fa-map-marker-alt(style="color:#ff7b2e") 
+                    a(style="text-decoration:none") &nbsp; Địa chỉ
+                    p ĐH CNTT, ĐHQG-HCM
                   li
-                    a(href='/#') Telecommunication
+                    i.fa.fa-phone(style="color:#ff7b2e") 
+                    a(style="text-decoration:none") &nbsp; Điện thoại
+                    p 0123 456 789
                   li
-                    a(href='/#') Restaurant
-                  li
-                    a(href='/#') Programing
-                  li
-                    a(href='/#') Architecture
+                    i.fa.fa-envelope(style="color:#ff7b2e") 
+                    a(style="text-decoration:none") &nbsp; Email
+                    p wakameuit@gmail.com
+
     // footer-bottom area
     .footer-bottom-area
       .container
@@ -521,15 +590,12 @@ footer
             .col-xl-12
               .footer-copy-right.text-center
                 p
-                  // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
                   | Copyright &copy;
                   script.
                     document.write(new Date().getFullYear());
-                  |  All rights reserved | This template is made with 
+                  |  | This template is made with 
                   i.fa.fa-heart(aria-hidden='true')
-                  |  by 
-                  a(href='/https://colorlib.com' target='_blank') Colorlib
-                  // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+                  |  by Nhóm 1
     // Footer End
 // Scroll Up
 #back-top
