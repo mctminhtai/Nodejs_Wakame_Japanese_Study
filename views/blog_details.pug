@@ -2,15 +2,20 @@ doctype html
 head
   meta(charset='utf-8')
   meta(http-equiv='x-ua-compatible' content='ie=edge')
-  title Courses | Education
+  title Blog Details | Wakame
   meta(name='description' content='')
   meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='manifest' href='site.webmanifest')
   link(rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico')
   // CSS here
   link(rel='stylesheet' href='assets/css/bootstrap.min.css')
   link(rel='stylesheet' href='assets/css/owl.carousel.min.css')
   link(rel='stylesheet' href='assets/css/slicknav.css')
+    link(rel='stylesheet' href='assets/css/flaticon.css')
+  link(rel='stylesheet' href='assets/css/progressbar_barfiller.css')
+  link(rel='stylesheet' href='assets/css/gijgo.css')
   link(rel='stylesheet' href='assets/css/animate.min.css')
+    link(rel='stylesheet' href='assets/css/animated-headline.css')
   link(rel='stylesheet' href='assets/css/hamburgers.min.css')
   link(rel='stylesheet' href='assets/css/magnific-popup.css')
   link(rel='stylesheet' href='assets/css/fontawesome-all.min.css')
@@ -24,7 +29,7 @@ head
     .preloader-inner.position-relative
       .preloader-circle
       .preloader-img.pere-text
-        img(src='assets/img/logo/loder.png' alt='')
+        img(src='assets/img/logo/onion_logo.svg' alt='' style='width:120px; height:50px;')
 // Preloader Start
 // Header Start
 .header-area.header-transparent
@@ -35,8 +40,8 @@ head
           // Logo
           .col-xl-2.col-lg-2
             .logo
-              a(href='index.html')
-                img(src='assets/img/logo/logo.png' alt='')
+              a(href='/')
+                img(src='assets/img/logo/wakame_logo.svg' alt='' style='width:350px; height:90px;')
           .col-xl-10.col-lg-10
             .menu-wrapper.d-flex.align-items-center.justify-content-end
               // Main-menu
@@ -44,27 +49,27 @@ head
                 nav
                   ul#navigation
                     li.active
-                      a(href='index.html') Home
+                      a(href='/') Trang chủ
                     li
-                      a(href='courses.html') Courses
+                      a(href='/courses') Khóa học
                     li
-                      a(href='about.html') About
+                      a(href='/about') Về chúng tôi
                     li
-                      a(href='#') Blog
+                      a(href='/blog') Blog
                       ul.submenu
                         li
-                          a(href='blog.html') Blog
+                          a(href='/blog' style="color:#ffc107; font-weight:bold") Blog
                         li
-                          a(href='blog_details.html') Blog Details
+                          a(href='/blog_details') Blog Details
                         li
                           a(href='elements.html') Element
                     li
-                      a(href='contact.html') Contact
+                      a(href='/contact') Liên hệ
                     // Button
                     li.button-header.margin-left
-                      a.btn(href='#') Join
+                      a.btn(href='/register') Đăng ký
                     li.button-header
-                      a.btn.btn3(href='login.html') Log in
+                      a.btn.btn3(href='/login') Đăng nhập
           // Mobile Menu
           .col-12
             .mobile_menu.d-block.d-lg-none
@@ -79,14 +84,14 @@ main
           .row
             .col-xl-8.col-lg-11.col-md-12
               .hero__caption.hero__caption2
-                h1(data-animation='bounceIn' data-delay='0.2s') Company insights
+                h1(data-animation='bounceIn' data-delay='0.2s') Blog details
                 // breadcrumb Start
                 nav(aria-label='breadcrumb')
                   ol.breadcrumb
                     li.breadcrumb-item
-                      a(href='index.html') Home
+                      a(href='/') Trang chủ
                     li.breadcrumb-item
-                      a(href='#') Blog
+                      a(href='/blog_details') Blog details
                 // breadcrumb End
   // ? Blog Area Start
   section.blog_area.single-post-area.section-padding
@@ -144,10 +149,10 @@ main
                 // <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p>
               ul.social-icons
                 li
-                  a(href='https://www.facebook.com/sai4ull')
+                  a(href='https://www.facebook.com')
                     i.fab.fa-facebook-f
                 li
-                  a(href='#')
+                  a(href='https://www.twitter.com')
                     i.fab.fa-twitter
                 li
                   a(href='#')
@@ -299,25 +304,25 @@ main
               .media.post_item
                 img(src='assets/img/post/post_1.png' alt='post')
                 .media-body
-                  a(href='blog_details.html')
+                  a(href='/blog_details')
                     h3(style='color: #2d2d2d;') From life was you fish...
                   p January 12, 2019
               .media.post_item
                 img(src='assets/img/post/post_2.png' alt='post')
                 .media-body
-                  a(href='blog_details.html')
+                  a(href='/blog_details')
                     h3(style='color: #2d2d2d;') The Amazing Hubble
                   p 02 Hours ago
               .media.post_item
                 img(src='assets/img/post/post_3.png' alt='post')
                 .media-body
-                  a(href='blog_details.html')
+                  a(href='/blog_details')
                     h3(style='color: #2d2d2d;') Astronomy Or Astrology
                   p 03 Hours ago
               .media.post_item
                 img(src='assets/img/post/post_4.png' alt='post')
                 .media-body
-                  a(href='blog_details.html')
+                  a(href='/blog_details')
                     h3(style='color: #2d2d2d;') Asteroids telescope
                   p 01 Hours ago
             aside.single_sidebar_widget.tag_cloud_widget
@@ -378,18 +383,18 @@ footer
               .single-footer-caption.mb-30
                 // logo
                 .footer-logo.mb-25
-                  a(href='index.html')
+                  a(href='/')
                     img(src='assets/img/logo/logo2_footer.png' alt='')
                 .footer-tittle
                   .footer-pera
                     p The automated process starts as soon as your clothes go into the machine.
                 // social
                 .footer-social
-                  a(href='#')
+                  a(href='https://twitter.com')
                     i.fab.fa-twitter
-                  a(href='https://bit.ly/sai4ull')
+                  a(href='https://facebook.com')
                     i.fab.fa-facebook-f
-                  a(href='#')
+                  a(href='https://www.pinterest.com')
                     i.fab.fa-pinterest-p
           .col-xl-2.col-lg-3.col-md-4.col-sm-5
             .single-footer-caption.mb-50

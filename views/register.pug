@@ -28,10 +28,10 @@ head
     .preloader-inner.position-relative
       .preloader-circle
       .preloader-img.pere-text
-        img(src='assets/img/logo/loder.png' alt='')
+        img(src='assets/img/logo/onion_logo.svg' alt='' style='width:120px; height:50px;')
 // Preloader Start
 // Register
-main.login-body(data-vide-bg='assets/img/login-bg.mp4')
+main.login-body(data-vide-bg='assets/img/login.jpg')
   // Login Admin
   form.form-default(action='' method='POST')
     .login-form
@@ -55,7 +55,7 @@ main.login-body(data-vide-bg='assets/img/login-bg.mp4')
       .form-input.pt-30
         input(type='submit' name='submit' value='Registration')
       // Forget Password
-      a.registration(href='login.html') login
+      a.registration(href='/login') login
   // /end login form
 script(src='./assets/js/vendor/modernizr-3.5.0.min.js')
 // Jquery, Popper, Bootstrap
