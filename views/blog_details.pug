@@ -2,15 +2,20 @@ doctype html
 head
   meta(charset='utf-8')
   meta(http-equiv='x-ua-compatible' content='ie=edge')
-  title Blog Detail | Wakame
+  title Blog Details | Wakame
   meta(name='description' content='')
   meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='manifest' href='site.webmanifest')
   link(rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico')
   // CSS here
   link(rel='stylesheet' href='assets/css/bootstrap.min.css')
   link(rel='stylesheet' href='assets/css/owl.carousel.min.css')
   link(rel='stylesheet' href='assets/css/slicknav.css')
+    link(rel='stylesheet' href='assets/css/flaticon.css')
+  link(rel='stylesheet' href='assets/css/progressbar_barfiller.css')
+  link(rel='stylesheet' href='assets/css/gijgo.css')
   link(rel='stylesheet' href='assets/css/animate.min.css')
+    link(rel='stylesheet' href='assets/css/animated-headline.css')
   link(rel='stylesheet' href='assets/css/hamburgers.min.css')
   link(rel='stylesheet' href='assets/css/magnific-popup.css')
   link(rel='stylesheet' href='assets/css/fontawesome-all.min.css')
@@ -35,7 +40,7 @@ head
           // Logo
           .col-xl-2.col-lg-2
             .logo
-              a(href='index.html')
+              a(href='/')
                 img(src='assets/img/logo/wakame_logo.svg' alt='' style='width:350px; height:90px;')
           .col-xl-10.col-lg-10
             .menu-wrapper.d-flex.align-items-center.justify-content-end
@@ -53,7 +58,7 @@ head
                       a(href='/blog') Blog
                       ul.submenu
                         li
-                          a(href='/blog') Blog
+                          a(href='/blog' style="color:#ffc107; font-weight:bold") Blog
                         li
                           a(href='/blog_details') Blog Details
                         li
@@ -79,14 +84,14 @@ main
           .row
             .col-xl-8.col-lg-11.col-md-12
               .hero__caption.hero__caption2
-                h1(data-animation='bounceIn' data-delay='0.2s') Blog detail
+                h1(data-animation='bounceIn' data-delay='0.2s') Blog details
                 // breadcrumb Start
                 nav(aria-label='breadcrumb')
                   ol.breadcrumb
                     li.breadcrumb-item
                       a(href='/') Trang chủ
                     li.breadcrumb-item
-                      a(href='/blog_tails') Blog detail
+                      a(href='/blog_details') Blog details
                 // breadcrumb End
   // ? Blog Area Start
   section.blog_area.single-post-area.section-padding

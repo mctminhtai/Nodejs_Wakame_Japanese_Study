@@ -2,7 +2,7 @@ doctype html
 head
   meta(charset='utf-8')
   meta(http-equiv='x-ua-compatible' content='ie=edge')
-  title Blog | Education
+  title Blog | Wakame
   meta(name='description' content='')
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico')
@@ -38,7 +38,7 @@ head
           .col-xl-2.col-lg-2
             .logo
               a(href='/')
-                img(src='assets/img/logo/Picture1.svg' alt='' style='width:350px; height:90px;')
+                img(src='assets/img/logo/wakame_logo.svg' alt='' style='width:350px; height:90px;')
           .col-xl-10.col-lg-10
             .menu-wrapper.d-flex.align-items-center.justify-content-end
               // Main-menu
@@ -46,27 +46,27 @@ head
                 nav
                   ul#navigation
                     li.active
-                      a(href='index.html') Home
+                      a(href='/') Home
                     li
-                      a(href='courses.html') Courses
+                      a(href='/courses') Courses
                     li
-                      a(href='about.html') About
+                      a(href='/about') About
                     li
-                      a(href='#') Blog
+                      a(href='/blog' style="color:#ffc107; font-weight:bold") Blog
                       ul.submenu
                         li
-                          a(href='blog.html') Blog
+                          a(href='/blog') Blog
                         li
-                          a(href='blog_details.html') Blog Details
+                          a(href='/blog_details') Blog Details
                         li
                           a(href='elements.html') Element
                     li
-                      a(href='contact.html') Contact
+                      a(href='/contact') Contact
                     // Button
                     li.button-header.margin-left
-                      a.btn(href='#') Join
+                      a.btn(href='/register') Join
                     li.button-header
-                      a.btn.btn3(href='login.html') Log in
+                      a.btn.btn3(href='/login') Log in
           // Mobile Menu
           .col-12
             .mobile_menu.d-block.d-lg-none
@@ -81,12 +81,12 @@ main
           .row
             .col-xl-8.col-lg-11.col-md-12
               .hero__caption.hero__caption2
-                h1(data-animation='bounceIn' data-delay='0.2s') Company insights
+                h1(data-animation='bounceIn' data-delay='0.2s') Blog
                 // breadcrumb Start
                 nav(aria-label='breadcrumb')
                   ol.breadcrumb
                     li.breadcrumb-item
-                      a(href='index.html') Home
+                      a(href='index.html') Trang chủ
                     li.breadcrumb-item
                       a(href='#') Blog
                 // breadcrumb End
@@ -98,109 +98,118 @@ main
           .blog_left_sidebar
             article.blog_item
               .blog_item_img
-                img.card-img.rounded-0(src='assets/img/blog/single_blog_1.png' alt='')
-                a.blog_item_date(href='#')
-                  h3 15
-                  p Jan
+                img.card-img.rounded-0(src='assets/img/blog/blog20112021.jpg' alt='')
+                a(style="text-align:center").blog_item_date(href='#')
+                  h3 20
+                  p 十二月
               .blog_details
-                a.d-inline-block(href='blog_details.html')
-                  h2.blog-head(style='color: #2d2d2d;') Google inks pact for new 35-storey office
+                a.d-inline-block(href='/blog_details')
+                  h2.blog-head(style='color: #2d2d2d;') Wakame chúc mừng ngày Nhà giáo Việt Nam 20-11-2021
                 p
-                  | That dominion stars lights dominion divide years for fourth have don&apos;t stars is that
-                  | he earth it first without heaven in place seed it second morning saying.
+                  | Nhân ngày Nhà giáo Việt Nam, xin thay mặt cho toàn thể thành viên CLB gửi đến thầy cô 
+                  | lời chúc tốt đẹp nhất. Chúc thầy cô dồi dào sức khỏe, gặp nhiều may mắn, luôn luôn trẻ 
+                  | trung, vui vẻ và tràn ngập niềm tin trong cuộc sống.
                 ul.blog-info-link
                   li
                     a(href='#')
                       i.fa.fa-user
-                      |  Travel, Lifestyle
+                      |  Nguyễn Thanh Nhã
                   li
                     a(href='#')
                       i.fa.fa-comments
                       |  03 Comments
             article.blog_item
               .blog_item_img
-                img.card-img.rounded-0(src='assets/img/blog/single_blog_2.png' alt='')
-                a.blog_item_date(href='#')
-                  h3 15
-                  p Jan
+                img.card-img.rounded-0(src='assets/img/blog/blog_hpny.jpg' alt='')
+                a(style="text-align:center").blog_item_date(href='#')
+                  h3 2
+                  p 一月
               .blog_details
-                a.d-inline-block(href='blog_details.html')
-                  h2.blog-head(style='color: #2d2d2d;') Google inks pact for new 35-storey office
+                a.d-inline-block(href='/blog_details')
+                  h2.blog-head(style='color: #2d2d2d;') Wakame chúc mừng năm mới 2021
                 p
-                  | That dominion stars lights dominion divide years for fourth have don&apos;t stars is that
-                  | he earth it first without heaven in place seed it second morning saying.
+                  | Nhân ngày đầu tiên đi học của năm 2021, CLB Wakame muốn gửi đến 
+                  | các bạn sinh viên một lời chúc tốt đẹp nhất. Chúc các bạn một năm 
+                  | mới an lành và thật nhiều may mắn.
                 ul.blog-info-link
                   li
                     a(href='#')
                       i.fa.fa-user
-                      |  Travel, Lifestyle
+                      |  Lê Minh Tài
                   li
                     a(href='#')
                       i.fa.fa-comments
-                      |  03 Comments
+                      |  10 Comments
             article.blog_item
               .blog_item_img
-                img.card-img.rounded-0(src='assets/img/blog/single_blog_3.png' alt='')
-                a.blog_item_date(href='#')
-                  h3 15
-                  p Jan
+                img.card-img.rounded-0(src='assets/img/blog/blog_ngayhoiclb.jpg' alt='')
+                a(style="text-align:center").blog_item_date(href='#')
+                  h3 5
+                  p 十月
               .blog_details
-                a.d-inline-block(href='blog_details.html')
-                  h2.blog-head(style='color: #2d2d2d;') Google inks pact for new 35-storey office
+                a.d-inline-block(href='/blog_details')
+                  h2.blog-head(style='color: #2d2d2d;') Wakame tham gia ngày hội Câu lạc bộ
                 p
-                  | That dominion stars lights dominion divide years for fourth have don&apos;t stars is that
-                  | he earth it first without heaven in place seed it second morning saying.
+                  | Trải qua 2 ngày hoạt động sự kiện Chào Tân sinh viên K15.
+                  | Tuy sự kiện chỉ diễn ra trong vòng 2 ngày ngắn ngủi nhưng 
+                  | các bạn đã làm cho CLB thấy được sự năng nổ, tích cực trong bản thân các bạn!
+                  | Sự thông minh, khéo léo và tính kiên trì của các bạn được thể hiện rõ trong 
+                  | các trò chơi do CLB tổ chức.
                 ul.blog-info-link
                   li
                     a(href='#')
                       i.fa.fa-user
-                      |  Travel, Lifestyle
+                      |  Nguyễn Phương Nam
                   li
                     a(href='#')
                       i.fa.fa-comments
-                      |  03 Comments
+                      |  20 Comments
             article.blog_item
               .blog_item_img
-                img.card-img.rounded-0(src='assets/img/blog/single_blog_4.png' alt='')
-                a.blog_item_date(href='#')
-                  h3 15
-                  p Jan
+                img.card-img.rounded-0(src='assets/img/blog/blog_talkshow.jpg' alt='')
+                a(style="text-align:center").blog_item_date(href='#')
+                  h3 10
+                  p 七月
               .blog_details
-                a.d-inline-block(href='blog_details.html')
-                  h2.blog-head(style='color: #2d2d2d;') Google inks pact for new 35-storey office
+                a.d-inline-block(href='/blog_details')
+                  h2.blog-head(style='color: #2d2d2d;') Talkshow Ngôn ngữ & văn hóa Nhật Bản
                 p
-                  | That dominion stars lights dominion divide years for fourth have don&apos;t stars is that
-                  | he earth it first without heaven in place seed it second morning saying.
+                  | Buổi Talkshow được tổ chức nhằm giúp các bạn sinh viên có một cái nhìn 
+                  | tổng quan hơn về văn hoá doanh nghiệp của các công ty Nhật Bản tại Việt Nam. 
+                  | Đồng thời giúp cho các bạn sinh viên có định hướng rõ ràng trong việc học 
+                  | tiếng Nhật của mình để nhanh chóng đạt được mục tiêu mà các bạn mong muốn. 
                 ul.blog-info-link
                   li
                     a(href='#')
                       i.fa.fa-user
-                      |  Travel, Lifestyle
+                      |  Hoàng Nguyên Phương
                   li
                     a(href='#')
                       i.fa.fa-comments
-                      |  03 Comments
+                      |  30 Comments
             article.blog_item
               .blog_item_img
-                img.card-img.rounded-0(src='assets/img/blog/single_blog_5.png' alt='')
-                a.blog_item_date(href='#')
-                  h3 15
-                  p Jan
+                img.card-img.rounded-0(src='assets/img/blog/blog_hoithao.jpg' alt='')
+                a(style="text-align:center").blog_item_date(href='#')
+                  h3 25
+                  p 十二月
               .blog_details
-                a.d-inline-block(href='blog_details.html')
-                  h2.blog-head(style='color: #2d2d2d;') Google inks pact for new 35-storey office
+                a.d-inline-block(href='/blog_details')
+                  h2.blog-head(style='color: #2d2d2d;') Hội thảo Work in Japan
                 p
-                  | That dominion stars lights dominion divide years for fourth have don&apos;t stars is that
-                  | he earth it first without heaven in place seed it second morning saying.
+                  | Nhật Bản là một trong những quốc gia hàng đầu trong lĩnh vực 
+                  | nghiên cứu khoa học, công nghệ, thiết bị và nghiên cứu y học 
+                  | với ngân sách lớn thứ ba thế giới cho nghiên cứu và phát triển.  
+                  | Đất nước nơi hầu hết sinh viên muốn làm việc và sống với chế độ và mức lương đặc biệt.
                 ul.blog-info-link
                   li
                     a(href='#')
                       i.fa.fa-user
-                      |  Travel, Lifestyle
+                      |  Phạm Vũ Kiều Tiên
                   li
                     a(href='#')
                       i.fa.fa-comments
-                      |  03 Comments
+                      |  24 Comments
             nav.blog-pagination.justify-content-center.d-flex
               ul.pagination
                 li.page-item
@@ -219,85 +228,85 @@ main
               form(action='#')
                 .form-group
                   .input-group.mb-3
-                    input.form-control(type='text' placeholder='Search Keyword' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'")
+                    input.form-control(type='text' placeholder='Tìm kiếm từ khóa' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tìm kiếm từ khóa'")
                     .input-group-append
                       button.btns(type='button')
                         i.ti-search
-                button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Search
+                button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Tìm kiếm
             aside.single_sidebar_widget.post_category_widget
-              h4.widget_title(style='color: #2d2d2d;') Category
+              h4.widget_title(style='color: #2d2d2d;') Lĩnh vực
               ul.list.cat-list
                 li
                   a.d-flex(href='#')
-                    p Resaurant food
-                    p (37)
+                    p Học tập
+                    p &nbsp;(37)
                 li
                   a.d-flex(href='#')
-                    p Travel news
-                    p (10)
+                    p Du học
+                    p &nbsp;(10)
                 li
                   a.d-flex(href='#')
-                    p Modern technology
-                    p (03)
+                    p Kinh nghiệm đời sống
+                    p &nbsp;(03)
                 li
                   a.d-flex(href='#')
-                    p Product
-                    p (11)
+                    p Ôn thi
+                    p &nbsp;(11)
                 li
                   a.d-flex(href='#')
-                    p Inspiration
-                    p 21
+                    p Kỹ năng mềm
+                    p &nbsp;(21)
                 li
                   a.d-flex(href='#')
-                    p Health Care (21)
-                    p 09
+                    p Sức khỏe
+                    p &nbsp;(09)
             aside.single_sidebar_widget.popular_post_widget
-              h3.widget_title(style='color: #2d2d2d;') Recent Post
+              h3.widget_title(style='color: #2d2d2d;') Bài viết gần đây
               .media.post_item
-                img(src='assets/img/post/post_1.png' alt='post')
+                img(src='assets/img/post/qtpn.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
                 .media-body
-                  a(href='blog_details.html')
-                    h3(style='color: #2d2d2d;') From life was you fish...
-                  p January 12, 2019
+                  a(href='/blog_details')
+                    h3(style='color: #2d2d2d;') Ngày Quốc tế Phụ nữ 
+                  p ２０２１年３月８日
               .media.post_item
-                img(src='assets/img/post/post_2.png' alt='post')
+                img(src='assets/img/post/pnvn.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
                 .media-body
-                  a(href='blog_details.html')
-                    h3(style='color: #2d2d2d;') The Amazing Hubble
-                  p 02 Hours ago
+                  a(href='/blog_details')
+                    h3(style='color: #2d2d2d;') Ngày Phụ nữ Việt Nam 
+                  p ２０２０年１０月２０日
               .media.post_item
-                img(src='assets/img/post/post_3.png' alt='post')
+                img(src='assets/img/post/mext.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
                 .media-body
-                  a(href='blog_details.html')
-                    h3(style='color: #2d2d2d;') Astronomy Or Astrology
-                  p 03 Hours ago
+                  a(href='/blog_details')
+                    h3(style='color: #2d2d2d;') Học bổng du học MEXT
+                  p ３時前　
               .media.post_item
-                img(src='assets/img/post/post_4.png' alt='post')
+                img(src='assets/img/post/jlpt.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
                 .media-body
-                  a(href='blog_details.html')
-                    h3(style='color: #2d2d2d;') Asteroids telescope
-                  p 01 Hours ago
+                  a(href='/blog_details')
+                    h3(style='color: #2d2d2d;') Kỳ thi JLPT Tháng 7/2021
+                  p １０分前　
             aside.single_sidebar_widget.tag_cloud_widget
-              h4.widget_title(style='color: #2d2d2d;') Tag Clouds
+              h4.widget_title(style='color: #2d2d2d;') Tag 
               ul.list
                 li
-                  a(href='#') project
+                  a(href='#') #wakame
                 li
-                  a(href='#') love
+                  a(href='#') #love
                 li
-                  a(href='#') technology
+                  a(href='#') #study
                 li
-                  a(href='#') travel
+                  a(href='#') #duhoc
                 li
-                  a(href='#') restaurant
+                  a(href='#') #hocbong
                 li
-                  a(href='#') life style
+                  a(href='#') #UIT
                 li
-                  a(href='#') design
+                  a(href='#') #game
                 li
-                  a(href='#') illustration
+                  a(href='#') #talkshow
             aside.single_sidebar_widget.instagram_feeds
-              h4.widget_title(style='color: #2d2d2d;') Instagram Feeds
+              h4.widget_title(style='color: #2d2d2d;') Instagram New Feeds
               ul.instagram_row.flex-wrap
                 li
                   a(href='#')
@@ -318,10 +327,10 @@ main
                   a(href='#')
                     img.img-fluid(src='assets/img/post/post_10.png' alt='')
             aside.single_sidebar_widget.newsletter_widget
-              h4.widget_title(style='color: #2d2d2d;') Newsletter
+              h4.widget_title(style='color: #2d2d2d;') Nhận tin tức
               form(action='#')
                 .form-group
-                  input.form-control(type='email' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required='')
+                  input.form-control(type='email' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email của bạn'" placeholder='Enter email' required='')
                 button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Subscribe
   // Blog Area End
 footer
@@ -336,63 +345,66 @@ footer
                 // logo
                 .footer-logo.mb-25
                   a(href='/')
-                    img(src='assets/img/logo/logo2_footer.png' alt='')
+                    img(src='assets/img/logo/wakame_logo.svg' alt='' style='width:300px; height:80px;')
                 .footer-tittle
                   .footer-pera
-                    p The automated process starts as soon as your clothes go into the machine.
+                    p 熱意なしに偉大なことが達成されたことはない。Không có sự vĩ đại nào đạt được nếu không có sự nhiệt tình, nhiệt tâm.
                 // social
                 .footer-social
-                  a(href='https://twitter.com')
+                  a(href='https://twitter.com' target='_blank')
                     i.fab.fa-twitter
-                  a(href='https://facebook.com')
+                  a(href='https://facebook.com' target='_blank')
                     i.fab.fa-facebook-f
-                  a(href='https://www.pinterest.com')
-                    i.fab.fa-pinterest-p
+                  a(href="https://www.youtube.com" target="blank")
+                    i.fab.fa-youtube
+                  a(href="https://www.instagram.com" target="blank")
+                    i.fab.fa-instagram
+                  a(href="https://www.plus.google.com" target="blank")
+                    i.fab.fa-google-plus-g
           .col-xl-2.col-lg-3.col-md-4.col-sm-5
             .single-footer-caption.mb-50
               .footer-tittle
-                h4 Our solutions
+                h4 Về chúng tôi
                 ul
                   li
-                    a(href='#') Design &amp; creatives
+                    a(href='#') Về Wakame
                   li
-                    a(href='#') Telecommunication
+                    a(href='#') Tuyển dụng                
                   li
-                    a(href='#') Restaurant
+                    a(href='#') Điều khoản sử dụng
                   li
-                    a(href='#') Programing
-                  li
-                    a(href='#') Architecture
+                    a(href='#') Chính sách bảo mật 
           .col-xl-2.col-lg-4.col-md-4.col-sm-6
             .single-footer-caption.mb-50
               .footer-tittle
-                h4 Support
+                h4 Hỗ trợ
                 ul
                   li
-                    a(href='#') Design &amp; creatives
+                    a(href='#') Trung tâm trợ giúp
                   li
-                    a(href='#') Telecommunication
+                    a(href='#') Mua khóa học
                   li
-                    a(href='#') Restaurant
+                    a(href='#') Đổi trả &amp; hoàn tiền
                   li
-                    a(href='#') Programing
-                  li
-                    a(href='#') Architecture
+                    a(href='#') Thanh toán
           .col-xl-2.col-lg-3.col-md-4.col-sm-6
             .single-footer-caption.mb-50
               .footer-tittle
-                h4 Company
+                h4 Liên hệ
                 ul
                   li
-                    a(href='#') Design &amp; creatives
+                    i.fa.fa-map-marker-alt(style="color:#ff7b2e") 
+                    a(style="text-decoration:none") &nbsp; Địa chỉ
+                    p ĐH CNTT, ĐHQG-HCM
                   li
-                    a(href='#') Telecommunication
+                    i.fa.fa-phone(style="color:#ff7b2e") 
+                    a(style="text-decoration:none") &nbsp; Điện thoại
+                    p 0123 456 789
                   li
-                    a(href='#') Restaurant
-                  li
-                    a(href='#') Programing
-                  li
-                    a(href='#') Architecture
+                    i.fa.fa-envelope(style="color:#ff7b2e") 
+                    a(style="text-decoration:none") &nbsp; Email
+                    p wakameuit@gmail.com
+
     // footer-bottom area
     .footer-bottom-area
       .container
@@ -401,16 +413,14 @@ footer
             .col-xl-12
               .footer-copy-right.text-center
                 p
-                  // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
                   | Copyright &copy;
                   script.
                     document.write(new Date().getFullYear());
-                  |  All rights reserved | This template is made with 
+                  |  | This template is made with 
                   i.fa.fa-heart(aria-hidden='true')
-                  |  by 
-                  a(href='https://colorlib.com' target='_blank') Colorlib
-                  // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+                  |  by Nhóm 1
     // Footer End
+
 // Scroll Up
 #back-top
   a(title='Go to Top' href='#')
