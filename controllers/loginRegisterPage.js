@@ -8,7 +8,7 @@ passport.use('local.login', new LocalStrategy({
     passwordField: 'password'
 },
     function (username, password, done) {
-        models.User.findOne({
+        models.USERS.findOne({
             attributes: ['email', 'password', 'id'],
             where: { email: username }
         }).then((user) => {
@@ -32,7 +32,7 @@ passport.use('local.signup', new LocalStrategy({
     passReqToCallback: true
 },
     function (req, username, password, done) {
-        models.User.findOne({
+        models.USERS.findOne({
             attributes: ['email', 'password', 'id'],
             where: { email: username }
         }).then((user) => {
@@ -42,7 +42,7 @@ passport.use('local.signup', new LocalStrategy({
             }
             bcrypt.hash(req.body.password, 10, function (err, hash) {
                 // Store hash in your password DB.
-                models.User.create({
+                models.USERS.create({
                     fullName: req.body.name,
                     email: req.body.email,
                     password: hash
@@ -60,7 +60,7 @@ passport.serializeUser(function (user, done) {
 });
 
 passport.deserializeUser(function (id, done) {
-    models.User.findByPk(id).then((user) => {
+    models.USERS.findByPk(id).then((user) => {
         return done(null, user);
     });
     // User.findById(id, function (err, user) {
@@ -71,7 +71,7 @@ exports.get_loginPage = function (req, res, next) {
     return res.render('login', { title: 'Express' });
 }
 // exports.post_loginPage = function (req, res, next) {
-//     return models.User.create({
+//     return models.USERS.create({
 //         email: req.body.login_email,
 //         password: req.body.login_password
 //     }).then(lead => {
@@ -86,7 +86,7 @@ exports.get_registerPage = function (req, res, next) {
 // exports.post_registerPage = function (req, res, next) {
 //     data = req.body;
 //     const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//     models.User.findAll({
+//     models.USERS.findAll({
 //         attributes: ['email'],
 //         where: { email: data.email }
 //     }).then((allUsers) => {
@@ -109,7 +109,7 @@ exports.get_registerPage = function (req, res, next) {
 //         } else {
 //             bcrypt.hash(req.body.password, 10, function (err, hash) {
 //                 // Store hash in your password DB.
-//                 models.User.create({
+//                 models.USERS.create({
 //                     fullName: req.body.name,
 //                     email: req.body.email,
 //                     password: hash
@@ -128,19 +128,19 @@ exports.get_logout = function (req, res, next) {
 }
 exports.get_test = async function (req, res, next) {
     users = []
-    models.User.findAll({ attributes: ['fullName', 'email', 'password'] }).then((all) => {
+    models.USERS.findAll({ attributes: ['fullName', 'email', 'password'] }).then((all) => {
         all.forEach((item, index) => {
             users.push(item.dataValues);
         })
         res.render('test', { users: users });
     });
-    // models.User.findOne({
+    // models.USERS.findOne({
     //     attributes: ['email', 'password'],
     //     where: { email: 'tai@gmail.com' }
     // }).then((user) => {
     //     console.log(user.dataValues.email);
     // })
-    var user = await models.User.create({ fullName: 'minhtai', email: 'minhtai@gmail.com', password: 'haha' });
+    var user = await models.USERS.create({ fullName: 'minhtai', email: 'minhtai@gmail.com', password: 'haha' });
     //await models.Blogs.create({ title: 'helo', description: 'giai thich', content: 'khong co gi', userId: 1 })
     await user.create({ title: 'helo', description: 'giai thich', content: 'khong co gi' });
 
