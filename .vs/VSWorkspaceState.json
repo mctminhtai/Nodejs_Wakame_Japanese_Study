@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\config",
+    "\\controllers",
+    "\\migrations",
+    "\\models",
+    "\\public",
+    "\\routes"
+  ],
+  "SelectedNode": "\\models\\blog.js",
+  "PreviewInSolutionExplorer": false
+}
