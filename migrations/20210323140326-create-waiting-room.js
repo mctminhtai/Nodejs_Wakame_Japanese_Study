@@ -19,6 +19,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
+      //cho nay cung sua
     });
   },
   down: async (queryInterface, Sequelize) => {

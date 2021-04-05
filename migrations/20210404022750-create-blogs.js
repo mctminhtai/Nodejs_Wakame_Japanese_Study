@@ -16,6 +16,7 @@ module.exports = {
           key: 'id'
         }
       },
+      //sua cho nay luon
       title: {
         type: Sequelize.STRING
       },

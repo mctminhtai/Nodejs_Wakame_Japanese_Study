@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     USERId: DataTypes.INTEGER,
     BLOGId: DataTypes.INTEGER,
     cmcontent: DataTypes.STRING
+    //sua luon ca cho nay
   }, {
     sequelize,
     modelName: 'COMMENT',
