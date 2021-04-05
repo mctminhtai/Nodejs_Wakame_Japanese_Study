@@ -25,5 +25,4 @@ module.exports = (sequelize, DataTypes) => {
             freezeTableName: true,
         });
     return USER;
-    //No god please!!!
 };

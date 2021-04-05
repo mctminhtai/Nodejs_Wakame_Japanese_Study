@@ -137,9 +137,10 @@ exports.get_test = async function (req, res, next) {
     // }).then((user) => {
     //     console.log(user.dataValues.email);
     // })
-    // await models.USER.create({ fullName: 'minhtai', email: 'minhtai@gmail.com', password: 'haha' });
-    // await models.BLOG.create({ USERId: 1, title: 'helo', content: 'khong co giiii' });
-    // await models.COMMENT.create({ USERId: 1, BLOGId: 1, cmcontent: 'met qua luon' });
+    await models.USER.create({ fullName: 'minhtai33', email: 'minhtai@gmail.com', password: 'hahakakakak' });
+    await models.TAG.create({ TEN_TAG: 'SuKien' });
+    await models.BLOG.create({ USERId: 1, TAGId: 1, title: 'helo33', content: 'khong co giiii' });
+    await models.COMMENT.create({ USERId: 1, BLOGId: 1, cmcontent: 'met qua luon' });
     models.USER.findByPk(2, { include: ['binhluan'] }).then((user) => {
         console.log(user.binhluan);
     })
