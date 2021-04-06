@@ -1,461 +1,265 @@
-doctype html
-head
-  meta(charset='utf-8')
-  meta(http-equiv='x-ua-compatible' content='ie=edge')
-  title Blog | Wakame
-  meta(name='description' content='')
-  meta(name='viewport' content='width=device-width, initial-scale=1')
-  link(rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico')
-  // CSS here
-  link(rel='stylesheet' href='assets/css/bootstrap.min.css')
-  link(rel='stylesheet' href='assets/css/owl.carousel.min.css')
-  link(rel='stylesheet' href='assets/css/slicknav.css')
-  link(rel='stylesheet' href='assets/css/animate.min.css')
-  link(rel='stylesheet' href='assets/css/hamburgers.min.css')
-  link(rel='stylesheet' href='assets/css/magnific-popup.css')
-  link(rel='stylesheet' href='assets/css/fontawesome-all.min.css')
-  link(rel='stylesheet' href='assets/css/themify-icons.css')
-  link(rel='stylesheet' href='assets/css/themify-icons.css')
-  link(rel='stylesheet' href='assets/css/slick.css')
-  link(rel='stylesheet' href='assets/css/nice-select.css')
-  link(rel='stylesheet' href='assets/css/style.css')
-  link(rel='stylesheet' href='assets/css/responsive.css')
-// ? Preloader Start
-#preloader-active
-  .preloader.d-flex.align-items-center.justify-content-center
-    .preloader-inner.position-relative
-      .preloader-circle
-      .preloader-img.pere-text
-        img(src='assets/img/logo/onion_logo.svg' alt='' style='width:120px; height:50px;')
-// Preloader Start
-// Header Start
-.header-area.header-transparent
-  .main-header
-    .header-bottom.header-sticky
-      .container-fluid
-        .row.align-items-center
-          // Logo
-          .col-xl-2.col-lg-2
-            .logo
-              a(href='/')
-                img(src='assets/img/logo/wakame_logo.svg' alt='' style='width:350px; height:90px;')
-          .col-xl-10.col-lg-10
-            .menu-wrapper.d-flex.align-items-center.justify-content-end
-              // Main-menu
-              .main-menu.d-none.d-lg-block
-                nav
-                  ul#navigation
-                    li.active
-                      a(href='/') Trang chủ
-                    li
-                      a(href='/courses') Khóa học
-                    li
-                      a(href='/about') Về chúng tôi
-                    li
-                      a(href='/blog' style="color:#ffc107; font-weight:bold") Blog
-                      ul.submenu
-                        li
-                          a(href='/blog') Blog
-                        li
-                          a(href='/blogdetail') Blog Details
-                        li
-                          a(href='elements.html') Element
-                    li
-                      a(href='/contact') Liên hệ
-                    // Button
-                    li.button-header.margin-left
-                      a.btn(href='/register') Đăng ký
-                    li.button-header
-                      a.btn.btn3(href='/login') Đăng nhập
-          // Mobile Menu
-          .col-12
-            .mobile_menu.d-block.d-lg-none
-// Header End
-main
-  // ? slider Area Start
-  section.slider-area.slider-area2
-    .slider-active
-      // Single Slider
-      .single-slider.slider-height2
-        .container
-          .row
-            .col-xl-8.col-lg-11.col-md-12
-              .hero__caption.hero__caption2
-                h1(data-animation='bounceIn' data-delay='0.2s') Blog
-                // breadcrumb Start
-                nav(aria-label='breadcrumb')
-                  ol.breadcrumb
-                    li.breadcrumb-item
-                      a(href='/') Trang chủ
-                    li.breadcrumb-item
-                      a(href='#') Blog
-                // breadcrumb End
-  // ? Blog Area Start
-  section.blog_area.section-padding
-    .container
-      .row
-        .col-lg-8.mb-5.mb-lg-0
-          .blog_left_sidebar
-            article.blog_item
-              .blog_item_img
-                img.card-img.rounded-0(src='assets/img/blog/blog20112021.jpg' alt='')
-                a(style="text-align:center").blog_item_date(href='#')
-                  h3 20
-                  p 十二月
-              .blog_details
-                a.d-inline-block(href='/blog_details')
-                  h2.blog-head(style='color: #2d2d2d;') Wakame chúc mừng ngày Nhà giáo Việt Nam 20-11-2021
-                p
-                  | Nhân ngày Nhà giáo Việt Nam, xin thay mặt cho toàn thể thành viên CLB gửi đến thầy cô 
-                  | lời chúc tốt đẹp nhất. Chúc thầy cô dồi dào sức khỏe, gặp nhiều may mắn, luôn luôn trẻ 
-                  | trung, vui vẻ và tràn ngập niềm tin trong cuộc sống.
-                ul.blog-info-link
-                  li
-                    a(href='#')
-                      i.fa.fa-user
-                      |  Nguyễn Thanh Nhã
-                  li
-                    a(href='#')
-                      i.fa.fa-comments
-                      |  03 bình luận
-            article.blog_item
-              .blog_item_img
-                img.card-img.rounded-0(src='assets/img/blog/blog_hpny.jpg' alt='')
-                a(style="text-align:center").blog_item_date(href='#')
-                  h3 2
-                  p 一月
-              .blog_details
-                a.d-inline-block(href='/blog_details')
-                  h2.blog-head(style='color: #2d2d2d;') Wakame chúc mừng năm mới 2021
-                p
-                  | Nhân ngày đầu tiên đi học của năm 2021, CLB Wakame muốn gửi đến 
-                  | các bạn sinh viên một lời chúc tốt đẹp nhất. Chúc các bạn một năm 
-                  | mới an lành và thật nhiều may mắn.
-                ul.blog-info-link
-                  li
-                    a(href='#')
-                      i.fa.fa-user
-                      |  Lê Minh Tài
-                  li
-                    a(href='#')
-                      i.fa.fa-comments
-                      |  10 bình luận
-            article.blog_item
-              .blog_item_img
-                img.card-img.rounded-0(src='assets/img/blog/blog_ngayhoiclb.jpg' alt='')
-                a(style="text-align:center").blog_item_date(href='#')
-                  h3 5
-                  p 十月
-              .blog_details
-                a.d-inline-block(href='/blog_details')
-                  h2.blog-head(style='color: #2d2d2d;') Wakame tham gia ngày hội Câu lạc bộ
-                p
-                  | Trải qua 2 ngày hoạt động sự kiện Chào Tân sinh viên K15.
-                  | Tuy sự kiện chỉ diễn ra trong vòng 2 ngày ngắn ngủi nhưng 
-                  | các bạn đã làm cho CLB thấy được sự năng nổ, tích cực trong bản thân các bạn!
-                  | Sự thông minh, khéo léo và tính kiên trì của các bạn được thể hiện rõ trong 
-                  | các trò chơi do CLB tổ chức.
-                ul.blog-info-link
-                  li
-                    a(href='#')
-                      i.fa.fa-user
-                      |  Nguyễn Phương Nam
-                  li
-                    a(href='#')
-                      i.fa.fa-comments
-                      |  20 bình luận
-            article.blog_item
-              .blog_item_img
-                img.card-img.rounded-0(src='assets/img/blog/blog_talkshow.jpg' alt='')
-                a(style="text-align:center").blog_item_date(href='#')
-                  h3 10
-                  p 七月
-              .blog_details
-                a.d-inline-block(href='/blog_details')
-                  h2.blog-head(style='color: #2d2d2d;') Talkshow Ngôn ngữ &amp; văn hóa Nhật Bản
-                p
-                  | Buổi Talkshow được tổ chức nhằm giúp các bạn sinh viên có một cái nhìn 
-                  | tổng quan hơn về văn hoá doanh nghiệp của các công ty Nhật Bản tại Việt Nam. 
-                  | Đồng thời giúp cho các bạn sinh viên có định hướng rõ ràng trong việc học 
-                  | tiếng Nhật của mình để nhanh chóng đạt được mục tiêu mà các bạn mong muốn. 
-                ul.blog-info-link
-                  li
-                    a(href='#')
-                      i.fa.fa-user
-                      |  Hoàng Nguyên Phương
-                  li
-                    a(href='#')
-                      i.fa.fa-comments
-                      |  30 bình luận
-            article.blog_item
-              .blog_item_img
-                img.card-img.rounded-0(src='assets/img/blog/blog_hoithao.jpg' alt='')
-                a(style="text-align:center").blog_item_date(href='#')
-                  h3 25
-                  p 十二月
-              .blog_details
-                a.d-inline-block(href='/blog_details')
-                  h2.blog-head(style='color: #2d2d2d;') Hội thảo Work in Japan
-                p
-                  | Nhật Bản là một trong những quốc gia hàng đầu trong lĩnh vực 
-                  | nghiên cứu khoa học, công nghệ, thiết bị và nghiên cứu y học 
-                  | với ngân sách lớn thứ ba thế giới cho nghiên cứu và phát triển.  
-                  | Đất nước nơi hầu hết sinh viên muốn làm việc và sống với chế độ và mức lương đặc biệt.
-                ul.blog-info-link
-                  li
-                    a(href='#')
-                      i.fa.fa-user
-                      |  Phạm Vũ Kiều Tiên
-                  li
-                    a(href='#')
-                      i.fa.fa-comments
-                      |  24 bình luận
-            nav.blog-pagination.justify-content-center.d-flex
-              ul.pagination
-                li.page-item
-                  a.page-link(href='#' aria-label='Previous')
-                    i.ti-angle-left
-                li.page-item
-                  a.page-link(href='#') 1
-                li.page-item.active
-                  a.page-link(href='#') 2
-                li.page-item
-                  a.page-link(href='#' aria-label='Next')
-                    i.ti-angle-right
-        .col-lg-4
-          .blog_right_sidebar
-            aside.single_sidebar_widget.search_widget
-              form(action='#')
-                .form-group
-                  .input-group.mb-3
-                    input.form-control(type='text' placeholder='Tìm kiếm từ khóa' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tìm kiếm từ khóa'")
-                    .input-group-append
-                      button.btns(type='button')
-                        i.ti-search
-                button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Tìm kiếm
-            aside.single_sidebar_widget.post_category_widget
-              h4.widget_title(style='color: #2d2d2d;') Lĩnh vực
-              ul.list.cat-list
-                li
-                  a.d-flex(href='#')
-                    p Học tập
-                    p &nbsp;(37)
-                li
-                  a.d-flex(href='#')
-                    p Du học
-                    p &nbsp;(10)
-                li
-                  a.d-flex(href='#')
-                    p Kinh nghiệm đời sống
-                    p &nbsp;(03)
-                li
-                  a.d-flex(href='#')
-                    p Ôn thi
-                    p &nbsp;(11)
-                li
-                  a.d-flex(href='#')
-                    p Kỹ năng mềm
-                    p &nbsp;(21)
-                li
-                  a.d-flex(href='#')
-                    p Sức khỏe
-                    p &nbsp;(09)
-            aside.single_sidebar_widget.popular_post_widget
-              h3.widget_title(style='color: #2d2d2d;') Bài viết gần đây
-              .media.post_item
-                img(src='assets/img/post/qtpn.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
-                .media-body
-                  a(href='/blog_details')
-                    h3(style='color: #2d2d2d;') Ngày Quốc tế Phụ nữ 
-                  p ２０２１年３月８日
-              .media.post_item
-                img(src='assets/img/post/pnvn.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
-                .media-body
-                  a(href='/blog_details')
-                    h3(style='color: #2d2d2d;') Ngày Phụ nữ Việt Nam 
-                  p ２０２０年１０月２０日
-              .media.post_item
-                img(src='assets/img/post/mext.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
-                .media-body
-                  a(href='/blog_details')
-                    h3(style='color: #2d2d2d;') Học bổng du học MEXT
-                  p ３時前　
-              .media.post_item
-                img(src='assets/img/post/jlpt.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
-                .media-body
-                  a(href='/blog_details')
-                    h3(style='color: #2d2d2d;') Kỳ thi JLPT Tháng 7/2021
-                  p １０分前　
-            aside.single_sidebar_widget.tag_cloud_widget
-              h4.widget_title(style='color: #2d2d2d;') Tag 
-              ul.list
-                li
-                  a(href='#') #wakame
-                li
-                  a(href='#') #love
-                li
-                  a(href='#') #study
-                li
-                  a(href='#') #duhoc
-                li
-                  a(href='#') #hocbong
-                li
-                  a(href='#') #UIT
-                li
-                  a(href='#') #game
-                li
-                  a(href='#') #talkshow
-            aside.single_sidebar_widget.instagram_feeds
-              h4.widget_title(style='color: #2d2d2d;') Instagram New Feeds
-              ul.instagram_row.flex-wrap
-                li
-                  a(href='#')
-                    img.img-fluid(src='assets/img/post/post_5.png' alt='')
-                li
-                  a(href='#')
-                    img.img-fluid(src='assets/img/post/post_6.png' alt='')
-                li
-                  a(href='#')
-                    img.img-fluid(src='assets/img/post/post_7.png' alt='')
-                li
-                  a(href='#')
-                    img.img-fluid(src='assets/img/post/post_8.png' alt='')
-                li
-                  a(href='#')
-                    img.img-fluid(src='assets/img/post/post_9.png' alt='')
-                li
-                  a(href='#')
-                    img.img-fluid(src='assets/img/post/post_10.png' alt='')
-            aside.single_sidebar_widget.newsletter_widget
-              h4.widget_title(style='color: #2d2d2d;') Nhận tin tức
-              form(action='#')
-                .form-group
-                  input.form-control(type='email' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email của bạn'" placeholder='Enter email' required='')
-                button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Subscribe
-  // Blog Area End
-footer
-  .footer-wrappper.footer-bg
-    // Footer Start
-    .footer-area.footer-padding
+extends layout.pug 
+block main 
+  main
+    // ? slider Area Start
+    section.slider-area.slider-area2
+      .slider-active
+        // Single Slider
+        .single-slider.slider-height2
+          .container
+            .row
+              .col-xl-8.col-lg-11.col-md-12
+                .hero__caption.hero__caption2
+                  h1(data-animation='bounceIn' data-delay='0.2s') Blog
+                  // breadcrumb Start
+                  nav(aria-label='breadcrumb')
+                    ol.breadcrumb
+                      li.breadcrumb-item
+                        a(href='/') Trang chủ
+                      li.breadcrumb-item
+                        a(href='#') Blog
+                  // breadcrumb End
+    // ? Blog Area Start
+    section.blog_area.section-padding
       .container
-        .row.justify-content-between
-          .col-xl-4.col-lg-5.col-md-4.col-sm-6
-            .single-footer-caption.mb-50
-              .single-footer-caption.mb-30
-                // logo
-                .footer-logo.mb-25
-                  a(href='/')
-                    img(src='assets/img/logo/wakame_logo.svg' alt='' style='width:300px; height:80px;')
-                .footer-tittle
-                  .footer-pera
-                    p 熱意なしに偉大なことが達成されたことはない。Không có sự vĩ đại nào đạt được nếu không có sự nhiệt tình, nhiệt tâm.
-                // social
-                .footer-social
-                  a(href='https://twitter.com' target='_blank')
-                    i.fab.fa-twitter
-                  a(href='https://facebook.com' target='_blank')
-                    i.fab.fa-facebook-f
-                  a(href="https://www.youtube.com" target="blank")
-                    i.fab.fa-youtube
-                  a(href="https://www.instagram.com" target="blank")
-                    i.fab.fa-instagram
-                  a(href="https://www.plus.google.com" target="blank")
-                    i.fab.fa-google-plus-g
-          .col-xl-2.col-lg-3.col-md-4.col-sm-5
-            .single-footer-caption.mb-50
-              .footer-tittle
-                h4 Về chúng tôi
-                ul
+        .row
+          .col-lg-8.mb-5.mb-lg-0
+            .blog_left_sidebar
+              article.blog_item
+                .blog_item_img
+                  img.card-img.rounded-0(src='assets/img/blog/blog20112021.jpg' alt='')
+                  a(style="text-align:center").blog_item_date(href='#')
+                    h3 20
+                    p 十二月
+                .blog_details
+                  a.d-inline-block(href='/blog_details')
+                    h2.blog-head(style='color: #2d2d2d;') Wakame chúc mừng ngày Nhà giáo Việt Nam 20-11-2021
+                  p
+                    | Nhân ngày Nhà giáo Việt Nam, xin thay mặt cho toàn thể thành viên CLB gửi đến thầy cô 
+                    | lời chúc tốt đẹp nhất. Chúc thầy cô dồi dào sức khỏe, gặp nhiều may mắn, luôn luôn trẻ 
+                    | trung, vui vẻ và tràn ngập niềm tin trong cuộc sống.
+                  ul.blog-info-link
+                    li
+                      a(href='#')
+                        i.fa.fa-user
+                        |  Nguyễn Thanh Nhã
+                    li
+                      a(href='#')
+                        i.fa.fa-comments
+                        |  03 bình luận
+              article.blog_item
+                .blog_item_img
+                  img.card-img.rounded-0(src='assets/img/blog/blog_hpny.jpg' alt='')
+                  a(style="text-align:center").blog_item_date(href='#')
+                    h3 2
+                    p 一月
+                .blog_details
+                  a.d-inline-block(href='/blog_details')
+                    h2.blog-head(style='color: #2d2d2d;') Wakame chúc mừng năm mới 2021
+                  p
+                    | Nhân ngày đầu tiên đi học của năm 2021, CLB Wakame muốn gửi đến 
+                    | các bạn sinh viên một lời chúc tốt đẹp nhất. Chúc các bạn một năm 
+                    | mới an lành và thật nhiều may mắn.
+                  ul.blog-info-link
+                    li
+                      a(href='#')
+                        i.fa.fa-user
+                        |  Lê Minh Tài
+                    li
+                      a(href='#')
+                        i.fa.fa-comments
+                        |  10 bình luận
+              article.blog_item
+                .blog_item_img
+                  img.card-img.rounded-0(src='assets/img/blog/blog_ngayhoiclb.jpg' alt='')
+                  a(style="text-align:center").blog_item_date(href='#')
+                    h3 5
+                    p 十月
+                .blog_details
+                  a.d-inline-block(href='/blog_details')
+                    h2.blog-head(style='color: #2d2d2d;') Wakame tham gia ngày hội Câu lạc bộ
+                  p
+                    | Trải qua 2 ngày hoạt động sự kiện Chào Tân sinh viên K15.
+                    | Tuy sự kiện chỉ diễn ra trong vòng 2 ngày ngắn ngủi nhưng 
+                    | các bạn đã làm cho CLB thấy được sự năng nổ, tích cực trong bản thân các bạn!
+                    | Sự thông minh, khéo léo và tính kiên trì của các bạn được thể hiện rõ trong 
+                    | các trò chơi do CLB tổ chức.
+                  ul.blog-info-link
+                    li
+                      a(href='#')
+                        i.fa.fa-user
+                        |  Nguyễn Phương Nam
+                    li
+                      a(href='#')
+                        i.fa.fa-comments
+                        |  20 bình luận
+              article.blog_item
+                .blog_item_img
+                  img.card-img.rounded-0(src='assets/img/blog/blog_talkshow.jpg' alt='')
+                  a(style="text-align:center").blog_item_date(href='#')
+                    h3 10
+                    p 七月
+                .blog_details
+                  a.d-inline-block(href='/blog_details')
+                    h2.blog-head(style='color: #2d2d2d;') Talkshow Ngôn ngữ &amp; văn hóa Nhật Bản
+                  p
+                    | Buổi Talkshow được tổ chức nhằm giúp các bạn sinh viên có một cái nhìn 
+                    | tổng quan hơn về văn hoá doanh nghiệp của các công ty Nhật Bản tại Việt Nam. 
+                    | Đồng thời giúp cho các bạn sinh viên có định hướng rõ ràng trong việc học 
+                    | tiếng Nhật của mình để nhanh chóng đạt được mục tiêu mà các bạn mong muốn. 
+                  ul.blog-info-link
+                    li
+                      a(href='#')
+                        i.fa.fa-user
+                        |  Hoàng Nguyên Phương
+                    li
+                      a(href='#')
+                        i.fa.fa-comments
+                        |  30 bình luận
+              article.blog_item
+                .blog_item_img
+                  img.card-img.rounded-0(src='assets/img/blog/blog_hoithao.jpg' alt='')
+                  a(style="text-align:center").blog_item_date(href='#')
+                    h3 25
+                    p 十二月
+                .blog_details
+                  a.d-inline-block(href='/blog_details')
+                    h2.blog-head(style='color: #2d2d2d;') Hội thảo Work in Japan
+                  p
+                    | Nhật Bản là một trong những quốc gia hàng đầu trong lĩnh vực 
+                    | nghiên cứu khoa học, công nghệ, thiết bị và nghiên cứu y học 
+                    | với ngân sách lớn thứ ba thế giới cho nghiên cứu và phát triển.  
+                    | Đất nước nơi hầu hết sinh viên muốn làm việc và sống với chế độ và mức lương đặc biệt.
+                  ul.blog-info-link
+                    li
+                      a(href='#')
+                        i.fa.fa-user
+                        |  Phạm Vũ Kiều Tiên
+                    li
+                      a(href='#')
+                        i.fa.fa-comments
+                        |  24 bình luận
+              nav.blog-pagination.justify-content-center.d-flex
+                ul.pagination
+                  li.page-item
+                    a.page-link(href='#' aria-label='Previous')
+                      i.ti-angle-left
+                  li.page-item
+                    a.page-link(href='#') 1
+                  li.page-item.active
+                    a.page-link(href='#') 2
+                  li.page-item
+                    a.page-link(href='#' aria-label='Next')
+                      i.ti-angle-right
+          .col-lg-4
+            .blog_right_sidebar
+              aside.single_sidebar_widget.search_widget
+                form(action='#')
+                  .form-group
+                    .input-group.mb-3
+                      input.form-control(type='text' placeholder='Tìm kiếm từ khóa' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tìm kiếm từ khóa'")
+                      .input-group-append
+                        button.btns(type='button')
+                          i.ti-search
+                  button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Tìm kiếm
+              aside.single_sidebar_widget.post_category_widget
+                h4.widget_title(style='color: #2d2d2d;') Lĩnh vực
+                ul.list.cat-list
                   li
-                    a(href='#') Về Wakame
+                    a.d-flex(href='#')
+                      p Học tập
+                      p &nbsp;(37)
                   li
-                    a(href='#') Tuyển dụng                
+                    a.d-flex(href='#')
+                      p Du học
+                      p &nbsp;(10)
                   li
-                    a(href='#') Điều khoản sử dụng
+                    a.d-flex(href='#')
+                      p Kinh nghiệm đời sống
+                      p &nbsp;(03)
                   li
-                    a(href='#') Chính sách bảo mật 
-          .col-xl-2.col-lg-4.col-md-4.col-sm-6
-            .single-footer-caption.mb-50
-              .footer-tittle
-                h4 Hỗ trợ
-                ul
+                    a.d-flex(href='#')
+                      p Ôn thi
+                      p &nbsp;(11)
                   li
-                    a(href='#') Trung tâm trợ giúp
+                    a.d-flex(href='#')
+                      p Kỹ năng mềm
+                      p &nbsp;(21)
                   li
-                    a(href='#') Mua khóa học
+                    a.d-flex(href='#')
+                      p Sức khỏe
+                      p &nbsp;(09)
+              aside.single_sidebar_widget.popular_post_widget
+                h3.widget_title(style='color: #2d2d2d;') Bài viết gần đây
+                .media.post_item
+                  img(src='assets/img/post/qtpn.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
+                  .media-body
+                    a(href='/blog_details')
+                      h3(style='color: #2d2d2d;') Ngày Quốc tế Phụ nữ 
+                    p ２０２１年３月８日
+                .media.post_item
+                  img(src='assets/img/post/pnvn.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
+                  .media-body
+                    a(href='/blog_details')
+                      h3(style='color: #2d2d2d;') Ngày Phụ nữ Việt Nam 
+                    p ２０２０年１０月２０日
+                .media.post_item
+                  img(src='assets/img/post/mext.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
+                  .media-body
+                    a(href='/blog_details')
+                      h3(style='color: #2d2d2d;') Học bổng du học MEXT
+                    p ３時前　
+                .media.post_item
+                  img(src='assets/img/post/jlpt.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
+                  .media-body
+                    a(href='/blog_details')
+                      h3(style='color: #2d2d2d;') Kỳ thi JLPT Tháng 7/2021
+                    p １０分前　
+              aside.single_sidebar_widget.tag_cloud_widget
+                h4.widget_title(style='color: #2d2d2d;') Tag 
+                ul.list
                   li
-                    a(href='#') Đổi trả &amp; hoàn tiền
+                    a(href='#') #wakame
                   li
-                    a(href='#') Thanh toán
-          .col-xl-2.col-lg-3.col-md-4.col-sm-6
-            .single-footer-caption.mb-50
-              .footer-tittle
-                h4 Liên hệ
-                ul
+                    a(href='#') #love
                   li
-                    i.fa.fa-map-marker-alt(style="color:#ff7b2e") 
-                    a(style="text-decoration:none") &nbsp; Địa chỉ
-                    p ĐH CNTT, ĐHQG-HCM
+                    a(href='#') #study
                   li
-                    i.fa.fa-phone(style="color:#ff7b2e") 
-                    a(style="text-decoration:none") &nbsp; Điện thoại
-                    p 0123 456 789
+                    a(href='#') #duhoc
                   li
-                    i.fa.fa-envelope(style="color:#ff7b2e") 
-                    a(style="text-decoration:none") &nbsp; Email
-                    p wakameuit@gmail.com
-
-    // footer-bottom area
-    .footer-bottom-area
-      .container
-        .footer-border
-          .row.d-flex.align-items-center
-            .col-xl-12
-              .footer-copy-right.text-center
-                p
-                  | Copyright &copy;
-                  script.
-                    document.write(new Date().getFullYear());
-                  |  | This template is made by 
-                  i.fab.fa-github(style="color:black")
-                  a(href="https://github.com/mctminhtai/Nodejs_Wakame_Japanese_Study" target="blank") &nbsp;Nhóm 1
-    // Footer End
-
-// Scroll Up
-#back-top
-  a(title='Go to Top' href='#')
-    i.fas.fa-level-up-alt
-// JS here
-script(src='./assets/js/vendor/modernizr-3.5.0.min.js')
-// Jquery, Popper, Bootstrap
-script(src='./assets/js/vendor/jquery-1.12.4.min.js')
-script(src='./assets/js/popper.min.js')
-script(src='./assets/js/bootstrap.min.js')
-// Jquery Mobile Menu
-script(src='./assets/js/jquery.slicknav.min.js')
-// Jquery Slick , Owl-Carousel Plugins
-script(src='./assets/js/owl.carousel.min.js')
-script(src='./assets/js/slick.min.js')
-// One Page, Animated-HeadLin
-script(src='./assets/js/wow.min.js')
-script(src='./assets/js/animated.headline.js')
-script(src='./assets/js/jquery.magnific-popup.js')
-// Date Picker
-script(src='./assets/js/gijgo.min.js')
-// Nice-select, sticky
-script(src='./assets/js/jquery.nice-select.min.js')
-script(src='./assets/js/jquery.sticky.js')
-// counter , waypoint,Hover Direction
-script(src='./assets/js/jquery.counterup.min.js')
-script(src='./assets/js/waypoints.min.js')
-script(src='./assets/js/jquery.countdown.min.js')
-script(src='./assets/js/hover-direction-snake.min.js')
-// contact js
-script(src='./assets/js/contact.js')
-script(src='./assets/js/jquery.form.js')
-script(src='./assets/js/jquery.validate.min.js')
-script(src='./assets/js/mail-script.js')
-script(src='./assets/js/jquery.ajaxchimp.min.js')
-// Jquery Plugins, main Jquery
-script(src='./assets/js/plugins.js')
-script(src='./assets/js/main.js')
+                    a(href='#') #hocbong
+                  li
+                    a(href='#') #UIT
+                  li
+                    a(href='#') #game
+                  li
+                    a(href='#') #talkshow
+              aside.single_sidebar_widget.instagram_feeds
+                h4.widget_title(style='color: #2d2d2d;') Instagram New Feeds
+                ul.instagram_row.flex-wrap
+                  li
+                    a(href='#')
+                      img.img-fluid(src='assets/img/post/post_5.png' alt='')
+                  li
+                    a(href='#')
+                      img.img-fluid(src='assets/img/post/post_6.png' alt='')
+                  li
+                    a(href='#')
+                      img.img-fluid(src='assets/img/post/post_7.png' alt='')
+                  li
+                    a(href='#')
+                      img.img-fluid(src='assets/img/post/post_8.png' alt='')
+                  li
+                    a(href='#')
+                      img.img-fluid(src='assets/img/post/post_9.png' alt='')
+                  li
+                    a(href='#')
+                      img.img-fluid(src='assets/img/post/post_10.png' alt='')
+              aside.single_sidebar_widget.newsletter_widget
+                h4.widget_title(style='color: #2d2d2d;') Nhận tin tức
+                form(action='#')
+                  .form-group
+                    input.form-control(type='email' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email của bạn'" placeholder='Enter email' required='')
+                  button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Subscribe
+    // Blog Area End
+  

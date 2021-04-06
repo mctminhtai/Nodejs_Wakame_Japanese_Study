@@ -67,10 +67,17 @@ header
                       li
                         a(href='/contact') Liên hệ
                       // Button
-                      li.button-header.margin-left
-                        a.btn(href='/register') Đăng ký
-                      li.button-header
-                        a.btn.btn3(href='/login') Đăng nhập
+                      if Authenticated=== false 
+                        li.button-header.margin-left
+                          a.btn(href='/register') Đăng ký
+                        li.button-header
+                          a.btn.btn3(href='/login') Đăng nhập
+                      else
+                        li.button-header.margin-left
+                          a.btn(href='/') #{user_name}
+                        li.button-header
+                          a.btn.btn3(href='/login') Đăng xuất 
+                        
             .col-12
               .mobile_menu.d-block.d-lg-none
   // Header End
