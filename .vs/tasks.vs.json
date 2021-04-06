@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-20210405164356-create-tiet-thu",
+      "appliesTo": "migrations/20210405164356-create-tiet-thu.js",
+      "type": "launch"
+    }
+  ]
+}

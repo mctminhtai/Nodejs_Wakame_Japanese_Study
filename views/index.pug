@@ -1,553 +1,478 @@
-doctype html
-head
-  meta(charset='utf-8')
-  meta(http-equiv='x-ua-compatible' content='ie=edge')
-  title Trang chủ | Wakame
-  meta(name='description' content='')
-  meta(name='viewport' content='width=device-width, initial-scale=1')
-  link(rel='manifest' href='site.webmanifest')
-  link(rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico')
-  // CSS here
-  link(rel='stylesheet' href='assets/css/bootstrap.min.css')
-  link(rel='stylesheet' href='assets/css/owl.carousel.min.css')
-  link(rel='stylesheet' href='assets/css/slicknav.css')
-  link(rel='stylesheet' href='assets/css/flaticon.css')
-  link(rel='stylesheet' href='assets/css/progressbar_barfiller.css')
-  link(rel='stylesheet' href='assets/css/gijgo.css')
-  link(rel='stylesheet' href='assets/css/animate.min.css')
-  link(rel='stylesheet' href='assets/css/animated-headline.css')
-  link(rel='stylesheet' href='assets/css/magnific-popup.css')
-  link(rel='stylesheet' href='assets/css/font-awesome.css')
-  link(rel='stylesheet' href='assets/css/fontawesome-all.min.css')
-  link(rel='stylesheet' href='assets/css/themify-icons.css')
-  link(rel='stylesheet' href='assets/css/slick.css')
-  link(rel='stylesheet' href='assets/css/nice-select.css')
-  link(rel='stylesheet' href='assets/css/style.css')
-// ? Preloader Start
-#preloader-active
-  .preloader.d-flex.align-items-center.justify-content-center
-    .preloader-inner.position-relative
-      .preloader-circle
-      .preloader-img.pere-text
-        img(src='assets/img/logo/onion_logo.svg' alt='' style='width:120px; height:50px;')
-// Preloader Start
-header
-  // Header Start
-  .header-area.header-transparent
-    .main-header
-      .header-bottom.header-sticky
-        .container-fluid
-          .row.align-items-center
-            // Logo
-            .col-xl-2.col-lg-2
-              .logo
-                a(href='/')
-                img(src='assets/img/logo/wakame_logo.svg' alt='' style='width:350px; height:90px;')
-            .col-xl-10.col-lg-10
-              .menu-wrapper.d-flex.align-items-center.justify-content-end
-                // Main-menu
-                .main-menu.d-none.d-lg-block
-                  nav
-                    ul#navigation
-                      li.active
-                        a(href='/' style="color:#ffc107; font-weight:bold") Trang chủ
-                      li
-                        a(href='/courses') Khóa học
-                      li
-                        a(href='/about') Về chúng tôi
-                      li
-                        a(href='/#') Blog
-                        ul.submenu
-                          li
-                            a(href='/blog') Blog
-                          li
-                            a(href='/blogdetail') Blog Details
-                          li
-                            a(href='/elements') Element
-                      li
-                        a(href='/contact') Liên hệ
-                      // Button
-                      li.button-header.margin-left
-                        a.btn(href='/register') Đăng ký
-                      li.button-header
-                        a.btn.btn3(href='/login') Đăng nhập
-            .col-12
-              .mobile_menu.d-block.d-lg-none
-  // Header End
-main
-  // ? slider Area Start
-  section.slider-area
-    .slider-active
-      // Single Slider
-      .single-slider.slider-height.d-flex.align-items-center
-        .container
-          .row
-            .col-xl-6.col-lg-7.col-md-12
-              .hero__caption
-                h1(data-animation='fadeInLeft' data-delay='0.2s')
-                  | Học tiếng Nhật
-                  br
-                  |  trực tuyến
-                p(data-animation='fadeInLeft' data-delay='0.4s')
-                  | Nơi phát triển kiến thức ngôn ngữ Nhật, kinh nghiệm thực tế và kỹ năng sống hằng ngày
-                a.btn.hero-btn(href='/register' data-animation='fadeInLeft' data-delay='0.7s') Đăng ký miễn phí
-  // ? services-area
-  .services-area
-    .container
-      .row.justify-content-sm-center
-        .col-lg-4.col-md-6.col-sm-8
-          .single-services.mb-30
+extends layout.pug 
+block main 
+  main
+    // ? slider Area Start
+    section.slider-area
+      .slider-active
+        // Single Slider
+        .single-slider.slider-height.d-flex.align-items-center
+          .container
+            .row
+              .col-xl-6.col-lg-7.col-md-12
+                .hero__caption
+                  h1(data-animation='fadeInLeft' data-delay='0.2s')
+                    | Học tiếng Nhật
+                    br
+                    |  trực tuyến
+                  p(data-animation='fadeInLeft' data-delay='0.4s')
+                    | Nơi phát triển kiến thức ngôn ngữ Nhật, kinh nghiệm thực tế và kỹ năng sống hằng ngày
+                  a.btn.hero-btn(href='/register' data-animation='fadeInLeft' data-delay='0.7s') Đăng ký miễn phí
+    // ? services-area
+    .services-area
+      .container
+        .row.justify-content-sm-center
+          .col-lg-4.col-md-6.col-sm-8
+            .single-services.mb-30
+              .features-icon
+                img(src='assets/img/icon/icon1.svg' alt='')
+              .features-caption
+                h3 50+ khóa học tiếng Nhật
+                p Bao gồm tài liệu và đề thi JLPT cập nhật thường xuyên.
+          .col-lg-4.col-md-6.col-sm-8
+            .single-services.mb-30
+              .features-icon
+                img(src='assets/img/icon/icon2.svg' alt='')
+              .features-caption
+                h3 Đội ngũ chuyên gia
+                p Nơi tập trung các chuyên gia hàng đầu trong ngành ngôn ngữ Nhật.
+          .col-lg-4.col-md-6.col-sm-8
+            .single-services.mb-30
+              .features-icon
+                img(src='assets/img/icon/icon3.svg' alt='')
+              .features-caption
+                h3 Khóa học trọn đời
+                p Nâng cấp Prenium để được hưởng ưu đãi này.    
+    
+    //Rating area start
+    section.about-area3.fix#rating
+      .section-tittle.section-tittle2.mb-20
+        .front-text
+          h2 Đánh giá và cảm nhận của học viên    
+      .support-wrapper.align-items-center
+        .right-content3
+          h1#rating-score 4.9
+          p 108.7M đánh giá
+        .left-content3
+          // section tittle
+          .single-features.star-rating
             .features-icon
-              img(src='assets/img/icon/icon1.svg' alt='')
+              .rating
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star 
+            .percent-bar
+              .filled-percent-bar.star5
             .features-caption
-              h3 50+ khóa học tiếng Nhật
-              p Bao gồm tài liệu và đề thi JLPT cập nhật thường xuyên.
-        .col-lg-4.col-md-6.col-sm-8
-          .single-services.mb-30
+              p 102M+  
+          .single-features.star-rating
             .features-icon
-              img(src='assets/img/icon/icon2.svg' alt='')
+              .rating
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.star-grey.fas.fa-star   
+            .percent-bar
+              .filled-percent-bar(style="width:80%")
             .features-caption
-              h3 Đội ngũ chuyên gia
-              p Nơi tập trung các chuyên gia hàng đầu trong ngành ngôn ngữ Nhật.
-        .col-lg-4.col-md-6.col-sm-8
-          .single-services.mb-30
+                p 86.4M             
+          .single-features.star-rating
             .features-icon
-              img(src='assets/img/icon/icon3.svg' alt='')
+              .rating
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.star-grey.fas.fa-star   
+                i.star-grey.fas.fa-star   
+            .percent-bar
+              .filled-percent-bar(style="width:30%")
             .features-caption
-              h3 Khóa học trọn đời
-              p Nâng cấp Prenium để được hưởng ưu đãi này.    
-  
-  //Rating area start
-  section.about-area3.fix#rating
-    .section-tittle.section-tittle2.mb-20
-      .front-text
-        h2 Đánh giá và cảm nhận của học viên    
-    .support-wrapper.align-items-center
-      .right-content3
-        h1#rating-score 4.9
-        p 108.7M đánh giá
-      .left-content3
-        // section tittle
-        .single-features.star-rating
-          .features-icon
-            .rating
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star 
-          .percent-bar
-            .filled-percent-bar.star5
-          .features-caption
-            p 102M+  
-        .single-features.star-rating
-          .features-icon
-            .rating
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.star-grey.fas.fa-star   
-          .percent-bar
-            .filled-percent-bar(style="width:80%")
-          .features-caption
-              p 86.4M             
-        .single-features.star-rating
-          .features-icon
-            .rating
-              i.fas.fa-star
-              i.fas.fa-star
-              i.fas.fa-star
-              i.star-grey.fas.fa-star   
-              i.star-grey.fas.fa-star   
-          .percent-bar
-            .filled-percent-bar(style="width:30%")
-          .features-caption
-            p 32.4M 
-        .single-features.star-rating
-          .features-icon
-            .rating
-              i.fas.fa-star
-              i.fas.fa-star
-              i.star-grey.fas.fa-star
-              i.star-grey.fas.fa-star   
-              i.star-grey.fas.fa-star   
-          .percent-bar
-            .filled-percent-bar(style="width:20%")
-          .features-caption
-            p 21.6M 
-        .single-features.star-rating
-          .features-icon
-            .rating
-              i.fas.fa-star
-              i.star-grey.fas.fa-star   
-              i.star-grey.fas.fa-star   
-              i.star-grey.fas.fa-star   
-              i.star-grey.fas.fa-star   
-          .percent-bar
-            .filled-percent-bar(style="width:10%")
-          .features-caption
-            p 10M+                                
-  //Rating area end
+              p 32.4M 
+          .single-features.star-rating
+            .features-icon
+              .rating
+                i.fas.fa-star
+                i.fas.fa-star
+                i.star-grey.fas.fa-star
+                i.star-grey.fas.fa-star   
+                i.star-grey.fas.fa-star   
+            .percent-bar
+              .filled-percent-bar(style="width:20%")
+            .features-caption
+              p 21.6M 
+          .single-features.star-rating
+            .features-icon
+              .rating
+                i.fas.fa-star
+                i.star-grey.fas.fa-star   
+                i.star-grey.fas.fa-star   
+                i.star-grey.fas.fa-star   
+                i.star-grey.fas.fa-star   
+            .percent-bar
+              .filled-percent-bar(style="width:10%")
+            .features-caption
+              p 10M+                                
+    //Rating area end
 
-  //Review Area End
-  section.team-area.section-padding40.fix(style="padding-bottom:100px;padding-top:50px")
+    //Review Area End
+    section.team-area.section-padding40.fix(style="padding-bottom:100px;padding-top:50px")
+      .container
+        .team-active
+          .reviews(style="background-color:#ffcbc1;padding:40px 0px;border-radius:20px;margin-right:10px;margin-left:10px")
+            .single-cat.text-center
+              .cat-icon
+                img(src='assets/img/gallery/Thien.jpg' alt='' style='width:200px; height:200px;border:5px solid #ffc107;border-radius:100px')
+              .cat-cap
+                h5
+                  a(href='services.html') Võ Hồng Thiên
+                p "Tuyệt vời. Bài giảng dễ hiểu cứ nghe hoài từ sáng đến tối luôn"
+                .rating
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star 
+          .reviews(style="background-color:#ffcbc1;padding:40px 0px;border-radius:20px;margin-right:10px;margin-left:10px")
+            .single-cat.text-center
+              .cat-icon
+                img(src='assets/img/gallery/VietAnh.jpg' alt='' style='width:200px; height:200px;border:5px solid #4cd3e3;border-radius:100px')
+              .cat-cap
+                h5
+                  a(href='services.html') Trần Việt Anh
+                p "Nhờ Wakame mà mình đã có động lực chinh phục Tiếng Nhật"
+                .rating
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star 
+          .reviews(style="background-color:#ffcbc1;padding:40px 0px;border-radius:20px;margin-right:10px;margin-left:10px")
+            .single-cat.text-center
+              .cat-icon
+                img(src='assets/img/gallery/Tien.jpg' alt='' style='width:200px; height:200px;border:5px solid #38a4ff;border-radius:100px')
+              .cat-cap
+                h5
+                  a(href='services.html') Phạm Vũ Kiều Tiên
+                p "Học ở Wakame không hoài phí thanh xuân và thời gian nhé"
+                .rating
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star 
+          .reviews(style="background-color:#ffcbc1;padding:40px 0px;border-radius:20px;margin-right:10px;margin-left:10px")
+            .single-cat.text-center
+              .cat-icon
+                img(src='assets/img/gallery/U.jpg' alt='' style='width:200px; height:200px;border:5px solid #e83e8c;border-radius:100px')
+              .cat-cap
+                h5
+                  a(href='services.html') Hoàng Ng. Phương
+                p "Nhờ có Wakame, bây giờ tôi rất tự tin giao tiếp tiếng Nhật"
+                .rating
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star 
+          .reviews(style="background-color:#ffcbc1;padding:40px 0px;border-radius:25px;margin-right:10px;margin-left:10px")
+            .single-cat.text-center
+              .cat-icon
+                img(src='assets/img/gallery/AnhTai.jpg' alt='' style='width:200px; height:200px;border:5px solid #28a745;border-radius:100px')
+              .cat-cap
+                h5
+                  a(href='services.html') Lê Minh Tài
+                p "Giáo viên hài hước, nhiệt tình giảng dạy kiến thức chắc chắn"
+                .rating
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star 
+    //Review Area End
+
+    // ? About Area-1 Start
+    section.about-area1.fix.pt-10
+      .support-wrapper.align-items-center
+        .left-content1
+          .about-icon
+            img(src='assets/img/icon/about.svg' alt='')
+          // section tittle
+          .section-tittle.section-tittle2.mb-55
+            .front-text
+              h2 Học nhiều hơn về ngôn ngữ và văn hóa Nhật
+              p
+                | "Tất cả mọi thành công trên đời đều là do luyện tập mà thành."
+                br
+                | – Pele –
+          .single-features
+            .features-icon
+              img(src='assets/img/icon/right-icon.svg' alt='')
+            .features-caption
+              p Nội dung học tập cập nhật theo xu hướng hiện đại, cách tiếp cận mới mẻ, thú vị.
+          .single-features
+            .features-icon
+              img(src='assets/img/icon/right-icon.svg' alt='')
+            .features-caption
+              p Tham gia cùng hàng triệu người từ khắp nơi trên thế giới cùng nhau học tập.
+          .single-features
+            .features-icon
+              img(src='assets/img/icon/right-icon.svg' alt='')
+            .features-caption
+              p Học trực tuyến một cách dễ dàng, tiện lợi. Hướng đến mục đích giao tiếp tiếng Nhật tự nhiên nhất.
+        .right-content1
+          // img
+          .right-img
+            img(src='assets/img/gallery/about.png' alt='')
+            .video-icon
+              a.popup-video.btn-icon(href='https://www.youtube.com/watch?v=up68UAfH0d0')
+                i.fas.fa-play
+    // About Area End
+
+    // Courses area start
+    .courses-area.section-padding40.fix
+      .container
+        .row.justify-content-center
+          .col-xl-7.col-lg-8
+            .section-tittle.text-center.mb-55
+              h2 Các khóa học nổi bật
+        .row
+          .col-lg-4
+            .properties.properties2.mb-30
+              .properties__card
+                .properties__img.overlay1
+                  a(href='#')
+                    img(src='assets/img/gallery/course_time.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
+                .properties__caption
+                  p Nguyễn Thị Hoa
+                  h3
+                    a(href='#') Quản lý thời gian hiệu quả
+                  p 
+                    |- Thời gian có là “kim cương, vàng, bạc”?
+                    br
+                    |- Bạn đang “làm chủ” thời gian hay đang là “nô lệ”?
+                    br
+                    |- Bạn làm gì với thời gian một ngày 24 tiếng?
+                  a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+          .col-lg-4
+            .properties.properties2.mb-30
+              .properties__card
+                .properties__img.overlay1
+                  a(href='#')
+                    img(src='assets/img/gallery/course_giaotiepsocap.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
+                .properties__caption
+                  p Suzuki Shin
+                  h3
+                    a(href='#') Combo N3-N2-N1
+                  p
+                    | - Tiết kiệm chi phí hơn cho bạn. 
+                    br
+                    | - Thời gian học dài hơn 2 lần khoá thường. 
+                    br
+                    | - Các ưu đãi, đặc quyền chỉ có ở gói combo.
+                  a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+          .col-lg-4
+            .properties.properties2.mb-30
+              .properties__card
+                .properties__img.overlay1
+                  a(href='#')
+                    img(src='assets/img/gallery/course_flirt.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
+                .properties__caption
+                  p Phan Thanh Lệ
+                  h3
+                    a(href='#') Cách tán gái bằng tiếng Nhật
+                  p
+                    | Bạn muốn tỏ tình với người thương bằng tiếng Nhật? Hay bạn muốn có một màn tỏ tình khó quên? Vậy đừng bỏ qua khóa học thú vị này của Wakame để biết được những kinh nghiệm tỏ tình hiệu quả nhé!
+                  a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+          .col-lg-4
+            .properties.properties2.mb-30
+              .properties__card
+                .properties__img.overlay1
+                  a(href='#')
+                    img(src='assets/img/gallery/course_giaotieptrungcap.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
+                .properties__caption
+                  p Junko Hirayama
+                  h3
+                    a(href='#') Giao tiếp tiếng Nhật trung cấp
+                  p
+                    | Khóa học phù hợp với những bạn đã đạt chứng chỉ tiếng Nhật sơ cấp, 
+                    | muốn rút ngắn thời gian để du học, giao tiếp và làm việc ở công ty 
+                    | Nhật, ở trường học, hoặc tham gia vào các kỳ thi năng lực tiếng Nhật.
+                  a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+          .col-lg-4
+            .properties.properties2.mb-30
+              .properties__card
+                .properties__img.overlay1
+                  a(href='#')
+                    img(src='assets/img/gallery/course_socap.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
+                .properties__caption
+                  p Junko Hirayama
+                  h3
+                    a(href='#') Khóa học cấp tốc sơ cấp
+                  p
+                    | Khóa học phù hợp với những bạn
+                    | muốn rút ngắn thời gian để du học hay lao động tại Nhật Bản.
+                    | Đảm bảo đủ kiến thức và kỹ năng thi JLPT sơ cấp. 
+                    | Tự tin giao tiếp, tham gia phỏng vấn du học trực tiếp với các trường Nhật Bản.
+                  a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+          .col-lg-4
+            .properties.properties2.mb-30
+              .properties__card
+                .properties__img.overlay1
+                  a(href='#')
+                    img(src='assets/img/gallery/course_business.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
+                .properties__caption
+                  p Dương Thị Thương
+                  h3
+                    a(href='#') Tiếng Nhật thương mại
+                  p
+                    | Khóa học dành cho các ứng viên đi làm tại 
+                    | các công ty Nhật bản, Khóa học Giao dịch 
+                    | thương mại qua Email, Khóa học Biên phiên dịch 
+                    | chuyên ngành kinh tế, Khóa học Giao tiếp Tiếng Nhật 
+                    | trong văn phòng. 
+                  a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+        .row.justify-content-center
+          .col-xl-7.col-lg-8
+            .section-tittle.text-center.mt-40
+              a.border-btn(href='#') Xem thêm
+    // Courses area End
+    // ? About Area-3 Start
+    section.about-area3.fix
+      .support-wrapper.align-items-center
+        .right-content3
+          // img
+          .right-img
+          img(src='assets/img/icon/advantage.png' alt='' style='width:550px; height:300px; margin-top:0px; margin-left: 100px;')
+        .left-content3
+          // section tittle
+          .section-tittle.section-tittle2.mb-20
+            .front-text
+              h2 Lợi ích khi tham gia khóa học
+          .single-features
+            .features-icon
+              img(src='assets/img/icon/right-icon.svg' alt='')
+            .features-caption
+              p Được truy cập vào kho dữ liệu khổng lồ về kiến thức và kinh nghiệm phong phú khác.
+          .single-features
+            .features-icon
+              img(src='assets/img/icon/right-icon.svg' alt='')
+            .features-caption
+              p Cơ hội tiếp xúc học tập cùng với các chuyên gia ngôn ngữ Nhật hàng đầu trong nước và nước ngoài.
+          .single-features
+            .features-icon
+              img(src='assets/img/icon/right-icon.svg' alt='')
+            .features-caption
+              p Cơ hội nhận học bổng du học tại các trường đại học nổi tiếng và được giới thiệu việc làm với các công ty có văn hóa Nhật.
+    // About Area End
+    // ? Team
+    section.team-area.section-padding40.fix
+      .container
+        .row.justify-content-center
+          .col-xl-7.col-lg-8
+            .section-tittle.text-center.mb-55
+              h2 Đội ngũ chuyên gia
+        .team-active
+          .single-cat.text-center
+            .cat-icon
+              img(src='assets/img/gallery/MsJunko.jpg' alt='' style='width:200px; height:200px;')
+            .cat-cap
+              h5
+                a(href='services.html') Ms. Junko Hirayama
+              p Kinh nghiệm giảng dạy 10 năm
+              p - Ōsaka -
+          .single-cat.text-center
+            .cat-icon
+              img(src='assets/img/gallery/MsHoa.jpg' alt='' style='width:200px; height:200px;')
+            .cat-cap
+              h5
+                a(href='services.html') Ms. Nguyễn Thị Hoa
+              p Kinh nghiệm giảng dạy 5 năm
+              p - UIT - 
+          .single-cat.text-center
+            .cat-icon
+              img(src='assets/img/gallery/MsLe.jpg' alt='' style='width:200px; height:200px;')
+            .cat-cap
+              h5
+                a(href='services.html') Ms. Phan Thanh Lệ
+              p Kinh nghiệm giảng dạy 5 năm
+              p - UIT - 
+          .single-cat.text-center
+            .cat-icon
+              img(src='assets/img/gallery/MsThuong.jpg' alt='' style='width:200px; height:200px;')
+            .cat-cap
+              h5
+                a(href='services.html') Ms. Dương Thị Thương
+              p Kinh nghiệm giảng dạy 5 năm
+              p - UIT -             
+          .single-cat.text-center
+            .cat-icon
+              img(src='assets/img/gallery/MrTai.png' alt='' style='width:200px; height:200px;')
+            .cat-cap
+              h5
+                a(href='services.html') Mr. Lê Minh Tài
+              p Kinh nghiệm du học Nhật 2 năm 
+              p - UIT - 
+          .single-cat.text-center
+            .cat-icon
+              img(src='assets/img/gallery/MrShin.jpg' alt='' style='width:200px; height:200px;')
+            .cat-cap
+              h5
+                a(href='services.html') Mr. Suzuki Shin 
+              p Kinh nghiệm giảng dạy 3 năm
+              p - Tagata-gun, Shizuoka - 
+          .single-cat.text-center
+            .cat-icon
+              img(src='assets/img/gallery/MsAkai.png' alt='' style='width:200px; height:200px;')
+            .cat-cap
+              h5
+                a(href='services.html') Ms. Aika Hamasaki
+              p Kinh nghiệm giảng dạy 2 năm
+              p - Ōsaka - 
+    // Services End
+    // ? About Trust Start
+    section.team-area.section-padding40.fix(style="padding-top:0")
+      .container
+        .row.justify-content-center
+          .col-xl-7.col-lg-8
+            .section-tittle.text-center.mb-55
+              h2 
+                | Được các tổ chức hàng đầu 
+                br
+                | tin cậy hơn 25 năm
+        .partner
+          img(src='assets/img/logo/bku-logo.svg', alt='', style='width:140px; height:140px;margin-right:50px')
+          img(src='assets/img/logo/iu-logo.png', alt='', style='width:140px; height:140px;margin-right:50px')
+          img(src='assets/img/logo/khtn-logo.png', alt='', style='width:150px; height:130px;margin-right:50px')
+          img(src='assets/img/logo/ussh-logo.png', alt='', style='width:190px; height:140px;margin-right:50px')
+          img(src='assets/img/logo/uit-logo.png', alt='', style='width:160px; height:140px;margin-right:50px')
+          img(src='assets/img/logo/uel-logo.png', alt='', style='width:140px; height:140px;margin-right:0px')
+    // About Trust End
+
+    // Tư-vấn Area Start
     .container
-      .team-active
-        .reviews(style="background-color:#ffcbc1;padding:40px 0px;border-radius:20px;margin-right:10px;margin-left:10px")
-          .single-cat.text-center
-            .cat-icon
-              img(src='assets/img/gallery/Thien.jpg' alt='' style='width:200px; height:200px;border:5px solid #ffc107;border-radius:100px')
-            .cat-cap
-              h5
-                a(href='services.html') Võ Hồng Thiên
-              p "Tuyệt vời. Bài giảng dễ hiểu cứ nghe hoài từ sáng đến tối luôn"
-              .rating
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star 
-        .reviews(style="background-color:#ffcbc1;padding:40px 0px;border-radius:20px;margin-right:10px;margin-left:10px")
-          .single-cat.text-center
-            .cat-icon
-              img(src='assets/img/gallery/VietAnh.jpg' alt='' style='width:200px; height:200px;border:5px solid #4cd3e3;border-radius:100px')
-            .cat-cap
-              h5
-                a(href='services.html') Trần Việt Anh
-              p "Nhờ Wakame mà mình đã có động lực chinh phục Tiếng Nhật"
-              .rating
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star 
-        .reviews(style="background-color:#ffcbc1;padding:40px 0px;border-radius:20px;margin-right:10px;margin-left:10px")
-          .single-cat.text-center
-            .cat-icon
-              img(src='assets/img/gallery/Tien.jpg' alt='' style='width:200px; height:200px;border:5px solid #38a4ff;border-radius:100px')
-            .cat-cap
-              h5
-                a(href='services.html') Phạm Vũ Kiều Tiên
-              p "Học ở Wakame không hoài phí thanh xuân và thời gian nhé"
-              .rating
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star 
-        .reviews(style="background-color:#ffcbc1;padding:40px 0px;border-radius:20px;margin-right:10px;margin-left:10px")
-          .single-cat.text-center
-            .cat-icon
-              img(src='assets/img/gallery/U.jpg' alt='' style='width:200px; height:200px;border:5px solid #e83e8c;border-radius:100px')
-            .cat-cap
-              h5
-                a(href='services.html') Hoàng Ng. Phương
-              p "Nhờ có Wakame, bây giờ tôi rất tự tin giao tiếp tiếng Nhật"
-              .rating
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star 
-        .reviews(style="background-color:#ffcbc1;padding:40px 0px;border-radius:25px;margin-right:10px;margin-left:10px")
-          .single-cat.text-center
-            .cat-icon
-              img(src='assets/img/gallery/AnhTai.jpg' alt='' style='width:200px; height:200px;border:5px solid #28a745;border-radius:100px')
-            .cat-cap
-              h5
-                a(href='services.html') Lê Minh Tài
-              p "Giáo viên hài hước, nhiệt tình giảng dạy kiến thức chắc chắn"
-              .rating
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star 
-  //Review Area End
+      .row.justify-content-sm-center(style="margin-left:auto;margin-right:auto;margin-bottom:50px")
+        .col-lg-6
+          form.form-default(action='' method='POST')
+            .login-form(style="font-family:'Mulish',sans-serif;background-color:#ffcbc1")
+              h2 NHẬN TƯ VẤN
+              .form-input
+                input(type='text' name='name' placeholder='Họ và Tên')
+              .form-input
+                input(type='email' name='email' placeholder='Email')
+              .form-input
+                input(type='number' name='mobile-phone' placeholder='Số điện thoại')
+              .form-input
+                input(type='text' name='mobile-phone' placeholder='Cấp độ tiếng Nhật hiện tại')      
+              .form-input
+                input(type='text' name='course' placeholder='Khóa học cần tư vấn')      
+              .form-input.pt-30
+                input(type='submit' name='submit' value='Đăng ký nhận tư vấn' style="background-color:#ff9f67;color:#fff")
+        .col-lg-6
+          img(src='assets/img/gallery/tuvan-bg.png', alt='', style='width:650px;height:550px')
 
-  // ? About Area-1 Start
-  section.about-area1.fix.pt-10
-    .support-wrapper.align-items-center
-      .left-content1
-        .about-icon
-          img(src='assets/img/icon/about.svg' alt='')
-        // section tittle
-        .section-tittle.section-tittle2.mb-55
-          .front-text
-            h2 Học nhiều hơn về ngôn ngữ và văn hóa Nhật
-            p
-              | "Tất cả mọi thành công trên đời đều là do luyện tập mà thành."
-              br
-              | – Pele –
-        .single-features
-          .features-icon
-            img(src='assets/img/icon/right-icon.svg' alt='')
-          .features-caption
-            p Nội dung học tập cập nhật theo xu hướng hiện đại, cách tiếp cận mới mẻ, thú vị.
-        .single-features
-          .features-icon
-            img(src='assets/img/icon/right-icon.svg' alt='')
-          .features-caption
-            p Tham gia cùng hàng triệu người từ khắp nơi trên thế giới cùng nhau học tập.
-        .single-features
-          .features-icon
-            img(src='assets/img/icon/right-icon.svg' alt='')
-          .features-caption
-            p Học trực tuyến một cách dễ dàng, tiện lợi. Hướng đến mục đích giao tiếp tiếng Nhật tự nhiên nhất.
-      .right-content1
-        // img
-        .right-img
-          img(src='assets/img/gallery/about.png' alt='')
-          .video-icon
-            a.popup-video.btn-icon(href='https://www.youtube.com/watch?v=up68UAfH0d0')
-              i.fas.fa-play
-  // About Area End
-
-  // Courses area start
-  .courses-area.section-padding40.fix
-    .container
-      .row.justify-content-center
-        .col-xl-7.col-lg-8
-          .section-tittle.text-center.mb-55
-            h2 Các khóa học nổi bật
-      .row
-        .col-lg-4
-          .properties.properties2.mb-30
-            .properties__card
-              .properties__img.overlay1
-                a(href='#')
-                  img(src='assets/img/gallery/course_time.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
-              .properties__caption
-                p Nguyễn Thị Hoa
-                h3
-                  a(href='#') Quản lý thời gian hiệu quả
-                p 
-                  |- Thời gian có là “kim cương, vàng, bạc”?
-                  br
-                  |- Bạn đang “làm chủ” thời gian hay đang là “nô lệ”?
-                  br
-                  |- Bạn làm gì với thời gian một ngày 24 tiếng?
-                a.border-btn.border-btn2(href='#') Tìm hiểu thêm
-        .col-lg-4
-          .properties.properties2.mb-30
-            .properties__card
-              .properties__img.overlay1
-                a(href='#')
-                  img(src='assets/img/gallery/course_giaotiepsocap.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
-              .properties__caption
-                p Suzuki Shin
-                h3
-                  a(href='#') Combo N3-N2-N1
-                p
-                  | - Tiết kiệm chi phí hơn cho bạn. 
-                  br
-                  | - Thời gian học dài hơn 2 lần khoá thường. 
-                  br
-                  | - Các ưu đãi, đặc quyền chỉ có ở gói combo.
-                a.border-btn.border-btn2(href='#') Tìm hiểu thêm
-        .col-lg-4
-          .properties.properties2.mb-30
-            .properties__card
-              .properties__img.overlay1
-                a(href='#')
-                  img(src='assets/img/gallery/course_flirt.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
-              .properties__caption
-                p Phan Thanh Lệ
-                h3
-                  a(href='#') Cách tán gái bằng tiếng Nhật
-                p
-                  | Bạn muốn tỏ tình với người thương bằng tiếng Nhật? Hay bạn muốn có một màn tỏ tình khó quên? Vậy đừng bỏ qua khóa học thú vị này của Wakame để biết được những kinh nghiệm tỏ tình hiệu quả nhé!
-                a.border-btn.border-btn2(href='#') Tìm hiểu thêm
-        .col-lg-4
-          .properties.properties2.mb-30
-            .properties__card
-              .properties__img.overlay1
-                a(href='#')
-                  img(src='assets/img/gallery/course_giaotieptrungcap.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
-              .properties__caption
-                p Junko Hirayama
-                h3
-                  a(href='#') Giao tiếp tiếng Nhật trung cấp
-                p
-                  | Khóa học phù hợp với những bạn đã đạt chứng chỉ tiếng Nhật sơ cấp, 
-                  | muốn rút ngắn thời gian để du học, giao tiếp và làm việc ở công ty 
-                  | Nhật, ở trường học, hoặc tham gia vào các kỳ thi năng lực tiếng Nhật.
-                a.border-btn.border-btn2(href='#') Tìm hiểu thêm
-        .col-lg-4
-          .properties.properties2.mb-30
-            .properties__card
-              .properties__img.overlay1
-                a(href='#')
-                  img(src='assets/img/gallery/course_socap.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
-              .properties__caption
-                p Junko Hirayama
-                h3
-                  a(href='#') Khóa học cấp tốc sơ cấp
-                p
-                  | Khóa học phù hợp với những bạn
-                  | muốn rút ngắn thời gian để du học hay lao động tại Nhật Bản.
-                  | Đảm bảo đủ kiến thức và kỹ năng thi JLPT sơ cấp. 
-                  | Tự tin giao tiếp, tham gia phỏng vấn du học trực tiếp với các trường Nhật Bản.
-                a.border-btn.border-btn2(href='#') Tìm hiểu thêm
-        .col-lg-4
-          .properties.properties2.mb-30
-            .properties__card
-              .properties__img.overlay1
-                a(href='#')
-                  img(src='assets/img/gallery/course_business.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
-              .properties__caption
-                p Dương Thị Thương
-                h3
-                  a(href='#') Tiếng Nhật thương mại
-                p
-                  | Khóa học dành cho các ứng viên đi làm tại 
-                  | các công ty Nhật bản, Khóa học Giao dịch 
-                  | thương mại qua Email, Khóa học Biên phiên dịch 
-                  | chuyên ngành kinh tế, Khóa học Giao tiếp Tiếng Nhật 
-                  | trong văn phòng. 
-                a.border-btn.border-btn2(href='#') Tìm hiểu thêm
-      .row.justify-content-center
-        .col-xl-7.col-lg-8
-          .section-tittle.text-center.mt-40
-            a.border-btn(href='#') Xem thêm
-  // Courses area End
-  // ? About Area-3 Start
-  section.about-area3.fix
-    .support-wrapper.align-items-center
-      .right-content3
-        // img
-        .right-img
-        img(src='assets/img/icon/advantage.png' alt='' style='width:550px; height:300px; margin-top:0px; margin-left: 100px;')
-      .left-content3
-        // section tittle
-        .section-tittle.section-tittle2.mb-20
-          .front-text
-            h2 Lợi ích khi tham gia khóa học
-        .single-features
-          .features-icon
-            img(src='assets/img/icon/right-icon.svg' alt='')
-          .features-caption
-            p Được truy cập vào kho dữ liệu khổng lồ về kiến thức và kinh nghiệm phong phú khác.
-        .single-features
-          .features-icon
-            img(src='assets/img/icon/right-icon.svg' alt='')
-          .features-caption
-            p Cơ hội tiếp xúc học tập cùng với các chuyên gia ngôn ngữ Nhật hàng đầu trong nước và nước ngoài.
-        .single-features
-          .features-icon
-            img(src='assets/img/icon/right-icon.svg' alt='')
-          .features-caption
-            p Cơ hội nhận học bổng du học tại các trường đại học nổi tiếng và được giới thiệu việc làm với các công ty có văn hóa Nhật.
-  // About Area End
-  // ? Team
-  section.team-area.section-padding40.fix
-    .container
-      .row.justify-content-center
-        .col-xl-7.col-lg-8
-          .section-tittle.text-center.mb-55
-            h2 Đội ngũ chuyên gia
-      .team-active
-        .single-cat.text-center
-          .cat-icon
-            img(src='assets/img/gallery/MsJunko.jpg' alt='' style='width:200px; height:200px;')
-          .cat-cap
-            h5
-              a(href='services.html') Ms. Junko Hirayama
-            p Kinh nghiệm giảng dạy 10 năm
-            p - Ōsaka -
-        .single-cat.text-center
-          .cat-icon
-            img(src='assets/img/gallery/MsHoa.jpg' alt='' style='width:200px; height:200px;')
-          .cat-cap
-            h5
-              a(href='services.html') Ms. Nguyễn Thị Hoa
-            p Kinh nghiệm giảng dạy 5 năm
-            p - UIT - 
-        .single-cat.text-center
-          .cat-icon
-            img(src='assets/img/gallery/MsLe.jpg' alt='' style='width:200px; height:200px;')
-          .cat-cap
-            h5
-              a(href='services.html') Ms. Phan Thanh Lệ
-            p Kinh nghiệm giảng dạy 5 năm
-            p - UIT - 
-        .single-cat.text-center
-          .cat-icon
-            img(src='assets/img/gallery/MsThuong.jpg' alt='' style='width:200px; height:200px;')
-          .cat-cap
-            h5
-              a(href='services.html') Ms. Dương Thị Thương
-            p Kinh nghiệm giảng dạy 5 năm
-            p - UIT -             
-        .single-cat.text-center
-          .cat-icon
-            img(src='assets/img/gallery/MrTai.png' alt='' style='width:200px; height:200px;')
-          .cat-cap
-            h5
-              a(href='services.html') Mr. Lê Minh Tài
-            p Kinh nghiệm du học Nhật 2 năm 
-            p - UIT - 
-        .single-cat.text-center
-          .cat-icon
-            img(src='assets/img/gallery/MrShin.jpg' alt='' style='width:200px; height:200px;')
-          .cat-cap
-            h5
-              a(href='services.html') Mr. Suzuki Shin 
-            p Kinh nghiệm giảng dạy 3 năm
-            p - Tagata-gun, Shizuoka - 
-        .single-cat.text-center
-          .cat-icon
-            img(src='assets/img/gallery/MsAkai.png' alt='' style='width:200px; height:200px;')
-          .cat-cap
-            h5
-              a(href='services.html') Ms. Aika Hamasaki
-            p Kinh nghiệm giảng dạy 2 năm
-            p - Ōsaka - 
-  // Services End
-  // ? About Trust Start
-  section.team-area.section-padding40.fix(style="padding-top:0")
-    .container
-      .row.justify-content-center
-        .col-xl-7.col-lg-8
-          .section-tittle.text-center.mb-55
-            h2 
-              | Được các tổ chức hàng đầu 
-              br
-              | tin cậy hơn 25 năm
-      .partner
-        img(src='assets/img/logo/bku-logo.svg', alt='', style='width:140px; height:140px;margin-right:50px')
-        img(src='assets/img/logo/iu-logo.png', alt='', style='width:140px; height:140px;margin-right:50px')
-        img(src='assets/img/logo/khtn-logo.png', alt='', style='width:150px; height:130px;margin-right:50px')
-        img(src='assets/img/logo/ussh-logo.png', alt='', style='width:190px; height:140px;margin-right:50px')
-        img(src='assets/img/logo/uit-logo.png', alt='', style='width:160px; height:140px;margin-right:50px')
-        img(src='assets/img/logo/uel-logo.png', alt='', style='width:140px; height:140px;margin-right:0px')
-  // About Trust End
-
-  // Tư-vấn Area Start
-  .container
-    .row.justify-content-sm-center(style="margin-left:auto;margin-right:auto;margin-bottom:50px")
-      .col-lg-6
-        form.form-default(action='' method='POST')
-          .login-form(style="font-family:'Mulish',sans-serif;background-color:#ffcbc1")
-            h2 NHẬN TƯ VẤN
-            .form-input
-              input(type='text' name='name' placeholder='Họ và Tên')
-            .form-input
-              input(type='email' name='email' placeholder='Email')
-            .form-input
-              input(type='number' name='mobile-phone' placeholder='Số điện thoại')
-            .form-input
-              input(type='text' name='mobile-phone' placeholder='Cấp độ tiếng Nhật hiện tại')      
-            .form-input
-              input(type='text' name='course' placeholder='Khóa học cần tư vấn')      
-            .form-input.pt-30
-              input(type='submit' name='submit' value='Đăng ký nhận tư vấn' style="background-color:#ff9f67;color:#fff")
-      .col-lg-6
-        img(src='assets/img/gallery/tuvan-bg.png', alt='', style='width:650px;height:550px')
-
-  // Tư-vấn Area End 
-
+<<<<<<< HEAD
 footer
   .footer-wrappper.footer-bg
     // Footer Start
@@ -660,3 +585,6 @@ script(src='./assets/js/jquery.ajaxchimp.min.js')
 // Jquery Plugins, main Jquery
 script(src='./assets/js/plugins.js')
 script(src='./assets/js/main.js')
+=======
+    // Tư-vấn Area End 
+>>>>>>> aa4cc6879e46917fe9ea5239ab3db4bb86488c4a

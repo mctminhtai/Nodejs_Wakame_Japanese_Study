@@ -12,13 +12,12 @@ module.exports = (sequelize, DataTypes) => {
         static associate(models) {
             // define association here
             this.belongsTo(models.USER, { foreignKey: 'USERId', as: 'nguoidang' });
-            this.belongsTo(models.TAG, { foreignKey: 'TAGId', as: 'theloai' });
+            this.hasMany(models.TAG_BLOG, { as: 'theloai' });
             this.hasMany(models.COMMENT, { as: 'binhluan' });
         }
     };
     BLOG.init({
         USERId: DataTypes.INTEGER,
-        TAGId: DataTypes.INTEGER,
         title: DataTypes.STRING,
         content: DataTypes.STRING
     }, {

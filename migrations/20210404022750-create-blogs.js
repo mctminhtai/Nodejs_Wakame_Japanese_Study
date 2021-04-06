@@ -16,15 +16,6 @@ module.exports = {
                     key: 'id'
                 }
             },
-            TAGId: {
-                type: Sequelize.INTEGER,
-                allowNull: false,
-                references: {
-                    model: 'TAG',
-                    key: 'id'
-                }
-            },
-            //sua cho nay luon
             title: {
                 type: Sequelize.STRING
             },
