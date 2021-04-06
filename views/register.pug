@@ -34,28 +34,65 @@ head
 main.login-body(data-vide-bg='assets/img/login.jpg')
   // Login Admin
   form.form-default(action='' method='POST')
-    .login-form
-      // logo-login
-      .logo-login
-        a(href='/')
-          img(src='assets/img/logo/onion_logo.svg' alt='' style="width:100px;height:100px;margin-top:5px;")
+    .login-form(style="margin-top:0px;width:1098px")
       h2 Đăng ký tài khoản
       .form-input
-        label(for='name') Họ &amp; Tên
-        input(type='text' name='name' placeholder='Họ và Tên' onfocus='this.placeholder=""')
-      .form-input
-        label(for='name') Email
-        input(type='email' name='email' placeholder='Email' onfocus='this.placeholder=""')
-      .form-input
+        .row.justify-content-between(style="padding:0")
+          .col-xl-5.col-lg-5.col-md-4.col-sm-6(style="width:50%;")
+            .form-input
+              // Forget Password
+              label(for='name') Họ &amp; Tên
+              input(type='text' name='name' placeholder='Họ và Tên' onfocus='this.placeholder=""')
+          .col-xl-6.col-lg-5.col-md-4.col-sm-6(style="width:50%;")
+            .form-input
+              label(for='name') Email
+              input(type='email' name='email' placeholder='Email' onfocus='this.placeholder=""')
+
+      .form-input(style="margin-top:-20px")
         label(for='name') Mật khẩu
         input(type='password' name='password' placeholder='Mật khẩu' onfocus='this.placeholder=""')
       .form-input
         label(for='name') Xác nhận mật khẩu
         input(type='password' name='re_password' placeholder='Xác nhận mật khẩu' onfocus='this.placeholder=""')
+      .form-input
+        label(for='name') Mã bảo mật
+        .row.justify-content-between(style="height: 50px")
+          .col-xl-5.col-lg-5.col-md-4.col-sm-6
+            input(type='text' name='captcha' placeholder='Mã captcha' onfocus='this.placeholder=""')
+          .col-xl-7.col-lg-5.col-md-4.col-sm-6
+            .single-services.mb-30
+              img(src='assets/img/gallery/captcha.png' alt='' style='margin-top:-10px;width:150px; height:50px;')
+              a(href="#")
+                i.fas.fa-sync-alt.fa-2x(style="color:white;margin-left:20px")
+      .form-inputs(style='font-size:17px')
+        input(type='checkbox' name='password' style="width:20px")
+        label(for='name' style='display:inline') Tôi đã đọc và đồng ý với 
+          a(href="#") Điều khoản sử dụng
+          | &nbsp;của Wakame
       .form-input.pt-30
         input(type='submit' name='submit' value='Đăng ký')
+
+      .row.justify-content-between(style="margin-top:-20px")
+        .col-xl-6.col-lg-5.col-md-4.col-sm-6
+          .single-services.mb-30
+            // Forget Password
+            a.forget(href='#' style="width:fit-content;margin-top:35px") Đăng nhập
+        .col-xl-6.col-lg-5.col-md-4.col-sm-6
+          .single-services.mb-10(style="margin-top:30px;color:white")
+            .footer-social
+              p(style="color:white") Đăng ký bằng
+                a(href='https://facebook.com' target='_blank' style="background-color:#3b5998;margin-left:10px")
+                  i.fab.fa-facebook-f(style="color:white")
+                a(href='https://gmail.com' target='_blank' style="background-color:#ea4335;margin-left:1px")
+                  i.fab.fa-google-plus-g(style="color:white")
+
+      .footer-social(style="margin-top:20px")
+        a(href='/' style="background-color:white;margin-left:45%; margin-right:55%;width:80px;height:80px;box-shadow:0px 0px 10px 10px rgba(0,0,0, 0.5);")
+          i.fas.fa-home.fa-3x(style="color:black;margin-top:20px")
+     
+      
       // Forget Password
-      a.registration(href='/login') Đăng nhập
+      a.registration(href='/login') 
   // /end login form
 script(src='./assets/js/vendor/modernizr-3.5.0.min.js')
 // Jquery, Popper, Bootstrap

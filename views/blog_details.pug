@@ -2,7 +2,7 @@ doctype html
 head
   meta(charset='utf-8')
   meta(http-equiv='x-ua-compatible' content='ie=edge')
-  title Blog Details | Wakame
+  title Wakame chúc mừng năm mới 2021
   meta(name='description' content='')
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='manifest' href='site.webmanifest')
@@ -14,6 +14,7 @@ head
   link(rel='stylesheet' href='assets/css/animate.min.css')
   link(rel='stylesheet' href='assets/css/hamburgers.min.css')
   link(rel='stylesheet' href='assets/css/magnific-popup.css')
+  link(rel='stylesheet' href='assets/css/font-awesome.css')
   link(rel='stylesheet' href='assets/css/fontawesome-all.min.css')
   link(rel='stylesheet' href='assets/css/themify-icons.css')
   link(rel='stylesheet' href='assets/css/slick.css')
@@ -51,14 +52,7 @@ head
                     li
                       a(href='/about') Về chúng tôi
                     li
-                      a(href='/blog' style="color:#ffc107; font-weight:bold") Blog
-                      ul.submenu
-                        li
-                          a Blog
-                        li
-                          a(href='/blogdetail') Blog Details
-                        li
-                          a(href='elements.html') Element
+                      a(href='/blog' style="color:#ffc107; font-weight:bold") Tin tức
                     li
                       a(href='/contact') Liên hệ
                     // Button
@@ -80,14 +74,14 @@ main
           .row
             .col-xl-8.col-lg-11.col-md-12
               .hero__caption.hero__caption2
-                h1(data-animation='bounceIn' data-delay='0.2s') Blog details
+                h1(data-animation='bounceIn' data-delay='0.2s') Tin tức
                 // breadcrumb Start
                 nav(aria-label='breadcrumb')
                   ol.breadcrumb
                     li.breadcrumb-item
                       a(href='/') Trang chủ
                     li.breadcrumb-item
-                      a(href='/blog') Blog 
+                      a(href='/blog') Tin tức 
                 // breadcrumb End
   // ? Blog Area Start
   section.blog_area.single-post-area.section-padding
@@ -96,19 +90,28 @@ main
         .col-lg-8.posts-list
           .single-post
             .feature-img
-              img.img-fluid(src='assets/img/gallery/MrTai.png' alt='' style="width:50px; height:50px")
+              img.img-fluid(src='assets/img/blog/blog_hpny.jpg' alt='' style="width:770px;height:430px")
             .blog_details
               h2(style='color: #2d2d2d;')
                 | Wakame chúc mừng năm mới 2021
               ul.blog-info-link.mt-3.mb-4
                 li
                   a(href='#')
-                    i.fa.fa-user
-                    |  Lê Minh Tài
+                    i.fas.fa-eye
+                    | 61.7K
                 li
                   a(href='#')
-                    i.fa.fa-comments
-                    |  03 bình luận
+                    i.fas.fa-comment-alt
+                    |  10 bình luận
+              .blog-author(style="margin-bottom:30px")
+                .media.align-items-center
+                  img(src='assets/img/gallery/AnhTai.jpg' alt='')
+                  .media-body
+                    a(href='#')
+                      h4 Lê Minh Tài 
+                    p
+                      i.far.fa-clock
+                      | ２０２１年１月２日
               p.excert
                 | Hoa đào nở, chim én về, mai vàng trước sân, năm mới lại đến.
               p
@@ -126,58 +129,39 @@ main
             .d-sm-flex.justify-content-between.text-center
               p.like-info
                 span.align-middle
-                  i.fa.fa-heart
-                |  Lily và 4
-                |                   bạn khác đã thích
+                  i.fa.fa-heart(style="color:red")
+                |  Bạn và 4
+                |                   người khác đã thích
               .col-sm-4.text-center.my-2.my-sm-0
                 // <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p>
               ul.social-icons
-                li
-                  a(href='https://www.facebook.com')
-                    i.fab.fa-facebook-f
-                li
-                  a(href='https://www.twitter.com')
+                li 
+                  a(href='https://twitter.com' target='_blank')
                     i.fab.fa-twitter
                 li
-                  a(href='https://www.instagram.com')
+                  a(href='https://www.facebook.com' target='_blank')
+                    i.fab.fa-facebook-f
+                li
+                  a(href="https://www.youtube.com" target="blank")
+                    i.fab.fa-youtube
+                li
+                  a(href="https://www.instagram.com" target="blank")
                     i.fab.fa-instagram
                 li
-                  a(href='https://www.youtube.com')
-                    i.fab.fa-youtube
-            .navigation-area
-              .row
-                .col-lg-6.col-md-6.col-12.nav-left.flex-row.d-flex.justify-content-start.align-items-center
-                  .thumb
-                    a(href='#')
-                      img.img-fluid(src='assets/img/blog/blog_ngayhoiclb.jpg' alt='' style="width:50px;height:50px")
-                  .arrow
-                    a(href='#')
-                      span.lnr.text-white.ti-arrow-left
-                  .detials
-                    p Bài viết trước
-                    a(href='#')
-                      h4(style='color: #2d2d2d;') Wakame tham gia ngày hội Câu lạc bộ
-                .col-lg-6.col-md-6.col-12.nav-right.flex-row.d-flex.justify-content-end.align-items-center
-                  .detials
-                    p Bài viết sau
-                    a(href='#')
-                      h4(style='color: #2d2d2d;') Talkshow Ngôn ngữ &amp; văn hóa Nhật Bản
-                  .arrow
-                    a(href='#')
-                      span.lnr.text-white.ti-arrow-right
-                  .thumb
-                    a(href='#')
-                      img.img-fluid(src='assets/img/blog/blog_talkshow.jpg' alt='' style="width:50px;height:50px")
-          .blog-author
-            .media.align-items-center
-              img(src='assets/img/blog/author.jpg' alt='')
-              .media-body
-                a(href='#')
-                  h4 Nguyễn Thanh Nhã
-                p
-                  | Ban chủ nhiệm CLB Tiếng Nhật Wakame
+                  a(href="https://www.plus.google.com" target="blank")
+                    i.fab.fa-google-plus-g
+          
+          .blog_right_sidebar(style="margin-top:30px;")           
+            aside.single_sidebar_widget.tag_cloud_widget
+              i.fas.fa-tag(style="color:#4255A4")
+              ul.list(style='display:inline;margin-left:10px')
+                li
+                  a(href='#') #event
+                li
+                  a(href='#') #wakame
+
           .comments-area
-            h4 NHẬN XÉT CỦA ĐỘC GIẢ
+            h4 NHẬN XÉT CỦA ĐỘC GIẢ (10)
             .comment-list
               .single-comment.justify-content-between.d-flex
                 .user.justify-content-between.d-flex
@@ -191,8 +175,12 @@ main
                         h5
                           a(href='#') Khiem Chau
                         p.date ２０１７年１２月２１日、午後４時
-                      .reply-btn
-                        a.btn-reply.text-uppercase(href='#') Trả lời
+                      .reply-btn(style="margin-left:204px")
+                        a.btn-reply(href='#') 
+                          i.fas.fa-reply                     
+                          | &nbsp;Trả lời &emsp;
+                          i.far.fa-thumbs-up
+                          |&nbsp;Thích
             .comment-list
               .single-comment.justify-content-between.d-flex
                 .user.justify-content-between.d-flex
@@ -206,8 +194,12 @@ main
                         h5
                           a(href='#') Bảo
                         p.date ２０１８年１月２１日、午後７時 
-                      .reply-btn
-                        a.btn-reply.text-uppercase(href='#') Trả lời
+                      .reply-btn(style="margin-left:277px")
+                        a.btn-reply(href='#') 
+                          i.fas.fa-reply                     
+                          | &nbsp;Trả lời &emsp;
+                          i.far.fa-thumbs-up
+                          | &nbsp;Thích
             .comment-list
               .single-comment.justify-content-between.d-flex
                 .user.justify-content-between.d-flex
@@ -221,11 +213,14 @@ main
                         h5
                           a(href='#') Huy Ngô
                         p.date ２０２０年４月２８日、午前１０時
-                      .reply-btn
-                        a.btn-reply.text-uppercase(href='#') Trả lời | 
-                        i.far.fa-thumbs-up 10
+                      .reply-btn(style="margin-left:226px")
+                        a.btn-reply(href='#') 
+                          i.fas.fa-reply                     
+                          | &nbsp;Trả lời &emsp;
+                          i.far.fa-thumbs-up
+                          | &nbsp;Thích
             .section-tittle.text-center.mt-40
-              a.border-btn(href='#') Xem thêm
+              a.border-btn(href='#') Tải thêm
           .comment-form
             h4 Gửi bình luận
             form#commentForm.form-contact.comment_form(action='#')
@@ -308,46 +303,6 @@ main
                   a(href='/blog_details')
                     h3(style='color: #2d2d2d;') Kỳ thi JLPT Tháng 7/2021
                   p １０分前　
-            aside.single_sidebar_widget.tag_cloud_widget
-              h4.widget_title(style='color: #2d2d2d;') Tag 
-              ul.list
-                li
-                  a(href='#') #wakame
-                li
-                  a(href='#') #love
-                li
-                  a(href='#') #study
-                li
-                  a(href='#') #duhoc
-                li
-                  a(href='#') #hocbong
-                li
-                  a(href='#') #UIT
-                li
-                  a(href='#') #game
-                li
-                  a(href='#') #talkshow
-            aside.single_sidebar_widget.instagram_feeds
-              h4.widget_title(style='color: #2d2d2d;') Instagram New Feeds
-              ul.instagram_row.flex-wrap
-                li
-                  a(href='#')
-                    img.img-fluid(src='assets/img/post/post_5.png' alt='')
-                li
-                  a(href='#')
-                    img.img-fluid(src='assets/img/post/post_6.png' alt='')
-                li
-                  a(href='#')
-                    img.img-fluid(src='assets/img/post/post_7.png' alt='')
-                li
-                  a(href='#')
-                    img.img-fluid(src='assets/img/post/post_8.png' alt='')
-                li
-                  a(href='#')
-                    img.img-fluid(src='assets/img/post/post_9.png' alt='')
-                li
-                  a(href='#')
-                    img.img-fluid(src='assets/img/post/post_10.png' alt='')
             aside.single_sidebar_widget.newsletter_widget
               h4.widget_title(style='color: #2d2d2d;') Nhận tin tức
               form(action='#')
@@ -370,9 +325,10 @@ footer
                     img(src='assets/img/logo/wakame_logo.svg' alt='' style='width:300px; height:80px;')
                 .footer-tittle
                   .footer-pera
-                    p 熱意なしに偉大なことが達成されたことはない。Không có sự vĩ đại nào đạt được nếu không có sự nhiệt tình, nhiệt tâm.
+                    p(style="line-height: 2.2;") 熱意なしに偉大なことが達成されたことはない。Không có sự vĩ đại nào đạt được nếu không có sự nhiệt tình, nhiệt tâm.
                 // social
                 .footer-social
+                  p(style="color:white") Theo dõi chúng tôi:
                   a(href='https://twitter.com' target='_blank')
                     i.fab.fa-twitter
                   a(href='https://facebook.com' target='_blank')
@@ -383,50 +339,33 @@ footer
                     i.fab.fa-instagram
                   a(href="https://www.plus.google.com" target="blank")
                     i.fab.fa-google-plus-g
-          .col-xl-2.col-lg-3.col-md-4.col-sm-5
+          .col-xl-4.col-lg-3.col-md-4.col-sm-6(style="max-width:100%")
             .single-footer-caption.mb-50
-              .footer-tittle
-                h4 Về chúng tôi
-                ul
+              .footer-tittle(style="margin-bottom: 50px;")
+                h4(style="margin-top: 45px;") Liên hệ
+                ul(style="margin-top: 50px;width: 400px;")
                   li
-                    a(href='#') Về Wakame
+                    i.fa.fa-map-marker-alt(style="color:white") 
+                    a(style="text-decoration:none") &nbsp; Địa chỉ: Đại học Công nghệ Thông tin, ĐHQG-HCM
+                  li
+                    i.fa.fa-phone.fa-flip-horizontal(style="color:white") 
+                    a(style="text-decoration:none") &nbsp; Điện thoại: 0123 456 789
+                  li
+                    i.fa.fa-envelope(style="color:white") 
+                    a(style="text-decoration:none") &nbsp; Email: wakameuit@gmail.com
+          .col-xl-2.col-lg-4.col-md-4.col-sm-6
+            .single-footer-caption.mb-50
+              .footer-tittle(style="margin-bottom: 50px;")
+                h4(style="margin-top: 45px;") Hỗ trợ
+                ul(style="margin-top: 50px;")
+                  li
+                    a(href='#') FAQ
                   li
                     a(href='#') Tuyển dụng                
                   li
                     a(href='#') Điều khoản sử dụng
                   li
                     a(href='#') Chính sách bảo mật 
-          .col-xl-2.col-lg-4.col-md-4.col-sm-6
-            .single-footer-caption.mb-50
-              .footer-tittle
-                h4 Hỗ trợ
-                ul
-                  li
-                    a(href='#') Trung tâm trợ giúp
-                  li
-                    a(href='#') Mua khóa học
-                  li
-                    a(href='#') Đổi trả &amp; hoàn tiền
-                  li
-                    a(href='#') Thanh toán
-          .col-xl-2.col-lg-3.col-md-4.col-sm-6
-            .single-footer-caption.mb-50
-              .footer-tittle
-                h4 Liên hệ
-                ul
-                  li
-                    i.fa.fa-map-marker-alt(style="color:#ff7b2e") 
-                    a(style="text-decoration:none") &nbsp; Địa chỉ
-                    p ĐH CNTT, ĐHQG-HCM
-                  li
-                    i.fa.fa-phone(style="color:#ff7b2e") 
-                    a(style="text-decoration:none") &nbsp; Điện thoại
-                    p 0123 456 789
-                  li
-                    i.fa.fa-envelope(style="color:#ff7b2e") 
-                    a(style="text-decoration:none") &nbsp; Email
-                    p wakameuit@gmail.com
-
     // footer-bottom area
     .footer-bottom-area
       .container
@@ -439,8 +378,9 @@ footer
                   script.
                     document.write(new Date().getFullYear());
                   |  | This template is made by 
-                  i.fab.fa-github(style="color:black")
-                  a(href="https://github.com/mctminhtai/Nodejs_Wakame_Japanese_Study" target="blank") &nbsp;Nhóm 1
+                  a(href="https://github.com/mctminhtai/Nodejs_Wakame_Japanese_Study" target="blank") 
+                    i.fab.fa-github(style="color:white")
+                    |&nbsp;Nhóm 1
     // Footer End
 // Scroll Up
 #back-top

@@ -30,14 +30,16 @@ head
       .preloader-img.pere-text
         img(src='assets/img/logo/onion_logo.svg' alt='' style='width:120px; height:50px;')
 // Preloader Start
+
 main.login-body(data-vide-bg='assets/img/login.jpg')
+  // logo-login
+  .logo-login
+    a(href='/') 
+      //img(src='assets/img/logo/onion_logo.svg' alt='' style="width:150px;height:120px;margin-top:5px;")
+
   // Login Admin
   form.form-default(action='' method='POST')
-    .login-form(style="margin-top:-10px")
-      // logo-login
-      .logo-login
-        a(href='/')
-          img(src='assets/img/logo/onion_logo.svg' alt='' style="width:100px;height:100px;margin-top:5px;")
+    .login-form(style="margin-top:-10px;border-radius:50px;")
       h2 Đăng nhập
       .form-input
         label(for='name') Email
@@ -45,12 +47,46 @@ main.login-body(data-vide-bg='assets/img/login.jpg')
       .form-input
         label(for='name') Mật khẩu
         input(type='password' name='password' placeholder='Mật khẩu' onfocus='this.placeholder=""')
-      .form-input.pt-30
+      .form-input
+        label(for='name' style='width:600px') Mã bảo mật
+        .row.justify-content-between(style="height: 50px")
+          .col-xl-5.col-lg-5.col-md-4.col-sm-6
+            input(type='text' name='captcha' placeholder='Mã captcha' onfocus='this.placeholder=""')
+          .col-xl-7.col-lg-5.col-md-4.col-sm-6
+            .single-services.mb-30
+              img(src='assets/img/gallery/captcha.png' alt='' style='margin-top:-10px;width:150px; height:50px;')
+              a(href="#")
+                i.fas.fa-sync-alt.fa-2x(style="color:white;margin-left:20px")
+      .form-inputs(style='font-size:17px')
+        input(type='checkbox' name='password' style="width:20px")
+        label(for='name' style='display:inline') Tôi đã đọc và đồng ý với 
+          a(href="#") Điều khoản sử dụng
+          | &nbsp;của Wakame
+      .form-input
         input(type='submit' name='submit' value='Đăng nhập')
-      // Forget Password
-      a.forget(href='#') Quên mật khẩu
-      // Forget Password
-      a.registration(href='/register') Chưa có tài khoản?
+      
+      .row.justify-content-between
+        .col-xl-6.col-lg-5.col-md-4.col-sm-6
+          .single-services.mb-30
+            // Forget Password
+            a.forget(href='#' style="width:fit-content;margin-top:0px") Quên mật khẩu
+            // Forget Password
+            a.registration(href='/register' style="width:fit-content") Chưa có tài khoản?
+        .col-xl-6.col-lg-5.col-md-4.col-sm-6
+          .single-services.mb-10(style="margin-top:0px;color:white")
+            a Đăng nhập bằng
+          .single-footer-caption.mb-50
+            .footer-social
+              a(href='https://facebook.com' target='_blank' style="background-color:#3b5998")
+                i.fab.fa-facebook-f(style="color:white")
+              a(href='https://gmail.com' target='_blank' style="background-color:#ea4335;margin-left:1px")
+                i.fab.fa-google-plus-g(style="color:white")
+
+      .footer-social
+        a(href='/' style="background-color:white;margin-left:200px; width:80px;height:80px;box-shadow:0px 0px 10px 10px rgba(0,0,0, 0.5);")
+          i.fas.fa-home.fa-3x(style="color:black;margin-top:20px")
+        
+      
   // /end login form
 script(src='./assets/js/vendor/modernizr-3.5.0.min.js')
 // Jquery, Popper, Bootstrap
