@@ -11,23 +11,35 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
-            /*
             this.hasMany(models.GIANG_VIEN, { foreignKey: 'GIANG_VIENId', as: 'dayhoc' });
             this.belongsTo(models.LOPHOC, { foreignKey: 'LOPHOCId', as: 'hoclop' });
-            this.hasMany(models.TIET_THU, { foreignKey: 'ID_THU', as: 'thuhoc' });
-            this.hasMany(models.TIET_THU, { foreignKey: 'ID_TIET', as: 'tiethoc' });
-            */
+            this.belongsTo(models.THU, { foreignKey: 'THUId', as: 'thuhoc' });
+            this.hasMany(models.TIET, { foreignKey: 'TIETId', as: 'tiethoc' });
+
         }
     };
     DS_LOP_HOC.init({
-        LOPHOCId: DataTypes.INTEGER,
-        GIANG_VIENId: DataTypes.INTEGER,
-        ID_THU: DataTypes.INTEGER,
-        ID_TIET: DataTypes.INTEGER
+        LOPHOCId: {
+            type: DataTypes.INTEGER,
+            primaryKey=true
+        },
+        GIANG_VIENId: {
+            type: DataTypes.INTEGER,
+            primaryKey=true
+        },
+        ID_THU: {
+            type: DataTypes.INTEGER,
+            primaryKey=true
+        },
+        ID_TIET: {
+            type: DataTypes.INTEGER,
+            primaryKey=true
+        },
     }, {
             sequelize,
             modelName: 'DS_LOP_HOC',
             freezeTableName: true,
         });
+    DS_LOP_HOC.removeAttribute('id');
     return DS_LOP_HOC;
 };

@@ -10,18 +10,27 @@ module.exports = (sequelize, DataTypes) => {
          * The `models/index` file will call this method automatically.
          */
         static associate(models) {
-            // define association here
+            // define association 
+            this.belongsTo(models.THU, { foreignKey: 'THUId', as: 'thuhoc' });
+            this.belongsTo(models.TIET, { foreignKey: 'TIETId', as: 'tiethoc' });
             //this.hasMany(models.DS_LOP_HOC, { as: 'thuhoc' });
             //this.hasMany(models.DS_LOP_HOC, { as: 'tiethoc' });
         }
     };
     TIET_THU.init({
-        ID_THU: DataTypes.INTEGER,
-        ID_TIET: DataTypes.INTEGER
+        THUId: {
+            type: DataTypes.INTEGER,
+            primaryKey: true
+        },
+        TIETId: {
+            type: DataTypes.INTEGER,
+            primaryKey: true
+        },
     }, {
             sequelize,
             modelName: 'TIET_THU',
             freezeTableName: true,
         });
+    TIET_THU.removeAttribute('id');
     return TIET_THU;
 };
