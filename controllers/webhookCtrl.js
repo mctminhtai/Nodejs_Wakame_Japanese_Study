@@ -7,8 +7,8 @@ let chatRoom = {};
 
 let waitRoom = [];
 let loadOrSave = true;
-let startkey = ["ghép đôi ngẫu nhiên", "Ghép đôi ngẫu nhiên"];
-let pausekey = ["từ chối", "Từ chối"];
+let startkey = ["ghép đôi ngẫu nhiên", "Ghép đôi ngẫu nhiên", "ghepdoingaunhien", "Ghepdoingaunhien"];
+let pausekey = ["từ chối", "Từ chối", "Tuchoi", "tuchoi"];
 //key kich hoat bot: ghepdoingaunhien
 //key quay lai phong cho: tuchoichat
 exports.get_whBackupRestore = function (req, res, next) {
