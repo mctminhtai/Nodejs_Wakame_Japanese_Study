@@ -146,7 +146,9 @@ exports.get_test = async function (req, res, next) {
     await models.TAG.create({ TEN_TAG: 'Thien sieu me JAV' });
 
     await models.BLOG.create({ USERId: 1, title: 'helo33', content: 'khong co giiii' });
-    await models.TAG_BLOG.create({ TAGId: 1, BLOGId: 1 });
+    await models.TAG_BLOG.create({ TAGId:1 , BLOGId: 1 });
+    await models.TAG_BLOG.create({ TAGId: 2, BLOGId: 1 });
+    await models.TAG_BLOG.create({ TAGId: 3, BLOGId: 1 });
     await models.MONHOC.create({ TEN_MH: 'ĐẤM VỠ MÀN HÌNH', SO_TIN_CHI: 3 });
     await models.LOPHOC.create({ MONHOCId: 1 });
     await models.COMMENT.create({ USERId: 1, BLOGId: 1, cmcontent: 'met qua luon' });

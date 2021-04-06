@@ -200,20 +200,8 @@ block main
             aside.single_sidebar_widget.tag_cloud_widget
               h4.widget_title(style='color: #2d2d2d;') Tag Clouds
               ul.list
-                li
-                  a(href='#') project
-                li
-                  a(href='#') love
-                li
-                  a(href='#') technology
-                li
-                  a(href='#') travel
-                li
-                  a(href='#') restaurant
-                li
-                  a(href='#') life style
-                li
-                  a(href='#') design
-                li
-                  a(href='#') illustration
+                each val in list_tag
+                  li
+                    a(href='#') #{val}
+              
   // Blog Area End
