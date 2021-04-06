@@ -1,26 +1,22 @@
 'use strict';
 module.exports = {
     up: async (queryInterface, Sequelize) => {
-        await queryInterface.createTable('BLOG', {
+        await queryInterface.createTable('MONHOC', {
             id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
                 type: Sequelize.INTEGER
             },
-            USERId: {
+            TEN_MH: {
+                type: Sequelize.STRING
+            },
+            SO_TIN_CHI: {
+                type: Sequelize.INTEGER
+            },
+            DKTQ: {
                 type: Sequelize.INTEGER,
-                allowNull: false,
-                references: {
-                    model: 'USER',
-                    key: 'id'
-                }
-            },
-            title: {
-                type: Sequelize.STRING
-            },
-            content: {
-                type: Sequelize.STRING
+                allowNull: true
             },
             createdAt: {
                 allowNull: false,
@@ -33,6 +29,6 @@ module.exports = {
         });
     },
     down: async (queryInterface, Sequelize) => {
-        await queryInterface.dropTable('BLOG');
+        await queryInterface.dropTable('MONHOC');
     }
 };

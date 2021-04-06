@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class BLOG extends Model {
+    class GIANG_VIEN extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -11,19 +11,15 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
-            this.belongsTo(models.USER, { foreignKey: 'USERId', as: 'nguoidang' });
-            this.hasMany(models.TAG_BLOG, { as: 'theloai' });
-            this.hasMany(models.COMMENT, { as: 'binhluan' });
+            //this.belongsTo(models.DS_LOP_HOC, { as: 'dayhoc' });
         }
     };
-    BLOG.init({
-        USERId: DataTypes.INTEGER,
-        title: DataTypes.STRING,
-        content: DataTypes.STRING
+    GIANG_VIEN.init({
+        TEN_GV: DataTypes.STRING
     }, {
             sequelize,
-            modelName: 'BLOG',
+            modelName: 'GIANG_VIEN',
             freezeTableName: true,
         });
-    return BLOG;
+    return GIANG_VIEN;
 };

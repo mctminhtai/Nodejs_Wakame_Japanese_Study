@@ -8,6 +8,6 @@
     "\\public",
     "\\routes"
   ],
-  "SelectedNode": "\\models\\blog.js",
+  "SelectedNode": "\\migrations\\20210404014501-create-tag.js",
   "PreviewInSolutionExplorer": false
 }
