@@ -35,15 +35,17 @@ exports.get_blogPage = function (req, res, next) {
 }
 exports.get_blogDetailPage = function (req, res, next) {
     var xacnhan=false;
-    var list_blog=[];
+ 
     models.BLOG.findAll({ attributes: ['title', 'content', 'USERId'], include: ['nguoidang'] }).then((all) => {
-        all.forEach((item, index) => {
-            
-            list_blog.push(item.dataValues);
-            console.log(item);
-
+          var list_blog=[]; 
+          all.forEach((item, index) => {
+            var tieu_de_blog={
+                title:item.dataValues.title,
+                content: item.dataValues.content,
+                ten_ng_dang:item.dataValues.nguoidang.dataValues.fullName
+            }
+            list_blog.push(tieu_de_blog);
         }); 
-
         if (req.isAuthenticated()) {
             xacnhan=true;
             return res.render('blog_details', { title: 'Express',Authenticated:xacnhan,user_name:req.user.dataValues.fullName,blogs:list_blog });
@@ -51,7 +53,7 @@ exports.get_blogDetailPage = function (req, res, next) {
         else{
             return res.render('blog_details', { title: 'Express',Authenticated:xacnhan,blogs:list_blog });
         }
-    })
+    });
    
     // if (req.isAuthenticated()) {
     //     xacnhan=true;
