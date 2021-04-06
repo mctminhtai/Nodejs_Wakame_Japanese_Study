@@ -18,7 +18,7 @@ exports.get_aboutPage = function (req, res, next) {
         return res.render('about', { title: 'Express',Authenticated:xacnhan ,user_name:req.user.dataValues.fullName});
     }
     else{
-        return res.render('about', { title: 'Express',Authenticated:xacnhan,user_name:req.user.dataValues.fullName });
+        return res.render('about', { title: 'Express',Authenticated:xacnhan});
     }
 
 }
