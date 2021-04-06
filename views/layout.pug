@@ -42,30 +42,27 @@ header
             // Logo
             .col-xl-2.col-lg-2
               .logo
-                a(href='/')
-                img(src='assets/img/logo/wakame_logo.svg' alt='' style='width:350px; height:90px;')
+                a(href='/') WAKAME
             .col-xl-10.col-lg-10
               .menu-wrapper.d-flex.align-items-center.justify-content-end
                 // Main-menu
                 .main-menu.d-none.d-lg-block
                   nav
                     ul#navigation
-                      li.active
-                        a(href='/' style="color:#ffc107; font-weight:bold") Trang chủ
-                      li
-                        a(href='/courses') Khóa học
-                      li
-                        a(href='/about') Về chúng tôi
-                      li
-                        a(href='/#') Blog
+                      li.active.nav-item
+                        a(href='/') Trang chủ
+                      li.nav-item
+                        a(href='#') Giảng dạy
                         ul.submenu
                           li
-                            a(href='/blog') Blog
+                            a(href='/courses') Khóa học
                           li
-                            a(href='/blogdetail') Blog Details
-                          li
-                            a(href='/elements') Element
-                      li
+                            a(href='/') Tài liệu
+                      li.nav-item
+                        a(href='/blog') Tin tức
+                      li.nav-item
+                        a(href='/about') Về chúng tôi
+                      li.nav-item
                         a(href='/contact') Liên hệ
                       // Button
                       if Authenticated=== false 
