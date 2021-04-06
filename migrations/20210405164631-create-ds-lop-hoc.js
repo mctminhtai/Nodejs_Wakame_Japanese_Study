@@ -2,10 +2,6 @@
 module.exports = {
     up: async (queryInterface, Sequelize) => {
         await queryInterface.createTable('DS_LOP_HOC', {
-            id: {
-                autoIncrement: true,
-                type: Sequelize.INTEGER
-            },
             LOPHOCId: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
@@ -13,8 +9,6 @@ module.exports = {
                     model: 'LOPHOC',
                     key: 'id'
                 },
-                allowNull: false,
-                primaryKey: true,
             },
             GIANG_VIENId: {
                 type: Sequelize.INTEGER,
@@ -23,28 +17,22 @@ module.exports = {
                     model: 'GIANG_VIEN',
                     key: 'id'
                 },
-                allowNull: false,
-                primaryKey: true,
             },
-            ID_THU: {
+            THUId: {
                 type: Sequelize.INTEGER,
-                //allowNull: false,
-                //references: {
-                //    model: 'TIET_THU',
-                //    key: 'ID_THU'
-                //},
                 allowNull: false,
-                primaryKey: true,
+                references: {
+                    model: 'THU',
+                    key: "id"
+                },
             },
-            ID_TIET: {
+            TIETId: {
                 type: Sequelize.INTEGER,
-                //allowNull: false,
-                //references: {
-                //    model: 'TIET_THU',
-                //    key: 'ID_TIET'
-                //},
                 allowNull: false,
-                primaryKey: true,
+                references: {
+                    model: 'TIET',
+                    key: 'id'
+                },
             },
             createdAt: {
                 allowNull: false,
@@ -54,7 +42,10 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.DATE
             }
-        });
+        })
+            .then(() => {
+                return queryInterface.sequelize.query('ALTER TABLE "DS_LOP_HOC" ADD CONSTRAINT "dslophoc1" PRIMARY KEY ("LOPHOCId", "GIANG_VIENId","THUId","TIETId")');
+            })
     },
     down: async (queryInterface, Sequelize) => {
         await queryInterface.dropTable('DS_LOP_HOC');

@@ -28,45 +28,21 @@ block main
             .feature-img
               img.img-fluid(src='assets/img/blog/single_blog_1.png' alt='')
             .blog_details
-              h2(style='color: #2d2d2d;')
-                | Second divided from form fish beast made every of seas
-                | all gathered us saying he our
+              h2(style='color: #2d2d2d;') #{blogs.title}
               ul.blog-info-link.mt-3.mb-4
                 li
                   i.fa.fa-user
-                  a(href='#') L&ecirc; Minh T&agrave;i
+                  a(href='#') #{blogs.ten_ng_dang}
                 li
                   i.fa.fa-tag
                   a(href='#') Travel
                   | , 
                   a(href='#') Lifestyle
                 li
-                  i.fa.fa-calendar
-                  |  01/01/2021
+                  i.fa.fa-calendar 
+                  |#{blogs.time_dang.getDate()}/#{blogs.time_dang.getMonth()+1}/#{blogs.time_dang.getFullYear()}
               p.excert
-                | MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                | should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                | fraction of the camp price. However, who has the willpower
-              p
-                | MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                | should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                | fraction of the camp price. However, who has the willpower to actually sit through a
-                | self-imposed MCSE training. who has the willpower to actually
-              .quote-wrapper
-                .quotes
-                  | MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                  | should have to spend money on boot camp when you can get the MCSE study materials yourself at
-                  | a fraction of the camp price. However, who has the willpower to actually sit through a
-                  | self-imposed MCSE training.
-              p
-                | MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                | should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                | fraction of the camp price. However, who has the willpower
-              p
-                | MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                | should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                | fraction of the camp price. However, who has the willpower to actually sit through a
-                | self-imposed MCSE training. who has the willpower to actually
+                |#{blogs.content}
           .navigation-top
             .d-sm-flex.justify-content-between.text-center
               p.like-info
@@ -224,20 +200,8 @@ block main
             aside.single_sidebar_widget.tag_cloud_widget
               h4.widget_title(style='color: #2d2d2d;') Tag Clouds
               ul.list
-                li
-                  a(href='#') project
-                li
-                  a(href='#') love
-                li
-                  a(href='#') technology
-                li
-                  a(href='#') travel
-                li
-                  a(href='#') restaurant
-                li
-                  a(href='#') life style
-                li
-                  a(href='#') design
-                li
-                  a(href='#') illustration
+                each val in list_tag
+                  li
+                    a(href='#') #{val}
+              
   // Blog Area End

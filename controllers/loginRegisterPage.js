@@ -139,16 +139,32 @@ exports.get_test = async function (req, res, next) {
     // })
     await models.USER.create({ fullName: 'minhtai33', email: 'minhtai@gmail.com', password: 'hahakakakak' });
     await models.TAG.create({ TEN_TAG: 'SuKien' });
+    await models.TAG.create({ TEN_TAG: 'Thien thich jav' });
+    await models.TAG.create({ TEN_TAG: 'Thien me dong JAv' });
+    await models.TAG.create({ TEN_TAG: 'Thien coi jav' });
+    await models.TAG.create({ TEN_TAG: 'Thien than tuong jav' });
+    await models.TAG.create({ TEN_TAG: 'Thien sieu me JAV' });
+
     await models.BLOG.create({ USERId: 1, title: 'helo33', content: 'khong co giiii' });
-    await models.TAG_BLOG.create({ TAGId: 1, BLOGId: 1 });
+    await models.TAG_BLOG.create({ TAGId:1 , BLOGId: 1 });
+    await models.TAG_BLOG.create({ TAGId: 2, BLOGId: 1 });
+    await models.TAG_BLOG.create({ TAGId: 3, BLOGId: 1 });
     await models.MONHOC.create({ TEN_MH: 'ĐẤM VỠ MÀN HÌNH', SO_TIN_CHI: 3 });
     await models.LOPHOC.create({ MONHOCId: 1 });
     await models.COMMENT.create({ USERId: 1, BLOGId: 1, cmcontent: 'met qua luon' });
-    models.USER.findByPk(2, { include: ['binhluan'] }).then((user) => {
+    await models.THU.create({ TEN_THU: 'Thu 2' });
+    await models.TIET.create({ TEN_TIET: 'Tiet 3' });
+    await models.TIET_THU.create({ THUId: 1, TIETId: 1 });
+    await models.GIANG_VIEN.create({ TEN_GV: 'God' });
+
+    models.USER.findByPk(1, { include: ['binhluan'] }).then((user) => {
         console.log(user.binhluan);
     })
 
     users = []
+
+
+
     await models.USER.findAll({ attributes: ['fullName', 'email', 'password'] }).then((all) => {
         all.forEach((item, index) => {
             users.push(item.dataValues);

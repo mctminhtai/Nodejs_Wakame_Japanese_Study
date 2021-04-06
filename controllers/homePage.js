@@ -35,31 +35,38 @@ exports.get_blogPage = function (req, res, next) {
 }
 exports.get_blogDetailPage = function (req, res, next) {
     var xacnhan=false;
-    var list_blog=[];
-    models.BLOG.findAll({ attributes: ['title', 'content', 'USERId'], include: ['nguoidang'] }).then((all) => {
-        all.forEach((item, index) => {
-            
-            list_blog.push(item.dataValues);
-            console.log(item);
-
+ 
+    models.BLOG.findAll({ attributes: ['title', 'content', 'USERId','createdAt'], include: ['nguoidang','theloai'] }).then((all) => {
+          var list_blog=[]; 
+          
+          all.forEach((item, index) => {
+            var tieu_de_blog={
+                title:item.dataValues.title,
+                content: item.dataValues.content,
+                ten_ng_dang:item.dataValues.nguoidang.dataValues.fullName,
+                time_dang: item.dataValues.createdAt
+            }
+            list_blog.push(tieu_de_blog);
         }); 
-
-        if (req.isAuthenticated()) {
+        models.TAG.findAll({attributes:['TEN_TAG'],include:['the']}).then((all) =>{
+            var list_tag=[];
+            all.forEach((item,index)=>{
+                
+                list_tag.push(item.dataValues.TEN_TAG);
+            });
+           
+          if (req.isAuthenticated()) {
             xacnhan=true;
-            return res.render('blog_details', { title: 'Express',Authenticated:xacnhan,user_name:req.user.dataValues.fullName,blogs:list_blog });
+            return res.render('blog_details', { title: 'Express',Authenticated:xacnhan,user_name:req.user.dataValues.fullName,blogs:list_blog[0],list_tag:list_tag });
         }
         else{
-            return res.render('blog_details', { title: 'Express',Authenticated:xacnhan,blogs:list_blog });
-        }
-    })
+            return res.render('blog_details', { title: 'Express',Authenticated:xacnhan,blogs:list_blog[0],list_tag:list_tag  });
+        }    
+         
+        });
+      
+    });
    
-    // if (req.isAuthenticated()) {
-    //     xacnhan=true;
-    //     return res.render('blog_details', { title: 'Express',Authenticated:xacnhan,user_name:req.user.dataValues.fullName });
-    // }
-    // else{
-    //     return res.render('blog_details', { title: 'Express',Authenticated:xacnhan });
-    // }
 
 }
 exports.get_contactPage = function (req, res, next) {
