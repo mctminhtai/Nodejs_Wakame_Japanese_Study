@@ -10,14 +10,14 @@ block main
           .row
             .col-xl-8.col-lg-11.col-md-12
               .hero__caption.hero__caption2
-                h1(data-animation='bounceIn' data-delay='0.2s') Tin tức
+                h1(data-animation='bounceIn' data-delay='0.2s') Company insights
                 // breadcrumb Start
                 nav(aria-label='breadcrumb')
                   ol.breadcrumb
                     li.breadcrumb-item
                       a(href='index.html') Home
                     li.breadcrumb-item
-                      a(href='/blog') Tin tức 
+                      a(href='#') Blog
                 // breadcrumb End
   // ? Blog Area Start
   section.blog_area.single-post-area.section-padding
@@ -26,66 +26,47 @@ block main
         .col-lg-7.posts-list.offset-1
           .single-post
             .feature-img
-              img.img-fluid(src='assets/img/blog/blog_hpny.jpg' alt='' style="width:770px;height:430px")
+              img.img-fluid(src='assets/img/blog/single_blog_1.png' alt='')
             .blog_details
               h2(style='color: #2d2d2d;') #{blogs.title}
               ul.blog-info-link.mt-3.mb-4
                 li
-                  a(href='#')
-                    i.fas.fa-eye
-                    | 61.7K
+                  i.fa.fa-user
+                  a(href='#') #{blogs.ten_ng_dang}
                 li
-                  a(href='#')
-                    i.fas.fa-comment-alt
-                    |  10 bình luận
-              .blog-author(style="margin-bottom:30px")
-                .media.align-items-center
-                  img(src='assets/img/gallery/AnhTai.jpg' alt='')
-                  .media-body
-                    a(href='#') #{blogs.ten_ng_dang}
-                      h4 Lê Minh Tài 
-                    p
-                      i.far.fa-clock
-                      |#{blogs.time_dang.getDate()}/#{blogs.time_dang.getMonth()+1}/#{blogs.time_dang.getFullYear()}
+                  i.fa.fa-tag
+                  a(href='#') Travel
+                  | , 
+                  a(href='#') Lifestyle
+                li
+                  i.fa.fa-calendar 
+                  |#{blogs.time_dang.getDate()}/#{blogs.time_dang.getMonth()+1}/#{blogs.time_dang.getFullYear()}
               p.excert
                 |#{blogs.content}
           .navigation-top
             .d-sm-flex.justify-content-between.text-center
               p.like-info
                 span.align-middle
-                  i.fa.fa-heart(style="color:red")
-                |  Bạn và 4
-                |                   người khác đã thích
+                  i.fa.fa-heart
+                |  Lily and 4
+                |                   people like this
               .col-sm-4.text-center.my-2.my-sm-0
                 // <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p>
               ul.social-icons
-                li 
-                  a(href='https://twitter.com' target='_blank')
-                    i.fab.fa-twitter
                 li
-                  a(href='https://www.facebook.com' target='_blank')
+                  a(href='https://www.facebook.com/sai4ull')
                     i.fab.fa-facebook-f
                 li
-                  a(href="https://www.youtube.com" target="blank")
-                    i.fab.fa-youtube
+                  a(href='#')
+                    i.fab.fa-twitter
                 li
-                  a(href="https://www.instagram.com" target="blank")
-                    i.fab.fa-instagram
+                  a(href='#')
+                    i.fab.fa-dribbble
                 li
-                  a(href="https://www.plus.google.com" target="blank")
-                    i.fab.fa-google-plus-g
-          
-          .blog_right_sidebar(style="margin-top:30px;")           
-            aside.single_sidebar_widget.tag_cloud_widget
-              i.fas.fa-tag(style="color:#4255A4")
-              ul.list(style='display:inline;margin-left:10px')
-                li
-                  a(href='#') #event
-                li
-                  a(href='#') #wakame
-
+                  a(href='#')
+                    i.fab.fa-behance
           .comments-area
-            h4 NHẬN XÉT CỦA ĐỘC GIẢ (10)
+            h4 05 Comments
             .comment-list
               .single-comment.justify-content-between.d-flex
                 .user.justify-content-between.d-flex
@@ -98,14 +79,10 @@ block main
                     .d-flex.justify-content-between
                       .d-flex.align-items-center
                         h5
-                          a(href='#') Khiem Chau
-                        p.date ２０１７年１２月２１日、午後４時
-                      .reply-btn(style="margin-left:204px")
-                        a.btn-reply(href='#') 
-                          i.fas.fa-reply                     
-                          | &nbsp;Trả lời &emsp;
-                          i.far.fa-thumbs-up
-                          |&nbsp;Thích
+                          a(href='#') Emilly Blunt
+                        p.date December 4, 2017 at 3:12 pm 
+                      .reply-btn
+                        a.btn-reply.text-uppercase(href='#') reply
             .comment-list
               .single-comment.justify-content-between.d-flex
                 .user.justify-content-between.d-flex
@@ -118,14 +95,10 @@ block main
                     .d-flex.justify-content-between
                       .d-flex.align-items-center
                         h5
-                          a(href='#') Bảo
-                        p.date ２０１８年１月２１日、午後７時 
-                      .reply-btn(style="margin-left:277px")
-                        a.btn-reply(href='#') 
-                          i.fas.fa-reply                     
-                          | &nbsp;Trả lời &emsp;
-                          i.far.fa-thumbs-up
-                          | &nbsp;Thích
+                          a(href='#') Emilly Blunt
+                        p.date December 4, 2017 at 3:12 pm 
+                      .reply-btn
+                        a.btn-reply.text-uppercase(href='#') reply
             .comment-list
               .single-comment.justify-content-between.d-flex
                 .user.justify-content-between.d-flex
@@ -138,16 +111,10 @@ block main
                     .d-flex.justify-content-between
                       .d-flex.align-items-center
                         h5
-                          a(href='#') Huy Ngô
-                        p.date ２０２０年４月２８日、午前１０時
-                      .reply-btn(style="margin-left:226px")
-                        a.btn-reply(href='#') 
-                          i.fas.fa-reply                     
-                          | &nbsp;Trả lời &emsp;
-                          i.far.fa-thumbs-up
-                          | &nbsp;Thích
-            .section-tittle.text-center.mt-40
-              a.border-btn(href='#') Tải thêm
+                          a(href='#') Emilly Blunt
+                        p.date December 4, 2017 at 3:12 pm 
+                      .reply-btn
+                        a.btn-reply.text-uppercase(href='#') reply
           .comment-form
             h4 Leave a Reply
             form#commentForm.form-contact.comment_form(action='#')
@@ -177,12 +144,33 @@ block main
                       button.btns(type='button')
                         i.ti-search
                 button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Search
-            aside.single_sidebar_widget.tag_cloud_widget
-              h4.widget_title(style='color: #2d2d2d;') Tag Clouds
-              ul.list
-                each val in list_tag
-                  li
-                    a(href='#') #{val}
+            aside.single_sidebar_widget.post_category_widget
+              h4.widget_title(style='color: #2d2d2d;') Category
+              ul.list.cat-list
+                li
+                  a.d-flex(href='#')
+                    p Resaurant food
+                    p (37)
+                li
+                  a.d-flex(href='#')
+                    p Travel news
+                    p (10)
+                li
+                  a.d-flex(href='#')
+                    p Modern technology
+                    p (03)
+                li
+                  a.d-flex(href='#')
+                    p Product
+                    p (11)
+                li
+                  a.d-flex(href='#')
+                    p Inspiration
+                    p (21)
+                li
+                  a.d-flex(href='#')
+                    p Health Care
+                    p (21)
             aside.single_sidebar_widget.popular_post_widget
               h3.widget_title(style='color: #2d2d2d;') Recent Post
               .media.post_item
@@ -203,10 +191,17 @@ block main
                   a(href='blog_details.html')
                     h3(style='color: #2d2d2d;') Astronomy Or Astrology
                   p 03 Hours ago
-            aside.single_sidebar_widget.newsletter_widget
-              h4.widget_title(style='color: #2d2d2d;') Nhận tin tức
-              form(action='#')
-                .form-group
-                  input.form-control(type='email' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email của bạn'" placeholder='Enter email' required='')
-                button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Subscribe
+              .media.post_item
+                img(src='assets/img/post/post_4.png' alt='post')
+                .media-body
+                  a(href='blog_details.html')
+                    h3(style='color: #2d2d2d;') Asteroids telescope
+                  p 01 Hours ago
+            aside.single_sidebar_widget.tag_cloud_widget
+              h4.widget_title(style='color: #2d2d2d;') Tag Clouds
+              ul.list
+                each val in list_tag
+                  li
+                    a(href='#') #{val}
+              
   // Blog Area End
