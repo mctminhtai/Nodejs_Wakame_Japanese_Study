@@ -1,287 +1,243 @@
-extends layout.pug 
-block main 
+extends layout
+block main
   main
-    // ? slider Area Start
-    section.slider-area.slider-area2
-      .slider-active
-        // Single Slider
-        .single-slider.slider-height2
-          .container
-            .row
-              .col-xl-8.col-lg-11.col-md-12
-                .hero__caption.hero__caption2
-                  h1(data-animation='bounceIn' data-delay='0.2s') Blog details
-                  // breadcrumb Start
-                  nav(aria-label='breadcrumb')
-                    ol.breadcrumb
-                      li.breadcrumb-item
-                        a(href='/') Trang chủ
-                      li.breadcrumb-item
-                        a(href='/blog') Blog 
-                  // breadcrumb End
-    // ? Blog Area Start
-    section.blog_area.single-post-area.section-padding
-      .container
-        .row
-          .col-lg-8.posts-list
-            .single-post
-              .feature-img
-                img.img-fluid(src='assets/img/gallery/MrTai.png' alt='' style="width:50px; height:50px")
-              .blog_details
-                h2(style='color: #2d2d2d;')
-                  | Wakame chúc mừng năm mới 2021
-                ul.blog-info-link.mt-3.mb-4
-                  li
-                    a(href='#')
-                      i.fa.fa-user
-                      |  Lê Minh Tài
-                  li
-                    a(href='#')
-                      i.fa.fa-comments
-                      |  03 bình luận
-                p.excert
-                  | Hoa đào nở, chim én về, mai vàng trước sân, năm mới lại đến.
-                p
-                  | Mặt trời ló rạng, Covid lùi dần và xa, năm mới đến sẽ là khởi nguồn của những điều tươi sáng.
-                .quote-wrapper
-                  .quotes
-                    | 明けましておめでとうございます｡
-                    br
-                    | Chúc mừng năm mới.
-                p
-                  | Chúc mọi người cùng gia đình một năm Tân Sửu bình an, suôn sẻ, gặp nhiều may mắn và thành công. 
-                p
-                  | Hãy giữ mãi nụ cười trên môi và thi đậu tất cả các môn các bạn nhé.              
-            .navigation-top
-              .d-sm-flex.justify-content-between.text-center
-                p.like-info
-                  span.align-middle
-                    i.fa.fa-heart
-                  |  Lily và 4
-                  |                   bạn khác đã thích
-                .col-sm-4.text-center.my-2.my-sm-0
-                  // <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p>
-                ul.social-icons
-                  li
-                    a(href='https://www.facebook.com')
-                      i.fab.fa-facebook-f
-                  li
-                    a(href='https://www.twitter.com')
-                      i.fab.fa-twitter
-                  li
-                    a(href='https://www.instagram.com')
-                      i.fab.fa-instagram
-                  li
-                    a(href='https://www.youtube.com')
-                      i.fab.fa-youtube
-              .navigation-area
-                .row
-                  .col-lg-6.col-md-6.col-12.nav-left.flex-row.d-flex.justify-content-start.align-items-center
-                    .thumb
-                      a(href='#')
-                        img.img-fluid(src='assets/img/blog/blog_ngayhoiclb.jpg' alt='' style="width:50px;height:50px")
-                    .arrow
-                      a(href='#')
-                        span.lnr.text-white.ti-arrow-left
-                    .detials
-                      p Bài viết trước
-                      a(href='#')
-                        h4(style='color: #2d2d2d;') Wakame tham gia ngày hội Câu lạc bộ
-                  .col-lg-6.col-md-6.col-12.nav-right.flex-row.d-flex.justify-content-end.align-items-center
-                    .detials
-                      p Bài viết sau
-                      a(href='#')
-                        h4(style='color: #2d2d2d;') Talkshow Ngôn ngữ &amp; văn hóa Nhật Bản
-                    .arrow
-                      a(href='#')
-                        span.lnr.text-white.ti-arrow-right
-                    .thumb
-                      a(href='#')
-                        img.img-fluid(src='assets/img/blog/blog_talkshow.jpg' alt='' style="width:50px;height:50px")
-            .blog-author
-              .media.align-items-center
-                img(src='assets/img/blog/author.jpg' alt='')
-                .media-body
+  // ? slider Area Start
+  section.slider-area.slider-area2
+    .slider-active
+      // Single Slider
+      .single-slider.slider-height2
+        .container
+          .row
+            .col-xl-8.col-lg-11.col-md-12
+              .hero__caption.hero__caption2
+                h1(data-animation='bounceIn' data-delay='0.2s') Company insights
+                // breadcrumb Start
+                nav(aria-label='breadcrumb')
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='index.html') Home
+                    li.breadcrumb-item
+                      a(href='#') Blog
+                // breadcrumb End
+  // ? Blog Area Start
+  section.blog_area.single-post-area.section-padding
+    .container-fluid
+      .row
+        .col-lg-7.posts-list.offset-1
+          .single-post
+            .feature-img
+              img.img-fluid(src='assets/img/blog/single_blog_1.png' alt='')
+            .blog_details
+              h2(style='color: #2d2d2d;')
+                | Second divided from form fish beast made every of seas
+                | all gathered us saying he our
+              ul.blog-info-link.mt-3.mb-4
+                li
+                  i.fa.fa-user
+                  a(href='#') L&ecirc; Minh T&agrave;i
+                li
+                  i.fa.fa-tag
+                  a(href='#') Travel
+                  | , 
+                  a(href='#') Lifestyle
+                li
+                  i.fa.fa-calendar
+                  |  01/01/2021
+              p.excert
+                | MCSE boot camps have its supporters and its detractors. Some people do not understand why you
+                | should have to spend money on boot camp when you can get the MCSE study materials yourself at a
+                | fraction of the camp price. However, who has the willpower
+              p
+                | MCSE boot camps have its supporters and its detractors. Some people do not understand why you
+                | should have to spend money on boot camp when you can get the MCSE study materials yourself at a
+                | fraction of the camp price. However, who has the willpower to actually sit through a
+                | self-imposed MCSE training. who has the willpower to actually
+              .quote-wrapper
+                .quotes
+                  | MCSE boot camps have its supporters and its detractors. Some people do not understand why you
+                  | should have to spend money on boot camp when you can get the MCSE study materials yourself at
+                  | a fraction of the camp price. However, who has the willpower to actually sit through a
+                  | self-imposed MCSE training.
+              p
+                | MCSE boot camps have its supporters and its detractors. Some people do not understand why you
+                | should have to spend money on boot camp when you can get the MCSE study materials yourself at a
+                | fraction of the camp price. However, who has the willpower
+              p
+                | MCSE boot camps have its supporters and its detractors. Some people do not understand why you
+                | should have to spend money on boot camp when you can get the MCSE study materials yourself at a
+                | fraction of the camp price. However, who has the willpower to actually sit through a
+                | self-imposed MCSE training. who has the willpower to actually
+          .navigation-top
+            .d-sm-flex.justify-content-between.text-center
+              p.like-info
+                span.align-middle
+                  i.fa.fa-heart
+                |  Lily and 4
+                |                   people like this
+              .col-sm-4.text-center.my-2.my-sm-0
+                // <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p>
+              ul.social-icons
+                li
+                  a(href='https://www.facebook.com/sai4ull')
+                    i.fab.fa-facebook-f
+                li
                   a(href='#')
-                    h4 Nguyễn Thanh Nhã
-                  p
-                    | Ban chủ nhiệm CLB Tiếng Nhật Wakame
-            .comments-area
-              h4 NHẬN XÉT CỦA ĐỘC GIẢ
-              .comment-list
-                .single-comment.justify-content-between.d-flex
-                  .user.justify-content-between.d-flex
-                    .thumb
-                      img(src='assets/img/blog/comment_profile.png' alt='' style="width:50px;height:50px")
-                    .desc
-                      p.comment
-                        | Úi xịn xịn
-                      .d-flex.justify-content-between
-                        .d-flex.align-items-center
-                          h5
-                            a(href='#') Khiem Chau
-                          p.date ２０１７年１２月２１日、午後４時
-                        .reply-btn
-                          a.btn-reply.text-uppercase(href='#') Trả lời
-              .comment-list
-                .single-comment.justify-content-between.d-flex
-                  .user.justify-content-between.d-flex
-                    .thumb
-                      img(src='assets/img/blog/comment_profile.png' alt='' style="width:50px;height:50px")
-                    .desc
-                      p.comment
-                        | vjp z
-                      .d-flex.justify-content-between
-                        .d-flex.align-items-center
-                          h5
-                            a(href='#') Bảo
-                          p.date ２０１８年１月２１日、午後７時 
-                        .reply-btn
-                          a.btn-reply.text-uppercase(href='#') Trả lời
-              .comment-list
-                .single-comment.justify-content-between.d-flex
-                  .user.justify-content-between.d-flex
-                    .thumb
-                      img(src='assets/img/blog/comment_profile.png' alt='' style="width:50px;height:50px")
-                    .desc
-                      p.comment
-                        | おめでとう。
-                      .d-flex.justify-content-between
-                        .d-flex.align-items-center
-                          h5
-                            a(href='#') Huy Ngô
-                          p.date ２０２０年４月２８日、午前１０時
-                        .reply-btn
-                          a.btn-reply.text-uppercase(href='#') Trả lời | 
-                          i.far.fa-thumbs-up 10
-              .section-tittle.text-center.mt-40
-                a.border-btn(href='#') Xem thêm
-            .comment-form
-              h4 Gửi bình luận
-              form#commentForm.form-contact.comment_form(action='#')
-                .row
-                  .col-12
-                    .form-group
-                      textarea#comment.form-control.w-100(name='comment' cols='30' rows='9' placeholder='Nội dung bình luận')
-                  .col-sm-6
-                    .form-group
-                      input#name.form-control(name='name' type='text' placeholder='Tên')
-                  .col-sm-6
-                    .form-group
-                      input#email.form-control(name='email' type='email' placeholder='Email')
-                  .col-12
-                    .form-group
-                      input#website.form-control(name='website' type='text' placeholder='Website')
+                    i.fab.fa-twitter
+                li
+                  a(href='#')
+                    i.fab.fa-dribbble
+                li
+                  a(href='#')
+                    i.fab.fa-behance
+          .comments-area
+            h4 05 Comments
+            .comment-list
+              .single-comment.justify-content-between.d-flex
+                .user.justify-content-between.d-flex
+                  .thumb
+                    img(src='assets/img/blog/comment_1.png' alt='')
+                  .desc
+                    p.comment
+                      | Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
+                      | Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                    .d-flex.justify-content-between
+                      .d-flex.align-items-center
+                        h5
+                          a(href='#') Emilly Blunt
+                        p.date December 4, 2017 at 3:12 pm 
+                      .reply-btn
+                        a.btn-reply.text-uppercase(href='#') reply
+            .comment-list
+              .single-comment.justify-content-between.d-flex
+                .user.justify-content-between.d-flex
+                  .thumb
+                    img(src='assets/img/blog/comment_2.png' alt='')
+                  .desc
+                    p.comment
+                      | Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
+                      | Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                    .d-flex.justify-content-between
+                      .d-flex.align-items-center
+                        h5
+                          a(href='#') Emilly Blunt
+                        p.date December 4, 2017 at 3:12 pm 
+                      .reply-btn
+                        a.btn-reply.text-uppercase(href='#') reply
+            .comment-list
+              .single-comment.justify-content-between.d-flex
+                .user.justify-content-between.d-flex
+                  .thumb
+                    img(src='assets/img/blog/comment_3.png' alt='')
+                  .desc
+                    p.comment
+                      | Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
+                      | Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                    .d-flex.justify-content-between
+                      .d-flex.align-items-center
+                        h5
+                          a(href='#') Emilly Blunt
+                        p.date December 4, 2017 at 3:12 pm 
+                      .reply-btn
+                        a.btn-reply.text-uppercase(href='#') reply
+          .comment-form
+            h4 Leave a Reply
+            form#commentForm.form-contact.comment_form(action='#')
+              .row
+                .col-12
+                  .form-group
+                    textarea#comment.form-control.w-100(name='comment' cols='30' rows='9' placeholder='Write Comment')
+                .col-sm-6
+                  .form-group
+                    input#name.form-control(name='name' type='text' placeholder='Name')
+                .col-sm-6
+                  .form-group
+                    input#email.form-control(name='email' type='email' placeholder='Email')
+                .col-12
+                  .form-group
+                    input#website.form-control(name='website' type='text' placeholder='Website')
+              .form-group
+                button.button.button-contactForm.btn_1.boxed-btn(type='submit') Post Comment
+        .col-lg-3
+          .blog_right_sidebar
+            aside.single_sidebar_widget.search_widget
+              form(action='#')
                 .form-group
-                  button.button.button-contactForm.btn_1.boxed-btn(type='submit') Gửi 
-          .col-lg-4
-            .blog_right_sidebar
-              aside.single_sidebar_widget.search_widget
-                form(action='#')
-                  .form-group
-                    .input-group.mb-3
-                      input.form-control(type='text' placeholder='Tìm kiếm từ khóa' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tìm kiếm từ khóa'")
-                      .input-group-append
-                        button.btns(type='button')
-                          i.ti-search
-                  button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Tìm kiếm
-              aside.single_sidebar_widget.post_category_widget
-                h4.widget_title(style='color: #2d2d2d;') Lĩnh vực
-                ul.list.cat-list
-                  li
-                    a.d-flex(href='#')
-                      p Học tập
-                      p &nbsp;(37)
-                  li
-                    a.d-flex(href='#')
-                      p Du học
-                      p &nbsp;(10)
-                  li
-                    a.d-flex(href='#')
-                      p Kinh nghiệm đời sống
-                      p &nbsp;(03)
-                  li
-                    a.d-flex(href='#')
-                      p Ôn thi
-                      p &nbsp;(11)
-                  li
-                    a.d-flex(href='#')
-                      p Kỹ năng mềm
-                      p &nbsp;(21)
-                  li
-                    a.d-flex(href='#')
-                      p Sức khỏe
-                      p &nbsp;(09)
-              aside.single_sidebar_widget.popular_post_widget
-                h3.widget_title(style='color: #2d2d2d;') Bài viết gần đây
-                .media.post_item
-                  img(src='assets/img/post/qtpn.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
-                  .media-body
-                    a(href='/blog_details')
-                      h3(style='color: #2d2d2d;') Ngày Quốc tế Phụ nữ 
-                    p ２０２１年３月８日
-                .media.post_item
-                  img(src='assets/img/post/pnvn.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
-                  .media-body
-                    a(href='/blog_details')
-                      h3(style='color: #2d2d2d;') Ngày Phụ nữ Việt Nam 
-                    p ２０２０年１０月２０日
-                .media.post_item
-                  img(src='assets/img/post/mext.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
-                  .media-body
-                    a(href='/blog_details')
-                      h3(style='color: #2d2d2d;') Học bổng du học MEXT
-                    p ３時前　
-                .media.post_item
-                  img(src='assets/img/post/jlpt.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
-                  .media-body
-                    a(href='/blog_details')
-                      h3(style='color: #2d2d2d;') Kỳ thi JLPT Tháng 7/2021
-                    p １０分前　
-              aside.single_sidebar_widget.tag_cloud_widget
-                h4.widget_title(style='color: #2d2d2d;') Tag 
-                ul.list
-                  li
-                    a(href='#') #wakame
-                  li
-                    a(href='#') #love
-                  li
-                    a(href='#') #study
-                  li
-                    a(href='#') #duhoc
-                  li
-                    a(href='#') #hocbong
-                  li
-                    a(href='#') #UIT
-                  li
-                    a(href='#') #game
-                  li
-                    a(href='#') #talkshow
-              aside.single_sidebar_widget.instagram_feeds
-                h4.widget_title(style='color: #2d2d2d;') Instagram New Feeds
-                ul.instagram_row.flex-wrap
-                  li
-                    a(href='#')
-                      img.img-fluid(src='assets/img/post/post_5.png' alt='')
-                  li
-                    a(href='#')
-                      img.img-fluid(src='assets/img/post/post_6.png' alt='')
-                  li
-                    a(href='#')
-                      img.img-fluid(src='assets/img/post/post_7.png' alt='')
-                  li
-                    a(href='#')
-                      img.img-fluid(src='assets/img/post/post_8.png' alt='')
-                  li
-                    a(href='#')
-                      img.img-fluid(src='assets/img/post/post_9.png' alt='')
-                  li
-                    a(href='#')
-                      img.img-fluid(src='assets/img/post/post_10.png' alt='')
-              aside.single_sidebar_widget.newsletter_widget
-                h4.widget_title(style='color: #2d2d2d;') Nhận tin tức
-                form(action='#')
-                  .form-group
-                    input.form-control(type='email' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email của bạn'" placeholder='Enter email' required='')
-                  button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Subscribe
-    // Blog Area End
+                  .input-group.mb-3
+                    input.form-control(type='text' placeholder='Search Keyword' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'")
+                    .input-group-append
+                      button.btns(type='button')
+                        i.ti-search
+                button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Search
+            aside.single_sidebar_widget.post_category_widget
+              h4.widget_title(style='color: #2d2d2d;') Category
+              ul.list.cat-list
+                li
+                  a.d-flex(href='#')
+                    p Resaurant food
+                    p (37)
+                li
+                  a.d-flex(href='#')
+                    p Travel news
+                    p (10)
+                li
+                  a.d-flex(href='#')
+                    p Modern technology
+                    p (03)
+                li
+                  a.d-flex(href='#')
+                    p Product
+                    p (11)
+                li
+                  a.d-flex(href='#')
+                    p Inspiration
+                    p (21)
+                li
+                  a.d-flex(href='#')
+                    p Health Care
+                    p (21)
+            aside.single_sidebar_widget.popular_post_widget
+              h3.widget_title(style='color: #2d2d2d;') Recent Post
+              .media.post_item
+                img(src='assets/img/post/post_1.png' alt='post')
+                .media-body
+                  a(href='blog_details.html')
+                    h3(style='color: #2d2d2d;') From life was you fish...
+                  p January 12, 2019
+              .media.post_item
+                img(src='assets/img/post/post_2.png' alt='post')
+                .media-body
+                  a(href='blog_details.html')
+                    h3(style='color: #2d2d2d;') The Amazing Hubble
+                  p 02 Hours ago
+              .media.post_item
+                img(src='assets/img/post/post_3.png' alt='post')
+                .media-body
+                  a(href='blog_details.html')
+                    h3(style='color: #2d2d2d;') Astronomy Or Astrology
+                  p 03 Hours ago
+              .media.post_item
+                img(src='assets/img/post/post_4.png' alt='post')
+                .media-body
+                  a(href='blog_details.html')
+                    h3(style='color: #2d2d2d;') Asteroids telescope
+                  p 01 Hours ago
+            aside.single_sidebar_widget.tag_cloud_widget
+              h4.widget_title(style='color: #2d2d2d;') Tag Clouds
+              ul.list
+                li
+                  a(href='#') project
+                li
+                  a(href='#') love
+                li
+                  a(href='#') technology
+                li
+                  a(href='#') travel
+                li
+                  a(href='#') restaurant
+                li
+                  a(href='#') life style
+                li
+                  a(href='#') design
+                li
+                  a(href='#') illustration
+  // Blog Area End
