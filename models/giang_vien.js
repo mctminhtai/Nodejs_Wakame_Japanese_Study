@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
-            this.hasMany(models.DS_LOP_HOC, { as: 'dayhoc' });
+            this.belongsToMany(models.TIET, { through: models.DS_LOP_HOC, as: 'dayhoc3' });
         }
     };
     GIANG_VIEN.init({
