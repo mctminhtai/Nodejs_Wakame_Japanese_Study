@@ -40,10 +40,13 @@ block main
                   else  
                     a(href='#') Chưa có tên tác giả  
                 li
-                  i.fa.fa-tag
-                  a(href='#') Travel
-                  | , 
-                  a(href='#') Lifestyle
+                  if tags_blog
+                    each val in tags_blog
+                      i.fa.fa-tag
+                      a(href='#') #{val} 
+                  else 
+                    i.fa.fa-tag
+                    a(href='#') Chưa tồn tại tag của blog 
                 li
                   if blogs.time_dang
                     i.fa.fa-calendar 
@@ -215,8 +218,12 @@ block main
             aside.single_sidebar_widget.tag_cloud_widget
               h4.widget_title(style='color: #2d2d2d;') Tag Clouds
               ul.list
-                each val in list_tag
+                if list_tag
+                  each val in list_tag
+                    li
+                      a(href='#') #{val}
+                else 
                   li
-                    a(href='#') #{val}
+                     a(href='#') Chưa tồn tại tag
               
   // Blog Area End
