@@ -1,14 +1,14 @@
 const request = require('request');
 const models = require('../models');
-const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABAFydZB1qSp6a5quB9MvZAg7mOITpWF5gjeCZB3JsFmDxZBZB1zYfVbZAej2JVSqPlaiVXb1c8Y64r8QXV292w6XCiyOeOk4dQa2LlAF4Y6pbbPql6fKl3NxVDNv0N9si80DxeziQo7DpiRYzzmZBahcGfAdKb1LNZBmRW17CEjFDDjF95trXKzIZD"
+const PAGE_ACCESS_TOKEN = "EAASGhGZBXOZCABAB8eic8L9IMVjZAsRSJCSe90VpQZAA4HvniEGzat48BszRAMg7qZCjBe7T6BdglgkAAZCojAz1lLlKzOnqwh6UPoRKYjdoftKZCecckGrDDr620BlsJ5uhaTR17cA6HpIGbEdXi5Qpqf2YLa9ZCCqlvLdIvnLZCrCaZC5qR7p9ZCQZBZBJheAVCHYYZD"
 let chatRoom = {};
 
 
 
 let waitRoom = [];
 let loadOrSave = true;
-let startkey = ["ghép đôi ngẫu nhiên", "Ghép đôi ngẫu nhiên"];
-let pausekey = ["từ chối", "Từ chối"];
+let startkey = ["ghép đôi ngẫu nhiên", "Ghép đôi ngẫu nhiên", "ghepdoingaunhien", "Ghepdoingaunhien"];
+let pausekey = ["từ chối", "Từ chối", "Tuchoi", "tuchoi"];
 //key kich hoat bot: ghepdoingaunhien
 //key quay lai phong cho: tuchoichat
 exports.get_whBackupRestore = function (req, res, next) {

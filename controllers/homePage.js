@@ -1,4 +1,5 @@
 
+const cookieParser = require('cookie-parser');
 const models = require('../models');
 exports.get_homePage = function (req, res, next) {
     var xacnhan=false;
@@ -38,30 +39,43 @@ exports.get_blogDetailPage = function (req, res, next) {
  
     models.BLOG.findAll({ attributes: ['title', 'content', 'USERId','createdAt'], include: ['nguoidang','theloai'] }).then((all) => {
           var list_blog=[]; 
-          
-          all.forEach((item, index) => {
-            var tieu_de_blog={
-                title:item.dataValues.title,
-                content: item.dataValues.content,
-                ten_ng_dang:item.dataValues.nguoidang.dataValues.fullName,
-                time_dang: item.dataValues.createdAt
-            }
+          var tieu_de_blog={
+                title:undefined,
+                content: undefined,
+                ten_ng_dang:undefined,
+                time_dang: undefined,
+            };
+            var tag_cua_blog=[];
+        all.forEach((item, index) => {
+            tieu_de_blog.title=item.dataValues.title,
+            tieu_de_blog.content= item.dataValues.content,
+            tieu_de_blog.ten_ng_dang=item.dataValues.nguoidang.dataValues.fullName,
+            tieu_de_blog.time_dang= item.dataValues.createdAt
             list_blog.push(tieu_de_blog);
         }); 
-        models.TAG.findAll({attributes:['TEN_TAG'],include:['the']}).then((all) =>{
-            var list_tag=[];
-            all.forEach((item,index)=>{
-                
-                list_tag.push(item.dataValues.TEN_TAG);
+     
+        models.TAG_BLOG.findAll({attributes:['TAGId','BLOGId'],include:['the','theloai']}).then((all) =>{
+            var tags_blog=[];
+            all.forEach((item,index)=>{           
+                tags_blog.push(item.dataValues.the.dataValues.TEN_TAG);
             });
-           
-          if (req.isAuthenticated()) {
-            xacnhan=true;
-            return res.render('blog_details', { title: 'Express',Authenticated:xacnhan,user_name:req.user.dataValues.fullName,blogs:list_blog[0],list_tag:list_tag });
-        }
-        else{
-            return res.render('blog_details', { title: 'Express',Authenticated:xacnhan,blogs:list_blog[0],list_tag:list_tag  });
-        }    
+            
+            models.TAG.findAll({attributes:['TEN_TAG']}).then((all) =>{
+                var tags_all=[];
+                all.forEach((item,index)=>{           
+                    tags_all.push(item.dataValues.TEN_TAG);
+                   
+                });
+                
+                if (req.isAuthenticated()) {s
+                    xacnhan=true;
+                    return res.render('blog_details', { title: 'Express',Authenticated:xacnhan,user_name:req.user.dataValues.fullName,blogs:list_blog[0],tags_blog:tags_blog,list_tag:tags_all });
+                }
+                else{
+                    return res.render('blog_details', { title: 'Express',Authenticated:xacnhan,blogs:list_blog[0],tags_blog:tags_blog, list_tag:tags_all});
+                }    
+            });
+      
          
         });
       

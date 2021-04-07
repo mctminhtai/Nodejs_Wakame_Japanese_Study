@@ -28,21 +28,39 @@ block main
             .feature-img
               img.img-fluid(src='assets/img/blog/single_blog_1.png' alt='')
             .blog_details
-              h2(style='color: #2d2d2d;') #{blogs.title}
+              if blogs.title
+                h2(style='color: #2d2d2d;') #{blogs.title} 
+              else 
+                h2(style='color: #2d2d2d;') Tiêu đề chưa có hoặc bị lỗi
               ul.blog-info-link.mt-3.mb-4
                 li
                   i.fa.fa-user
-                  a(href='#') #{blogs.ten_ng_dang}
+                  if blogs.ten_ng_dang
+                    a(href='#') #{blogs.ten_ng_dang}  
+                  else  
+                    a(href='#') Chưa có tên tác giả  
                 li
-                  i.fa.fa-tag
-                  a(href='#') Travel
-                  | , 
-                  a(href='#') Lifestyle
+                  if tags_blog
+                    each val in tags_blog
+                      i.fa.fa-tag
+                      a(href='#') #{val} 
+                  else 
+                    i.fa.fa-tag
+                    a(href='#') Chưa tồn tại tag của blog 
                 li
-                  i.fa.fa-calendar 
-                  |#{blogs.time_dang.getDate()}/#{blogs.time_dang.getMonth()+1}/#{blogs.time_dang.getFullYear()}
-              p.excert
-                |#{blogs.content}
+                  if blogs.time_dang
+                    i.fa.fa-calendar 
+                    |#{blogs.time_dang.getDate()}/#{blogs.time_dang.getMonth()+1}/#{blogs.time_dang.getFullYear()}
+                  else
+                    i.fa.fa-calendar 
+                    | Chưa có thời gian 
+              if blogs.content
+                p.excert
+                  |#{blogs.content}
+              else
+                p.excert
+                  |#{blogs.content}
+
           .navigation-top
             .d-sm-flex.justify-content-between.text-center
               p.like-info
@@ -200,8 +218,12 @@ block main
             aside.single_sidebar_widget.tag_cloud_widget
               h4.widget_title(style='color: #2d2d2d;') Tag Clouds
               ul.list
-                each val in list_tag
+                if list_tag
+                  each val in list_tag
+                    li
+                      a(href='#') #{val}
+                else 
                   li
-                    a(href='#') #{val}
+                     a(href='#') Chưa tồn tại tag
               
   // Blog Area End
