@@ -28,19 +28,30 @@ block main
             .feature-img
               img.img-fluid(src='assets/img/blog/single_blog_1.png' alt='')
             .blog_details
-              h2(style='color: #2d2d2d;') #{blogs.title}
+              if blogs.title
+                h2(style='color: #2d2d2d;') #{blogs.title} 
+              else 
+                h2(style='color: #2d2d2d;') Tiêu đề chưa có hoặc bị lỗi
               ul.blog-info-link.mt-3.mb-4
                 li
                   i.fa.fa-user
-                  a(href='#') #{blogs.ten_ng_dang}
+                  if blogs.ten_ng_dang
+                    a(href='#') #{blogs.ten_ng_dang}  
+                  else  
+                    a(href='#') Chưa có tên tác giả  
                 li
                   i.fa.fa-tag
                   a(href='#') Travel
                   | , 
                   a(href='#') Lifestyle
                 li
-                  i.fa.fa-calendar 
-                  |#{blogs.time_dang.getDate()}/#{blogs.time_dang.getMonth()+1}/#{blogs.time_dang.getFullYear()}
+                  if blogs.time_dang
+                    i.fa.fa-calendar 
+                    |#{blogs.time_dang.getDate()}/#{blogs.time_dang.getMonth()+1}/#{blogs.time_dang.getFullYear()}
+                  else
+                    i.fa.fa-calendar 
+                    | Chưa có thời gian 
+
               p.excert
                 |#{blogs.content}
           .navigation-top
