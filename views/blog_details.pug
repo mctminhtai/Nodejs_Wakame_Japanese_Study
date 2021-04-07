@@ -51,9 +51,13 @@ block main
                   else
                     i.fa.fa-calendar 
                     | Chưa có thời gian 
+              if blogs.content
+                p.excert
+                  |#{blogs.content}
+              else
+                p.excert
+                  |#{blogs.content}
 
-              p.excert
-                |#{blogs.content}
           .navigation-top
             .d-sm-flex.justify-content-between.text-center
               p.like-info
