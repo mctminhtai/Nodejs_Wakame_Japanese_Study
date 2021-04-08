@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
             this.hasMany(models.BLOG, { as: 'baidang' });
             this.hasMany(models.COMMENT, { as: 'binhluan' });
             this.hasMany(models.TKB_DU_KIEN, { as: 'user_tkb' });
-            this.hasMany(models.DS_MON_DA_HOC, { as: 'user_mondahoc' });
+            this.belongsToMany(models.MONHOC, { through: models.DS_MON_DA_HOC, foreignKey: 'USERId', as: 'user_mondahoc' });
         }
     };
     USER.init({
