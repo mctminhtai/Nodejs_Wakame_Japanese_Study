@@ -81,7 +81,7 @@ exports.get_loginPage = function (req, res, next) {
 //     })
 // }
 exports.get_registerPage = function (req, res, next) {
-    return res.render('register', { error: '' });
+    return res.render('register', { errors: '' });
 }
 // exports.post_registerPage = function (req, res, next) {
 //     data = req.body;

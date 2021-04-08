@@ -10,6 +10,7 @@ router.get('/login', checkAuth.checkNotAuthenticated, loginRegister.get_loginPag
 router.post(
     '/login',
     body('email').isEmail().normalizeEmail(),
+
     passport.authenticate(
         'local.login',
         { successRedirect: '/', failureRedirect: '/login', failureFlash: false }));
@@ -17,16 +18,17 @@ router.get('/register', checkAuth.checkNotAuthenticated, loginRegister.get_regis
 //router.post('/register', loginRegister.post_registerPage);
 router.post(
     '/register',
-    body('name').isLength({ min: 5 }),
-    body('email').isEmail().normalizeEmail(),
-    body('password').isLength({ min: 8 }),
+    body('name', 'tên phải lớn hơn 5 ký tự').isLength({ min: 5 }),
+    body('email', 'email chưa đúng định dạng').isEmail().normalizeEmail(),
+    body('terms', 'chưa đồng ý thoả thuận người dùng').exists(),
+    body('password', 'password phải từ 8 ký tự trở lên').isLength({ min: 8 }),
     body('re_password').custom((value, { req }) => {
         if (value !== req.body.password) {
-            throw new Error('Password confirmation does not match password');
+            throw new Error('mật khẩu xác nhận và mật khẩu không khớp');
         }
         return true;
     }),
-    validate.valiReg,
+    validate.checkErr,
     passport.authenticate(
         'local.signup',
         { successRedirect: '/', failureRedirect: '/register', failureFlash: false }

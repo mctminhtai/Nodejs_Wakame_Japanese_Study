@@ -1,9 +1,13 @@
 const { validationResult } = require('express-validator');
-exports.valiReg = function (req, res, next) {
-    const errors = validationResult(req);
+exports.checkErr = function (req, res, next) {
+    const arrerrors = validationResult(req);
+    var errors = {}
+    arrerrors.errors.forEach((error) => {
+        errors[error.param] = error.msg;
+    });
     console.log(errors);
-    if (!errors.isEmpty()) {
-        return res.redirect('/register');
+    if (!arrerrors.isEmpty()) {
+        return res.render('register', { errors: errors });
     }
     next();
 }

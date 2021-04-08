@@ -33,7 +33,7 @@ head
 // Register
 main.login-body(data-vide-bg='assets/img/login.jpg')
   // Login Admin
-  form.form-default(action='/login' method='POST')
+  form.form-default(action='/register' method='POST')
     .login-form(style="margin-top:10px;width:750px;padding-top:70px;border-radius:50px;padding-bottom:10px;background:rgb(0, 0, 0,0.2);box-shadow:0px 0px 0px 0px rgba(0,0,0,0.5)")
       // logo-login
       .logo-login
@@ -46,26 +46,30 @@ main.login-body(data-vide-bg='assets/img/login.jpg')
             .form-input
               // Forget Password
               input(type='text' name='name' placeholder='Họ và Tên' onfocus='this.placeholder=""' onblur='this.placeholder="Họ và Tên"')
-              small.form-text(style="color:yellow")
-                |   Độ dài ít nhất 8 ký tự.    
+              if errors.name 
+                small.form-text(style="color:yellow")
+                  |   #{errors.name}    
           .col-xl-6.col-lg-5.col-md-4.col-sm-6(style="width:100%;")
             .form-input
               input(type='email' name='email' placeholder='Email' onfocus='this.placeholder=""' onblur='this.placeholder="Email"')
-              small.form-text(style="color:yellow;")
-                |   Email không đúng.    
+              if errors.email
+                small.form-text(style="color:yellow;")
+                  |   #{errors.email}    
       .form-input(style="margin-top:-20px;height:80px")
         .row.justify-content-between(style="padding:0")
           .col-xl-6.col-lg-5.col-md-4.col-sm-6(style="width:50%;")
             .form-input
               // Forget Password
               input(type='password' name='password' placeholder='Mật khẩu' onfocus='this.placeholder=""' onblur='this.placeholder="Mật khẩu"')
-              small.form-text(style="color:yellow")
-                |   Độ dài ít nhất 8 ký tự, bao gồm chữ và số.    
+              if errors.password
+                small.form-text(style="color:yellow")
+                  |   #{errors.password}    
           .col-xl-6.col-lg-5.col-md-4.col-sm-6(style="width:50%;")
             .form-input
               input(type='password' name='re_password' placeholder='Xác nhận mật khẩu' onfocus='this.placeholder=""' onblur='this.placeholder="Xác nhận mật khẩu"')
-              small.form-text(style="color:yellow")
-                |   Mật khẩu không khớp.    
+              if errors.re_password
+                small.form-text(style="color:yellow")
+                  |   #{errors.re_password}    
       .form-input
         .row.justify-content-between(style="height:70px")
           .col-xl-6.col-lg-5.col-md-4.col-sm-6
@@ -82,8 +86,9 @@ main.login-body(data-vide-bg='assets/img/login.jpg')
         label(for='name' style='display:inline') Tôi đã đọc và đồng ý với 
           a(href="#") Điều khoản sử dụng
           | &nbsp;của Wakame
-        small.form-text(style="color:yellow")
-          |   Chọn đồng ý trước khi đăng ký.    
+        if errors.terms
+          small.form-text(style="color:yellow")
+            |   #{errors.terms}    
       .form-input
         input(type='submit' name='submit' value='Đăng ký')
 
