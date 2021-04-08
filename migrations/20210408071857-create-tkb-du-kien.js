@@ -1,7 +1,15 @@
 'use strict';
 module.exports = {
     up: async (queryInterface, Sequelize) => {
-        await queryInterface.createTable('DS_LOP_HOC', {
+        await queryInterface.createTable('TKB_DU_KIEN', {
+            USERId: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                references: {
+                    model: 'USER',
+                    key: 'id'
+                },
+            },
             LOPHOCId: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
@@ -10,20 +18,12 @@ module.exports = {
                     key: 'id'
                 },
             },
-            GIANGVIENId: {
-                type: Sequelize.INTEGER,
-                allowNull: false,
-                references: {
-                    model: 'GIANGVIEN',
-                    key: 'id'
-                },
-            },
             THUId: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
                 references: {
                     model: 'THU',
-                    key: "id"
+                    key: 'id'
                 },
             },
             TIETId: {
@@ -44,10 +44,10 @@ module.exports = {
             }
         })
             .then(() => {
-                return queryInterface.sequelize.query('ALTER TABLE "DS_LOP_HOC" ADD CONSTRAINT "dslophoc1" PRIMARY KEY ("LOPHOCId", "GIANGVIENId","THUId","TIETId")');
+                return queryInterface.sequelize.query('ALTER TABLE "TKB_DU_KIEN" ADD CONSTRAINT "TKB" PRIMARY KEY ("USERId", "LOPHOCId","THUId","TIETId")');
             })
     },
     down: async (queryInterface, Sequelize) => {
-        await queryInterface.dropTable('DS_LOP_HOC');
+        await queryInterface.dropTable('TKB_DU_KIEN');
     }
 };

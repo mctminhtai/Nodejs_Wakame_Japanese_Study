@@ -11,8 +11,9 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
-            this.belongsTo(models.MONHOC, { foreignKey: 'MONHOCId', as: 'lophoc1' });
-            this.belongsTo(models.DS_LOP_HOC, { as: 'hoclop3' });
+            this.belongsTo(models.MONHOC, { foreignKey: 'MONHOCId', as: 'lophoc_monhoc' });
+            this.hasMany(models.DS_LOP_HOC, { as: 'lophoc_dslophoc' });
+            this.hasMany(models.TKB_DU_KIEN, { as: 'lophoc_tkb' });
         }
     };
     LOPHOC.init({

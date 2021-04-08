@@ -11,8 +11,10 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
-            this.hasMany(models.BLOG, { as: 'baidang' });
-            this.hasMany(models.COMMENT, { as: 'binhluan' });
+            this.hasMany(models.BLOG, { as: 'user_blog' });
+            this.hasMany(models.COMMENT, { as: 'user_comment' });
+            this.hasMany(models.TKB_DU_KIEN, { as: 'user_tkb' });
+            this.belongsToMany(models.MONHOC, { through: models.DS_MON_DA_HOC, foreignKey: 'USERId', as: 'user_monhoc' });
         }
     };
     USER.init({

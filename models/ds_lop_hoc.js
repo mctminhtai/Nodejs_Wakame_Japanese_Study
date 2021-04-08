@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
-            this.belongsTo(models.GIANG_VIEN, { foreignKey: 'GIANG_VIENId', as: 'dayhoc3' });
-            this.belongsTo(models.LOPHOC, { foreignKey: 'LOPHOCId', as: 'hoclop3' });
-            this.belongsTo(models.THU, { foreignKey: 'THUId', as: 'thuhoc3' });
-            this.belongsTo(models.TIET, { foreignKey: 'TIETId', as: 'tiethoc3' });
+            this.belongsTo(models.GIANGVIEN, { foreignKey: 'GIANGVIENId', as: 'dslophoc_giangvien' });
+            this.belongsTo(models.LOPHOC, { foreignKey: 'LOPHOCId', as: 'dslophoc_lophoc' });
+            this.belongsTo(models.THU, { foreignKey: 'THUId', as: 'dslophoc_thu' });
+            this.belongsTo(models.TIET, { foreignKey: 'TIETId', as: 'dslophoc_tiet' });
 
         }
     };
@@ -23,15 +23,15 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             primaryKey: true
         },
-        GIANG_VIENId: {
+        GIANGVIENId: {
             type: DataTypes.INTEGER,
             primaryKey: true
         },
-        ID_THU: {
+        THUId: {
             type: DataTypes.INTEGER,
             primaryKey: true
         },
-        ID_TIET: {
+        TIETId: {
             type: DataTypes.INTEGER,
             primaryKey: true
         },
