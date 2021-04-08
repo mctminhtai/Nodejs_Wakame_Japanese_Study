@@ -149,13 +149,16 @@ exports.get_test = async function (req, res, next) {
     await models.TAG_BLOG.create({ TAGId: 1, BLOGId: 1 });
     await models.TAG_BLOG.create({ TAGId: 2, BLOGId: 1 });
     await models.TAG_BLOG.create({ TAGId: 3, BLOGId: 1 });
-    // await models.MONHOC.create({ TEN_MH: 'ĐẤM VỠ MÀN HÌNH', SO_TIN_CHI: 3 });
-    // await models.LOPHOC.create({ MONHOCId: 1 });
-    // await models.COMMENT.create({ USERId: 1, BLOGId: 1, cmcontent: 'met qua luon' });
-    // await models.THU.create({ TEN_THU: 'Thu 2' });
-    // await models.TIET.create({ TEN_TIET: 'Tiet 3' });
-    // await models.TIET_THU.create({ THUId: 1, TIETId: 1 });
-    // await models.GIANG_VIEN.create({ TEN_GV: 'God' });
+    await models.MONHOC.create({ TEN_MH: 'ĐẤM VỠ MÀN HÌNH', SO_TIN_CHI: 3 });
+    await models.LOPHOC.create({ MONHOCId: 1 });
+    await models.COMMENT.create({ USERId: 1, BLOGId: 1, cmcontent: 'met qua luon' });
+    await models.THU.create({ TEN_THU: 'Thu 2' });
+    await models.TIET.create({ TEN_TIET: 'Tiet 3' });
+    //await models.TIET_THU.create({ THUId: 1, TIETId: 1 });
+    await models.GIANGVIEN.create({ TEN_GV: 'God' });
+    await models.DS_LOP_HOC.create({ LOPHOCId: 1, GIANGVIENId: 1, THUId: 1, TIETId: 1 });
+    await models.TKB_DU_KIEN.create({ USERId: 1, LOPHOCId: 1, THUId: 1, TIETId: 1 });
+    await models.DS_MON_DA_HOC.create({ USERId: 1, MONHOCId: 1 });
 
     models.USER.findByPk(1, { include: ['binhluan'] }).then((user) => {
         console.log(user.binhluan);
