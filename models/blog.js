@@ -11,9 +11,9 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
-            this.belongsTo(models.USER, { foreignKey: 'USERId', as: 'nguoidang' });
-            this.belongsToMany(models.TAG, { through: models.TAG_BLOG, foreignKey: 'BLOGId', as: 'theloai' });
-            this.hasMany(models.COMMENT, { as: 'binhluan' });
+            this.belongsTo(models.USER, { foreignKey: 'USERId', as: 'blog_user' });
+            this.belongsToMany(models.TAG, { through: models.TAG_BLOG, foreignKey: 'BLOGId', as: 'blog_tag' });
+            this.hasMany(models.COMMENT, { as: 'blog_comment' });
         }
     };
     BLOG.init({

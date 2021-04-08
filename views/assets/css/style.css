@@ -3590,7 +3590,9 @@ to{
 .courses-area .properties__img img{
 	width:100%;
 	border-radius:10px 10px 0 0;
-	position:relative
+	position:relative;
+	height:300px;
+	margin-top: 0
 }
 .courses-area .properties__caption{
 	padding:29px 20px 20px 20px
@@ -3971,7 +3973,7 @@ to{
 	width:480px;
 	padding:90px 45px 60px 45px;
 	transform:translate(-50%, -50%);
-	background:rgba(0,0,0,0.4);
+	background:rgb(255, 255, 255);
 	box-shadow:0 15px 20px rgba(0,0,0,0.2);
 	border-radius:5px
 }
@@ -4004,7 +4006,7 @@ to{
 }
 .login-form .form-input{
 	position:relative;
-	margin:20px 0
+	margin:10px 0
 }
 .login-form .form-input label{
 	font-size:18px;
@@ -6343,4 +6345,5 @@ b,sup,sub,u,del{
 .switch-wrap{
 	margin-bottom:10px
 }
+
 
