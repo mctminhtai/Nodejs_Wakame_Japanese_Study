@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
             //this.hasMany(models.DS_LOP_HOC, { as: 'thuhoc' });
             //this.belongsToMany(models.GIANG_VIEN, { through: models.DS_LOP_HOC, as: 'tiethoc3' });
-            this.belongsToMany(models.THU, { through: models.TIET_THU, as: 'tiet_thu' });
+            this.belongsToMany(models.THU, { through: models.TIET_THU, foreignKey: 'TIETId', as: 'tiet_thu' });
             this.hasMany(models.DS_LOP_HOC, { as: 'tiet_dslophoc' });
             this.hasMany(models.TKB_DU_KIEN, { as: 'tiet_tkb' });
         }
@@ -21,9 +21,9 @@ module.exports = (sequelize, DataTypes) => {
     TIET.init({
         TEN_TIET: DataTypes.STRING
     }, {
-            sequelize,
-            modelName: 'TIET',
-            freezeTableName: true,
-        });
+        sequelize,
+        modelName: 'TIET',
+        freezeTableName: true,
+    });
     return TIET;
 };

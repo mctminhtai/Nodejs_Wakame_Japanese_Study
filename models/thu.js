@@ -13,16 +13,16 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
             this.hasMany(models.DS_LOP_HOC, { as: 'thu_dslophoc' });
             //this.hasMany(models.DS_LOP_HOC, { as: 'tiethoc' });
-            this.belongsToMany(models.TIET, { through: models.TIET_THU, as: 'thu_tiet' });
+            this.belongsToMany(models.TIET, { through: models.TIET_THU, foreignKey: 'THUId', as: 'thu_tiet' });
             this.hasMany(models.TKB_DU_KIEN, { as: 'thu_tkb' });
         }
     };
     THU.init({
         TEN_THU: DataTypes.STRING
     }, {
-            sequelize,
-            modelName: 'THU',
-            freezeTableName: true,
-        });
+        sequelize,
+        modelName: 'THU',
+        freezeTableName: true,
+    });
     return THU;
 };
