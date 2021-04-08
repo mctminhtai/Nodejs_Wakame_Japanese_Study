@@ -8,9 +8,9 @@ var logger = require('morgan');
 var passport = require('passport');
 var session = require('express-session');
 
-// var redis = require("redis");
-// var redisStore = require('connect-redis')(session);
-// var redisClient = redis.createClient();
+var redis = require("redis");
+var redisStore = require('connect-redis')(session);
+var redisClient = redis.createClient();
 //process.env.REDIS_URL
 
 
@@ -43,11 +43,11 @@ app.use(cookieParser());
 app.use(express.static(path.join('public')));
 app.use(session({
   secret: 'keyboard cat',
-  // store: new redisStore({
-  //   host: 'localhost',
-  //   port: 6379,
-  //   client: redisClient
-  // }),
+  store: new redisStore({
+    host: 'localhost',
+    port: 6379,
+    client: redisClient
+  }),
   saveUninitialized: false,
   resave: false,
   cookie: { secure: false }
