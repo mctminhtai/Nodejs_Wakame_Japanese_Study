@@ -46,76 +46,8 @@ block main
     //Rating area start
     section.about-area3.fix#rating
       .section-tittle.section-tittle2.mb-20
-        .front-text
+        .front-text(style="text-align:center;margin-top:70px")
           h2 Đánh giá và cảm nhận của học viên    
-      .support-wrapper.align-items-center
-        .right-content3
-          h1#rating-score 4.9
-          p 108.7M đánh giá
-        .left-content3
-          // section tittle
-          .single-features.star-rating
-            .features-icon
-              .rating
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star 
-            .percent-bar
-              .filled-percent-bar.star5
-            .features-caption
-              p 102M+  
-          .single-features.star-rating
-            .features-icon
-              .rating
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.star-grey.fas.fa-star   
-            .percent-bar
-              .filled-percent-bar(style="width:80%")
-            .features-caption
-                p 86.4M             
-          .single-features.star-rating
-            .features-icon
-              .rating
-                i.fas.fa-star
-                i.fas.fa-star
-                i.fas.fa-star
-                i.star-grey.fas.fa-star   
-                i.star-grey.fas.fa-star   
-            .percent-bar
-              .filled-percent-bar(style="width:30%")
-            .features-caption
-              p 32.4M 
-          .single-features.star-rating
-            .features-icon
-              .rating
-                i.fas.fa-star
-                i.fas.fa-star
-                i.star-grey.fas.fa-star
-                i.star-grey.fas.fa-star   
-                i.star-grey.fas.fa-star   
-            .percent-bar
-              .filled-percent-bar(style="width:20%")
-            .features-caption
-              p 21.6M 
-          .single-features.star-rating
-            .features-icon
-              .rating
-                i.fas.fa-star
-                i.star-grey.fas.fa-star   
-                i.star-grey.fas.fa-star   
-                i.star-grey.fas.fa-star   
-                i.star-grey.fas.fa-star   
-            .percent-bar
-              .filled-percent-bar(style="width:10%")
-            .features-caption
-              p 10M+                                
-    //Rating area end
-
     //Review Area End
     section.team-area.section-padding40.fix(style="padding-bottom:100px;padding-top:50px")
       .container
@@ -193,7 +125,7 @@ block main
     //Review Area End
 
     // ? About Area-1 Start
-    section.about-area1.fix.pt-10
+    section.about-area1.fix.pt-10(style="margin-left:100px")
       .support-wrapper.align-items-center
         .left-content1
           .about-icon
@@ -243,7 +175,7 @@ block main
               .properties__card
                 .properties__img.overlay1
                   a(href='#')
-                    img(src='assets/img/gallery/course_time.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
+                    img(src='assets/img/gallery/course_time.jpg' alt='')
                 .properties__caption
                   p Nguyễn Thị Hoa
                   h3
@@ -260,7 +192,7 @@ block main
               .properties__card
                 .properties__img.overlay1
                   a(href='#')
-                    img(src='assets/img/gallery/course_giaotiepsocap.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
+                    img(src='assets/img/gallery/course_giaotiepsocap.jpg' alt='')
                 .properties__caption
                   p Suzuki Shin
                   h3
@@ -277,7 +209,7 @@ block main
               .properties__card
                 .properties__img.overlay1
                   a(href='#')
-                    img(src='assets/img/gallery/course_flirt.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
+                    img(src='assets/img/gallery/course_flirt.jpg' alt='')
                 .properties__caption
                   p Phan Thanh Lệ
                   h3
@@ -290,7 +222,7 @@ block main
               .properties__card
                 .properties__img.overlay1
                   a(href='#')
-                    img(src='assets/img/gallery/course_giaotieptrungcap.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
+                    img(src='assets/img/gallery/course_giaotieptrungcap.jpg' alt='')
                 .properties__caption
                   p Junko Hirayama
                   h3
@@ -305,7 +237,7 @@ block main
               .properties__card
                 .properties__img.overlay1
                   a(href='#')
-                    img(src='assets/img/gallery/course_socap.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
+                    img(src='assets/img/gallery/course_socap.jpg' alt='')
                 .properties__caption
                   p Junko Hirayama
                   h3
@@ -321,7 +253,7 @@ block main
               .properties__card
                 .properties__img.overlay1
                   a(href='#')
-                    img(src='assets/img/gallery/course_business.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
+                    img(src='assets/img/gallery/course_business.jpg' alt='' id="author-logo")
                 .properties__caption
                   p Dương Thị Thương
                   h3
@@ -450,26 +382,3 @@ block main
           img(src='assets/img/logo/uel-logo.png', alt='', style='width:140px; height:140px;margin-right:0px')
     // About Trust End
 
-    // Tư-vấn Area Start
-    .container
-      .row.justify-content-sm-center(style="margin-left:auto;margin-right:auto;margin-bottom:50px")
-        .col-lg-6
-          form.form-default(action='' method='POST')
-            .login-form(style="font-family:'Mulish',sans-serif;background-color:#ffcbc1")
-              h2 NHẬN TƯ VẤN
-              .form-input
-                input(type='text' name='name' placeholder='Họ và Tên')
-              .form-input
-                input(type='email' name='email' placeholder='Email')
-              .form-input
-                input(type='number' name='mobile-phone' placeholder='Số điện thoại')
-              .form-input
-                input(type='text' name='mobile-phone' placeholder='Cấp độ tiếng Nhật hiện tại')      
-              .form-input
-                input(type='text' name='course' placeholder='Khóa học cần tư vấn')      
-              .form-input.pt-30
-                input(type='submit' name='submit' value='Đăng ký nhận tư vấn' style="background-color:#ff9f67;color:#fff")
-        .col-lg-6
-          img(src='assets/img/gallery/tuvan-bg.png', alt='', style='width:650px;height:550px')
-
-    // Tư-vấn Area End 
