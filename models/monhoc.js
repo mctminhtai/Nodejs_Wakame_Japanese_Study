@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
-            this.hasMany(models.LOPHOC, { as: 'lophoc1' });
+            this.hasMany(models.LOPHOC, { as: 'monhoc_lophoc' });
+            this.hasMany(models.DS_MON_DA_HOC, { as: 'monhoc_mondahoc' });
         }
     };
     MONHOC.init({

@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class USER extends Model {
+    class DS_MON_DA_HOC extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -11,20 +11,18 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
-            this.hasMany(models.BLOG, { as: 'baidang' });
-            this.hasMany(models.COMMENT, { as: 'binhluan' });
-            this.hasMany(models.TKB_DU_KIEN, { as: 'user_tkb' });
-            this.hasMany(models.DS_MON_DA_HOC, { as: 'user_mondahoc' });
+            this.belongsTo(models.USER, { foreignKey: 'USERId', as: 'mondahoc_user' });
+            this.belongsTo(models.MONHOC, { foreignKey: 'MONHOCId', as: 'mondahoc_monhoc' });
         }
     };
-    USER.init({
-        fullName: DataTypes.STRING,
-        email: DataTypes.STRING,
-        password: DataTypes.STRING
+    DS_MON_DA_HOC.init({
+        MONHOCId: DataTypes.INTEGER,
+        USERId: DataTypes.INTEGER
     }, {
             sequelize,
-            modelName: 'USER',
+            modelName: 'DS_MON_DA_HOC',
             freezeTableName: true,
         });
-    return USER;
+    DS_MON_DA_HOC.removeAttribute('id');
+    return DS_MON_DA_HOC;
 };
