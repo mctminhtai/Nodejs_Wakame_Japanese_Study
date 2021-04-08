@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
-            this.belongsTo(models.USER, { foreignKey: 'USERId', as: 'mondahoc_user' });
-            this.belongsTo(models.MONHOC, { foreignKey: 'MONHOCId', as: 'mondahoc_monhoc' });
+            this.belongsTo(models.USER, { foreignKey: 'USERId', as: 'dsmondahoc_user' });
+            this.belongsTo(models.MONHOC, { foreignKey: 'MONHOCId', as: 'dsmondahoc_monhoc' });
         }
     };
     DS_MON_DA_HOC.init({
