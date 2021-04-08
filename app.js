@@ -10,7 +10,7 @@ var session = require('express-session');
 
 var redis = require("redis");
 var redisStore = require('connect-redis')(session);
-var redisClient = redis.createClient();
+var redisClient = redis.createClient(process.env.REDIS_URL);
 //process.env.REDIS_URL
 
 
