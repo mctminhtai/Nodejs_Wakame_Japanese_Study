@@ -13,7 +13,7 @@ exports.checkErr = function (req, res, next) {
     arrerrors.errors.forEach((error) => {
         errors[error.param] = error.msg;
     });
-    console.log(errors);
+    //console.log(errors);
     if (req.route.path == '/register') {
         if (Object.keys(errors).length != 0) {
             var captcha = svgCaptcha.create();
@@ -22,7 +22,8 @@ exports.checkErr = function (req, res, next) {
         }
     }
     if (req.route.path == '/login') {
-        if (Object.keys(errors).length != 0) {
+        console.log(arrerrors);
+        if (Object.keys(arrerrors.errors).length != 0) {
             return res.render('login', { errors: errors });
         }
     }
