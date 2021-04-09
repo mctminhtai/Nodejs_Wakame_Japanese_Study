@@ -47,14 +47,21 @@ main.login-body(data-vide-bg='assets/img/login.jpg')
       h2 Đăng nhập
       .form-input
         input(type='email' name='email' placeholder='Email' onfocus='this.placeholder=""' onblur='this.placeholder="Email"')
-        small.form-text(id="passwordHelpBlock" style="color:yellow;visibility:hidden")
-          |   Email không đúng.   
-
+        if errors.email
+          small.form-text(id="passwordHelpBlock" style="color:yellow")
+            |   #{errors.email}
+        else 
+          small.form-text(id="passwordHelpBlock" style="color:yellow;visibility:hidden")
+            |   jfidfijsdi   
       .form-input
         //label(for='name') Mật khẩu
         input(type='password' name='password' placeholder='Mật khẩu' onfocus='this.placeholder=""' onblur='this.placeholder="Mật khẩu"')
-        small.form-text(id="passwordHelpBlock" style="color:yellow")
-          |   Mật khẩu không đúng.  
+        if errors.password
+          small.form-text(id="passwordHelpBlock" style="color:yellow")
+            |   #{errors.password}
+        else
+          small.form-text(id="passwordHelpBlock" style="color:yellow;visibility:hidden")
+            |   Mật khẩu không đúng.  
       .form-inputs(style='font-size:17px')
         input(type='checkbox' name='password' style="width:20px")
         label(for='name' style='display:inline') Duy trì đăng nhập

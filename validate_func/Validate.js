@@ -6,8 +6,15 @@ exports.checkErr = function (req, res, next) {
         errors[error.param] = error.msg;
     });
     console.log(errors);
-    if (!arrerrors.isEmpty()) {
-        return res.render('register', { errors: errors });
+    if (req.route.path == '/register') {
+        if (!arrerrors.isEmpty()) {
+            return res.render('register', { errors: errors });
+        }
+    }
+    if (req.route.path == '/login') {
+        if (!arrerrors.isEmpty()) {
+            return res.render('login', { errors: errors });
+        }
     }
     next();
 }

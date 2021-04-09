@@ -68,7 +68,7 @@ passport.deserializeUser(function (id, done) {
     // });
 });
 exports.get_loginPage = function (req, res, next) {
-    return res.render('login', { title: 'Express' });
+    return res.render('login', { errors: '' });
 }
 // exports.post_loginPage = function (req, res, next) {
 //     return models.USER.create({
@@ -137,7 +137,7 @@ exports.get_test = async function (req, res, next) {
     // }).then((user) => {
     //     console.log(user.dataValues.email);
     // })
-    await models.USER.create({ fullName: 'minhtai33', email: 'minhtai@gmail.com', password: 'hahakakakak' });
+    //await models.USER.create({ fullName: 'minhtai33', email: 'minhtai@gmail.com', password: 'hahakakakak' });
     await models.TAG.create({ TEN_TAG: 'SuKien' });
     await models.TAG.create({ TEN_TAG: 'Thien thich jav' });
     await models.TAG.create({ TEN_TAG: 'Thien me dong JAv' });
@@ -160,9 +160,9 @@ exports.get_test = async function (req, res, next) {
     await models.TKB_DU_KIEN.create({ USERId: 1, LOPHOCId: 1, THUId: 1, TIETId: 1 });
     await models.DS_MON_DA_HOC.create({ USERId: 1, MONHOCId: 1 });
 
-    models.USER.findByPk(1, { include: ['binhluan'] }).then((user) => {
-        console.log(user.binhluan);
-    })
+    // models.USER.findByPk(1, { include: ['binhluan'] }).then((user) => {
+    //     console.log(user.binhluan);
+    // })
 
     users = []
 

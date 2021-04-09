@@ -9,8 +9,8 @@ const { body } = require('express-validator');
 router.get('/login', checkAuth.checkNotAuthenticated, loginRegister.get_loginPage);
 router.post(
     '/login',
-    body('email').isEmail().normalizeEmail(),
-
+    body('email', 'Email không đúng định dạng').isEmail().normalizeEmail(),
+    validate.checkErr,
     passport.authenticate(
         'local.login',
         { successRedirect: '/', failureRedirect: '/login', failureFlash: false }));
