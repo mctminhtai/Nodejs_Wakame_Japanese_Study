@@ -76,15 +76,16 @@ main.login-body(data-vide-bg='assets/img/login.jpg')
             input(type='text' name='captcha' placeholder='Mã xác nhận' onfocus='this.placeholder=""' onblur='this.placeholder="Mã xác nhận"')
             if errors.captcha
               small.form-text(style="color:yellow")
-                |   Mã xác nhận không đúng.    
+                |   #{errors.captcha}    
           .col-xl-6.col-lg-5.col-md-4.col-sm-6
             .single-services.mb-30
-              img(src='assets/img/gallery/captcha.png' alt='' style='margin-top:-10px;width:150px; height:50px;')
+              |!{captcha}
+              
               a(href="#")
                 i.fas.fa-sync-alt.fa-2x(style="color:white;margin-left:20px")
       .form-inputs(style='font-size:17px')
-        input(type='checkbox' name='password' style="width:20px")
-        label(for='name' style='display:inline') Tôi đã đọc và đồng ý với 
+        input(type='checkbox' name='terms' id='terms' style="width:20px")
+        label(for='terms' style='display:inline') Tôi đã đọc và đồng ý với 
           a(href="#") Điều khoản sử dụng
           | &nbsp;của Wakame
         if errors.terms

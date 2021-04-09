@@ -1,4 +1,5 @@
 const models = require('../models');
+var svgCaptcha = require('svg-captcha');
 // const regValidate = require('../validate_func/registerValidate');
 const bcrypt = require('bcryptjs');
 var passport = require('passport');
@@ -36,7 +37,6 @@ passport.use('local.signup', new LocalStrategy({
             attributes: ['email', 'password', 'id'],
             where: { email: username }
         }).then((user) => {
-            console.log(user);
             if (user) {
                 return done(null, false);
             }
@@ -81,7 +81,9 @@ exports.get_loginPage = function (req, res, next) {
 //     })
 // }
 exports.get_registerPage = function (req, res, next) {
-    return res.render('register', { errors: '' });
+    var captcha = svgCaptcha.create();
+    req.session.captcha = captcha.text;
+    return res.render('register', { errors: '', captcha: captcha.data });
 }
 // exports.post_registerPage = function (req, res, next) {
 //     data = req.body;
@@ -125,6 +127,11 @@ exports.get_registerPage = function (req, res, next) {
 exports.get_logout = function (req, res, next) {
     req.logout();
     return res.redirect('/');
+}
+exports.get_captcha = function (req, res, next) {
+    var captcha = svgCaptcha.create();
+    console.log(captcha);
+    return res.render('captcha', { captcha: captcha.data });
 }
 exports.get_test = async function (req, res, next) {
 
