@@ -110,3 +110,13 @@ exports.get_coursesPage = function (req, res, next) {
     else { return res.render('courses', { title: 'Express', Authenticated: xacnhan }); }
 
 }
+
+exports.get_profilePage = function (req, res, next) {
+    var xacnhan = false;
+    if (req.isAuthenticated()) {
+        xacnhan = true;
+        return res.render('profile', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName });
+    }
+    else { return res.render('profile', { title: 'Express', Authenticated: xacnhan }); }
+
+}

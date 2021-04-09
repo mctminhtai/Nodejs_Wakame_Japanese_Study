@@ -8,4 +8,5 @@ router.get('/blog', homePage.get_blogPage);
 router.get('/blogdetail', homePage.get_blogDetailPage);
 router.get('/contact', homePage.get_contactPage);
 router.get('/courses', homePage.get_coursesPage);
+router.get('/profile', homePage.get_profilePage);
 module.exports = router;
