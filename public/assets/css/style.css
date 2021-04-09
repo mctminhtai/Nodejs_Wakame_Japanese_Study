@@ -133,6 +133,10 @@
 	border:1px solid transparent;
 	color:#fff
 }
+/* Captcha */
+.captcha svg{
+	background-color:#fff;
+}
 
 
 

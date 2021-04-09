@@ -31,7 +31,7 @@ head
         img(src='assets/img/logo/onion_logo.svg' alt='' style='width:120px; height:50px;')
 // Preloader Start
 // Register
-main.login-body(data-vide-bg='assets/img/login.jpg')
+main.login-body(data-vide-bg='assets/img/logo/login.png')
   // Login Admin
   form.form-default(action='/register' method='POST')
     .login-form(style="margin-top:10px;width:750px;padding-top:70px;border-radius:50px;padding-bottom:10px;background:rgb(0, 0, 0,0.2);box-shadow:0px 0px 0px 0px rgba(0,0,0,0.5)")
@@ -78,7 +78,7 @@ main.login-body(data-vide-bg='assets/img/login.jpg')
               small.form-text(style="color:yellow")
                 |   #{errors.captcha}    
           .col-xl-6.col-lg-5.col-md-4.col-sm-6
-            .single-services.mb-30
+            .single-services.mb-30.captcha
               |!{captcha}
               
               a(href="#")
