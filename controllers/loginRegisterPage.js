@@ -3,6 +3,9 @@ var svgCaptcha = require('svg-captcha');
 // const regValidate = require('../validate_func/registerValidate');
 const bcrypt = require('bcryptjs');
 var passport = require('passport');
+//add ham gui email
+var mailer = require('../utils/mailer');
+
 var LocalStrategy = require('passport-local').Strategy;
 passport.use('local.login', new LocalStrategy({
     usernameField: 'email',
@@ -130,7 +133,8 @@ exports.get_logout = function (req, res, next) {
 }
 exports.get_captcha = function (req, res, next) {
     var captcha = svgCaptcha.create();
-    console.log(captcha);
+    //console.log(captcha);
+    mailer.sendMail('tailm0796@gmail.com', 'test thử email CLB', 'không có gì đâu nha');
     return res.render('captcha', { captcha: captcha.data });
 }
 exports.get_test = async function (req, res, next) {
