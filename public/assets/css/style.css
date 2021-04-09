@@ -72,6 +72,73 @@
     text-align: center;
     padding: 0 0 2rem;
 }
+.see-more{
+	width:fit-content;
+	text-align: center;
+	margin: 2em auto;
+}
+.see-more-btn{
+	width: 100%;
+	text-align: center;
+	padding: 17px 40px;
+    border: 1px solid #E2E4FF;
+    color: #4255A4;
+    font-family: "Fira Sans",sans-serif;
+    background: none;
+    border-radius: 5px;
+    text-transform: capitalize;
+    -moz-user-select: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    position: relative;
+    transition: color 0.4s linear;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+
+.see-more a,.see-more i{
+	color:#4255A4;
+}
+.see-more a:hover i{
+	color:white !important;
+}
+.see-more a:hover{
+	color:#fff !important;
+}
+
+.see-more-btn::before{
+	border:1px solid transparent;
+	content:"";
+	position:absolute;
+	left:0;
+	top:0;
+	width:101%;
+	height:101%;
+	background:linear-gradient(to top, #c054ff 0%, #5274ff 100%);
+	z-index:-1;
+	transition:transform 0.5s;
+	transition-timing-function:ease;
+	transform-origin:0 0;
+	transition-timing-function:cubic-bezier(0.5, 1.6, 0.4, 0.7);
+	transform:scaleY(0);
+	border-radius:0
+}
+.see-more-btn:hover::before{
+	transform:scaleY(1);
+	border:1px solid transparent;
+	color:#fff
+}
+/* Captcha */
+.captcha svg{
+	background-color:#fff;
+}
+
+
 
 
 /* --------------------------------
@@ -415,7 +482,7 @@ hr{
 	z-index:-1
 }
 .btn:hover.btn3{
-	background-position:right;
+	background-position:top;
 	border:1px solid transparent
 }
 .btn.btn3{
@@ -423,11 +490,16 @@ hr{
 	border:1px solid #fff;
 	margin-left:10px;
 	color:#fff;
-	padding:22px 25px !important
+	padding:21px 15px !important
 }
 .btn.btn3::before{
 	border:1px solid transparent;
-	background:transparent
+	background-color:#FF9F67;
+	border-radius:5px;
+	transition:transform 0.5s;
+	transition-timing-function:ease;
+	transform-origin:0 0;
+	transition-timing-function:cubic-bezier(0.5, 1.6, 0.4, 0.7);
 }
 .btn.btn3:hover::before{
 	background:#FF9F67;
@@ -3574,7 +3646,8 @@ to{
 	margin:0 15px
 }
 .courses-area .properties.properties2{
-	margin-bottom:30px
+	margin-bottom:30px;
+	height:100%;
 }
 .courses-area .properties__card{
 	box-shadow:0px 6px 6px 0px rgba(2,25,65,0.08);
@@ -3582,7 +3655,9 @@ to{
 	-webkit-transition:.4s;
 	-moz-transition:.4s;
 	-o-transition:.4s;
-	transition:.4s
+	transition:.4s;
+	height:100%;
+
 }
 .courses-area .properties__card:hover{
 	box-shadow:0px 8px 8px 0px rgba(2,25,65,0.08)
