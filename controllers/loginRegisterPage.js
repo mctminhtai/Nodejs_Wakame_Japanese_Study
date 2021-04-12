@@ -134,8 +134,11 @@ exports.get_logout = function (req, res, next) {
 exports.get_captcha = function (req, res, next) {
     var captcha = svgCaptcha.create();
     //console.log(captcha);
-    mailer.sendMail('tailm0796@gmail.com', 'test thử email CLB', 'không có gì đâu nha');
+    //mailer.sendMail('tailm0796@gmail.com', 'test thử email CLB', 'không có gì đâu nha');
     return res.render('captcha', { captcha: captcha.data });
+}
+exports.post_captcha = function (req, res, next) {
+    console.log(req.body);
 }
 exports.get_test = async function (req, res, next) {
 

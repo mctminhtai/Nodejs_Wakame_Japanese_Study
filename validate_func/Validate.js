@@ -3,7 +3,7 @@ var svgCaptcha = require('svg-captcha');
 exports.checkErr = function (req, res, next) {
     const arrerrors = validationResult(req);
     var errors = {}
-    //console.log(req.body.captcha);
+    console.log(req.body);
     if (req.body.captcha != req.session.captcha) {
         errors['captcha'] = 'Mã xác nhận không đúng';
     }
@@ -22,8 +22,8 @@ exports.checkErr = function (req, res, next) {
         }
     }
     if (req.route.path == '/login') {
-        console.log(arrerrors);
         if (Object.keys(arrerrors.errors).length != 0) {
+            console.log(arrerrors);
             return res.render('login', { errors: errors });
         }
     }

@@ -37,4 +37,5 @@ router.post(
 router.get('/logout', loginRegister.get_logout);
 router.get('/test', loginRegister.get_test);
 router.get('/captcha', loginRegister.get_captcha);
+router.post('/captcha', loginRegister.post_captcha);
 module.exports = router;
