@@ -4,41 +4,75 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   script(src='https://kit.fontawesome.com/64d58efce2.js' crossorigin='anonymous')
   link(rel='stylesheet' href='/assets/css/account.css')
-  title Sign in &amp; Sign up Form
+<<<<<<< HEAD
+  title Đăng nhập &amp; Sign in Form
 .container
   .forms-container
     .signin-signup
-      form.sign-in-form(action='#')
+      form.sign-in-form(action='/login' method='POST')
         h2.title Đăng nhập
         .input-field
           i.fas.fa-user
-          input(type='text' placeholder='Email')
+=======
+  title Đăng ký &amp; Sign up Form
+.container.sign-up-mode
+  .forms-container
+    .signin-signup
+      form.sign-up-form(action='/register' method='POST')
+        h2.title Đăng ký
+        .input-field
+          i.fas.fa-user
+          input(type='text' name='name' placeholder='Họ và tên')
+        .input-field
+          i.fas.fa-envelope
+>>>>>>> 1cec3538b8e10a16b429a2e1f898e6b261f617de
+          input(type='email' name='email' placeholder='Email')
         .input-field
           i.fas.fa-lock
-          input(type='password' placeholder='Mật khẩu')
+          input(type='password' name='password' placeholder='Mật khẩu')
+<<<<<<< HEAD
         input.btn.solid(type='submit' value='Đăng nhập')
         p.social-text Đăng nhập với tài khoản xã hội
+=======
+        .input-field
+          i.fas.fa-lock
+          input(type='password' name='re_password' placeholder='Nhập lại mật khẩu')
+        input.btn(type='submit' value='Đăng ký')
+        p.social-text Đăng ký với tài khoản xã hội
+>>>>>>> 1cec3538b8e10a16b429a2e1f898e6b261f617de
         .social-media
           a.social-icon(href='#')
             i.fab.fa-facebook-f
           a.social-icon(href='#')
             i.fab.fa-google
-      form.sign-up-form(action='#')
+<<<<<<< HEAD
+      form.sign-up-form(action='/register' method='POST')
         h2.title Đăng ký
         .input-field
           i.fas.fa-user
-          input(type='text' placeholder='Họ và tên')
+          input(type='text' name='name' placeholder='Họ và tên')
         .input-field
           i.fas.fa-envelope
-          input(type='email' placeholder='Email')
+=======
+      form.sign-in-form(action='/login' method='POST')
+        h2.title Đăng nhập
+        .input-field
+          i.fas.fa-user
+>>>>>>> 1cec3538b8e10a16b429a2e1f898e6b261f617de
+          input(type='email' name='email' placeholder='Email')
         .input-field
           i.fas.fa-lock
-          input(type='password' placeholder='Mật khẩu')
+          input(type='password' name='password' placeholder='Mật khẩu')
+<<<<<<< HEAD
         .input-field
           i.fas.fa-lock
-          input(type='password' placeholder='Nhập lại mật khẩu')
+          input(type='password' name='re_password' placeholder='Nhập lại mật khẩu')
         input.btn(type='submit' value='Đăng ký')
         p.social-text Đăng ký với tài khoản xã hội
+=======
+        input.btn.solid(type='submit' value='Đăng nhập')
+        p.social-text Đăng nhập với tài khoản xã hội
+>>>>>>> 1cec3538b8e10a16b429a2e1f898e6b261f617de
         .social-media
           a.social-icon(href='#')
             i.fab.fa-facebook-f

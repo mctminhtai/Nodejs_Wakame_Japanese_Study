@@ -23,8 +23,7 @@ exports.checkErr = function (req, res, next) {
     }
     if (req.route.path == '/login') {
         if (Object.keys(arrerrors.errors).length != 0) {
-            console.log(arrerrors);
-            return res.render('login', { errors: errors });
+            return res.render('register', { errors: errors });
         }
     }
     next();

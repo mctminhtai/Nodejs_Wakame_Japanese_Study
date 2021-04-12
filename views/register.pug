@@ -1,149 +1,66 @@
 doctype html
 head
-  meta(charset='utf-8')
-  meta(http-equiv='x-ua-compatible' content='ie=edge')
-  title  Đăng ký | Wakame
-  meta(name='description' content='')
-  meta(name='viewport' content='width=device-width, initial-scale=1')
-  link(rel='manifest' href='site.webmanifest')
-  link(rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico')
-  // CSS here
-  link(rel='stylesheet' href='assets/css/bootstrap.min.css')
-  link(rel='stylesheet' href='assets/css/owl.carousel.min.css')
-  link(rel='stylesheet' href='assets/css/slicknav.css')
-  link(rel='stylesheet' href='assets/css/flaticon.css')
-  link(rel='stylesheet' href='assets/css/progressbar_barfiller.css')
-  link(rel='stylesheet' href='assets/css/gijgo.css')
-  link(rel='stylesheet' href='assets/css/animate.min.css')
-  link(rel='stylesheet' href='assets/css/animated-headline.css')
-  link(rel='stylesheet' href='assets/css/magnific-popup.css')
-  link(rel='stylesheet' href='assets/css/fontawesome-all.min.css')
-  link(rel='stylesheet' href='assets/css/themify-icons.css')
-  link(rel='stylesheet' href='assets/css/slick.css')
-  link(rel='stylesheet' href='assets/css/nice-select.css')
-  link(rel='stylesheet' href='assets/css/style.css')
-// ? Preloader Start
-#preloader-active
-  .preloader.d-flex.align-items-center.justify-content-center
-    .preloader-inner.position-relative
-      .preloader-circle
-      .preloader-img.pere-text
-        img(src='assets/img/logo/onion_logo.svg' alt='' style='width:120px; height:50px;')
-// Preloader Start
-// Register
-main.login-body(data-vide-bg='assets/img/logo/login.png')
-  // Login Admin
-  form.form-default(action='/register' method='POST')
-    .login-form(style="margin-top:10px;width:750px;padding-top:70px;border-radius:50px;padding-bottom:10px;background:rgb(0, 0, 0,0.2);box-shadow:0px 0px 0px 0px rgba(0,0,0,0.5)")
-      // logo-login
-      .logo-login
-        a(href='')
-          img(src='assets/img/logo/onion_logo.svg' alt='')    
-      h2 Đăng ký tài khoản
-      .form-input
-        .row.justify-content-between(style="padding:0;height:80px")
-          .col-xl-6.col-lg-5.col-md-4.col-sm-6(style="width:100%;")
-            .form-input
-              // Forget Password
-              input(type='text' name='name' placeholder='Họ và Tên' onfocus='this.placeholder=""' onblur='this.placeholder="Họ và Tên"')
-              if errors.name 
-                small.form-text(style="color:yellow")
-                  |   #{errors.name}    
-          .col-xl-6.col-lg-5.col-md-4.col-sm-6(style="width:100%;")
-            .form-input
-              input(type='email' name='email' placeholder='Email' onfocus='this.placeholder=""' onblur='this.placeholder="Email"')
-              if errors.email
-                small.form-text(style="color:yellow;")
-                  |   #{errors.email}    
-      .form-input(style="margin-top:-20px;height:80px")
-        .row.justify-content-between(style="padding:0")
-          .col-xl-6.col-lg-5.col-md-4.col-sm-6(style="width:50%;")
-            .form-input
-              // Forget Password
-              input(type='password' name='password' placeholder='Mật khẩu' onfocus='this.placeholder=""' onblur='this.placeholder="Mật khẩu"')
-              if errors.password
-                small.form-text(style="color:yellow")
-                  |   #{errors.password}    
-          .col-xl-6.col-lg-5.col-md-4.col-sm-6(style="width:50%;")
-            .form-input
-              input(type='password' name='re_password' placeholder='Xác nhận mật khẩu' onfocus='this.placeholder=""' onblur='this.placeholder="Xác nhận mật khẩu"')
-              if errors.re_password
-                small.form-text(style="color:yellow")
-                  |   #{errors.re_password}    
-      .form-input
-        .row.justify-content-between(style="height:70px")
-          .col-xl-6.col-lg-5.col-md-4.col-sm-6
-            input(type='text' name='captcha' placeholder='Mã xác nhận' onfocus='this.placeholder=""' onblur='this.placeholder="Mã xác nhận"')
-            if errors.captcha
-              small.form-text(style="color:yellow")
-                |   #{errors.captcha}    
-          .col-xl-6.col-lg-5.col-md-4.col-sm-6
-            .single-services.mb-30.captcha
-              |!{captcha}
-              
-              a(href="#")
-                i.fas.fa-sync-alt.fa-2x(style="color:white;margin-left:20px")
-      .form-inputs(style='font-size:17px')
-        input(type='checkbox' name='terms' id='terms' style="width:20px")
-        label(for='terms' style='display:inline') Tôi đã đọc và đồng ý với 
-          a(href="#") Điều khoản sử dụng
-          | &nbsp;của Wakame
-        if errors.terms
-          small.form-text(style="color:yellow")
-            |   #{errors.terms}    
-      .form-input
-        input(type='submit' name='submit' value='Đăng ký')
-
-      .row.justify-content-between(style="margin-top:-20px")
-        .col-xl-6.col-lg-5.col-md-4.col-sm-6
-          .single-services.mb-30
-            // Forget Password
-            a.forget(href='/login' style="width:fit-content;margin-top:30px") Đăng nhập
-            // Forget Password
-            a.registration(href='/' style="width:fit-content") Về trang chủ
-        .col-xl-6.col-lg-5.col-md-4.col-sm-6
-          .single-services.mb-10(style="margin-top:30px;color:white")
-            .footer-social
-              p(style="color:white") Đăng ký bằng
-                a(href='https://facebook.com' target='_blank' style="background-color:#3b5998;margin-left:10px")
-                  i.fab.fa-facebook-f(style="color:white")
-                a(href='https://gmail.com' target='_blank' style="background-color:#ea4335;margin-left:1px")
-                  i.fab.fa-google-plus-g(style="color:white")  
-  // /end login form
-script(src='./assets/js/vendor/modernizr-3.5.0.min.js')
-// Jquery, Popper, Bootstrap
-script(src='./assets/js/vendor/jquery-1.12.4.min.js')
-script(src='./assets/js/popper.min.js')
-script(src='./assets/js/bootstrap.min.js')
-// Jquery Mobile Menu
-script(src='./assets/js/jquery.slicknav.min.js')
-// Video bg
-script(src='./assets/js/jquery.vide.js')
-// Jquery Slick , Owl-Carousel Plugins
-script(src='./assets/js/owl.carousel.min.js')
-script(src='./assets/js/slick.min.js')
-// One Page, Animated-HeadLin
-script(src='./assets/js/wow.min.js')
-script(src='./assets/js/animated.headline.js')
-script(src='./assets/js/jquery.magnific-popup.js')
-// Date Picker
-script(src='./assets/js/gijgo.min.js')
-// Nice-select, sticky
-script(src='./assets/js/jquery.nice-select.min.js')
-script(src='./assets/js/jquery.sticky.js')
-// Progress
-script(src='./assets/js/jquery.barfiller.js')
-// counter , waypoint,Hover Direction
-script(src='./assets/js/jquery.counterup.min.js')
-script(src='./assets/js/waypoints.min.js')
-script(src='./assets/js/jquery.countdown.min.js')
-script(src='./assets/js/hover-direction-snake.min.js')
-// contact js
-script(src='./assets/js/contact.js')
-script(src='./assets/js/jquery.form.js')
-script(src='./assets/js/jquery.validate.min.js')
-script(src='./assets/js/mail-script.js')
-script(src='./assets/js/jquery.ajaxchimp.min.js')
-// Jquery Plugins, main Jquery
-script(src='./assets/js/plugins.js')
-script(src='./assets/js/main.js')
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  script(src='https://kit.fontawesome.com/64d58efce2.js' crossorigin='anonymous')
+  link(rel='stylesheet' href='/assets/css/account.css')
+  title Đăng ký &amp; Sign up Form
+.container
+  .forms-container
+    .signin-signup
+      form.sign-in-form(action='/login' method='POST')
+        h2.title Đăng nhập
+        .input-field
+          i.fas.fa-user
+          input(type='email' name='email' placeholder='Email')
+        .input-field
+          i.fas.fa-lock
+          input(type='password' name='password' placeholder='Mật khẩu')
+        input.btn.solid(type='submit' value='Đăng nhập')
+        p.social-text Đăng nhập với tài khoản xã hội
+        .social-media
+          a.social-icon(href='#')
+            i.fab.fa-facebook-f
+          a.social-icon(href='#')
+            i.fab.fa-google
+      form.sign-up-form(action='/register' method='POST')
+        h2.title Đăng ký
+        .input-field
+          i.fas.fa-user
+          input(type='text' name='name' placeholder='Họ và tên')
+        .input-field
+          i.fas.fa-envelope
+          input(type='email' name='email' placeholder='Email')
+        .input-field
+          i.fas.fa-lock
+          input(type='password' name='password' placeholder='Mật khẩu')
+        .input-field
+          i.fas.fa-lock
+          input(type='password' name='re_password' placeholder='Nhập lại mật khẩu')
+        input.btn(type='submit' value='Đăng ký')
+        p.social-text Đăng ký với tài khoản xã hội
+        .social-media
+          a.social-icon(href='#')
+            i.fab.fa-facebook-f
+          a.social-icon(href='#')
+            i.fab.fa-google
+  .panels-container
+    .panel.left-panel
+      .content
+        h3 Chưa có tài khoản ?
+        p
+          | Hãy đăng ký ngay vì nó là miễn phí. 
+          br
+          | Nếu là sinh viên của UIT hãy dùng tài khoản Gmail của trường để nhận những tiện ích đặc quyền.
+        button#sign-up-btn.btn.transparent
+          | Đăng ký
+      img.image(src='img/log.svg' alt='')
+    .panel.right-panel
+      .content
+        h3 Đã có tài khoản?
+        p
+          | Hay đăng nhập và bắt đầu sử dụng thôi nào
+        button#sign-in-btn.btn.transparent
+          | Đăng nhập
+      img.image(src='img/register.svg' alt='')
+script(src='/assets/js/account.js')

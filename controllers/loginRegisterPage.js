@@ -71,7 +71,7 @@ passport.deserializeUser(function (id, done) {
     // });
 });
 exports.get_loginPage = function (req, res, next) {
-    return res.render('login', { errors: '' });
+    return res.render('login_register', { errors: '' });
 }
 // exports.post_loginPage = function (req, res, next) {
 //     return models.USER.create({
@@ -86,7 +86,7 @@ exports.get_loginPage = function (req, res, next) {
 exports.get_registerPage = function (req, res, next) {
     var captcha = svgCaptcha.create();
     req.session.captcha = captcha.text;
-    return res.render('register', { errors: '', captcha: captcha.data });
+    return res.render('register_login', { errors: '', captcha: captcha.data });
 }
 // exports.post_registerPage = function (req, res, next) {
 //     data = req.body;
