@@ -71,7 +71,7 @@ passport.deserializeUser(function (id, done) {
     // });
 });
 exports.get_loginPage = function (req, res, next) {
-    return res.render('login_register', { errors: '' });
+    return res.render('login_register');
 }
 // exports.post_loginPage = function (req, res, next) {
 //     return models.USER.create({

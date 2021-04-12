@@ -6,7 +6,7 @@ var checkAuth = require('../validate_func/CheckAuth');
 var validate = require('../validate_func/Validate');
 const { body } = require('express-validator');
 /* GET home page. */
-router.get('/login', checkAuth.checkNotAuthenticated, loginRegister.get_loginPage);
+router.get('/accounts', checkAuth.checkNotAuthenticated, loginRegister.get_loginPage);
 router.post(
     '/login',
     body('email', 'Email không đúng định dạng').isEmail().normalizeEmail(),
@@ -14,8 +14,7 @@ router.post(
     passport.authenticate(
         'local.login',
         { successRedirect: '/', failureRedirect: '/login', failureFlash: false }));
-router.get('/register', checkAuth.checkNotAuthenticated, loginRegister.get_registerPage);
-//router.post('/register', loginRegister.post_registerPage);
+
 router.post(
     '/register',
     body('name', 'tên phải lớn hơn 5 ký tự').isLength({ min: 5 }),
