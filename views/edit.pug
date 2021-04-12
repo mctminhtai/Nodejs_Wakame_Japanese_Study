@@ -10,7 +10,7 @@ block main
             .row
               .col-xl-8.col-lg-11.col-md-12
                 .hero__caption.hero__caption2
-                  h1(data-animation='bounceIn' data-delay='0.2s') Thông tin cá nhân
+                  h1(data-animation='bounceIn' data-delay='0.2s') Chỉnh sửa thông tin
                   // breadcrumb Start
                   nav(aria-label='breadcrumb')
                     ol.breadcrumb
@@ -30,35 +30,38 @@ block main
               .col-xl-8.col-lg-11.col-md-12
                 h2 #{user_name}
               .col-xl-4.col-lg-11.col-md-12(style="margin-top:20px")
-                a(href="/edit" style="color:#4255a4;font-size:17px")
-                  i.fas.fa-edit
-                  | &nbsp;Chỉnh sửa thông tin
+                a(href="/profile" style="color:#4255a4;font-size:17px")
+                  i.fas.fa-save
+                  | &nbsp;Lưu
             .row(style="width:700px")
               .col-xl-8.col-lg-11.col-md-12
                 .features-caption
                   h3 Họ và tên
-                  p #{user_name}
+                  input(type="text" name="text")
               .col-xl-4.col-lg-11.col-md-12
                 .features-caption
                   h3 Giới tính
-                  p Nữ
+                  input(type="radio" name="gender" value="1" checked=gender=="male")
+                  | Male
+                  input(type="radio" name="gender" value="0" checked=gender=="female")
+                  | Female            
             .row(style="width:700px")
               .col-xl-8.col-lg-11.col-md-12
                 .features-caption
                   h3 Ngày sinh
-                  p 1/1/2000
-              .col-xl-4.col-lg-11.col-md-12
+                  span.date
+                    = Intl.DateTimeFormat('en-US',{ year: 'numeric', month: 'short', day: '2-digit', hour:'numeric', minute: '2-digit', second: '2-digit' }).format(PrismicDOM.Date(document.data.eventDate))              .col-xl-4.col-lg-11.col-md-12
                 .features-caption
                   h3 Số điện thoại
-                  p 0123 456 789
+                  input( type="tel" name="telephone" pattern="\\d{10}" )            
             .row(style="width:700px")
               .col-xl-8.col-lg-11.col-md-12
                 .features-caption
                   h3 Email
-                  p #{user_name}@gmail.com
+                  input( type="email" name="email")            
             .row(style="width:700px")
               .col-xl-8.col-lg-11.col-md-12
                 .features-caption
                   h3 Địa chỉ
-                  p Unknow
+                  input( type="text" name="address")            
     // ? About Area-1 End

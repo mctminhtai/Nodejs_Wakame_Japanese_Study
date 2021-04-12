@@ -52,7 +52,7 @@ header
                       li.active.nav-item
                         a(href='/') Trang chủ
                       li.nav-item
-                        a(href='#') 
+                        a(href='') 
                           |Giảng dạy&nbsp; 
                           i.fas.fa-caret-down
                         ul.submenu
@@ -75,6 +75,13 @@ header
                       else
                         li.button-header.margin-left
                           a.btn(href='/') #{user_name}
+                          ul.submenu(style="width:max-content")
+                            li
+                              a(href='/profile') Thông tin cá nhân
+                            li
+                              a(href='/') Thay đổi mật khẩu
+                            li
+                                a(href='/') Tạo TKB UIT                      
                         li.button-header
                           a.btn.btn3(href='/logout') Đăng xuất 
                         
