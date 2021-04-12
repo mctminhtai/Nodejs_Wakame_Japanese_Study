@@ -1,6 +1,5 @@
 const models = require('../models');
 var svgCaptcha = require('svg-captcha');
-// const regValidate = require('../validate_func/registerValidate');
 const bcrypt = require('bcryptjs');
 var passport = require('passport');
 //add ham gui email
@@ -66,67 +65,13 @@ passport.deserializeUser(function (id, done) {
     models.USER.findByPk(id).then((user) => {
         return done(null, user);
     });
-    // User.findById(id, function (err, user) {
-    //     done(err, user);
-    // });
 });
-exports.get_loginPage = function (req, res, next) {
+exports.get_accountsPage = function (req, res, next) {
     return res.render('login_register');
 }
-// exports.post_loginPage = function (req, res, next) {
-//     return models.USER.create({
-//         email: req.body.login_email,
-//         password: req.body.login_password
-//     }).then(lead => {
-//         res.redirect('/');
-//     }).catch(error => {
-//         console.log(error);
-//     })
-// }
-exports.get_registerPage = function (req, res, next) {
-    var captcha = svgCaptcha.create();
-    req.session.captcha = captcha.text;
-    return res.render('register_login', { errors: '', captcha: captcha.data });
-}
-// exports.post_registerPage = function (req, res, next) {
-//     data = req.body;
-//     const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//     models.USER.findAll({
-//         attributes: ['email'],
-//         where: { email: data.email }
-//     }).then((allUsers) => {
-//         let errors = [];
-//         if (allUsers.length > 0) {
-//             errors.push("Email này đã tồn tại");
-//         }
-//         if (!data.name) {
-//             errors.push("Username không được để trống");
-//         }
-//         if (!re.test(data.email)) {
-//             errors.push("Email không hợp lệ");
-//         }
-//         if (data.password != data.re_password) {
-//             errors.push("Password1 và password2 không trùng nhau");
-//         }
-//         //console.log('kiem tra loi khong ve home', errors);
-//         if (errors.length != 0) {
-//             res.render('register', { errors: errors });
-//         } else {
-//             bcrypt.hash(req.body.password, 10, function (err, hash) {
-//                 // Store hash in your password DB.
-//                 models.USER.create({
-//                     fullName: req.body.name,
-//                     email: req.body.email,
-//                     password: hash
-//                 }).then(user => {
-//                     res.redirect('/');
-//                 }).catch(error => {
-//                     console.log(error);
-//                 })
-//             });
-//         }
-//     });
-// }
+
+
+
 exports.get_logout = function (req, res, next) {
     req.logout();
     return res.redirect('/');
@@ -152,36 +97,33 @@ exports.get_test = async function (req, res, next) {
     //     console.log(user.dataValues.email);
     // })
     //await models.USER.create({ fullName: 'minhtai33', email: 'minhtai@gmail.com', password: 'hahakakakak' });
-    await models.TAG.create({ TEN_TAG: 'SuKien' });
-    await models.TAG.create({ TEN_TAG: 'Thien thich jav' });
-    await models.TAG.create({ TEN_TAG: 'Thien me dong JAv' });
-    await models.TAG.create({ TEN_TAG: 'Thien coi jav' });
-    await models.TAG.create({ TEN_TAG: 'Thien than tuong jav' });
-    await models.TAG.create({ TEN_TAG: 'Thien sieu me JAV' });
+    // await models.TAG.create({ TEN_TAG: 'SuKien' });
+    // await models.TAG.create({ TEN_TAG: 'Thien thich jav' });
+    // await models.TAG.create({ TEN_TAG: 'Thien me dong JAv' });
+    // await models.TAG.create({ TEN_TAG: 'Thien coi jav' });
+    // await models.TAG.create({ TEN_TAG: 'Thien than tuong jav' });
+    // await models.TAG.create({ TEN_TAG: 'Thien sieu me JAV' });
 
-    await models.BLOG.create({ USERId: 1, title: 'helo33', content: 'khong co giiii' });
-    await models.TAG_BLOG.create({ TAGId: 1, BLOGId: 1 });
-    await models.TAG_BLOG.create({ TAGId: 2, BLOGId: 1 });
-    await models.TAG_BLOG.create({ TAGId: 3, BLOGId: 1 });
-    await models.MONHOC.create({ TEN_MH: 'ĐẤM VỠ MÀN HÌNH', SO_TIN_CHI: 3 });
-    await models.LOPHOC.create({ MONHOCId: 1 });
-    await models.COMMENT.create({ USERId: 1, BLOGId: 1, cmcontent: 'met qua luon' });
-    await models.THU.create({ TEN_THU: 'Thu 2' });
-    await models.TIET.create({ TEN_TIET: 'Tiet 3' });
-    //await models.TIET_THU.create({ THUId: 1, TIETId: 1 });
-    await models.GIANGVIEN.create({ TEN_GV: 'God' });
-    await models.DS_LOP_HOC.create({ LOPHOCId: 1, GIANGVIENId: 1, THUId: 1, TIETId: 1 });
-    await models.TKB_DU_KIEN.create({ USERId: 1, LOPHOCId: 1, THUId: 1, TIETId: 1 });
-    await models.DS_MON_DA_HOC.create({ USERId: 1, MONHOCId: 1 });
+    // await models.BLOG.create({ USERId: 1, title: 'helo33', content: 'khong co giiii' });
+    // await models.TAG_BLOG.create({ TAGId: 1, BLOGId: 1 });
+    // await models.TAG_BLOG.create({ TAGId: 2, BLOGId: 1 });
+    // await models.TAG_BLOG.create({ TAGId: 3, BLOGId: 1 });
+    // await models.MONHOC.create({ TEN_MH: 'ĐẤM VỠ MÀN HÌNH', SO_TIN_CHI: 3 });
+    // await models.LOPHOC.create({ MONHOCId: 1 });
+    // await models.COMMENT.create({ USERId: 1, BLOGId: 1, cmcontent: 'met qua luon' });
+    // await models.THU.create({ TEN_THU: 'Thu 2' });
+    // await models.TIET.create({ TEN_TIET: 'Tiet 3' });
+    // await models.TIET_THU.create({ THUId: 1, TIETId: 1 });
+    // await models.GIANGVIEN.create({ TEN_GV: 'God' });
+    // await models.DS_LOP_HOC.create({ LOPHOCId: 1, GIANGVIENId: 1, THUId: 1, TIETId: 1 });
+    // await models.TKB_DU_KIEN.create({ USERId: 1, LOPHOCId: 1, THUId: 1, TIETId: 1 });
+    // await models.DS_MON_DA_HOC.create({ USERId: 1, MONHOCId: 1 });
 
     // models.USER.findByPk(1, { include: ['binhluan'] }).then((user) => {
     //     console.log(user.binhluan);
     // })
 
     users = []
-
-
-
     await models.USER.findAll({ attributes: ['fullName', 'email', 'password'] }).then((all) => {
         all.forEach((item, index) => {
             users.push(item.dataValues);

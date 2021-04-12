@@ -6,7 +6,7 @@ var checkAuth = require('../validate_func/CheckAuth');
 var validate = require('../validate_func/Validate');
 const { body } = require('express-validator');
 /* GET home page. */
-router.get('/accounts', checkAuth.checkNotAuthenticated, loginRegister.get_loginPage);
+router.get('/accounts', checkAuth.checkNotAuthenticated, loginRegister.get_accountsPage);
 router.post(
     '/login',
     body('email', 'Email không đúng định dạng').isEmail().normalizeEmail(),
