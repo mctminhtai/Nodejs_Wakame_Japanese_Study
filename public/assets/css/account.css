@@ -357,8 +357,8 @@ form.sign-in-form {
     transform: translateY(-300px);
   }
 
-  .container.sign-up-mode .right-panel .image,
-  .container.sign-up-mode .right-panel .content {
+  .containers.sign-up-mode .right-panel .image,
+  .containers.sign-up-mode .right-panel .content {
     transform: translateY(0px);
   }
 
@@ -367,7 +367,7 @@ form.sign-in-form {
     transform: translateY(300px);
   }
 
-  .container.sign-up-mode .signin-signup {
+  .containers.sign-up-mode .signin-signup {
     top: 5%;
     transform: translate(-50%, 0);
   }
