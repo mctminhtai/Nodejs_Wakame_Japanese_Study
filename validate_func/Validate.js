@@ -24,7 +24,7 @@ exports.checkErr = function (req, res, next) {
     if (req.route.path == '/login') {
         console.log(arrerrors);
         if (Object.keys(arrerrors.errors).length != 0) {
-            return res.render('login', { errors: errors });
+            return res.render('register', { errors: errors });
         }
     }
     next();
