@@ -23,15 +23,17 @@ exports.get_aboutPage = function (req, res, next) {
     }
 
 }
-exports.get_blogPage = function (req, res, next) {
-    var xacnhan = false;
-    if (req.isAuthenticated()) {
-        xacnhan = true;
-        return res.render('blog', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
-    }
-    else {
-        return res.render('blog', { title: 'Express', Authenticated: xacnhan });
-    }
+exports.get_blogPage = async function (req, res, next) {
+    var blogs = await models.BLOG.findAll({
+        attributes: ['uuid', 'title', 'content', 'description', 'createdAt'],
+        include: ['blog_user'],
+    })
+    console.log(blogs);
+    return res.render('blog', {
+        Authenticated: req.isAuthenticated(),
+        user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
+        blogs: blogs,
+    });
 }
 exports.get_blogDetailPage = async function (req, res, next) {
     var uuid = req.param('uuid');
@@ -44,21 +46,12 @@ exports.get_blogDetailPage = async function (req, res, next) {
         attributes: ['TEN_TAG']
     });
     console.log(blog, tags);
-    if (req.isAuthenticated()) {
-        xacnhan = true;
-        return res.render('blog_details', {
-            title: 'Express',
-            Authenticated: xacnhan,
-            user_name: req.user.dataValues.fullName,
-        });
-    }
-    else {
-        var xacnhan = false;
-        return res.render('blog_details', {
-            title: 'Express',
-            Authenticated: xacnhan,
-        });
-    }
+    return res.render('blog_details', {
+        Authenticated: req.isAuthenticated(),
+        user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
+        blog: blog,
+        tags: tags,
+    })
 }
 
 exports.get_contactPage = function (req, res, next) {

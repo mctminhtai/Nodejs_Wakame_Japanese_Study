@@ -25,6 +25,27 @@ block main
         .row
           .col-lg-8.mb-5.mb-lg-0
             .blog_left_sidebar
+              each val in blogs 
+                article.blog_item
+                  .blog_item_img
+                    img.card-img.rounded-0(src='assets/img/blog/blog20112021.jpg' alt='')
+                    a(style="text-align:center").blog_item_date(href='#')
+                      h3 #{val.dataValues.createdAt.getFullYear().toString().substr(2,2)}
+                      p #{val.dataValues.createdAt.getMonth()}月
+                  .blog_details
+                    a.d-inline-block(href='/blog/' + val.dataValues.uuid)
+                      h2.blog-head(style='color: #2d2d2d;') #{val.dataValues.title}
+                    p
+                      | #{val.dataValues.description}
+                    ul.blog-info-link
+                      li
+                        a(href='#')
+                          i.fa.fa-user
+                          |  #{val.blog_user.dataValues.fullName}
+                      li
+                        a(href='#')
+                          i.fa.fa-comments
+                          |  03 bình luận
               article.blog_item
                 .blog_item_img
                   img.card-img.rounded-0(src='assets/img/blog/blog20112021.jpg' alt='')

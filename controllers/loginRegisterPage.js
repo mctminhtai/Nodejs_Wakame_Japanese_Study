@@ -99,17 +99,17 @@ exports.get_test = async function (req, res, next) {
     //     console.log(user.dataValues.email);
     // })
     // await models.USER.create({ fullName: 'minhtai33', email: 'minhtai@gmail.com', password: 'hahakakakak' });
-    // await models.TAG.create({ TEN_TAG: 'SuKien' });
-    // await models.TAG.create({ TEN_TAG: 'Thien thich jav' });
-    // await models.TAG.create({ TEN_TAG: 'Thien me dong JAv' });
-    // await models.TAG.create({ TEN_TAG: 'Thien coi jav' });
-    // await models.TAG.create({ TEN_TAG: 'Thien than tuong jav' });
-    // await models.TAG.create({ TEN_TAG: 'Thien sieu me JAV' });
-    // randid = uuidv4()
-    // await models.BLOG.create({ uuid: randid, USERId: 1, title: 'helo33', content: 'khong co giiii' });
-    // await models.TAG_BLOG.create({ TAGId: 1, BLOGId: 1 });
-    // await models.TAG_BLOG.create({ TAGId: 2, BLOGId: 1 });
-    // await models.TAG_BLOG.create({ TAGId: 3, BLOGId: 1 });
+    await models.TAG.create({ TEN_TAG: 'SuKien' });
+    await models.TAG.create({ TEN_TAG: 'Thien thich jav' });
+    await models.TAG.create({ TEN_TAG: 'Thien me dong JAv' });
+    await models.TAG.create({ TEN_TAG: 'Thien coi jav' });
+    await models.TAG.create({ TEN_TAG: 'Thien than tuong jav' });
+    await models.TAG.create({ TEN_TAG: 'Thien sieu me JAV' });
+    randid = uuidv4()
+    await models.BLOG.create({ uuid: randid, USERId: 1, title: 'helo33', content: 'khong co giiii' });
+    await models.TAG_BLOG.create({ TAGId: 1, BLOGId: 1 });
+    await models.TAG_BLOG.create({ TAGId: 2, BLOGId: 1 });
+    await models.TAG_BLOG.create({ TAGId: 3, BLOGId: 1 });
     // await models.MONHOC.create({ TEN_MH: 'ĐẤM VỠ MÀN HÌNH', SO_TIN_CHI: 3 });
     // await models.LOPHOC.create({ MONHOCId: 1 });
     // await models.COMMENT.create({ USERId: 1, BLOGId: 1, cmcontent: 'met qua luon' });
