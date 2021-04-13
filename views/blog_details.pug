@@ -1,4 +1,6 @@
 extends layout
+block title 
+  title Bài đăng | Wakame
 block main
   main
     // ? slider Area Start
@@ -10,14 +12,14 @@ block main
             .row
               .col-xl-8.col-lg-11.col-md-12
                 .hero__caption.hero__caption2
-                  h1(data-animation='bounceIn' data-delay='0.2s') Company insights
+                  h1(data-animation='bounceIn' data-delay='0.2s') Chi tiết tin tức
                   // breadcrumb Start
                   nav(aria-label='breadcrumb')
                     ol.breadcrumb
                       li.breadcrumb-item
                         a(href='index.html') Home
                       li.breadcrumb-item
-                        a(href='#') Blog
+                        a(href='#') Tin tức
                   // breadcrumb End
     // ? Blog Area Start
     section.blog_area.single-post-area.section-padding
@@ -116,90 +118,94 @@ block main
               //-           .reply-btn
               //-             a.btn-reply.text-uppercase(href='#') reply
             .comment-form
-              h4 Leave a Reply
+              h4 Đăng bình luận
               form#commentForm.form-contact.comment_form(action='#')
                 .row
                   .col-12
                     .form-group
-                      textarea#comment.form-control.w-100(name='comment' cols='30' rows='9' placeholder='Write Comment')
+                      textarea#comment.form-control.w-100(name='comment' cols='30' rows='9' placeholder='Nội dung bình luận')
                   .col-sm-6
                     .form-group
-                      input#name.form-control(name='name' type='text' placeholder='Name')
+                      input#name.form-control(name='name' type='text' placeholder='Tên của bạn')
                   .col-sm-6
                     .form-group
-                      input#email.form-control(name='email' type='email' placeholder='Email')
-                  .col-12
-                    .form-group
-                      input#website.form-control(name='website' type='text' placeholder='Website')
+                      input#email.form-control(name='email' type='email' placeholder='Email của bạn')
                 .form-group
-                  button.button.button-contactForm.btn_1.boxed-btn(type='submit') Post Comment
+                  button.button.button-contactForm.btn_1.boxed-btn(type='submit') Gửi
           .col-lg-3
             .blog_right_sidebar
               aside.single_sidebar_widget.search_widget
                 form(action='#')
                   .form-group
                     .input-group.mb-3
-                      input.form-control(type='text' placeholder='Search Keyword' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'")
+                      input.form-control(type='text' placeholder='Tìm kiếm từ khóa' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tìm kiếm từ khóa'")
                       .input-group-append
                         button.btns(type='button')
                           i.ti-search
-                  button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Search
+                  button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Tìm kiếm
               aside.single_sidebar_widget.post_category_widget
-                h4.widget_title(style='color: #2d2d2d;') Category
+                h4.widget_title(style='color: #2d2d2d;') Chủ đề
                 ul.list.cat-list
                   li
-                    a.d-flex(href='#')
-                      p Resaurant food
-                      p (37)
                   li
                     a.d-flex(href='#')
-                      p Travel news
-                      p (10)
+                      p Học tập
+                      p &nbsp;(37)
                   li
                     a.d-flex(href='#')
-                      p Modern technology
-                      p (03)
+                      p Du học
+                      p &nbsp;(10)
                   li
                     a.d-flex(href='#')
-                      p Product
-                      p (11)
+                      p Kinh nghiệm đời sống
+                      p &nbsp;(03)
                   li
                     a.d-flex(href='#')
-                      p Inspiration
-                      p (21)
+                      p Ôn thi
+                      p &nbsp;(11)
                   li
                     a.d-flex(href='#')
-                      p Health Care
-                      p (21)
-              aside.single_sidebar_widget.popular_post_widget
-                h3.widget_title(style='color: #2d2d2d;') Recent Post
+                      p Kỹ năng mềm
+                      p &nbsp;(21)
+                  li
+                    a.d-flex(href='#')
+                      p Sức khỏe
+                      p &nbsp;(09)
+                h3.widget_title(style='color: #2d2d2d;') Bài viết gần đây
                 .media.post_item
-                  img(src='assets/img/post/post_1.png' alt='post')
+                  img(src='assets/img/post/qtpn.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
                   .media-body
-                    a(href='blog_details.html')
-                      h3(style='color: #2d2d2d;') From life was you fish...
-                    p January 12, 2019
+                    a(href='/blog_details')
+                      h3(style='color: #2d2d2d;') Ngày Quốc tế Phụ nữ 
+                    p ２０２１年３月８日
                 .media.post_item
-                  img(src='assets/img/post/post_2.png' alt='post')
+                  img(src='assets/img/post/pnvn.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
                   .media-body
-                    a(href='blog_details.html')
-                      h3(style='color: #2d2d2d;') The Amazing Hubble
-                    p 02 Hours ago
+                    a(href='/blog_details')
+                      h3(style='color: #2d2d2d;') Ngày Phụ nữ Việt Nam 
+                    p ２０２０年１０月２０日
                 .media.post_item
-                  img(src='assets/img/post/post_3.png' alt='post')
+                  img(src='assets/img/post/mext.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
                   .media-body
-                    a(href='blog_details.html')
-                      h3(style='color: #2d2d2d;') Astronomy Or Astrology
-                    p 03 Hours ago
+                    a(href='/blog_details')
+                      h3(style='color: #2d2d2d;') Học bổng du học MEXT
+                    p ３時前　
                 .media.post_item
-                  img(src='assets/img/post/post_4.png' alt='post')
+                  img(src='assets/img/post/jlpt.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
                   .media-body
-                    a(href='blog_details.html')
-                      h3(style='color: #2d2d2d;') Asteroids telescope
-                    p 01 Hours ago
+                    a(href='/blog_details')
+                      h3(style='color: #2d2d2d;') Kỳ thi JLPT Tháng 7/2021
+                    p １０分前　
               aside.single_sidebar_widget.tag_cloud_widget
                 h4.widget_title(style='color: #2d2d2d;') Tag Clouds
                 ul.list
                   each val in tags
                     li
                       a(href='#') #{val.dataValues.TEN_TAG}
+              aside.single_sidebar_widget.newsletter_widget
+                h4.widget_title(style='color: #2d2d2d;') Nhận tin tức
+                form(action='#')
+                  .form-group
+                    input.form-control(type='email' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email của bạn'" placeholder='Enter email' required='')
+                  button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Subscribe
+    // Blog Area End

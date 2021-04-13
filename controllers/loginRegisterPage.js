@@ -89,15 +89,15 @@ exports.post_captcha = function (req, res, next) {
 }
 exports.get_test = async function (req, res, next) {
 
-    // models.USER.findByPk(1, { include: ['baidang'] }).then((user) => {
-    //     console.log(user.baidang);
-    // })
-    // models.USER.findOne({
-    //     attributes: ['email', 'password'],
-    //     where: { email: 'tai@gmail.com' }
-    // }).then((user) => {
-    //     console.log(user.dataValues.email);
-    // })
+    models.USER.findByPk(1, { include: ['baidang'] }).then((user) => {
+        console.log(user.baidang);
+    })
+    models.USER.findOne({
+        attributes: ['email', 'password'],
+        where: { email: 'tai@gmail.com' }
+    }).then((user) => {
+        console.log(user.dataValues.email);
+    })
     await models.USER.create({ fullName: 'minhtai33', email: 'minhtai@gmail.com', password: 'hahakakakak' });
     await models.TAG.create({ TEN_TAG: 'SuKien' });
     await models.TAG.create({ TEN_TAG: 'Thien thich jav' });

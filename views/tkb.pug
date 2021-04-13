@@ -1,0 +1,47 @@
+extends layout
+block title 
+  title Thời khóa biểu | Wakame
+block main
+  main
+    // ? slider Area Start
+    section.slider-area.slider-area2
+      .slider-active
+        // Single Slider
+        .single-slider.slider-height2
+          .container
+            .row
+              .col-xl-8.col-lg-11.col-md-12
+                .hero__caption.hero__caption2
+                  h1(data-animation='bounceIn' data-delay='0.2s') Thời khóa biểu
+                  // breadcrumb Start
+                  nav(aria-label='breadcrumb')
+                    ol.breadcrumb
+                      li.breadcrumb-item
+                        a(href='/') Trang chủ
+                      li.breadcrumb-item
+                        a(href='/tkb') Thời khóa biểu
+                  // breadcrumb End
+    .services-area.services-area2(style="padding-top:50px;padding-bottom:50px")
+      .container
+        .row.justify-content-sm-center
+          .col-lg-3.col-md-6.col-sm-8
+            .single-services.mb-30(style="box-shadow:none;padding-left:0px;padding-top:0px")
+                .features-caption(style="padding-left:0px")
+                    a(href="/profile")
+                        h3 Thông tin cá nhân
+                    a(href="/resetpw")
+                        h3 Thay đổi mật khẩu
+                    a(href="/tkb")
+                        h3 Tạo TKB UIT
+          .col-lg-9.col-md-6.col-sm-8
+            ol
+                li(style="margin-bottom:20px")
+                    | 1. Upload file excel TKB của UIT
+                    input(type="file" id="exampleFormControlFile1" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel").form-control-file
+                li(style="margin-bottom:20px") 
+                    | 2. Nhập vào danh sách mã lớp học
+                    input(type="text" style="width:100%;height:100px" placeholder="Mỗi mã học phần trên một hàng. Ví dụ:&#10;IE229.L21.CNCL&#10;IE213.L21.CNCL&#10;IE106.L22.CNCL")
+                li(style="margin-bottom:20px") 
+                    button.btn.transparent
+                        | Kết quả
+                    img(src='assets/img/gallery/tkb-uit.png' alt='' style="width:100%;height:700px")

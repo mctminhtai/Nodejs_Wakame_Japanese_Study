@@ -1,4 +1,6 @@
 extends layout.pug 
+block title 
+  title Chỉnh sửa thông tin | Wakame
 block main 
   main
     // ? slider Area Start
@@ -58,7 +60,7 @@ block main
               .col-xl-8.col-lg-11.col-md-12
                 .features-caption
                   h3 Email
-                  input( type="email" name="email")            
+                  p #{email_user}
             .row(style="width:700px")
               .col-xl-8.col-lg-11.col-md-12
                 .features-caption

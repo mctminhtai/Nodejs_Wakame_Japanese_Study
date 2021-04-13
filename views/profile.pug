@@ -1,4 +1,6 @@
 extends layout.pug 
+block title 
+  title Tài khoản cá nhân | Wakame
 block main 
   main
     // ? slider Area Start
@@ -19,18 +21,24 @@ block main
                       li.breadcrumb-item
                         a(href='/profile') Thông tin cá nhân
                   // breadcrumb End
-    // ? About Area-1 Start
-    section.about-area1.fix.pt-10.mb-30.mt-30(style="margin-left:100px")
-      .support-wrapper.align-items-center
-        .left-content1
-          // section tittle
-          .section-tittle.section-tittle2.mb-55
-            .front-text
-            .row(style="width:700px")
+    .services-area.services-area2(style="padding-top:50px;padding-bottom:50px")
+      .container
+        .row.justify-content-sm-center
+          .col-lg-4.col-md-6.col-sm-8
+            .single-services.mb-30(style="box-shadow:none;padding-left:0px;padding-top:0px")
+                .features-caption(style="padding-left:0px")
+                    a(href="/profile")
+                        h3 Thông tin cá nhân
+                    a(href="/resetpw")
+                        h3 Thay đổi mật khẩu
+                    a(href="/tkb")
+                        h3 Tạo TKB UIT
+          .col-lg-8.col-md-6.col-sm-8
+            .row(style="width:700px;margin-bottom:30px")
               .col-xl-8.col-lg-11.col-md-12
-                h2 #{user_name}
-              .col-xl-4.col-lg-11.col-md-12(style="margin-top:20px")
-                a(href="/edit" style="color:#4255a4;font-size:17px")
+                h1 Thông tin cá nhân
+              .col-xl-4.col-lg-11.col-md-12(style="margin-top:5px")
+                a(href="/editprofile" style="color:#4255a4;font-size:17px")
                   i.fas.fa-edit
                   | &nbsp;Chỉnh sửa thông tin
             .row(style="width:700px")
@@ -54,11 +62,19 @@ block main
             .row(style="width:700px")
               .col-xl-8.col-lg-11.col-md-12
                 .features-caption
+                  h3 Trình độ tiếng Nhật
+                  p N3
+              .col-xl-4.col-lg-11.col-md-12
+                .features-caption
+                  h3 Quốc gia
+                  p Việt Nam
+            .row(style="width:700px")
+              .col-xl-8.col-lg-11.col-md-12
+                .features-caption
                   h3 Email
-                  p #{user_name}@gmail.com
+                  p #{email_user}
             .row(style="width:700px")
               .col-xl-8.col-lg-11.col-md-12
                 .features-caption
                   h3 Địa chỉ
                   p Unknow
-    // ? About Area-1 End
