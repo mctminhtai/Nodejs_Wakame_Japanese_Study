@@ -1,229 +1,242 @@
 extends layout
 block main
   main
-  // ? slider Area Start
-  section.slider-area.slider-area2
-    .slider-active
-      // Single Slider
-      .single-slider.slider-height2
-        .container
-          .row
-            .col-xl-8.col-lg-11.col-md-12
-              .hero__caption.hero__caption2
-                h1(data-animation='bounceIn' data-delay='0.2s') Company insights
-                // breadcrumb Start
-                nav(aria-label='breadcrumb')
-                  ol.breadcrumb
-                    li.breadcrumb-item
-                      a(href='index.html') Home
-                    li.breadcrumb-item
-                      a(href='#') Blog
-                // breadcrumb End
-  // ? Blog Area Start
-  section.blog_area.single-post-area.section-padding
-    .container-fluid
-      .row
-        .col-lg-7.posts-list.offset-1
-          .single-post
-            .feature-img
-              img.img-fluid(src='assets/img/blog/single_blog_1.png' alt='')
-            .blog_details
-              if blogs.title
-                h2(style='color: #2d2d2d;') #{blogs.title} 
-              else 
-                h2(style='color: #2d2d2d;') Tiêu đề chưa có hoặc bị lỗi
-              ul.blog-info-link.mt-3.mb-4
-                li
-                  i.fa.fa-user
-                  if blogs.ten_ng_dang
-                    a(href='#') #{blogs.ten_ng_dang}  
-                  else  
-                    a(href='#') Chưa có tên tác giả  
-                li
-                  if tags_blog
-                    each val in tags_blog
-                      i.fa.fa-tag
-                      a(href='#') #{val} 
-                  else 
-                    i.fa.fa-tag
-                    a(href='#') Chưa tồn tại tag của blog 
-                li
-                  if blogs.time_dang
-                    i.fa.fa-calendar 
-                    |#{blogs.time_dang.getDate()}/#{blogs.time_dang.getMonth()+1}/#{blogs.time_dang.getFullYear()}
-                  else
-                    i.fa.fa-calendar 
-                    | Chưa có thời gian 
-              if blogs.content
-                p.excert
-                  |#{blogs.content}
-              else
-                p.excert
-                  |Chưa có content 
-
-          .navigation-top
-            .d-sm-flex.justify-content-between.text-center
-              p.like-info
-                span.align-middle
-                  i.fa.fa-heart
-                |  Lily and 4
-                |                   people like this
-              .col-sm-4.text-center.my-2.my-sm-0
-                // <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p>
-              ul.social-icons
-                li
-                  a(href='https://www.facebook.com/sai4ull')
-                    i.fab.fa-facebook-f
-                li
-                  a(href='#')
-                    i.fab.fa-twitter
-                li
-                  a(href='#')
-                    i.fab.fa-dribbble
-                li
-                  a(href='#')
-                    i.fab.fa-behance
-          .comments-area
-            h4 05 Comments
-            .comment-list
-              .single-comment.justify-content-between.d-flex
-                .user.justify-content-between.d-flex
-                  .thumb
-                    img(src='assets/img/blog/comment_1.png' alt='')
-                  .desc
-                    p.comment
-                      | Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                      | Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                    .d-flex.justify-content-between
-                      .d-flex.align-items-center
-                        h5
-                          a(href='#') Emilly Blunt
-                        p.date December 4, 2017 at 3:12 pm 
-                      .reply-btn
-                        a.btn-reply.text-uppercase(href='#') reply
-            .comment-list
-              .single-comment.justify-content-between.d-flex
-                .user.justify-content-between.d-flex
-                  .thumb
-                    img(src='assets/img/blog/comment_2.png' alt='')
-                  .desc
-                    p.comment
-                      | Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                      | Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                    .d-flex.justify-content-between
-                      .d-flex.align-items-center
-                        h5
-                          a(href='#') Emilly Blunt
-                        p.date December 4, 2017 at 3:12 pm 
-                      .reply-btn
-                        a.btn-reply.text-uppercase(href='#') reply
-            .comment-list
-              .single-comment.justify-content-between.d-flex
-                .user.justify-content-between.d-flex
-                  .thumb
-                    img(src='assets/img/blog/comment_3.png' alt='')
-                  .desc
-                    p.comment
-                      | Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                      | Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                    .d-flex.justify-content-between
-                      .d-flex.align-items-center
-                        h5
-                          a(href='#') Emilly Blunt
-                        p.date December 4, 2017 at 3:12 pm 
-                      .reply-btn
-                        a.btn-reply.text-uppercase(href='#') reply
-          .comment-form
-            h4 Leave a Reply
-            form#commentForm.form-contact.comment_form(action='#')
-              .row
-                .col-12
-                  .form-group
-                    textarea#comment.form-control.w-100(name='comment' cols='30' rows='9' placeholder='Write Comment')
-                .col-sm-6
-                  .form-group
-                    input#name.form-control(name='name' type='text' placeholder='Name')
-                .col-sm-6
-                  .form-group
-                    input#email.form-control(name='email' type='email' placeholder='Email')
-                .col-12
-                  .form-group
-                    input#website.form-control(name='website' type='text' placeholder='Website')
-              .form-group
-                button.button.button-contactForm.btn_1.boxed-btn(type='submit') Post Comment
-        .col-lg-3
-          .blog_right_sidebar
-            aside.single_sidebar_widget.search_widget
-              form(action='#')
-                .form-group
-                  .input-group.mb-3
-                    input.form-control(type='text' placeholder='Search Keyword' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'")
-                    .input-group-append
-                      button.btns(type='button')
-                        i.ti-search
-                button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Search
-            aside.single_sidebar_widget.post_category_widget
-              h4.widget_title(style='color: #2d2d2d;') Category
-              ul.list.cat-list
-                li
-                  a.d-flex(href='#')
-                    p Resaurant food
-                    p (37)
-                li
-                  a.d-flex(href='#')
-                    p Travel news
-                    p (10)
-                li
-                  a.d-flex(href='#')
-                    p Modern technology
-                    p (03)
-                li
-                  a.d-flex(href='#')
-                    p Product
-                    p (11)
-                li
-                  a.d-flex(href='#')
-                    p Inspiration
-                    p (21)
-                li
-                  a.d-flex(href='#')
-                    p Health Care
-                    p (21)
-            aside.single_sidebar_widget.popular_post_widget
-              h3.widget_title(style='color: #2d2d2d;') Recent Post
-              .media.post_item
-                img(src='assets/img/post/post_1.png' alt='post')
-                .media-body
-                  a(href='blog_details.html')
-                    h3(style='color: #2d2d2d;') From life was you fish...
-                  p January 12, 2019
-              .media.post_item
-                img(src='assets/img/post/post_2.png' alt='post')
-                .media-body
-                  a(href='blog_details.html')
-                    h3(style='color: #2d2d2d;') The Amazing Hubble
-                  p 02 Hours ago
-              .media.post_item
-                img(src='assets/img/post/post_3.png' alt='post')
-                .media-body
-                  a(href='blog_details.html')
-                    h3(style='color: #2d2d2d;') Astronomy Or Astrology
-                  p 03 Hours ago
-              .media.post_item
-                img(src='assets/img/post/post_4.png' alt='post')
-                .media-body
-                  a(href='blog_details.html')
-                    h3(style='color: #2d2d2d;') Asteroids telescope
-                  p 01 Hours ago
-            aside.single_sidebar_widget.tag_cloud_widget
-              h4.widget_title(style='color: #2d2d2d;') Tag Clouds
-              ul.list
-                if list_tag
-                  each val in list_tag
-                    li
-                      a(href='#') #{val}
-                else 
+    // ? slider Area Start
+    section.slider-area.slider-area2
+      .slider-active
+        // Single Slider
+        .single-slider.slider-height2
+          .container
+            .row
+              .col-xl-8.col-lg-11.col-md-12
+                .hero__caption.hero__caption2
+                  h1(data-animation='bounceIn' data-delay='0.2s') Company insights
+                  // breadcrumb Start
+                  nav(aria-label='breadcrumb')
+                    ol.breadcrumb
+                      li.breadcrumb-item
+                        a(href='index.html') Home
+                      li.breadcrumb-item
+                        a(href='#') Blog
+                  // breadcrumb End
+    // ? Blog Area Start
+    section.blog_area.single-post-area.section-padding
+      .container-fluid
+        .row
+          .col-lg-7.posts-list.offset-1
+            .single-post
+              .feature-img
+                img.img-fluid(src='assets/img/blog/single_blog_1.png' alt='')
+              .blog_details
+                h2(style='color: #2d2d2d;')
+                  | Second divided from form fish beast made every of seas
+                  | all gathered us saying he our
+                ul.blog-info-link.mt-3.mb-4
                   li
-                     a(href='#') Chưa tồn tại tag
-              
-  // Blog Area End
+                    i.fa.fa-user
+                    a(href='#') L&ecirc; Minh T&agrave;i
+                  li
+                    i.fa.fa-tag
+                    a(href='#') Travel
+                    | , 
+                    a(href='#') Lifestyle
+                  li
+                    i.fa.fa-calendar
+                    |  01/01/2021
+                p.excert
+                  | MCSE boot camps have its supporters and its detractors. Some people do not understand why you
+                  | should have to spend money on boot camp when you can get the MCSE study materials yourself at a
+                  | fraction of the camp price. However, who has the willpower
+                p
+                  | MCSE boot camps have its supporters and its detractors. Some people do not understand why you
+                  | should have to spend money on boot camp when you can get the MCSE study materials yourself at a
+                  | fraction of the camp price. However, who has the willpower to actually sit through a
+                  | self-imposed MCSE training. who has the willpower to actually
+                .quote-wrapper
+                  .quotes
+                    | MCSE boot camps have its supporters and its detractors. Some people do not understand why you
+                    | should have to spend money on boot camp when you can get the MCSE study materials yourself at
+                    | a fraction of the camp price. However, who has the willpower to actually sit through a
+                    | self-imposed MCSE training.
+                p
+                  | MCSE boot camps have its supporters and its detractors. Some people do not understand why you
+                  | should have to spend money on boot camp when you can get the MCSE study materials yourself at a
+                  | fraction of the camp price. However, who has the willpower
+                p
+                  | MCSE boot camps have its supporters and its detractors. Some people do not understand why you
+                  | should have to spend money on boot camp when you can get the MCSE study materials yourself at a
+                  | fraction of the camp price. However, who has the willpower to actually sit through a
+                  | self-imposed MCSE training. who has the willpower to actually
+            .navigation-top
+              .d-sm-flex.justify-content-between.text-center
+                p.like-info
+                  span.align-middle
+                    i.fa.fa-heart
+                  |  Lily and 4
+                  |                   people like this
+                .col-sm-4.text-center.my-2.my-sm-0
+                  // <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p>
+                ul.social-icons
+                  li
+                    a(href='https://www.facebook.com/sai4ull')
+                      i.fab.fa-facebook-f
+                  li
+                    a(href='#')
+                      i.fab.fa-twitter
+                  li
+                    a(href='#')
+                      i.fab.fa-dribbble
+                  li
+                    a(href='#')
+                      i.fab.fa-behance
+            .comments-area
+              h4 05 Comments
+              .comment-list
+                .single-comment.justify-content-between.d-flex
+                  .user.justify-content-between.d-flex
+                    .thumb
+                      img(src='assets/img/blog/comment_1.png' alt='')
+                    .desc
+                      p.comment
+                        | Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
+                        | Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                      .d-flex.justify-content-between
+                        .d-flex.align-items-center
+                          h5
+                            a(href='#') Emilly Blunt
+                          p.date December 4, 2017 at 3:12 pm 
+                        .reply-btn
+                          a.btn-reply.text-uppercase(href='#') reply
+              .comment-list
+                .single-comment.justify-content-between.d-flex
+                  .user.justify-content-between.d-flex
+                    .thumb
+                      img(src='assets/img/blog/comment_2.png' alt='')
+                    .desc
+                      p.comment
+                        | Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
+                        | Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                      .d-flex.justify-content-between
+                        .d-flex.align-items-center
+                          h5
+                            a(href='#') Emilly Blunt
+                          p.date December 4, 2017 at 3:12 pm 
+                        .reply-btn
+                          a.btn-reply.text-uppercase(href='#') reply
+              .comment-list
+                .single-comment.justify-content-between.d-flex
+                  .user.justify-content-between.d-flex
+                    .thumb
+                      img(src='assets/img/blog/comment_3.png' alt='')
+                    .desc
+                      p.comment
+                        | Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
+                        | Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                      .d-flex.justify-content-between
+                        .d-flex.align-items-center
+                          h5
+                            a(href='#') Emilly Blunt
+                          p.date December 4, 2017 at 3:12 pm 
+                        .reply-btn
+                          a.btn-reply.text-uppercase(href='#') reply
+            .comment-form
+              h4 Leave a Reply
+              form#commentForm.form-contact.comment_form(action='#')
+                .row
+                  .col-12
+                    .form-group
+                      textarea#comment.form-control.w-100(name='comment' cols='30' rows='9' placeholder='Write Comment')
+                  .col-sm-6
+                    .form-group
+                      input#name.form-control(name='name' type='text' placeholder='Name')
+                  .col-sm-6
+                    .form-group
+                      input#email.form-control(name='email' type='email' placeholder='Email')
+                  .col-12
+                    .form-group
+                      input#website.form-control(name='website' type='text' placeholder='Website')
+                .form-group
+                  button.button.button-contactForm.btn_1.boxed-btn(type='submit') Post Comment
+          .col-lg-3
+            .blog_right_sidebar
+              aside.single_sidebar_widget.search_widget
+                form(action='#')
+                  .form-group
+                    .input-group.mb-3
+                      input.form-control(type='text' placeholder='Search Keyword' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'")
+                      .input-group-append
+                        button.btns(type='button')
+                          i.ti-search
+                  button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Search
+              aside.single_sidebar_widget.post_category_widget
+                h4.widget_title(style='color: #2d2d2d;') Category
+                ul.list.cat-list
+                  li
+                    a.d-flex(href='#')
+                      p Resaurant food
+                      p (37)
+                  li
+                    a.d-flex(href='#')
+                      p Travel news
+                      p (10)
+                  li
+                    a.d-flex(href='#')
+                      p Modern technology
+                      p (03)
+                  li
+                    a.d-flex(href='#')
+                      p Product
+                      p (11)
+                  li
+                    a.d-flex(href='#')
+                      p Inspiration
+                      p (21)
+                  li
+                    a.d-flex(href='#')
+                      p Health Care
+                      p (21)
+              aside.single_sidebar_widget.popular_post_widget
+                h3.widget_title(style='color: #2d2d2d;') Recent Post
+                .media.post_item
+                  img(src='assets/img/post/post_1.png' alt='post')
+                  .media-body
+                    a(href='blog_details.html')
+                      h3(style='color: #2d2d2d;') From life was you fish...
+                    p January 12, 2019
+                .media.post_item
+                  img(src='assets/img/post/post_2.png' alt='post')
+                  .media-body
+                    a(href='blog_details.html')
+                      h3(style='color: #2d2d2d;') The Amazing Hubble
+                    p 02 Hours ago
+                .media.post_item
+                  img(src='assets/img/post/post_3.png' alt='post')
+                  .media-body
+                    a(href='blog_details.html')
+                      h3(style='color: #2d2d2d;') Astronomy Or Astrology
+                    p 03 Hours ago
+                .media.post_item
+                  img(src='assets/img/post/post_4.png' alt='post')
+                  .media-body
+                    a(href='blog_details.html')
+                      h3(style='color: #2d2d2d;') Asteroids telescope
+                    p 01 Hours ago
+              aside.single_sidebar_widget.tag_cloud_widget
+                h4.widget_title(style='color: #2d2d2d;') Tag Clouds
+                ul.list
+                  li
+                    a(href='#') project
+                  li
+                    a(href='#') love
+                  li
+                    a(href='#') technology
+                  li
+                    a(href='#') travel
+                  li
+                    a(href='#') restaurant
+                  li
+                    a(href='#') life style
+                  li
+                    a(href='#') design
+                  li
+                    a(href='#') illustration

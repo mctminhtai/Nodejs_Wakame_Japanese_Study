@@ -2,6 +2,7 @@ const models = require('../models');
 var svgCaptcha = require('svg-captcha');
 const bcrypt = require('bcryptjs');
 var passport = require('passport');
+const { v4: uuidv4 } = require('uuid');
 //add ham gui email
 var mailer = require('../utils/mailer');
 
@@ -80,6 +81,7 @@ exports.get_captcha = function (req, res, next) {
     var captcha = svgCaptcha.create();
     //console.log(captcha);
     //mailer.sendMail('tailm0796@gmail.com', 'test thử email CLB', 'không có gì đâu nha');
+    console.log(uuidv4());
     return res.render('captcha', { captcha: captcha.data });
 }
 exports.post_captcha = function (req, res, next) {
@@ -96,15 +98,15 @@ exports.get_test = async function (req, res, next) {
     // }).then((user) => {
     //     console.log(user.dataValues.email);
     // })
-    //await models.USER.create({ fullName: 'minhtai33', email: 'minhtai@gmail.com', password: 'hahakakakak' });
+    // await models.USER.create({ fullName: 'minhtai33', email: 'minhtai@gmail.com', password: 'hahakakakak' });
     // await models.TAG.create({ TEN_TAG: 'SuKien' });
     // await models.TAG.create({ TEN_TAG: 'Thien thich jav' });
     // await models.TAG.create({ TEN_TAG: 'Thien me dong JAv' });
     // await models.TAG.create({ TEN_TAG: 'Thien coi jav' });
     // await models.TAG.create({ TEN_TAG: 'Thien than tuong jav' });
     // await models.TAG.create({ TEN_TAG: 'Thien sieu me JAV' });
-
-    // await models.BLOG.create({ USERId: 1, title: 'helo33', content: 'khong co giiii' });
+    // randid = uuidv4()
+    // await models.BLOG.create({ uuid: randid, USERId: 1, title: 'helo33', content: 'khong co giiii' });
     // await models.TAG_BLOG.create({ TAGId: 1, BLOGId: 1 });
     // await models.TAG_BLOG.create({ TAGId: 2, BLOGId: 1 });
     // await models.TAG_BLOG.create({ TAGId: 3, BLOGId: 1 });

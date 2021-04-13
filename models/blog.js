@@ -19,11 +19,12 @@ module.exports = (sequelize, DataTypes) => {
     BLOG.init({
         USERId: DataTypes.INTEGER,
         title: DataTypes.STRING,
+        uuid: DataTypes.UUID,
         content: DataTypes.STRING
     }, {
-            sequelize,
-            modelName: 'BLOG',
-            freezeTableName: true,
-        });
+        sequelize,
+        modelName: 'BLOG',
+        freezeTableName: true,
+    });
     return BLOG;
 };
