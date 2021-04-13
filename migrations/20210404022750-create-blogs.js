@@ -21,16 +21,16 @@ module.exports = {
                 }
             },
             blogimg: {
-                type: Sequelize.STRING
+                type: Sequelize.STRING(1024)
             },
             title: {
-                type: Sequelize.STRING
+                type: Sequelize.STRING(1024)
             },
             description: {
-                type: Sequelize.STRING
+                type: Sequelize.STRING(1024)
             },
             content: {
-                type: Sequelize.STRING
+                type: Sequelize.TEXT('long')
             },
             createdAt: {
                 allowNull: false,

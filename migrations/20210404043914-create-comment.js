@@ -25,7 +25,7 @@ module.exports = {
                 }
             },
             cmcontent: {
-                type: Sequelize.STRING
+                type: Sequelize.TEXT('tiny')
             },
             createdAt: {
                 allowNull: false,

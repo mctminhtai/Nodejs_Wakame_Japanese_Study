@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
 
             this.hasMany(models.TKB_DU_KIEN, { as: 'user_tkb' });
             this.belongsToMany(models.MONHOC, { through: models.DS_MON_DA_HOC, foreignKey: 'USERId', as: 'user_monhoc' });
+            this.belongsToMany(models.BLOG, { through: models.COMMENT, foreignKey: 'USERId', as: 'user_comment_blog' });
         }
     };
     USER.init({
@@ -23,9 +24,9 @@ module.exports = (sequelize, DataTypes) => {
         email: DataTypes.STRING,
         password: DataTypes.STRING
     }, {
-        sequelize,
-        modelName: 'USER',
-        freezeTableName: true,
-    });
+            sequelize,
+            modelName: 'USER',
+            freezeTableName: true,
+        });
     return USER;
 };

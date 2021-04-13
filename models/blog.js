@@ -14,19 +14,20 @@ module.exports = (sequelize, DataTypes) => {
             this.belongsTo(models.USER, { foreignKey: 'USERId', as: 'blog_user' });
             this.belongsToMany(models.TAG, { through: models.TAG_BLOG, foreignKey: 'BLOGId', as: 'blog_tag' });
             this.hasMany(models.COMMENT, { as: 'blog_comment' });
+            this.belongsToMany(models.USER, { through: models.COMMENT, foreignKey: 'BLOGId', as: 'blog_comment_user' });
         }
     };
     BLOG.init({
         USERId: DataTypes.INTEGER,
-        title: DataTypes.STRING,
-        blogimg: DataTypes.STRING,
+        title: DataTypes.STRING(1024),
+        blogimg: DataTypes.STRING(1024),
         uuid: DataTypes.UUID,
-        content: DataTypes.STRING,
-        description: DataTypes.STRING,
+        content: DataTypes.TEXT('long'),
+        description: DataTypes.STRING(1024),
     }, {
-        sequelize,
-        modelName: 'BLOG',
-        freezeTableName: true,
-    });
+            sequelize,
+            modelName: 'BLOG',
+            freezeTableName: true,
+        });
     return BLOG;
 };
