@@ -9,3 +9,7 @@ sign_up_btn.addEventListener("click", () => {
 sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
+function offNoti() {
+  element = document.getElementById("error");
+  element.classList.remove("flag");
+}

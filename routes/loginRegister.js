@@ -13,13 +13,12 @@ router.post(
     validate.checkErr,
     passport.authenticate(
         'local.login',
-        { successRedirect: '/', failureRedirect: '/login', failureFlash: false }));
+        { successRedirect: '/', failureRedirect: '/accounts', failureFlash: false }));
 
 router.post(
     '/register',
     body('name', 'tên phải lớn hơn 5 ký tự').isLength({ min: 5 }),
     body('email', 'email chưa đúng định dạng').isEmail().normalizeEmail(),
-    body('terms', 'chưa đồng ý thoả thuận người dùng').exists(),
     body('password', 'password phải từ 8 ký tự trở lên').isLength({ min: 8 }),
     body('re_password').custom((value, { req }) => {
         if (value !== req.body.password) {
@@ -30,7 +29,7 @@ router.post(
     validate.checkErr,
     passport.authenticate(
         'local.signup',
-        { successRedirect: '/', failureRedirect: '/register', failureFlash: false }
+        { successRedirect: '/', failureRedirect: '/accounts', failureFlash: false }
     )
 );
 router.get('/logout', loginRegister.get_logout);
