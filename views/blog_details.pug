@@ -26,7 +26,7 @@ block main
           .col-lg-7.posts-list.offset-1
             .single-post
               .feature-img
-                img.img-fluid(src='assets/img/blog/single_blog_1.png' alt='')
+                img.img-fluid(src=blog.dataValues.blogimg alt='')
               .blog_details
                 h2(style='color: #2d2d2d;')
                   | #{blog.title}
@@ -67,54 +67,54 @@ block main
                       i.fab.fa-behance
             .comments-area
               h4 05 Comments
-              .comment-list
-                .single-comment.justify-content-between.d-flex
-                  .user.justify-content-between.d-flex
-                    .thumb
-                      img(src='assets/img/blog/comment_1.png' alt='')
-                    .desc
-                      p.comment
-                        | Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                        | Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                      .d-flex.justify-content-between
-                        .d-flex.align-items-center
-                          h5
-                            a(href='#') Emilly Blunt
-                          p.date December 4, 2017 at 3:12 pm 
-                        .reply-btn
-                          a.btn-reply.text-uppercase(href='#') reply
-              .comment-list
-                .single-comment.justify-content-between.d-flex
-                  .user.justify-content-between.d-flex
-                    .thumb
-                      img(src='assets/img/blog/comment_2.png' alt='')
-                    .desc
-                      p.comment
-                        | Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                        | Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                      .d-flex.justify-content-between
-                        .d-flex.align-items-center
-                          h5
-                            a(href='#') Emilly Blunt
-                          p.date December 4, 2017 at 3:12 pm 
-                        .reply-btn
-                          a.btn-reply.text-uppercase(href='#') reply
-              .comment-list
-                .single-comment.justify-content-between.d-flex
-                  .user.justify-content-between.d-flex
-                    .thumb
-                      img(src='assets/img/blog/comment_3.png' alt='')
-                    .desc
-                      p.comment
-                        | Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                        | Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                      .d-flex.justify-content-between
-                        .d-flex.align-items-center
-                          h5
-                            a(href='#') Emilly Blunt
-                          p.date December 4, 2017 at 3:12 pm 
-                        .reply-btn
-                          a.btn-reply.text-uppercase(href='#') reply
+              each val in blog.blog_comment
+                .comment-list
+                  .single-comment.justify-content-between.d-flex
+                    .user.justify-content-between.d-flex
+                      .thumb
+                        img(src='assets/img/blog/comment_1.png' alt='')
+                      .desc
+                        p.comment
+                          | #{val.dataValues.cmcontent}
+                        .d-flex.justify-content-between
+                          .d-flex.align-items-center
+                            h5
+                              a(href='#') Emilly Blunt
+                            p.date December 4, 2017 at 3:12 pm 
+                          .reply-btn
+                            a.btn-reply.text-uppercase(href='#') reply
+              //- .comment-list
+              //-   .single-comment.justify-content-between.d-flex
+              //-     .user.justify-content-between.d-flex
+              //-       .thumb
+              //-         img(src='assets/img/blog/comment_2.png' alt='')
+              //-       .desc
+              //-         p.comment
+              //-           | Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
+              //-           | Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+              //-         .d-flex.justify-content-between
+              //-           .d-flex.align-items-center
+              //-             h5
+              //-               a(href='#') Emilly Blunt
+              //-             p.date December 4, 2017 at 3:12 pm 
+              //-           .reply-btn
+              //-             a.btn-reply.text-uppercase(href='#') reply
+              //- .comment-list
+              //-   .single-comment.justify-content-between.d-flex
+              //-     .user.justify-content-between.d-flex
+              //-       .thumb
+              //-         img(src='assets/img/blog/comment_3.png' alt='')
+              //-       .desc
+              //-         p.comment
+              //-           | Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
+              //-           | Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+              //-         .d-flex.justify-content-between
+              //-           .d-flex.align-items-center
+              //-             h5
+              //-               a(href='#') Emilly Blunt
+              //-             p.date December 4, 2017 at 3:12 pm 
+              //-           .reply-btn
+              //-             a.btn-reply.text-uppercase(href='#') reply
             .comment-form
               h4 Leave a Reply
               form#commentForm.form-contact.comment_form(action='#')

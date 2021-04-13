@@ -25,27 +25,34 @@ exports.get_aboutPage = function (req, res, next) {
 }
 exports.get_blogPage = async function (req, res, next) {
     var blogs = await models.BLOG.findAll({
-        attributes: ['uuid', 'title', 'content', 'description', 'createdAt'],
+        attributes: ['uuid', 'title', 'blogimg', 'content', 'description', 'createdAt'],
         include: ['blog_user'],
-    })
+    });
+    var tags = await models.TAG.findAll({
+        attributes: ['TEN_TAG']
+    });
     console.log(blogs);
     return res.render('blog', {
         Authenticated: req.isAuthenticated(),
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
         blogs: blogs,
+        tags: tags,
     });
 }
 exports.get_blogDetailPage = async function (req, res, next) {
     var uuid = req.param('uuid');
     var blog = await models.BLOG.findOne({
-        attributes: ['id', 'USERId', 'title', 'content', 'createdAt'],
+        attributes: ['id', 'USERId', 'blogimg', 'title', 'content', 'createdAt'],
         where: { uuid: uuid },
-        include: ['blog_user', 'blog_tag']
+        include: ['blog_user', 'blog_tag', 'blog_comment']
     });
     var tags = await models.TAG.findAll({
         attributes: ['TEN_TAG']
     });
-    console.log(blog, tags);
+    var users = await models.USER.findAll({
+        attributes: ['id', 'fullName'],
+    })
+    console.log(blog.blog_comment);
     return res.render('blog_details', {
         Authenticated: req.isAuthenticated(),
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',

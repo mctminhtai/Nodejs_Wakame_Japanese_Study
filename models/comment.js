@@ -18,12 +18,11 @@ module.exports = (sequelize, DataTypes) => {
     COMMENT.init({
         USERId: DataTypes.INTEGER,
         BLOGId: DataTypes.INTEGER,
-        cmcontent: DataTypes.STRING
-        //sua luon ca cho nay
+        cmcontent: DataTypes.STRING,
     }, {
-            sequelize,
-            modelName: 'COMMENT',
-            freezeTableName: true,
-        });
+        sequelize,
+        modelName: 'COMMENT',
+        freezeTableName: true,
+    });
     return COMMENT;
 };

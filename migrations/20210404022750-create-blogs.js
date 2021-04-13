@@ -20,6 +20,9 @@ module.exports = {
                     key: 'id'
                 }
             },
+            blogimg: {
+                type: Sequelize.STRING
+            },
             title: {
                 type: Sequelize.STRING
             },
