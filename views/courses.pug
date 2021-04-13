@@ -1,4 +1,6 @@
 extends layout.pug 
+block title 
+  title Khóa học | Wakame
 block main 
   main
     // ? slider Area Start
@@ -10,7 +12,7 @@ block main
             .row
               .col-xl-8.col-lg-11.col-md-12
                 .hero__caption.hero__caption2
-                  h1(data-animation='bounceIn' data-delay='0.2s') Các khóa học 
+                  h1(data-animation='bounceIn' data-delay='0.2s') Khóa học 
                   // breadcrumb Start
                   nav(aria-label='breadcrumb')
                     ol.breadcrumb
@@ -43,7 +45,7 @@ block main
                     |- Bạn đang “làm chủ” thời gian hay đang là “nô lệ”?
                     br
                     |- Bạn làm gì với thời gian một ngày 24 tiếng?
-                  a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+                  a.border-btn.border-btn2(href='/coursesdetail') Tìm hiểu thêm
           .col-lg-4
             .properties.properties2.mb-30
               .properties__card
@@ -60,7 +62,7 @@ block main
                     | - Thời gian học dài hơn 2 lần khoá thường. 
                     br
                     | - Các ưu đãi, đặc quyền chỉ có ở gói combo.
-                  a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+                  a.border-btn.border-btn2(href='/coursesdetail') Tìm hiểu thêm
           .col-lg-4
             .properties.properties2.mb-30
               .properties__card
@@ -68,25 +70,12 @@ block main
                   a(href='#')
                     img(src='assets/img/gallery/course_flirt.jpg' alt='' style="width:340px;height:280px;margin-top: 0")
                 .properties__caption
-                  p Phan Lệ
+                  p Phan Thanh Lệ
                   h3
                     a(href='#') Cách tán gái bằng tiếng Nhật
                   p
                     | Bạn muốn tỏ tình với người thương bằng tiếng Nhật? Hay bạn muốn có một màn tỏ tình khó quên? Vậy đừng bỏ qua khóa học thú vị này của Wakame để biết được những kinh nghiệm tỏ tình hiệu quả nhé!
-                  .properties__footer.d-flex.justify-content-between.align-items-center
-                    .restaurant-name
-                      .rating
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star-half
-                      p
-                        span (4.5)
-                        |  21 đánh giá
-                    .price
-                      span &#165;100
-                  a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+                  a.border-btn.border-btn2(href='/coursesdetail') Tìm hiểu thêm
           .col-lg-4
             .properties.properties2.mb-30
               .properties__card
@@ -101,20 +90,7 @@ block main
                     | Khóa học phù hợp với những bạn đã đạt chứng chỉ tiếng Nhật sơ cấp, 
                     | muốn rút ngắn thời gian để du học, giao tiếp và làm việc ở công ty 
                     | Nhật, ở trường học, hoặc tham gia vào các kỳ thi năng lực tiếng Nhật.
-                  .properties__footer.d-flex.justify-content-between.align-items-center
-                    .restaurant-name
-                      .rating
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                      p
-                        span (4.5)
-                        |  268 đánh giá
-                    .price
-                      span &#165;10000
-                  a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+                  a.border-btn.border-btn2(href='/coursesdetail') Tìm hiểu thêm
           .col-lg-4
             .properties.properties2.mb-30
               .properties__card
@@ -130,20 +106,7 @@ block main
                     | muốn rút ngắn thời gian để du học hay lao động tại Nhật Bản.
                     | Đảm bảo đủ kiến thức và kỹ năng thi JLPT sơ cấp. 
                     | Tự tin giao tiếp, tham gia phỏng vấn du học trực tiếp với các trường Nhật Bản.
-                  .properties__footer.d-flex.justify-content-between.align-items-center
-                    .restaurant-name
-                      .rating
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star-half
-                      p
-                        span (4.5)
-                        |  79 đánh giá
-                    .price
-                      span &#165;2000
-                  a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+                  a.border-btn.border-btn2(href='/coursesdetail') Tìm hiểu thêm
           .col-lg-4
             .properties.properties2.mb-30
               .properties__card
@@ -160,20 +123,7 @@ block main
                     | thương mại qua Email, Khóa học Biên phiên dịch 
                     | chuyên ngành kinh tế, Khóa học Giao tiếp Tiếng Nhật 
                     | trong văn phòng. 
-                  .properties__footer.d-flex.justify-content-between.align-items-center
-                    .restaurant-name
-                      .rating
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                        i.fas.fa-star
-                      p
-                        span (5)
-                        |  34 đánh giá
-                    .price
-                      span &#165;1000
-                  a.border-btn.border-btn2(href='#') Tìm hiểu thêm
+                  a.border-btn.border-btn2(href='/coursesdetail') Tìm hiểu thêm
         .row.justify-content-center
           .col-xl-7.col-lg-8
             .section-tittle.text-center.mt-40

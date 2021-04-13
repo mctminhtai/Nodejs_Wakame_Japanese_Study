@@ -1,0 +1,232 @@
+extends layout.pug 
+block title 
+  title Chi tiết khóa học | Wakame
+block main 
+  main
+  // ? slider Area Start
+  section.slider-area.slider-area2
+    .slider-active
+      // Single Slider
+      .single-slider.slider-height2
+        .container
+          .row
+            .col-xl-8.col-lg-11.col-md-12
+              .hero__caption.hero__caption2
+                h1(data-animation='bounceIn' data-delay='0.2s') Khóa học
+                // breadcrumb Start
+                nav(aria-label='breadcrumb')
+                  ol.breadcrumb
+                    li.breadcrumb-item
+                      a(href='/') Trang chủ
+                    li.breadcrumb-item
+                      a(href='/blog') Khóa học 
+                // breadcrumb End
+  section.blog_area.single-post-area.section-padding
+    .container-fluid
+      .row
+        .col-lg-7.posts-list.offset-1
+          .single-post
+            .feature-img
+              img.img-fluid(src='assets/img/gallery/course_business.jpg' alt='' style="margin-top:0")
+            .blog_details
+              h2(style='color: #2d2d2d;') Tiếng Nhật thương mại
+              p
+                | Khóa học dành cho các ứng viên đi làm tại các công ty Nhật bản.
+                | Khóa học Giao dịch thương mại qua Email. Khóa học Biên phiên dịch 
+                | chuyên ngành kinh tế. Khóa học Giao tiếp Tiếng Nhật trong văn phòng.
+              ul.blog-info-link.mt-3.mb-4
+                li
+                  i.fas.fa-clock
+                  | 05:30:25
+                li
+                  i.fas.fa-play-circle
+                  | 3 video
+                li
+                  i.fas.fa-eye
+                  | 134 lượt xem
+          
+          .card
+            .card-header
+              ul.nav.nav-pills.card-header-pills
+                li.nav-item
+                  a.nav-link.active(href='#') Về khóa học
+                li.nav-item
+                  a.nav-link(href='#' style="color:#777777") Về giảng viên
+                li.nav-item
+                  a.nav-link(href='#' style="color:#777777") Bài học
+                li.nav-item
+                  a.nav-link(href='#' style="color:#777777") Thảo luận
+                li.nav-item
+                  a.nav-link(href='#' style="color:#777777") Tài liệu
+            .card-body
+              table.table.table-hover
+                thead
+                  tr
+                    th Thời lượng
+                    th Bài học
+                tbody
+                  tr
+                    td 01:06:05
+                    td 第１週－キチンで、リビングで
+                  tr
+                    td 01:06:05
+                    td 第２週－キチンで、リビングで
+                  tr
+                    td 01:06:05
+                    td 第３週－キチンで、リビングで
+                  tr
+                    td 01:06:05
+                    td 第４週－キチンで、リビングで
+                  tr
+                    td 01:06:05
+                    td 第５週－キチンで、リビングで
+          .comments-area
+            h1(style="margin-bottom:40px") Bình luận của học viên (03 bình luận)
+            .comment-list
+              .single-comment.justify-content-between.d-flex
+                .user.justify-content-between.d-flex
+                  .thumb
+                    img(src='assets/img/blog/comment_3.png' alt='')
+                  .desc
+                    p.comment
+                      | cho e hỏi là khác nhau giữa ồ rê, 
+                      | bô ku vs ạ, chou của e k xưng watashi 
+                      | mà xưng ồ rê vs bô ku thì có giống vs watashi k thầy
+                    .d-flex.justify-content-between
+                      .d-flex.align-items-center
+                        h5
+                          a(href='#') Nguyễn Thị Như Trà 
+                        p.date December 4, 2017 at 3:12 pm 
+                      .reply-btn
+                        a.btn-reply.text-uppercase(href='#') reply
+            .comment-list
+              .single-comment.justify-content-between.d-flex
+                .user.justify-content-between.d-flex
+                  .thumb
+                    img(src='assets/img/blog/comment_1.png' alt='')
+                  .desc
+                    p.comment
+                      | Giọng đọng của cô あやの hay quá thầy ơi, 
+                      | và em kết nhất câu: “Con người cần phải cố gắng để 
+                      | mỗi ý kiến nói ra đều đáng giá hàng trăm triệu “ của thầy Dũng đấy ạ.
+                    .d-flex.justify-content-between
+                      .d-flex.align-items-center
+                        h5
+                          a(href='#') Nguyễn Phạm Hường Huyền 
+                        p.date December 4, 2017 at 3:12 pm 
+                      .reply-btn
+                        a.btn-reply.text-uppercase(href='#') reply
+            .comment-list
+              .single-comment.justify-content-between.d-flex
+                .user.justify-content-between.d-flex
+                  .thumb
+                    img(src='assets/img/blog/comment_2.png' alt='')
+                  .desc
+                    p.comment
+                      | phần mới rất hay thầy ! Dễ hiểu dễ nhớ hi vọng các. 
+                      | Thầy cô phát triển hơn nữa để e theo tới n1 luôn hihi
+                    .d-flex.justify-content-between
+                      .d-flex.align-items-center
+                        h5
+                          a(href='#') ファム ルック 
+                        p.date December 4, 2017 at 3:12 pm 
+                      .reply-btn(style="margin-right:-60px")
+                        a.btn-reply.text-uppercase(href='#') reply
+          .comment-form
+            h1(style="margin-bottom:30px") Đăng bình luận
+            form#commentForm.form-contact.comment_form(action='#')
+              .row
+                .col-12
+                  .form-group
+                    textarea#comment.form-control.w-100(name='comment' cols='30' rows='9' placeholder='Nội dung bình luận')
+                .col-sm-6
+                  .form-group
+                    input#name.form-control(name='name' type='text' placeholder='Tên của bạn')
+                .col-sm-6
+                  .form-group
+                    input#email.form-control(name='email' type='email' placeholder='Email của bạn')
+              .form-group
+                button.button.button-contactForm.btn_1.boxed-btn(type='submit') Gửi
+        .col-lg-3
+          .blog_right_sidebar
+            aside.single_sidebar_widget.search_widget
+              form(action='#')
+                .form-group
+                  .input-group.mb-3
+                    input.form-control(type='text' placeholder='Tìm từ khóa' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tìm từ khóa'")
+                    .input-group-append
+                      button.btns(type='button')
+                        i.ti-search
+                button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Tìm kiếm
+            aside.single_sidebar_widget.post_category_widget
+              h4.widget_title(style='color: #2d2d2d;') Chủ đề
+              ul.list.cat-list
+                li
+                  a.d-flex(href='#')
+                    p JLPT
+                    p &nbsp;(37)
+                li
+                  a.d-flex(href='#')
+                    p Từ vựng
+                    p &nbsp;(10)
+                li
+                  a.d-flex(href='#')
+                    p Ngữ pháp
+                    p &nbsp;(03)
+                li
+                  a.d-flex(href='#')
+                    p Kinh nghiệm
+                    p &nbsp;(11)
+                li
+                  a.d-flex(href='#')
+                    p Văn hóa
+                    p &nbsp;(21)
+                li
+                  a.d-flex(href='#')
+                    p Du lịch
+                    p &nbsp;(41)
+            aside.single_sidebar_widget.popular_post_widget
+              h3.widget_title(style='color: #2d2d2d;') Khóa học nổi bật
+              .media.post_item
+                img(src='assets/img/post/post_1.png' alt='post')
+                .media-body
+                  a(href='blog_details.html')
+                    h3(style='color: #2d2d2d;') Giao tiếp tiếng Nhật trung cấp
+                  p Junko Hirayama
+              .media.post_item
+                img(src='assets/img/post/post_2.png' alt='post')
+                .media-body
+                  a(href='blog_details.html')
+                    h3(style='color: #2d2d2d;') Khóa học cấp tốc sơ cấp
+                  p Junko Hirayama
+              .media.post_item
+                img(src='assets/img/post/post_3.png' alt='post')
+                .media-body
+                  a(href='blog_details.html')
+                    h3(style='color: #2d2d2d;') Văn hóa công sở
+                  p Aika Hamasaki
+              .media.post_item
+                img(src='assets/img/post/post_4.png' alt='post')
+                .media-body
+                  a(href='blog_details.html')
+                    h3(style='color: #2d2d2d;') Combo N3-N2-N1
+                  p Shin Suzuki
+            aside.single_sidebar_widget.tag_cloud_widget
+              h4.widget_title(style='color: #2d2d2d;') Tag
+              ul.list
+                li
+                  a(href='#') #kanji
+                li
+                  a(href='#') #tuvung
+                li
+                  a(href='#') #nguphap
+                li
+                  a(href='#') #giaitri
+                li
+                  a(href='#') #hocbong
+                li
+                  a(href='#') #duhoc
+                li
+                  a(href='#') #congviec
+                li
+                  a(href='#') #vanhoa

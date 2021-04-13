@@ -1,4 +1,6 @@
 extends layout.pug 
+block title 
+  title Trang chủ | Wakame
 block main 
   main
   // ? slider Area Start
@@ -64,7 +66,7 @@ block main
                 .properties__footer.d-flex.justify-content-between.align-items-center
                   .restaurant-name
                     p.blog-date 01/01/2021
-                a.border-btn.border-btn2(href='#') Xem thêm 
+                a.border-btn.border-btn2(href='/coursesdetail') Xem thêm 
         // Single
         // Single
         .col-lg-4
@@ -82,9 +84,7 @@ block main
                 .properties__footer.d-flex.justify-content-between.align-items-center
                   .restaurant-name
                     p.blog-date 01/01/2021
-                a.border-btn.border-btn2(href='#') Xem thêm 
-                
-        // Single
+                a.border-btn.border-btn2(href='/coursesdetail') Xem thêm 
         // Single
         .col-lg-4
           .properties.properties2.mb-30
@@ -101,7 +101,7 @@ block main
                 .properties__footer.d-flex.justify-content-between.align-items-center
                   .restaurant-name
                     p.blog-date 01/01/2021
-                a.border-btn.border-btn2(href='#') Xem th&ecirc;m
+                a.border-btn.border-btn2(href='/coursesdetail') Xem th&ecirc;m
         // Single
       .col-lg-12.see-more
         a.see-more-btn(href='#')
@@ -174,61 +174,6 @@ block main
           | Xem thêm 
           i.fas.fa-angle-double-down
         // Single
-  // Courses area End -
-  //
-    ? About Area-1 Start --
-    <section class="about-area1 fix pt-10">
-    <div class="support-wrapper align-items-center">
-    <div class="left-content1">
-    <div class="about-icon">
-    <img src="assets/img/icon/about.svg" alt="">
-    </div>
-    <!-- section tittle --
-    <div class="section-tittle section-tittle2 mb-55">
-    <div class="front-text">
-    <h2 class="">Learn new skills online with top educators</h2>
-    <p>The automated process all your website tasks. Discover tools and
-    techniques to engage effectively with vulnerable children and young
-    people.</p>
-    </div>
-    </div>
-    <div class="single-features">
-    <div class="features-icon">
-    <img src="assets/img/icon/right-icon.svg" alt="">
-    </div>
-    <div class="features-caption">
-    <p>Techniques to engage effectively with vulnerable children and young people.</p>
-    </div>
-    </div>
-    <div class="single-features">
-    <div class="features-icon">
-    <img src="assets/img/icon/right-icon.svg" alt="">
-    </div>
-    <div class="features-caption">
-    <p>Join millions of people from around the world  learning together.</p>
-    </div>
-    </div>
-    <div class="single-features">
-    <div class="features-icon">
-    <img src="assets/img/icon/right-icon.svg" alt="">
-    </div>
-    <div class="features-caption">
-    <p>Join millions of people from around the world learning together. Online learning is as easy and natural.</p>
-    </div>
-    </div>
-    </div>
-    <div class="right-content1">
-    <!-- img --
-    <div class="right-img">
-    <img src="assets/img/gallery/about.png" alt="">
-    <div class="video-icon" >
-    <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0"><i class="fas fa-play"></i></a>
-    </div>
-    </div>
-    </div>
-    </div>
-    </section>
-    <!-- About Area End
   // ? top subjects Area Start
   .topic-area.section-padding40
     .container
@@ -301,63 +246,7 @@ block main
                 .topic-content
                   h3
                     a(href='#') Vi&#x1EC7;c l&agrave;m
-      //
-        div class="row justify-content-center">
-        <div class="col-xl-12">
-        <div class="section-tittle text-center mt-20">
-        <a href="courses.html" class="border-btn">View More Subjects</a>
-        </div>
-        </div>
-        </div
-  // top subjects End
-  //
-    ? About Area-3 Start --
-    <section class="about-area3 fix">
-    <div class="support-wrapper align-items-center">
-    <div class="right-content3">
-    <!-- img --
-    <div class="right-img">
-    <img src="assets/img/gallery/about3.png" alt="">
-    </div>
-    </div>
-    <div class="left-content3">
-    <!-- section tittle --
-    <div class="section-tittle section-tittle2 mb-20">
-    <div class="front-text">
-    <h2 class="">Lợi ích của việc học online</h2>
-    </div>
-    </div>
-    <div class="single-features">
-    <div class="features-icon">
-    <img src="assets/img/icon/right-icon.svg" alt="">
-    </div>
-    <div class="features-caption">
-    <p>Techniques to engage effectively with vulnerable children and young people.</p>
-    </div>
-    </div>
-    <div class="single-features">
-    <div class="features-icon">
-    <img src="assets/img/icon/right-icon.svg" alt="">
-    </div>
-    <div class="features-caption">
-    <p>Join millions of people from around the world
-    learning together.</p>
-    </div>
-    </div>
-    <div class="single-features">
-    <div class="features-icon">
-    <img src="assets/img/icon/right-icon.svg" alt="">
-    </div>
-    <div class="features-caption">
-    <p>Join millions of people from around the world learning together.
-    Online learning is as easy and natural.</p>
-    </div>
-    </div>
-    </div>
-    </div>
-    </section>
-    <!-- About Area End
-  // ? Team
+  // ? team
   section.team-area.section-padding40.fix
     .container
       .row.justify-content-center
@@ -401,7 +290,7 @@ block main
             img(src='assets/img/gallery/MsJunko.jpg' alt='')
           .cat-cap
             h5
-              a(href='services.html') Zunko Hirayama
+              a(href='services.html') Junko Hirayama
             p
               | Gi&aacute;o vi&ecirc;n b&#x1EA3;n ng&#x1EEF;. Kinh nghi&#x1EC7;m gi&#x1EA3;ng d&#x1EA1;y 7 n&abreve;m.
               br
@@ -420,30 +309,3 @@ block main
             h5
               a(href='services.html') Aika Hamasaki
             p Gi&aacute;o vi&ecirc;n b&#x1EA3;n ng&#x1EEF;. Kinh nghi&#x1EC7;m gi&#x1EA3;ng d&#x1EA1;y 7 n&abreve;m.
-  // Services End
-  //
-    ? About Area-2 Start --
-    <section class="about-area2 fix pb-padding">
-    <div class="support-wrapper align-items-center">
-    <div class="right-content2">
-    <!-- img --
-    <div class="right-img">
-    <img src="assets/img/gallery/about2.png" alt="">
-    </div>
-    </div>
-    <div class="left-content2">
-    <!-- section tittle --
-    <div class="section-tittle section-tittle2 mb-20">
-    <div class="front-text">
-    <h2 class="">Take the next step
-    toward your personal
-    and professional goals
-    with us.</h2>
-    <p>The automated process all your website tasks. Discover tools and techniques to engage effectively with vulnerable children and young people.</p>
-    <a href="#" class="btn">Join now for Free</a>
-    </div>
-    </div>
-    </div>
-    </div>
-    </section>
-    <!-- About Area End

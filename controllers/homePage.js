@@ -91,12 +91,43 @@ exports.get_profilePage = function (req, res, next) {
 
 }
 
-exports.get_editPage = function (req, res, next) {
+exports.get_editProfilePage = function (req, res, next) {
     var xacnhan = false;
     if (req.isAuthenticated()) {
         xacnhan = true;
-        return res.render('edit', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+        return res.render('editprofile', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
     }
-    else { return res.render('edit', { title: 'Express', Authenticated: xacnhan }); }
+    else { return res.render('editprofile', { title: 'Express', Authenticated: xacnhan }); }
 
 }
+
+exports.get_coursesDetailPage = function (req, res, next) {
+    var xacnhan = false;
+    if (req.isAuthenticated()) {
+        xacnhan = true;
+        return res.render('coursesdetail', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+    }
+    else { return res.render('coursesdetail', { title: 'Express', Authenticated: xacnhan }); }
+
+}
+
+exports.get_tkbPage = function (req, res, next) {
+    var xacnhan = false;
+    if (req.isAuthenticated()) {
+        xacnhan = true;
+        return res.render('tkb', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+    }
+    else { return res.render('tkb', { title: 'Express', Authenticated: xacnhan }); }
+
+}
+
+exports.get_resetpwPage = function (req, res, next) {
+    var xacnhan = false;
+    if (req.isAuthenticated()) {
+        xacnhan = true;
+        return res.render('resetpw', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+    }
+    else { return res.render('resetpw', { title: 'Express', Authenticated: xacnhan }); }
+
+}
+

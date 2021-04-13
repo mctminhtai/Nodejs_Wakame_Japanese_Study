@@ -1,4 +1,6 @@
 extends layout.pug 
+block title 
+  title Tin tức | Wakame
 block main 
   main
     // ? slider Area Start
@@ -10,14 +12,14 @@ block main
             .row
               .col-xl-8.col-lg-11.col-md-12
                 .hero__caption.hero__caption2
-                  h1(data-animation='bounceIn' data-delay='0.2s') Blog
+                  h1(data-animation='bounceIn' data-delay='0.2s') Tin tức
                   // breadcrumb Start
                   nav(aria-label='breadcrumb')
                     ol.breadcrumb
                       li.breadcrumb-item
                         a(href='/') Trang chủ
                       li.breadcrumb-item
-                        a(href='#') Blog
+                        a(href='#') Tin tức
                   // breadcrumb End
     // ? Blog Area Start
     section.blog_area.section-padding
@@ -242,27 +244,6 @@ block main
                   each val in tags
                     li
                       a(href='#') #{val.dataValues.TEN_TAG}
-              aside.single_sidebar_widget.instagram_feeds
-                h4.widget_title(style='color: #2d2d2d;') Instagram New Feeds
-                ul.instagram_row.flex-wrap
-                  li
-                    a(href='#')
-                      img.img-fluid(src='assets/img/post/post_5.png' alt='')
-                  li
-                    a(href='#')
-                      img.img-fluid(src='assets/img/post/post_6.png' alt='')
-                  li
-                    a(href='#')
-                      img.img-fluid(src='assets/img/post/post_7.png' alt='')
-                  li
-                    a(href='#')
-                      img.img-fluid(src='assets/img/post/post_8.png' alt='')
-                  li
-                    a(href='#')
-                      img.img-fluid(src='assets/img/post/post_9.png' alt='')
-                  li
-                    a(href='#')
-                      img.img-fluid(src='assets/img/post/post_10.png' alt='')
               aside.single_sidebar_widget.newsletter_widget
                 h4.widget_title(style='color: #2d2d2d;') Nhận tin tức
                 form(action='#')
