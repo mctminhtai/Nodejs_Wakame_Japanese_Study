@@ -18,13 +18,11 @@ head
   link(rel='stylesheet' href='assets/css/animate.min.css')
   link(rel='stylesheet' href='assets/css/animated-headline.css')
   link(rel='stylesheet' href='assets/css/magnific-popup.css')
-  link(rel='stylesheet' href='assets/css/font-awesome.css')
-  link(rel='stylesheet' href='assets/css/fontawesome-all.min.css')
   link(rel='stylesheet' href='assets/css/themify-icons.css')
   link(rel='stylesheet' href='assets/css/slick.css')
   link(rel='stylesheet' href='assets/css/nice-select.css')
   link(rel='stylesheet' href='assets/css/style.css')
-  link(rel="manifest" href="/favicons/manifest.json")
+  link(rel='stylesheet' href='assets/css/all.css')
 // ? Preloader Start
 #preloader-active
   .preloader.d-flex.align-items-center.justify-content-center
@@ -53,7 +51,7 @@ header
                       li.active.nav-item
                         a(href='/') Trang chủ
                       li.nav-item
-                        a(href='') 
+                        a(href='javascript:void(0)') 
                           |Giảng dạy&nbsp; 
                           i.fas.fa-caret-down
                         ul.submenu
@@ -68,23 +66,38 @@ header
                       li.nav-item
                         a(href='/contact') Liên hệ
                       // Button
+                .account
+                  nav
+                    ul#naviagation      
                       if Authenticated=== false 
                         li.button-header.margin-left
                           a.btn(href='/accounts') Đăng ký
                         li.button-header
                           a.btn.btn3(href='/accounts') Đăng nhập
                       else
-                        li.button-header.margin-left
-                          a.btn(href='/') #{user_name}
-                          ul.submenu(style="width:max-content")
+                        li.nav-item.margin-left.button-header
+                          a.user-size(href='javascript:void(0)')
+                            #user-icon
+                              i.far.fa-user-circle
+                            #user-text
+                              p Giảng dạy
+                            #user-tail 
+                              i.fas.fa-caret-down
+                          ul.submenu
                             li
                               a(href='/profile') Thông tin cá nhân
                             li
                               a(href='/resetpw') Thay đổi mật khẩu
                             li
+<<<<<<< HEAD
+                              a(href='/') Tạo TKB UIT                      
+                            li.button-header
+                              a(href='/logout') Đăng xuất 
+=======
                                 a(href='/tkb') Tạo TKB UIT                      
                         li.button-header
                           a.btn.btn3(href='/logout') Đăng xuất 
+>>>>>>> 77f1197568d03d4886f884e026ad0f12aa1257dc
                         
             .col-12
               .mobile_menu.d-block.d-lg-none
@@ -99,7 +112,7 @@ footer
         .row.justify-content-between
           .col-xl-4.col-lg-5.col-md-4.col-sm-6
             .single-footer-caption.mb-50
-              .single-footer-caption.mb-30
+              .single-footer-caption
                 // logo
                 .footer-logo.mb-25
                   a(href='/')
