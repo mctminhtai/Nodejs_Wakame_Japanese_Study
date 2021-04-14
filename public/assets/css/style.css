@@ -5,6 +5,14 @@
 /* ------------------------------
 	Tùy chỉnh
 -------------------------------- */
+.isDissabled {
+	cursor:pointer;
+	pointer-events: none;
+}
+
+.cat-list li a:hover{
+	color:#68c25c !important;
+}
 .sheader-transparent{
     background-image: linear-gradient(-45deg, #90fd12 0%, #2966ce 100%);
 }
@@ -13,6 +21,55 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.account{
+	display: block;
+	width:280px;
+}
+.account .submenu{
+	position: absolute;
+	width: max-content;
+	background: linear-gradient(to top, #c054ff 0%, #5274ff 100%);
+	background-image: linear-gradient(
+	135deg
+	, #90fd12 0%, #2966ce 100%);
+	left: 0;
+	top: 90%;
+	visibility: hidden;
+	opacity: 0;
+	box-shadow: 0 0 10px 3px rgb(0 0 0 / 5%);
+	padding: 0;
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+}
+.account ul li {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    margin: 0 27px;
+}
+.account ul ul.submenu>li {
+    margin-left: 0px;
+    display: block;
+}
+.account ul ul.submenu>li>a {
+    padding: 0px 25px !important;
+    display: block;
+    background: none !important;
+    color: #fff!important;
+    padding-left: 20px;
+    height: 40px;
+    line-height: 40px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    position: relative;
+    font-size: 15px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
 
 .team-area .single-cat .cat-icon img{
 	width: 200px;
@@ -25,9 +82,23 @@
 	font-size:24px;
 }
 .main-header .main-menu ul .nav-item a{
-	padding:27px 2px !important;
 	font-weight: 0;
 }
+
+.nav-item .user-size{
+	padding:20px 2px 20px 2px !important;
+}
+.user-size i{
+	font-size:35px;
+}
+.user-size span{
+	font-size:17px
+}
+.user-size div{
+	display: inline-block;
+	position: relative;
+}
+
 .icon{
 	font-size:16px !important;
 	color: #fff !important;
@@ -187,17 +258,16 @@
 }
 .boxed-btn{
 	background:#fff;
-	color:#C86FFF !important;
+	color:#68c25c !important;
 	display:inline-block;
-	padding:18px 44px;
+	padding:12px 44px;
 	font-family:"Fira Sans",sans-serif;
-	font-size:14px;
-	font-weight:400;
+	font-size:16px;
+	font-weight:600;
 	border:0;
-	border:1px solid #C86FFF;
-	letter-spacing:3px;
+	border:1px solid #68c25c;
+	letter-spacing:2px;
 	text-align:center;
-	color:#C86FFF;
 	text-transform:uppercase;
 	cursor:pointer
 }
@@ -205,7 +275,7 @@
 	background:linear-gradient(-45deg,#90fd12 0%,#2966ce 100%);
 	color:#fff !important;
 	border:1px solid; 
-	padding:18px 44px;
+	padding:12px 44px;
 }
 .boxed-btn:focus{
 	outline:none
@@ -2478,7 +2548,7 @@ to{
 .main-header .main-menu ul li a{
 	color:#fff;
 	font-weight:0;
-	padding:39px 2px;
+	padding:27px 2px;
 	display:block;
 	font-size:17px;
 	-webkit-transition:.3s;
@@ -4323,7 +4393,7 @@ to{
 	transition:.4s
 }
 .blog_area a:hover,.blog_area a :hover{
-	background:-webkit-linear-gradient(131deg, #C86FFF 0%, #C86FFF 99%);
+	background:-webkit-linear-gradient(131deg, #68c25c 0%, #68c25c 99%);
 	-webkit-background-clip:text;
 	-webkit-text-fill-color:transparent;
 	text-decoration:none;
@@ -4702,7 +4772,7 @@ to{
 	color:#080808
 }
 .blog_details a:hover{
-	color:#FF9F67
+	color:#68c25c;
 }
 .blog_details h2{
 	font-size:18px;
@@ -4751,7 +4821,7 @@ to{
 	left:10px;
 	display:block;
 	color:#fff;
-	background-color:#C86FFF;
+	background-image:linear-gradient(32deg, #90fd12 0%, #2966ce 100%);
 	padding:8px 15px;
 	border-radius:5px;
 }
@@ -4799,7 +4869,8 @@ to{
 	border-bottom:1px solid #f0e9ff
 }
 .blog_right_sidebar .single_sidebar_widget{
-	background:#fbf9ff;
+	background:#f0fff2;
+
 	padding:30px;
 	margin-bottom:30px
 }
@@ -4808,12 +4879,12 @@ to{
 }
 .blog_right_sidebar .search_widget .form-control{
 	height:50px;
-	border-color:#f0e9ff;
+	border-color:#68c25c;
 	font-size:13px;
 	color:#999999;
 	padding-left:20px;
 	border-radius:0;
-	border-right:0
+
 }
 .blog_right_sidebar .search_widget .form-control::placeholder{
 	color:#999999
@@ -4921,7 +4992,7 @@ to{
 	font-size:13px
 }
 .blog_right_sidebar .tag_cloud_widget ul li a:hover{
-	background:#C86FFF;
+	background:linear-gradient(-32deg,#90fd12 0%,#2966ce 100%);
 	color:#fff !important;
 	-webkit-text-fill-color:#fff;
 	text-decoration:none;

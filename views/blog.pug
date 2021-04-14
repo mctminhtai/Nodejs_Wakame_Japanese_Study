@@ -31,7 +31,7 @@ block main
                 article.blog_item
                   .blog_item_img
                     img.card-img.rounded-0(src=val.dataValues.blogimg alt='')
-                    a(style="text-align:center").blog_item_date(href='#')
+                    .blog_item_date(href='#')
                       h3 #{val.dataValues.createdAt.getFullYear().toString().substr(2,2)}
                       p #{val.dataValues.createdAt.getMonth()}月
                   .blog_details
@@ -181,9 +181,6 @@ block main
                   .form-group
                     .input-group.mb-3
                       input.form-control(type='text' placeholder='Tìm kiếm từ khóa' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tìm kiếm từ khóa'")
-                      .input-group-append
-                        button.btns(type='button')
-                          i.ti-search
                   button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Tìm kiếm
               aside.single_sidebar_widget.post_category_widget
                 h4.widget_title(style='color: #2d2d2d;') Lĩnh vực
