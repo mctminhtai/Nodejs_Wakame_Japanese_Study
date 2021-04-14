@@ -26,7 +26,7 @@ exports.get_aboutPage = function (req, res, next) {
 exports.get_blogPage = async function (req, res, next) {
     var blogs = await models.BLOG.findAll({
         attributes: ['uuid', 'title', 'blogimg', 'content', 'description', 'createdAt'],
-        include: ['blog_user'],
+        include: ['blog_user', 'blog_comment'],
     });
     var tags = await models.TAG.findAll({
         attributes: ['TEN_TAG']
@@ -49,15 +49,20 @@ exports.get_blogDetailPage = async function (req, res, next) {
     var tags = await models.TAG.findAll({
         attributes: ['TEN_TAG']
     });
-    var users = await models.USER.findAll({
-        attributes: ['id', 'fullName'],
-    })
-    console.log(blog);
+    var comments = blog.blog_comment.map((value, index) => {
+        return {
+            cmcontent: value.dataValues.cmcontent,
+            cmuser: blog.blog_comment_user[index].dataValues.fullName,
+            cmtime: value.dataValues.createdAt,
+        };
+    });
+    console.log(comments);
     return res.render('blog_details', {
         Authenticated: req.isAuthenticated(),
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
         blog: blog,
         tags: tags,
+        comments: comments,
     })
 }
 
