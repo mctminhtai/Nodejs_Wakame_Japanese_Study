@@ -107,13 +107,20 @@ exports.get_test = async function (req, res, next) {
     await models.TAG.create({ TEN_TAG: 'Viet Anh Love JAV' });
     await models.TAG.create({ TEN_TAG: 'Viet Anh hontoni JAV wo aishiteiru' });
     await models.TAG.create({ TEN_TAG: 'Viet Anh la fan cua Tokuda' });
-    randid = uuidv4()
     await models.BLOG.create({
-        uuid: randid,
+        uuid: uuidv4(),
         USERId: 1,
         description: 'Multiply sea night grass fourth day sea lesser rule open subdue female fill which them Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser',
         title: 'helo33',
         content: 'khong co giiii',
+        blogimg: 'https://seido.vn/wp-content/uploads/2020/12/Colorful-Geometric-Simple-Background-Image.jpg'
+    });
+    await models.BLOG.create({
+        uuid: uuidv4(),
+        USERId: 1,
+        description: 'Multiply sea night grass fourth day sea lesser rule open subdue female fill which them Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser',
+        title: 'helo33444',
+        content: 'sap xong roi',
         blogimg: 'https://seido.vn/wp-content/uploads/2020/12/Colorful-Geometric-Simple-Background-Image.jpg'
     });
     await models.TAG_BLOG.create({ TAGId: 1, BLOGId: 1 });
@@ -140,9 +147,9 @@ exports.get_test = async function (req, res, next) {
     // await models.TKB_DU_KIEN.create({ USERId: 1, LOPHOCId: 1, THUId: 1, TIETId: 1 });
     // await models.DS_MON_DA_HOC.create({ USERId: 1, MONHOCId: 1 });
 
-    models.USER.findByPk(1, { include: ['binhluan'] }).then((user) => {
-        console.log(user.binhluan);
-    })
+    // models.USER.findByPk(1, { include: ['binhluan'] }).then((user) => {
+    //     console.log(user.binhluan);
+    // })
 
     users = []
     await models.USER.findAll({ attributes: ['fullName', 'email', 'password'] }).then((all) => {

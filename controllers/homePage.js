@@ -1,5 +1,5 @@
 const models = require('../models');
-
+const search = require('../utils/multiSearch');
 exports.get_homePage = function (req, res, next) {
     var xacnhan = false;
 
@@ -31,11 +31,34 @@ exports.get_blogPage = async function (req, res, next) {
     var tags = await models.TAG.findAll({
         attributes: ['TEN_TAG']
     });
-    //console.log(blogs.blog_comment);
+    console.log(blogs);
     return res.render('blog', {
         Authenticated: req.isAuthenticated(),
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
         blogs: blogs,
+        tags: tags,
+    });
+}
+exports.get_searchBlogPage = async function (req, res, next) {
+    var words = req.query.q.split(" ");
+    blogs = await models.BLOG.findAll({
+        attributes: ['uuid', 'title', 'blogimg', 'content', 'description', 'createdAt'],
+        include: ['blog_user', 'blog_comment'],
+    });
+    foundBlogs = [];
+    blogs.forEach((blog) => {
+        if (search.multiSearchOr(blog.content, words) == "Found!") {
+            foundBlogs.push(blog);
+        }
+    });
+    var tags = await models.TAG.findAll({
+        attributes: ['TEN_TAG']
+    });
+    console.log(foundBlogs);
+    return res.render('blog', {
+        Authenticated: req.isAuthenticated(),
+        user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
+        blogs: foundBlogs,
         tags: tags,
     });
 }
@@ -53,7 +76,6 @@ exports.get_blogDetailPage = async function (req, res, next) {
         where: { BLOGId: blog.id },
         include: ['comment_user'],
     });
-    console.log(comments[0].comment_user.fullName);
     return res.render('blog_details', {
         Authenticated: req.isAuthenticated(),
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',

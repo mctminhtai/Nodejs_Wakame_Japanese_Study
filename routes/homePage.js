@@ -5,6 +5,7 @@ let homePage = require('../controllers/homePage')
 router.get('/', homePage.get_homePage);
 router.get('/about', homePage.get_aboutPage);
 router.get('/blog', homePage.get_blogPage);
+router.get('/blog-search', homePage.get_searchBlogPage);
 router.get('/blog/:uuid', homePage.get_blogDetailPage);
 router.get('/contact', homePage.get_contactPage);
 router.get('/courses', homePage.get_coursesPage);
