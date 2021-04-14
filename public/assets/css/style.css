@@ -2206,8 +2206,8 @@ to{
 
 }
 .footer-padding{
-	padding-top:100px;
-	padding-bottom:13px
+	padding-top:20px;
+	padding-bottom:0px
 }
 @media only screen and (min-width: 576px) and (max-width: 767px){
 	.footer-padding{
@@ -4007,7 +4007,7 @@ to{
 	color:#C86FFF
 }
 .footer-bottom-area .footer-border{
-	padding:33px 0px 20px
+	padding:0px 0px 20px
 }
 .footer-bottom-area .footer-copy-right p{
 	color:#fff;
