@@ -89,16 +89,16 @@ exports.post_captcha = function (req, res, next) {
 }
 exports.get_test = async function (req, res, next) {
 
-    models.USER.findByPk(1, { include: ['baidang'] }).then((user) => {
-        console.log(user.baidang);
-    })
-    models.USER.findOne({
-        attributes: ['email', 'password'],
-        where: { email: 'tai@gmail.com' }
-    }).then((user) => {
-        console.log(user.dataValues.email);
-    })
-    await models.USER.create({ fullName: 'minhtai33', email: 'minhtai@gmail.com', password: 'hahakakakak' });
+    // models.USER.findByPk(1, { include: ['baidang'] }).then((user) => {
+    //     console.log(user.baidang);
+    // })
+    // models.USER.findOne({
+    //     attributes: ['email', 'password'],
+    //     where: { email: 'tai@gmail.com' }
+    // }).then((user) => {
+    //     console.log(user.dataValues.email);
+    // })
+    // await models.USER.create({ fullName: 'minhtai33', email: 'minhtai@gmail.com', password: 'hahakakakak' });
     await models.TAG.create({ TEN_TAG: 'SuKien' });
     await models.TAG.create({ TEN_TAG: 'Thien thich jav' });
     await models.TAG.create({ TEN_TAG: 'Thien me dong JAv' });
@@ -122,16 +122,16 @@ exports.get_test = async function (req, res, next) {
         BLOGId: 1,
         cmcontent: 'bai viet qua hay',
     })
-    await models.MONHOC.create({ TEN_MH: 'ĐẤM VỠ MÀN HÌNH', SO_TIN_CHI: 3 });
-    await models.LOPHOC.create({ MONHOCId: 1 });
-    await models.COMMENT.create({ USERId: 1, BLOGId: 1, cmcontent: 'met qua luon' });
-    await models.THU.create({ TEN_THU: 'Thu 2' });
-    await models.TIET.create({ TEN_TIET: 'Tiet 3' });
-    await models.TIET_THU.create({ THUId: 1, TIETId: 1 });
-    await models.GIANGVIEN.create({ TEN_GV: 'God' });
-    await models.DS_LOP_HOC.create({ LOPHOCId: 1, GIANGVIENId: 1, THUId: 1, TIETId: 1 });
-    await models.TKB_DU_KIEN.create({ USERId: 1, LOPHOCId: 1, THUId: 1, TIETId: 1 });
-    await models.DS_MON_DA_HOC.create({ USERId: 1, MONHOCId: 1 });
+    // await models.MONHOC.create({ TEN_MH: 'ĐẤM VỠ MÀN HÌNH', SO_TIN_CHI: 3 });
+    // await models.LOPHOC.create({ MONHOCId: 1 });
+    // await models.COMMENT.create({ USERId: 1, BLOGId: 1, cmcontent: 'met qua luon' });
+    // await models.THU.create({ TEN_THU: 'Thu 2' });
+    // await models.TIET.create({ TEN_TIET: 'Tiet 3' });
+    // await models.TIET_THU.create({ THUId: 1, TIETId: 1 });
+    // await models.GIANGVIEN.create({ TEN_GV: 'God' });
+    // await models.DS_LOP_HOC.create({ LOPHOCId: 1, GIANGVIENId: 1, THUId: 1, TIETId: 1 });
+    // await models.TKB_DU_KIEN.create({ USERId: 1, LOPHOCId: 1, THUId: 1, TIETId: 1 });
+    // await models.DS_MON_DA_HOC.create({ USERId: 1, MONHOCId: 1 });
 
     models.USER.findByPk(1, { include: ['binhluan'] }).then((user) => {
         console.log(user.binhluan);
