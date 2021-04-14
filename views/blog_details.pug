@@ -66,8 +66,8 @@ block main
                         .d-flex.justify-content-between
                           .d-flex.align-items-center
                             h5
-                              a(href='#') #{val.cmuser}
-                            p.date #{val.cmtime.getDate()}/#{val.cmtime.getMonth()}/#{val.cmtime.getFullYear()}
+                              a(href='#') #{val.comment_user.fullName}
+                            p.date #{val.createdAt.getDate()}/#{val.createdAt.getMonth()}/#{val.createdAt.getFullYear()}
                           .reply-btn
                             a.btn-reply.text-uppercase(href='#') reply
               //- .comment-list
