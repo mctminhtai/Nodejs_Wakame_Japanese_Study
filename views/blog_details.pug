@@ -68,8 +68,8 @@ block main
                     a(href='#')
                       i.fab.fa-behance
             .comments-area
-              h4 05 Comments
-              each val in blog.blog_comment
+              h4 #{comments.length} Comments
+              each val in comments
                 .comment-list
                   .single-comment.justify-content-between.d-flex
                     .user.justify-content-between.d-flex
@@ -77,12 +77,12 @@ block main
                         img(src='assets/img/blog/comment_1.png' alt='')
                       .desc
                         p.comment
-                          | #{val.dataValues.cmcontent}
+                          | #{val.cmcontent}
                         .d-flex.justify-content-between
                           .d-flex.align-items-center
                             h5
-                              a(href='#') Emilly Blunt
-                            p.date December 4, 2017 at 3:12 pm 
+                              a(href='#') #{val.cmuser}
+                            p.date #{val.cmtime.getDate()}/#{val.cmtime.getMonth()}/#{val.cmtime.getFullYear()}
                           .reply-btn
                             a.btn-reply.text-uppercase(href='#') reply
               //- .comment-list
