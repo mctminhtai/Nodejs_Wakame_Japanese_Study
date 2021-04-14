@@ -22,11 +22,12 @@ module.exports = (sequelize, DataTypes) => {
     USER.init({
         fullName: DataTypes.STRING,
         email: DataTypes.STRING,
-        password: DataTypes.STRING
+        password: DataTypes.STRING,
+        status: DataTypes.BOOLEAN,
     }, {
-            sequelize,
-            modelName: 'USER',
-            freezeTableName: true,
-        });
+        sequelize,
+        modelName: 'USER',
+        freezeTableName: true,
+    });
     return USER;
 };

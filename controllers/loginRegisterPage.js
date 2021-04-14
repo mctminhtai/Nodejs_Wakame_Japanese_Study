@@ -99,12 +99,14 @@ exports.get_test = async function (req, res, next) {
     //     console.log(user.dataValues.email);
     // })
     // await models.USER.create({ fullName: 'minhtai33', email: 'minhtai@gmail.com', password: 'hahakakakak' });
+    await models.USER.create({ fullName: 'VietAnhJav', email: 'JavIsNumberOne@gmail.com', password: 'vietanh' });
+    await models.USER.create({ fullName: 'VietAnhLoveJAV', email: 'JavIsNumber1@gmail.com', password: 'vietanh' });
     await models.TAG.create({ TEN_TAG: 'SuKien' });
-    await models.TAG.create({ TEN_TAG: 'Thien thich jav' });
-    await models.TAG.create({ TEN_TAG: 'Thien me dong JAv' });
-    await models.TAG.create({ TEN_TAG: 'Thien coi jav' });
-    await models.TAG.create({ TEN_TAG: 'Thien than tuong jav' });
-    await models.TAG.create({ TEN_TAG: 'Thien sieu me JAV' });
+    await models.TAG.create({ TEN_TAG: 'Viet Anh JAV' });
+    await models.TAG.create({ TEN_TAG: 'JAV is Viet Anh life' });
+    await models.TAG.create({ TEN_TAG: 'Viet Anh Love JAV' });
+    await models.TAG.create({ TEN_TAG: 'Viet Anh hontoni JAV wo aishiteiru' });
+    await models.TAG.create({ TEN_TAG: 'Viet Anh la fan cua Tokuda' });
     randid = uuidv4()
     await models.BLOG.create({
         uuid: randid,
