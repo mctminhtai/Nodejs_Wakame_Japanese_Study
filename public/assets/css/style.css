@@ -5,6 +5,9 @@
 /* ------------------------------
 	Tùy chỉnh
 -------------------------------- */
+.sheader-transparent{
+    background-image: linear-gradient(-45deg, #90fd12 0%, #2966ce 100%);
+}
 .features-icon{
 	background: linear-gradient(to bottom, #eae2fe 0%, #a376ff 1%, #ea68ff 98%, #ec7dfe 99%, #f3f3fa 99%, #f4f5fa 100%);
     -webkit-background-clip: text;
@@ -119,7 +122,7 @@
 	top:0;
 	width:101%;
 	height:101%;
-	background:linear-gradient(to top, #c054ff 0%, #5274ff 100%);
+	background:#2966ce;
 	z-index:-1;
 	transition:transform 0.5s;
 	transition-timing-function:ease;
@@ -133,6 +136,7 @@
 	border:1px solid transparent;
 	color:#fff
 }
+
 /* Captcha */
 .captcha svg{
 	background-color:#fff;
@@ -198,9 +202,10 @@
 	cursor:pointer
 }
 .boxed-btn:hover{
-	background:#C86FFF;
+	background:linear-gradient(-45deg,#90fd12 0%,#2966ce 100%);
 	color:#fff !important;
-	border:1px solid #C86FFF
+	border:1px solid; 
+	padding:18px 44px;
 }
 .boxed-btn:focus{
 	outline:none
@@ -372,8 +377,8 @@ hr{
 	border-radius:10px 10px 0 0
 }
 .section-padding{
-	padding-top:120px;
-	padding-bottom:120px
+	padding-top:40px;
+	padding-bottom:40px
 }
 .separator{
 	border-top:1px solid #f2f2f2
@@ -676,7 +681,7 @@ hr{
 	color:#888
 }
 #scrollUp,#back-top{
-	background:#C86FFF;
+	background:#2966ce;
 	height:50px;
 	width:50px;
 	right:31px;
@@ -2489,6 +2494,7 @@ to{
 	position:absolute;
 	width:170px;
 	background: linear-gradient(to top, #c054ff 0%, #5274ff 100%);
+	background-image: linear-gradient(135deg, #90fd12 0%, #2966ce 100%);
 	left:0;
 	top:90%;
 	visibility:hidden;
@@ -2672,7 +2678,8 @@ to{
 
 }
 .slider-height2{
-	min-height:400px;
+	min-height:78.88px;
+	max-height:fit-content;
 	background-repeat:no-repeat;
 	background-position:center center;
 	background-size:cover
@@ -2721,12 +2728,13 @@ to{
 }
 .slider-area,.slider-area2{
 	background-image:url(../img/hero/h1_hero.png);
+	background-image: linear-gradient(-45deg, #90fd12 0%, #2966ce 100%);
 	background-size:cover;
 	background-repeat:no-repeat;
 	background-position:center center
 }
 .slider-area.slider-area2,.slider-area2.slider-area2{
-	background-image:url(../img/hero/hero2.png)
+	background-image: linear-gradient(-45deg, #90fd12 0%, #2966ce 100%);
 }
 .slider-area .hero__caption,.slider-area2 .hero__caption{
 	overflow:hidden
@@ -2747,11 +2755,11 @@ to{
 
 }
 .slider-area .hero__caption h1,.slider-area2 .hero__caption h1{
-	font-size:60px;
+	font-size:40px;
 	font-weight:700;
 	color:#fff;
 	line-height:1.3;
-	margin-bottom:22px
+	margin-bottom:11px
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px){
 	.slider-area .hero__caption h1,.slider-area2 .hero__caption h1{
@@ -2796,7 +2804,7 @@ to{
 
 }
 .slider-area .hero__caption.hero__caption2,.slider-area2 .hero__caption.hero__caption2{
-	padding-top:218px
+	padding-top:80px
 }
 @media (max-width: 575px){
 	.slider-area .hero__caption.hero__caption2,.slider-area2 .hero__caption.hero__caption2{
@@ -4745,8 +4753,9 @@ to{
 	color:#fff;
 	background-color:#C86FFF;
 	padding:8px 15px;
-	border-radius:5px
+	border-radius:5px;
 }
+
 @media (min-width: 768px){
 	.blog_item_img .blog_item_date{
 	bottom:-20px;
@@ -5473,6 +5482,7 @@ to{
 	background:-moz-linear-gradient(top, #c054ff 0%, #5274ff 100%);
 	background:-webkit-linear-gradient(top, #c054ff 0%, #5274ff 100%);
 	background:linear-gradient(to bottom, #c054ff 0%, #5274ff 100%);
+	background-image: linear-gradient(-45deg, #90fd12 0%, #2966ce 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#c054ff', endColorstr='#5274ff',GradientType=0 )
 }
 .about-area1 .support-wrapper .left-content1 .about-icon{
