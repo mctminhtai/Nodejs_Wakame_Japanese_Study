@@ -124,9 +124,14 @@ exports.get_test = async function (req, res, next) {
         BLOGId: 1,
         cmcontent: 'bai viet qua hay',
     })
+    await models.COMMENT.create({
+        USERId: 1,
+        BLOGId: 1,
+        cmcontent: 'met qua luon',
+    });
     // await models.MONHOC.create({ TEN_MH: 'ĐẤM VỠ MÀN HÌNH', SO_TIN_CHI: 3 });
     // await models.LOPHOC.create({ MONHOCId: 1 });
-    // await models.COMMENT.create({ USERId: 1, BLOGId: 1, cmcontent: 'met qua luon' });
+
     // await models.THU.create({ TEN_THU: 'Thu 2' });
     // await models.TIET.create({ TEN_TIET: 'Tiet 3' });
     // await models.TIET_THU.create({ THUId: 1, TIETId: 1 });

@@ -31,7 +31,7 @@ exports.get_blogPage = async function (req, res, next) {
     var tags = await models.TAG.findAll({
         attributes: ['TEN_TAG']
     });
-    console.log(blogs);
+    //console.log(blogs.blog_comment);
     return res.render('blog', {
         Authenticated: req.isAuthenticated(),
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
@@ -42,21 +42,18 @@ exports.get_blogPage = async function (req, res, next) {
 exports.get_blogDetailPage = async function (req, res, next) {
     var uuid = req.param('uuid');
     var blog = await models.BLOG.findOne({
-        attributes: ['id', 'USERId', 'blogimg', 'title', 'content', 'createdAt'],
+        //attributes: ['id', 'USERId', 'blogimg', 'title', 'content', 'createdAt'],
         where: { uuid: uuid },
-        include: ['blog_user', 'blog_tag', 'blog_comment', 'blog_comment_user']
+        include: ['blog_user', 'blog_tag', 'blog_comment']
     });
     var tags = await models.TAG.findAll({
         attributes: ['TEN_TAG']
     });
-    var comments = blog.blog_comment.map((value, index) => {
-        return {
-            cmcontent: value.dataValues.cmcontent,
-            cmuser: blog.blog_comment_user[index].dataValues.fullName,
-            cmtime: value.dataValues.createdAt,
-        };
+    var comments = await models.COMMENT.findAll({
+        where: { BLOGId: blog.id },
+        include: ['comment_user'],
     });
-    console.log(comments);
+    console.log(comments[0].comment_user.fullName);
     return res.render('blog_details', {
         Authenticated: req.isAuthenticated(),
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',

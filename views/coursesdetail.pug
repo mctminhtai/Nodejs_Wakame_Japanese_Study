@@ -44,109 +44,183 @@ block main
                 li
                   i.fas.fa-eye
                   | 134 lượt xem
-          
-          .card
-            .card-header
-              ul.nav.nav-pills.card-header-pills
-                li.nav-item
-                  a.nav-link.active(href='#') Về khóa học
-                li.nav-item
-                  a.nav-link(href='#' style="color:#777777") Về giảng viên
-                li.nav-item
-                  a.nav-link(href='#' style="color:#777777") Bài học
-                li.nav-item
-                  a.nav-link(href='#' style="color:#777777") Thảo luận
-                li.nav-item
-                  a.nav-link(href='#' style="color:#777777") Tài liệu
-            .card-body
-              table.table.table-hover
-                thead
-                  tr
-                    th Thời lượng
-                    th Bài học
-                tbody
-                  tr
-                    td 01:06:05
-                    td 第１週－キチンで、リビングで
-                  tr
-                    td 01:06:05
-                    td 第２週－キチンで、リビングで
-                  tr
-                    td 01:06:05
-                    td 第３週－キチンで、リビングで
-                  tr
-                    td 01:06:05
-                    td 第４週－キチンで、リビングで
-                  tr
-                    td 01:06:05
-                    td 第５週－キチンで、リビングで
-          .comments-area
-            h1(style="margin-bottom:40px") Bình luận của học viên (03 bình luận)
-            .comment-list
-              .single-comment.justify-content-between.d-flex
-                .user.justify-content-between.d-flex
-                  .thumb
-                    img(src='assets/img/blog/comment_3.png' alt='')
-                  .desc
-                    p.comment
-                      | cho e hỏi là khác nhau giữa ồ rê, 
-                      | bô ku vs ạ, chou của e k xưng watashi 
-                      | mà xưng ồ rê vs bô ku thì có giống vs watashi k thầy
-                    .d-flex.justify-content-between
-                      .d-flex.align-items-center
-                        h5
-                          a(href='#') Nguyễn Thị Như Trà 
-                        p.date December 4, 2017 at 3:12 pm 
-                      .reply-btn
-                        a.btn-reply.text-uppercase(href='#') reply
-            .comment-list
-              .single-comment.justify-content-between.d-flex
-                .user.justify-content-between.d-flex
-                  .thumb
-                    img(src='assets/img/blog/comment_1.png' alt='')
-                  .desc
-                    p.comment
-                      | Giọng đọng của cô あやの hay quá thầy ơi, 
-                      | và em kết nhất câu: “Con người cần phải cố gắng để 
-                      | mỗi ý kiến nói ra đều đáng giá hàng trăm triệu “ của thầy Dũng đấy ạ.
-                    .d-flex.justify-content-between
-                      .d-flex.align-items-center
-                        h5
-                          a(href='#') Nguyễn Phạm Hường Huyền 
-                        p.date December 4, 2017 at 3:12 pm 
-                      .reply-btn
-                        a.btn-reply.text-uppercase(href='#') reply
-            .comment-list
-              .single-comment.justify-content-between.d-flex
-                .user.justify-content-between.d-flex
-                  .thumb
-                    img(src='assets/img/blog/comment_2.png' alt='')
-                  .desc
-                    p.comment
-                      | phần mới rất hay thầy ! Dễ hiểu dễ nhớ hi vọng các. 
-                      | Thầy cô phát triển hơn nữa để e theo tới n1 luôn hihi
-                    .d-flex.justify-content-between
-                      .d-flex.align-items-center
-                        h5
-                          a(href='#') ファム ルック 
-                        p.date December 4, 2017 at 3:12 pm 
-                      .reply-btn(style="margin-right:-60px")
-                        a.btn-reply.text-uppercase(href='#') reply
-          .comment-form
-            h1(style="margin-bottom:30px") Đăng bình luận
-            form#commentForm.form-contact.comment_form(action='#')
-              .row
-                .col-12
-                  .form-group
-                    textarea#comment.form-control.w-100(name='comment' cols='30' rows='9' placeholder='Nội dung bình luận')
-                .col-sm-6
-                  .form-group
-                    input#name.form-control(name='name' type='text' placeholder='Tên của bạn')
-                .col-sm-6
-                  .form-group
-                    input#email.form-control(name='email' type='email' placeholder='Email của bạn')
-              .form-group
-                button.button.button-contactForm.btn_1.boxed-btn(type='submit') Gửi
+
+          .tabs
+            input#tab1(type='radio' name='tab-control' checked='')
+            input#tab2(type='radio' name='tab-control')
+            input#tab3(type='radio' name='tab-control')
+            input#tab4(type='radio' name='tab-control')
+            ul
+              li
+                label(for='tab1' role='button')
+                  i.fas.fa-info-circle
+                  | &nbsp;&nbsp;Thông tin
+              li
+                label(for='tab2' role='button')
+                  i.fas.fa-id-card
+                  | &nbsp;&nbsp;Giảng viên
+              li
+                label(for='tab3' role='button')
+                  i.fas.fa-graduation-cap
+                  | &nbsp;&nbsp;Bài học
+              li
+                label(for='tab4' role='button')
+                  i.fas.fa-comments
+                  | &nbsp;&nbsp;Thảo luận
+            .slider
+              .indicator
+            .content
+              section
+                .comments-area(style='border-top:none;margin-top:0px;padding:0')
+                  h1(style="margin-bottom:20px;border-bottom:2px solid #eee;padding-bottom:10px") Giới thiệu
+                  .comment-list(style='text-align:justify')
+                    p 
+                      | Khóa học cung cấp những kiến thức giao tiếp cơ bản trong kĩ năng để 
+                      | làm việc trong các lĩnh vực kinh doanh, thương mại, công nghệ thông tin, ...
+                    p 
+                      | Các kiến thức này được trình bày một cách hệ thống để người học có 
+                      | cái nhìn tổng quan về tiếng Nhật thương mại và người học sẽ được 
+                      | học thêm rất nhiều thuật ngữ, từ vựng liên quan đến lĩnh vực chuyên ngành.
+                    p 
+                      | Các khái niệm, thuật ngữ được giải thích rõ ràng dễ hiểu và được minh họa 
+                      | bằng các ví dụ để người học hiểu và ghi nhớ dễ dàng.
+                    p Sau khi hoàn thành khóa học, người học tự tin hơn khi giao tiếp về một số lĩnh vực phổ biến.                                 
+                .comments-area(style='border-top:none;margin-top:50px;padding:0')
+                  h1(style="margin-bottom:20px;border-bottom:2px solid #eee;padding-bottom:10px") Lợi ích khi tham gia khóa học
+                  .comment-list(style='text-align:justify')
+                    p 
+                      | Người học có thể áp dụng ngay những kiến thức được học vào công việc 
+                      | thực tế của mình trong các lĩnh vực như soạn hợp đồng, 
+                      | trao đổi với đối tác.              
+              section
+                .row.justify-content-center
+                  .col
+                    img(src='assets/img/gallery/MsThuong.jpg' alt='' style='width:230px;height:230px')
+                  .col-xl-8.col-lg-8
+                    .comments-area(style='border-top:none;margin-top:0px;padding:0')
+                      h1(style="margin-bottom:20px;border-bottom:2px solid #eee;padding-bottom:10px") ThS. Dương Thị Thương
+                      .comment-list
+                        p Kinh nghiệm giảng dạy 4 năm.
+                        p Chức vụ: Giảng viên tiếng Nhật, trường Đại học Công nghệ Thông tin, ĐHQG-HCM. 
+                        p Email: duongnt@uit.edu.vn
+                        p Số điện thoại: +84 123 456 789
+              section
+                table.table.table-hover
+                  thead
+                    tr
+                      th 
+                        .comments-area(style='border-top:none;margin-top:0px;padding:0')
+                          h1 Thời lượng                   
+                      th 
+                        .comments-area(style='border-top:none;margin-top:0px;padding:0')
+                          h1 Bài học                
+                      th 
+                        .comments-area(style='border-top:none;margin-top:0px;padding:0')
+                          h1 Tài liệu               
+                  tbody(style='color:#10285d')
+                    tr
+                      td 01:06:05
+                      td 第１週－キチンで、リビングで
+                      td 
+                        a(href='' style='color:#10285d' download)
+                          i.fas.fa-download
+                          | &nbsp;unit1.rar
+                    tr
+                      td 01:06:05
+                      td 第２週－キチンで、リビングで
+                      td
+                        a(href='' style='color:#10285d' download)
+                          i.fas.fa-download
+                          | &nbsp;unit2.rar
+                    tr
+                      td 01:06:05
+                      td 第３週－キチンで、リビングで
+                      td
+                        a(href='' style='color:#10285d' download)
+                          i.fas.fa-download
+                          | &nbsp;unit3.rar
+                    tr
+                      td 01:06:05
+                      td 第４週－キチンで、リビングで
+                      td
+                        a(href='' style='color:#10285d' download)
+                          i.fas.fa-download
+                          | &nbsp;unit4.rar
+                    tr
+                      td 01:06:05
+                      td 第５週－キチンで、リビングで
+                      td
+                        a(href='' style='color:#10285d' download)
+                          i.fas.fa-download
+                          | &nbsp;unit5.rar
+              section
+                .comments-area(style='border-top:none;margin-top:0px;padding:0')
+                  h1(style="margin-bottom:20px;border-bottom:2px solid #eee;padding-bottom:10px") Bình luận của học viên
+                  .comment-list
+                    .single-comment.justify-content-between.d-flex
+                      .user.justify-content-between.d-flex
+                        .thumb
+                          img(src='assets/img/blog/comment_3.png' alt='')
+                        .desc
+                          p.comment
+                            | cho e hỏi là khác nhau giữa ồ rê, 
+                            | bô ku vs ạ, chou của e k xưng watashi 
+                            | mà xưng ồ rê vs bô ku thì có giống vs watashi k thầy
+                          .d-flex.justify-content-between
+                            .d-flex.align-items-center
+                              h5
+                                a(href='#') Nguyễn Thị Như Trà 
+                              p.date December 4, 2017 at 3:12 pm 
+                            .reply-btn
+                              a.btn-reply.text-uppercase(href='#') reply
+                  .comment-list
+                    .single-comment.justify-content-between.d-flex
+                      .user.justify-content-between.d-flex
+                        .thumb
+                          img(src='assets/img/blog/comment_1.png' alt='')
+                        .desc
+                          p.comment
+                            | Giọng đọng của cô あやの hay quá thầy ơi, 
+                            | và em kết nhất câu: “Con người cần phải cố gắng để 
+                            | mỗi ý kiến nói ra đều đáng giá hàng trăm triệu “ của thầy Dũng đấy ạ.
+                          .d-flex.justify-content-between
+                            .d-flex.align-items-center
+                              h5
+                                a(href='#') Nguyễn Phạm Hường Huyền 
+                              p.date December 4, 2017 at 3:12 pm 
+                            .reply-btn
+                              a.btn-reply.text-uppercase(href='#') reply
+                  .comment-list
+                    .single-comment.justify-content-between.d-flex
+                      .user.justify-content-between.d-flex
+                        .thumb
+                          img(src='assets/img/blog/comment_2.png' alt='')
+                        .desc
+                          p.comment
+                            | phần mới rất hay thầy ! Dễ hiểu dễ nhớ hi vọng các. 
+                            | Thầy cô phát triển hơn nữa để e theo tới n1 luôn hihi
+                          .d-flex.justify-content-between
+                            .d-flex.align-items-center
+                              h5
+                                a(href='#') ファム ルック 
+                              p.date December 4, 2017 at 3:12 pm 
+                            .reply-btn
+                              a.btn-reply.text-uppercase(href='#') reply
+                .comment-form
+                  h1(style="margin-bottom:30px") Đăng bình luận
+                  form#commentForm.form-contact.comment_form(action='#')
+                    .row
+                      .col-12
+                        .form-group
+                          textarea#comment.form-control.w-100(name='comment' cols='30' rows='9' placeholder='Nội dung bình luận')
+                      .col-sm-6
+                        .form-group
+                          input#name.form-control(name='name' type='text' placeholder='Tên của bạn')
+                      .col-sm-6
+                        .form-group
+                          input#email.form-control(name='email' type='email' placeholder='Email của bạn')
+                    .form-group
+                      button.button.button-contactForm.btn_1.boxed-btn(type='submit') Gửi
         .col-lg-3
           .blog_right_sidebar
             aside.single_sidebar_widget.search_widget
