@@ -102,21 +102,22 @@ block main
               //-             p.date December 4, 2017 at 3:12 pm 
               //-           .reply-btn
               //-             a.btn-reply.text-uppercase(href='#') reply
-            .comment-form
-              h4 Đăng bình luận
-              form#commentForm.form-contact.comment_form(action='#')
-                .row
-                  .col-12
-                    .form-group
-                      textarea#comment.form-control.w-100(name='comment' cols='30' rows='9' placeholder='Nội dung bình luận')
-                  .col-sm-6
-                    .form-group
-                      input#name.form-control(name='name' type='text' placeholder='Tên của bạn')
-                  .col-sm-6
-                    .form-group
-                      input#email.form-control(name='email' type='email' placeholder='Email của bạn')
-                .form-group
-                  button.button.button-contactForm.btn_1.boxed-btn(type='submit') Gửi
+            if Authenticated
+              .comment-form
+                h4 Đăng bình luận
+                form#commentForm.form-contact.comment_form(action='/comment' method='POST')
+                  .row
+                    .col-12
+                      .form-group
+                        textarea#comment.form-control.w-100(name='comment' cols='30' rows='9' placeholder='Nội dung bình luận')
+                    .col-sm-6
+                      .form-group
+                        input#name.form-control(name='blogid' type='hidden' value=blog.uuid)
+                    .col-sm-6
+                      .form-group
+                        input#email.form-control(name='userid' type='hidden' value=user_id)
+                  .form-group
+                    button.button.button-contactForm.btn_1.boxed-btn(type='submit') Gửi
           .col-lg-3
             .blog_right_sidebar
               aside.single_sidebar_widget.search_widget

@@ -76,9 +76,11 @@ exports.get_blogDetailPage = async function (req, res, next) {
         where: { BLOGId: blog.id },
         include: ['comment_user'],
     });
+    //console.log(req.user.id);
     return res.render('blog_details', {
         Authenticated: req.isAuthenticated(),
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
+        user_id: req.isAuthenticated() ? req.user.dataValues.id : '',
         blog: blog,
         tags: tags,
         comments: comments,
