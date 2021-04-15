@@ -67,7 +67,7 @@ exports.get_blogDetailPage = async function (req, res, next) {
     var blog = await models.BLOG.findOne({
         //attributes: ['id', 'USERId', 'blogimg', 'title', 'content', 'createdAt'],
         where: { uuid: uuid },
-        include: ['blog_user', 'blog_tag', 'blog_comment']
+        include: ['blog_user', 'blog_tag']
     });
     var tags = await models.TAG.findAll({
         attributes: ['TEN_TAG']
@@ -76,17 +76,30 @@ exports.get_blogDetailPage = async function (req, res, next) {
         where: { BLOGId: blog.id },
         include: ['comment_user'],
     });
-    //console.log(req.user.id);
     return res.render('blog_details', {
         Authenticated: req.isAuthenticated(),
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
-        user_id: req.isAuthenticated() ? req.user.dataValues.id : '',
+        user_email: req.isAuthenticated() ? req.user.dataValues.email : '',
         blog: blog,
         tags: tags,
         comments: comments,
     })
 }
-
+exports.post_blogcmDetailPage = async function (req, res, next) {
+    var blog = await models.BLOG.findOne({
+        //attributes: ['id', 'USERId', 'blogimg', 'title', 'content', 'createdAt'],
+        where: { uuid: req.body.bloguuid },
+    });
+    var user = await models.USER.findOne({
+        where: { email: req.body.useremail },
+    });
+    await models.COMMENT.create({
+        BLOGId: blog.id,
+        USERId: user.id,
+        cmcontent: req.body.comment,
+    });
+    return res.redirect('/blog/' + req.body.bloguuid);
+}
 exports.get_contactPage = function (req, res, next) {
     var xacnhan = false;
     if (req.isAuthenticated()) {

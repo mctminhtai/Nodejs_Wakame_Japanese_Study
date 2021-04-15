@@ -105,17 +105,17 @@ block main
             if Authenticated
               .comment-form
                 h4 Đăng bình luận
-                form#commentForm.form-contact.comment_form(action='/comment' method='POST')
+                form#commentForm.form-contact.comment_form(action='/blog/post_comment' method='POST')
                   .row
                     .col-12
                       .form-group
                         textarea#comment.form-control.w-100(name='comment' cols='30' rows='9' placeholder='Nội dung bình luận')
                     .col-sm-6
                       .form-group
-                        input#name.form-control(name='blogid' type='hidden' value=blog.uuid)
+                        input#name.form-control(name='bloguuid' type='hidden' value=blog.uuid)
                     .col-sm-6
                       .form-group
-                        input#email.form-control(name='userid' type='hidden' value=user_id)
+                        input#email.form-control(name='useremail' type='hidden' value=user_email)
                   .form-group
                     button.button.button-contactForm.btn_1.boxed-btn(type='submit') Gửi
           .col-lg-3
