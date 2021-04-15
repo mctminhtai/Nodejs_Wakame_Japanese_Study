@@ -9,7 +9,9 @@
 	cursor:pointer;
 	pointer-events: none;
 }
-
+#navigation{
+	display:flex;
+}
 .cat-list li a:hover{
 	color:#68c25c !important;
 }
@@ -17,59 +19,28 @@
     background-image: linear-gradient(-45deg, #90fd12 0%, #2966ce 100%);
 }
 .features-icon{
-	background: linear-gradient(to bottom, #eae2fe 0%, #a376ff 1%, #ea68ff 98%, #ec7dfe 99%, #f3f3fa 99%, #f4f5fa 100%);
+	background-image: linear-gradient(315deg, #90fd12 0%, #2966ce 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.account{
-	display: block;
-	width:280px;
+li.user{
+	margin-top:0px !important;
+	margin-right:109.335px !important;
+	margin-left: 25px !important;
 }
-.account .submenu{
-	position: absolute;
-	width: max-content;
-	background: linear-gradient(to top, #c054ff 0%, #5274ff 100%);
-	background-image: linear-gradient(
-	135deg
-	, #90fd12 0%, #2966ce 100%);
-	left: 0;
-	top: 90%;
-	visibility: hidden;
-	opacity: 0;
-	box-shadow: 0 0 10px 3px rgb(0 0 0 / 5%);
-	padding: 0;
-	-webkit-transition: .3s;
-	-moz-transition: .3s;
-	-o-transition: .3s;
-	transition: .3s;
+a.user{
+	padding-top:22px !important;
+	padding-bottom:0px !important;
+	display:flex !important;
 }
-.account ul li {
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-    margin: 0 27px;
+a.user span,a.user i{
+	margin-top:auto;
+	margin-bottom:auto;
+	margin-right:7px;
 }
-.account ul ul.submenu>li {
-    margin-left: 0px;
-    display: block;
+a .user-size{
+	font-size:35px;
 }
-.account ul ul.submenu>li>a {
-    padding: 0px 25px !important;
-    display: block;
-    background: none !important;
-    color: #fff!important;
-    padding-left: 20px;
-    height: 40px;
-    line-height: 40px;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-    position: relative;
-    font-size: 15px;
-    border-bottom: 1px solid #f5f5f5;
-}
-
 
 .team-area .single-cat .cat-icon img{
 	width: 200px;
@@ -85,9 +56,6 @@
 	font-weight: 0;
 }
 
-.nav-item .user-size{
-	padding:20px 2px 20px 2px !important;
-}
 .user-size i{
 	font-size:35px;
 }
@@ -2626,7 +2594,9 @@ to{
 
 }
 .button-header{
-	margin:0 !important
+	margin:0 !important;
+	padding-top:17px;
+
 }
 .main-header ul>li:hover>ul.submenu{
 	visibility:visible;

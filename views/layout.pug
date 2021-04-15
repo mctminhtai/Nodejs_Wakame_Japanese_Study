@@ -66,32 +66,52 @@ header
                       li.nav-item
                         a(href='/contact') Liên hệ
                       // Button
-                .account
-                  nav
-                    ul#naviagation      
                       if Authenticated=== false 
                         li.button-header.margin-left
                           a.btn(href='/accounts') Đăng ký
                         li.button-header
                           a.btn.btn3(href='/accounts') Đăng nhập
                       else
-                        li.nav-item.margin-left.button-header
-                          a.user-size(href='javascript:void(0)')
-                            #user-icon
-                              i.far.fa-user-circle
-                            #user-text
-                              p Giảng dạy
-                            #user-tail 
-                              i.fas.fa-caret-down
-                          ul.submenu
+                        li.nav-item.user
+                          a.user(href='javascript:void(0)')
+                            i.far.fa-user-circle.user-size
+                            span Tài khoản
+                            i.fas.fa-caret-down
+                          ul.submenu(style="width:max-content")
                             li
                               a(href='/profile') Thông tin cá nhân
                             li
-                              a(href='/resetpw') Thay đổi mật khẩu
+                              a(href='/') Thay đổi mật khẩu
                             li
                               a(href='/') Tạo TKB UIT                      
-                            li.button-header
+                            li
                               a(href='/logout') Đăng xuất 
+                //- .account
+                //-   nav
+                //-     ul#naviagation      
+                //-       if Authenticated=== false 
+                //-         li.button-header.margin-left
+                //-           a.btn(href='/accounts') Đăng ký
+                //-         li.button-header
+                //-           a.btn.btn3(href='/accounts') Đăng nhập
+                //-       else
+                //-         li.nav-item.margin-left.button-header
+                //-           a.user-size(href='javascript:void(0)')
+                //-             #user-icon
+                //-               i.far.fa-user-circle
+                //-             #user-text
+                //-               p Giảng dạy
+                //-             #user-tail 
+                //-               i.fas.fa-caret-down
+                //-           ul.submenu
+                //-             li
+                //-               a(href='/profile') Thông tin cá nhân
+                //-             li
+                //-               a(href='/resetpw') Thay đổi mật khẩu
+                //-             li
+                //-               a(href='/') Tạo TKB UIT                      
+                //-             li.button-header
+                //-               a(href='/logout') Đăng xuất 
                         
             .col-12
               .mobile_menu.d-block.d-lg-none
