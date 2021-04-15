@@ -1,0 +1,55 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  script(src='https://kit.fontawesome.com/64d58efce2.js' crossorigin='anonymous')
+  link(rel='stylesheet' href='/assets/css/account.css')
+  title ResetPwd &amp; Đăng nhập Form
+.container.sign-up-mode
+  .forms-container
+    .signin-signup
+      form.sign-up-form(action='/pwd_reset/'+token method='POST')
+        h2.title Thiết lập lại mật khẩu
+        input(type='hidden' name='email' value=email)
+        .input-field
+          i.fas.fa-lock
+          input(type='password' name='password' placeholder='Mật khẩu')
+        .input-field
+          i.fas.fa-lock
+          input(type='password' name='re_password' placeholder='Nhập lại mật khẩu')
+        input.btn(type='submit' value='Submit')
+      form.sign-in-form(action='/login' method='POST')
+        h2.title Đăng nhập 
+        .input-field
+          i.fas.fa-user
+          input(type='email' name='email' placeholder='Email')
+        .input-field
+          i.fas.fa-lock
+          input(type='password' name='password' placeholder='Mật khẩu')
+        input.btn.solid(type='submit' value='Đăng nhập')
+        p.social-text Đăng nhập với tài khoản xã hội
+        .social-media
+          a.social-icon(href='#')
+            i.fab.fa-facebook-f
+          a.social-icon(href='#')
+            i.fab.fa-google
+  .panels-container
+    .panel.left-panel
+      .content
+        h3 Vẫn chưa nhớ ra mật khẩu á ?
+        p
+          | Hãy reset password ngay thôi. 
+          br
+          | Nếu là sinh viên của UIT hãy dùng tài khoản Gmail của trường để nhận những tiện ích đặc quyền.
+        button#sign-up-btn.btn.transparent
+          | Đăng ký
+      img.image(src='img/log.svg' alt='')
+    .panel.right-panel
+      .content
+        h3 Đã nhớ ra mật khẩu?
+        p
+          | Hãy đăng nhập và bắt đầu sử dụng thôi nào
+        button#sign-in-btn.btn.transparent
+          | Đăng nhập
+      img.image(src='img/register.svg' alt='')
+script(src='/assets/js/account.js')
