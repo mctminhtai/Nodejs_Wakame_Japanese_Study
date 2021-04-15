@@ -31,7 +31,7 @@ block main
                 article.blog_item
                   .blog_item_img
                     img.card-img.rounded-0(src=val.dataValues.blogimg alt='')
-                    a.blog_item_date(style="text-align:center" href='#')
+                    .blog_item_date(style="text-align:center")
                       h3 #{val.dataValues.createdAt.getFullYear().toString().substr(2,2)}
                       p #{val.dataValues.createdAt.getMonth()}月
                   .blog_details
@@ -181,9 +181,6 @@ block main
                   .form-group
                     .input-group.mb-3
                       input.form-control(type='text' name='q' placeholder='Tìm kiếm từ khóa' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tìm kiếm từ khóa'")
-                      .input-group-append
-                        button.btns(type='button')
-                          i.ti-search
                   button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Tìm kiếm
               aside.single_sidebar_widget.post_category_widget
                 h4.widget_title(style='color: #2d2d2d;') Lĩnh vực
@@ -219,25 +216,31 @@ block main
                   .media-body
                     a(href='/blog_details')
                       h3(style='color: #2d2d2d;') Ngày Quốc tế Phụ nữ 
-                    p ２０２１年３月８日
+                    p.jpgo
+                      span 2021
+                      span 年
+                      span 10
+                      span 月
+                      span 20
+                      span 日
                 .media.post_item
                   img(src='assets/img/post/pnvn.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
                   .media-body
                     a(href='/blog_details')
                       h3(style='color: #2d2d2d;') Ngày Phụ nữ Việt Nam 
-                    p ２０２０年１０月２０日
+                    p.jpgo ２０２０年１０月２０日
                 .media.post_item
                   img(src='assets/img/post/mext.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
                   .media-body
                     a(href='/blog_details')
                       h3(style='color: #2d2d2d;') Học bổng du học MEXT
-                    p ３時前　
+                    p.jpgo ３時前　
                 .media.post_item
                   img(src='assets/img/post/jlpt.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
                   .media-body
                     a(href='/blog_details')
                       h3(style='color: #2d2d2d;') Kỳ thi JLPT Tháng 7/2021
-                    p １０分前　
+                    p.jpgo １０分前　
               aside.single_sidebar_widget.tag_cloud_widget
                 h4.widget_title(style='color: #2d2d2d;') Tag 
                 ul.list
