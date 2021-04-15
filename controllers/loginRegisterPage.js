@@ -77,6 +77,15 @@ exports.get_logout = function (req, res, next) {
     req.logout();
     return res.redirect('/');
 }
+exports.get_resetPwd = function (req, res, next) {
+    res.render('pwdReset_login');
+}
+exports.post_resetPwd = function (req, res, next) {
+    console.log(req.body);
+    res.render('pwdReset_login');
+}
+
+
 exports.get_captcha = function (req, res, next) {
     var captcha = svgCaptcha.create();
     //console.log(captcha);

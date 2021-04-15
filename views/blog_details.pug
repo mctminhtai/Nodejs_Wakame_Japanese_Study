@@ -121,13 +121,10 @@ block main
           .col-lg-3
             .blog_right_sidebar
               aside.single_sidebar_widget.search_widget
-                form(action='#')
+                form(action='/blog-search' method='GET')
                   .form-group
                     .input-group.mb-3
-                      input.form-control(type='text' placeholder='Tìm kiếm từ khóa' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tìm kiếm từ khóa'")
-                      .input-group-append
-                        button.btns(type='button')
-                          i.ti-search
+                      input.form-control(type='text' name='q' placeholder='Tìm kiếm từ khóa' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tìm kiếm từ khóa'")
                   button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Tìm kiếm
               aside.single_sidebar_widget.post_category_widget
                 h4.widget_title(style='color: #2d2d2d;') Chủ đề

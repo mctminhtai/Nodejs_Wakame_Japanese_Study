@@ -4,31 +4,16 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   script(src='https://kit.fontawesome.com/64d58efce2.js' crossorigin='anonymous')
   link(rel='stylesheet' href='/assets/css/account.css')
-  title Đăng ký &amp; Đăng nhập Form
+  title ResetPwd &amp; Đăng nhập Form
 .container.sign-up-mode
   .forms-container
     .signin-signup
-      form.sign-up-form(action='/register' method='POST')
-        h2.title Đăng ký
-        .input-field
-          i.fas.fa-user
-          input(type='text' name='name' placeholder='Họ và tên')
+      form.sign-up-form(action='/pwd_reset' method='POST')
+        h2.title Email đã dùng để đăng ký tài khoản
         .input-field
           i.fas.fa-envelope
           input(type='email' name='email' placeholder='Email')
-        .input-field
-          i.fas.fa-lock
-          input(type='password' name='password' placeholder='Mật khẩu')
-        .input-field
-          i.fas.fa-lock
-          input(type='password' name='re_password' placeholder='Nhập lại mật khẩu')
-        input.btn(type='submit' value='Đăng ký')
-        p.social-text Đăng ký với tài khoản xã hội
-        .social-media
-          a.social-icon(href='#')
-            i.fab.fa-facebook-f
-          a.social-icon(href='#')
-            i.fab.fa-google
+        input.btn(type='submit' value='Submit')
       form.sign-in-form(action='/login' method='POST')
         h2.title Đăng nhập 
         .input-field
@@ -47,9 +32,9 @@ head
   .panels-container
     .panel.left-panel
       .content
-        h3 Chưa có tài khoản ?
+        h3 Vẫn chưa nhớ ra mật khẩu á ?
         p
-          | Hãy đăng ký ngay vì nó là miễn phí. 
+          | Hãy reset password ngay thôi. 
           br
           | Nếu là sinh viên của UIT hãy dùng tài khoản Gmail của trường để nhận những tiện ích đặc quyền.
         button#sign-up-btn.btn.transparent
@@ -57,9 +42,9 @@ head
       img.image(src='img/log.svg' alt='')
     .panel.right-panel
       .content
-        h3 Đã có tài khoản?
+        h3 Đã nhớ ra mật khẩu?
         p
-          | Hay đăng nhập và bắt đầu sử dụng thôi nào
+          | Hãy đăng nhập và bắt đầu sử dụng thôi nào
         button#sign-in-btn.btn.transparent
           | Đăng nhập
       img.image(src='img/register.svg' alt='')
