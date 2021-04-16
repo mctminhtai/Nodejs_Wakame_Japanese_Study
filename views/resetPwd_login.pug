@@ -5,6 +5,16 @@ head
   script(src='https://kit.fontawesome.com/64d58efce2.js' crossorigin='anonymous')
   link(rel='stylesheet' href='/assets/css/account.css')
   title ResetPwd &amp; Đăng nhập Form
+if(errors)
+  .pop-up.flag(id="error")
+    .messenger
+      i.fab.fa-first-order.fa-3x 
+      p.errors Đã xảy ra lỗi, xin vui lòng thử lại lần nữa
+      each val in errors
+        p #{val}
+      a(onclick = "offNoti()")
+        i.fas.fa-times
+        span Đóng
 .container.sign-up-mode
   .forms-container
     .signin-signup

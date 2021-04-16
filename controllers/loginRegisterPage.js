@@ -83,19 +83,33 @@ exports.get_logout = function (req, res, next) {
 exports.get_resetToken = function (req, res, next) {
     res.render('sendToken_login');
 }
-exports.post_resetToken = function (req, res, next) {
-    var randString = randomString.password({
-        length: 100,
-        string: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+exports.post_resetToken = async function (req, res, next) {
+    storedEmail = await models.USER.findOne({
+        where: {
+            email: req.body.email,
+        }
     });
-    var resetPwdUrl = req.headers.origin + '/pwd_reset' + '/' + randString;
-    console.log(resetPwdUrl);
-    mailer.sendMail(req.body.email, 'test thử email CLB', resetPwdUrl);
-    models.RESETTOKEN.create({
-        token: randString,
-        email: req.body.email,
-    });
-    res.render('sendToken_login');
+    if (storedEmail) {
+        var randString = randomString.password({
+            length: 100,
+            string: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        });
+        var resetPwdUrl = req.headers.origin + '/pwd_reset' + '/' + randString;
+        console.log(resetPwdUrl);
+        mailer.sendMail(req.body.email, 'test thử email CLB', resetPwdUrl);
+        models.RESETTOKEN.create({
+            token: randString,
+            email: req.body.email,
+        });
+        res.render('sendToken_login', {
+            noti: 'Đã gửi email reset mật khẩu thành công',
+        });
+    } else {
+        res.render('sendToken_login', {
+            noti: 'email không tồn tại',
+        });
+    }
+
 }
 exports.get_resetPwd = async function (req, res, next) {
     var received_token = req.param('token');
@@ -131,7 +145,7 @@ exports.post_resetPwd = async function (req, res, next) {
                 email: req.body.email,
             }
         });
-        res.redirect('/');
+        res.redirect('/accounts');
     } else {
         res.send('token khong dung');
     }
