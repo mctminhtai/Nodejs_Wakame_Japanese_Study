@@ -3,6 +3,8 @@ var svgCaptcha = require('svg-captcha');
 const bcrypt = require('bcryptjs');
 var passport = require('passport');
 const { v4: uuidv4 } = require('uuid');
+const randostring = require('randostrings/server');
+let randomString = new randostring();
 //add ham gui email
 var mailer = require('../utils/mailer');
 
@@ -50,6 +52,7 @@ passport.use('local.signup', new LocalStrategy({
                     email: req.body.email,
                     password: hash
                 }).then(user => {
+                    //console.log(user.email, req.body.email);
                     return done(null, user);
                 }).catch(error => {
                     console.log(error);
@@ -77,15 +80,76 @@ exports.get_logout = function (req, res, next) {
     req.logout();
     return res.redirect('/');
 }
-exports.get_resetPwd = function (req, res, next) {
-    res.render('pwdReset_login');
+exports.get_resetToken = function (req, res, next) {
+    res.render('sendToken_login');
 }
-exports.post_resetPwd = function (req, res, next) {
-    console.log(req.body);
-    res.render('pwdReset_login');
+exports.post_resetToken = async function (req, res, next) {
+    storedEmail = await models.USER.findOne({
+        where: {
+            email: req.body.email,
+        }
+    });
+    if (storedEmail) {
+        var randString = randomString.password({
+            length: 100,
+            string: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        });
+        var resetPwdUrl = req.headers.origin + '/pwd_reset' + '/' + randString;
+        console.log(resetPwdUrl);
+        mailer.sendMail(req.body.email, 'test thử email CLB', resetPwdUrl);
+        models.RESETTOKEN.create({
+            token: randString,
+            email: req.body.email,
+        });
+        res.render('sendToken_login', {
+            noti: 'Đã gửi email reset mật khẩu thành công',
+        });
+    } else {
+        res.render('sendToken_login', {
+            noti: 'email không tồn tại',
+        });
+    }
+
 }
-
-
+exports.get_resetPwd = async function (req, res, next) {
+    var received_token = req.param('token');
+    savedToken = await models.RESETTOKEN.findOne({
+        where: { token: received_token }
+    });
+    if (savedToken) {
+        res.render('resetPwd_login', {
+            token: savedToken.token,
+            email: savedToken.email,
+        });
+    } else {
+        res.send('token khong dung');
+    }
+}
+exports.post_resetPwd = async function (req, res, next) {
+    var received_token = req.param('token');
+    savedToken = await models.RESETTOKEN.findOne({
+        where: { token: received_token }
+    });
+    if (savedToken) {
+        var hashPwd = bcrypt.hashSync(req.body.password, 10);
+        models.USER.update(
+            { password: hashPwd },
+            {
+                where: {
+                    email: req.body.email,
+                }
+            }
+        );
+        models.RESETTOKEN.destroy({
+            where: {
+                email: req.body.email,
+            }
+        });
+        res.redirect('/accounts');
+    } else {
+        res.send('token khong dung');
+    }
+}
 exports.get_captcha = function (req, res, next) {
     var captcha = svgCaptcha.create();
     //console.log(captcha);
