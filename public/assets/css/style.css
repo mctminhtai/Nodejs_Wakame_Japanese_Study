@@ -23,6 +23,20 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.logo a img,.logo a p{
+	display:inline-block;
+	font-size:24px;
+}
+.logo a img{
+	width:36px;
+	height:44px;
+	margin-top:-6px;
+}
+.logo a p{
+	margin-left:10px;
+	margin-bottom:0px;
+	color:white;
+}
 li.user{
 	margin-top:0px !important;
 	margin-right:109.335px !important;
@@ -121,6 +135,9 @@ a .user-size{
 .fNavCopy {
     text-align: center;
     padding: 0 0 2rem;
+}
+.see-more-card{
+	padding: 0px 20px 0px 20px;
 }
 .see-more{
 	width:fit-content;
@@ -3676,7 +3693,7 @@ to{
 	background:none
 }
 .team-active button.slick-arrow i{
-	font-size:20px;
+	font-size:50px;
 	color:#C86FFF;
 	-webkit-transition:.2s;
 	-moz-transition:.2s;
@@ -3758,7 +3775,7 @@ to{
 
 }
 .courses-area .properties__footer{
-	margin-bottom:22px;
+	margin-bottom:0px;
 	-webkit-transition:.4s;
 	-moz-transition:.4s;
 	-o-transition:.4s;
