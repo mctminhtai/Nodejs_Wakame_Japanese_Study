@@ -50,6 +50,9 @@ exports.get_searchBlogPage = async function (req, res, next) {
         include: ['blog_user', 'blog_comment'],
     });
     foundBlogs = [];
+    var categories = await models.CATEGORY.findAll({
+        include: ['category_blog']
+    });
     blogs.forEach((blog) => {
         if (search.multiSearchOr(blog.content, words) == "Found!") {
             foundBlogs.push(blog);
@@ -64,6 +67,38 @@ exports.get_searchBlogPage = async function (req, res, next) {
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
         blogs: foundBlogs,
         tags: tags,
+        categories: categories,
+    });
+}
+exports.get_searchCategoryBlogPage = async function (req, res, next) {
+    var word = req.param('category').replace(/-/g, ' ');
+    var blogs = await models.BLOG.findAll({
+        attributes: ['uuid', 'title', 'blogimg', 'content', 'description', 'createdAt'],
+        include: [
+            'blog_user',
+            'blog_comment',
+            {
+                model: models.CATEGORY,
+                as: 'blog_category',
+                where: {
+                    name: word,
+                }
+            }
+        ],
+    });
+    var categories = await models.CATEGORY.findAll({
+        include: ['category_blog']
+    });
+    var tags = await models.TAG.findAll({
+        attributes: ['TEN_TAG']
+    });
+    console.log(blogs);
+    return res.render('blog', {
+        Authenticated: req.isAuthenticated(),
+        user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
+        blogs: blogs,
+        tags: tags,
+        categories: categories,
     });
 }
 exports.get_blogDetailPage = async function (req, res, next) {
