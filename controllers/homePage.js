@@ -64,6 +64,10 @@ exports.get_searchBlogPage = async function (req, res, next) {
 }
 exports.get_blogDetailPage = async function (req, res, next) {
     var uuid = req.param('uuid');
+    var blogs = await models.BLOG.findAll({
+        attributes: ['uuid', 'title', 'blogimg', 'content', 'description', 'createdAt'],
+        include: ['blog_user', 'blog_comment'],
+    });
     var blog = await models.BLOG.findOne({
         //attributes: ['id', 'USERId', 'blogimg', 'title', 'content', 'createdAt'],
         where: { uuid: uuid },
@@ -81,6 +85,7 @@ exports.get_blogDetailPage = async function (req, res, next) {
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
         user_email: req.isAuthenticated() ? req.user.dataValues.email : '',
         blog: blog,
+        blogs: blogs,
         tags: tags,
         comments: comments,
     })

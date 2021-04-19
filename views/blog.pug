@@ -211,36 +211,49 @@ block main
                       p &nbsp;(09)
               aside.single_sidebar_widget.popular_post_widget
                 h3.widget_title(style='color: #2d2d2d;') Bài viết gần đây
-                .media.post_item
-                  img(src='assets/img/post/qtpn.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
-                  .media-body
-                    a(href='/blog_details')
-                      h3(style='color: #2d2d2d;') Ngày Quốc tế Phụ nữ 
-                    p.jpgo
-                      span 2021
-                      span 年
-                      span 10
-                      span 月
-                      span 20
-                      span 日
-                .media.post_item
-                  img(src='assets/img/post/pnvn.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
-                  .media-body
-                    a(href='/blog_details')
-                      h3(style='color: #2d2d2d;') Ngày Phụ nữ Việt Nam 
-                    p.jpgo ２０２０年１０月２０日
-                .media.post_item
-                  img(src='assets/img/post/mext.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
-                  .media-body
-                    a(href='/blog_details')
-                      h3(style='color: #2d2d2d;') Học bổng du học MEXT
-                    p.jpgo ３時前　
-                .media.post_item
-                  img(src='assets/img/post/jlpt.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
-                  .media-body
-                    a(href='/blog_details')
-                      h3(style='color: #2d2d2d;') Kỳ thi JLPT Tháng 7/2021
-                    p.jpgo １０分前　
+                each val in blogs.slice(0,5)
+                  .media.post_item
+                    img(src=val.blogimg alt='post' style="width:100px;height:70px;margin-top:0px")
+                    .media-body
+                      a(href='/blog/' + val.dataValues.uuid)
+                        h3(style='color: #2d2d2d;') #{val.title.slice(0,20) + ' ...'}
+                      p.jpgo
+                        span #{val.createdAt.getFullYear()}
+                        span 年
+                        span #{val.createdAt.getMonth()}
+                        span 月
+                        span #{val.createdAt.getDate()}
+                        span 日
+                //- .media.post_item
+                //-   img(src='assets/img/post/qtpn.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
+                //-   .media-body
+                //-     a(href='/blog_details')
+                //-       h3(style='color: #2d2d2d;') Ngày Quốc tế Phụ nữ 
+                //-     p.jpgo
+                //-       span 2021
+                //-       span 年
+                //-       span 10
+                //-       span 月
+                //-       span 20
+                //-       span 日
+                //- .media.post_item
+                //-   img(src='assets/img/post/pnvn.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
+                //-   .media-body
+                //-     a(href='/blog_details')
+                //-       h3(style='color: #2d2d2d;') Ngày Phụ nữ Việt Nam 
+                //-     p.jpgo ２０２０年１０月２０日
+                //- .media.post_item
+                //-   img(src='assets/img/post/mext.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
+                //-   .media-body
+                //-     a(href='/blog_details')
+                //-       h3(style='color: #2d2d2d;') Học bổng du học MEXT
+                //-     p.jpgo ３時前　
+                //- .media.post_item
+                //-   img(src='assets/img/post/jlpt.jpg' alt='post' style="width:100px;height:70px;margin-top:0px")
+                //-   .media-body
+                //-     a(href='/blog_details')
+                //-       h3(style='color: #2d2d2d;') Kỳ thi JLPT Tháng 7/2021
+                //-     p.jpgo １０分前　
               aside.single_sidebar_widget.tag_cloud_widget
                 h4.widget_title(style='color: #2d2d2d;') Tag 
                 ul.list
