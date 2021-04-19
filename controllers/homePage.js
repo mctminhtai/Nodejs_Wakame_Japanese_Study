@@ -31,12 +31,16 @@ exports.get_blogPage = async function (req, res, next) {
     var tags = await models.TAG.findAll({
         attributes: ['TEN_TAG']
     });
-    console.log(blogs);
+    var categories = await models.CATEGORY.findAll({
+        include: ['category_blog']
+    });
+    console.log(categories);
     return res.render('blog', {
         Authenticated: req.isAuthenticated(),
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
         blogs: blogs,
         tags: tags,
+        categories: categories,
     });
 }
 exports.get_searchBlogPage = async function (req, res, next) {
@@ -80,6 +84,9 @@ exports.get_blogDetailPage = async function (req, res, next) {
         where: { BLOGId: blog.id },
         include: ['comment_user'],
     });
+    var categories = await models.CATEGORY.findAll({
+        include: ['category_blog']
+    });
     return res.render('blog_details', {
         Authenticated: req.isAuthenticated(),
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
@@ -88,6 +95,7 @@ exports.get_blogDetailPage = async function (req, res, next) {
         blogs: blogs,
         tags: tags,
         comments: comments,
+        categories: categories,
     })
 }
 exports.post_blogcmDetailPage = async function (req, res, next) {

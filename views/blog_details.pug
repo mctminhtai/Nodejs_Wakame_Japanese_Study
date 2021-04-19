@@ -129,42 +129,42 @@ block main
               aside.single_sidebar_widget.post_category_widget
                 h4.widget_title(style='color: #2d2d2d;') Lĩnh vực
                 ul.list.cat-list
-                  li
-                    a.d-flex(href='#')
-                      p Học tập
-                      p &nbsp;(37)
-                  li
-                    a.d-flex(href='#')
-                      p Du học
-                      p &nbsp;(10)
-                  li
-                    a.d-flex(href='#')
-                      p Kinh nghiệm đời sống
-                      p &nbsp;(03)
-                  li
-                    a.d-flex(href='#')
-                      p Ôn thi
-                      p &nbsp;(11)
-                  li
-                    a.d-flex(href='#')
-                      p Kỹ năng mềm
-                      p &nbsp;(21)
-                  li
-                    a.d-flex(href='#')
-                      p Sức khỏe
-                      p &nbsp;(09)
+                  each val in categories
+                    li
+                      a.d-flex(href='#')
+                        p #{val.name}
+                        p &nbsp;(#{val.category_blog.length})
+                  //- li
+                  //-   a.d-flex(href='#')
+                  //-     p Du học
+                  //-     p &nbsp;(10)
+                  //- li
+                  //-   a.d-flex(href='#')
+                  //-     p Kinh nghiệm đời sống
+                  //-     p &nbsp;(03)
+                  //- li
+                  //-   a.d-flex(href='#')
+                  //-     p Ôn thi
+                  //-     p &nbsp;(11)
+                  //- li
+                  //-   a.d-flex(href='#')
+                  //-     p Kỹ năng mềm
+                  //-     p &nbsp;(21)
+                  //- li
+                  //-   a.d-flex(href='#')
+                  //-     p Sức khỏe
+                  //-     p &nbsp;(09)
               aside.single_sidebar_widget.popular_post_widget
                 h3.widget_title(style='color: #2d2d2d;') Bài viết gần đây
-                each val in blogs.slice(0,5)
+                each val in blogs.slice(0,4)
                   .media.post_item
                     img(src=val.blogimg alt='post' style="width:100px;height:70px;margin-top:0px")
                     .media-body
                       a(href='/blog/' + val.dataValues.uuid)
-                        h3(style='color: #2d2d2d;'). 
-                          if val.title.length < 20
-                            #{val.title} 
-                          else
-                            #{val.title.slice(0,20) + ' ...'}
+                        if val.title.length < 20
+                          h3(style='color: #2d2d2d;') #{val.title} 
+                        else
+                          h3(style='color: #2d2d2d;') #{val.title.slice(0,20) + ' ...'}
                       p.jpgo
                         span #{val.createdAt.getFullYear()}
                         span 年
