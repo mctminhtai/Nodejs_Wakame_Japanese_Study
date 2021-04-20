@@ -162,18 +162,20 @@ block main
               //-         a(href='#')
               //-           i.fa.fa-comments
               //-           |  24 bình luận
-              //- nav.blog-pagination.justify-content-center.d-flex
-              //-   ul.pagination
-              //-     li.page-item
-              //-       a.page-link(href='#' aria-label='Previous')
-              //-         i.ti-angle-left
-              //-     li.page-item
-              //-       a.page-link(href='#') 1
-              //-     li.page-item.active
-              //-       a.page-link(href='#') 2
-              //-     li.page-item
-              //-       a.page-link(href='#' aria-label='Next')
-              //-         i.ti-angle-right
+              nav.blog-pagination.justify-content-center.d-flex
+                ul.pagination
+                  li.page-item
+                    a.page-link(href='#' aria-label='Previous')
+                      i.ti-angle-left
+                  - var n = 1;
+                  while n<=numOfPage
+                    li.page-item
+                      a.page-link(href='/blog?page='+n)= n++
+                  //- li.page-item.active
+                  //-   a.page-link(href='/blog') 2
+                  li.page-item
+                    a.page-link(href='#' aria-label='Next')
+                      i.ti-angle-right
           .col-lg-4
             .blog_right_sidebar
               aside.single_sidebar_widget.search_widget
@@ -271,4 +273,3 @@ block main
                     input.form-control(type='email' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email của bạn'" placeholder='Enter email' required='')
                   button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Subscribe
     // Blog Area End
-  

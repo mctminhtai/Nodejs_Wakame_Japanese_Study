@@ -213,6 +213,51 @@ exports.get_test = async function (req, res, next) {
     await models.BLOG.create({
         uuid: uuidv4(),
         USERId: 1,
+        CATEGORYId: 1,
+        description: 'Multiply sea night grass fourth day sea lesser rule open subdue female fill which them Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser',
+        title: '商業施設など集客するイベント系全て1年休業要請商業施設など集客するイベン',
+        content: 'khong co giiii',
+        blogimg: 'https://seido.vn/wp-content/uploads/2020/12/Colorful-Geometric-Simple-Background-Image.jpg'
+    });
+    await models.BLOG.create({
+        uuid: uuidv4(),
+        USERId: 1,
+        CATEGORYId: 1,
+        description: 'Multiply sea night grass fourth day sea lesser rule open subdue female fill which them Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser',
+        title: '商業施設など集客するイベント系全て1年休業要請商業施設など集客するイベン',
+        content: 'khong co giiii',
+        blogimg: 'https://seido.vn/wp-content/uploads/2020/12/Colorful-Geometric-Simple-Background-Image.jpg'
+    });
+    await models.BLOG.create({
+        uuid: uuidv4(),
+        USERId: 1,
+        CATEGORYId: 1,
+        description: 'Multiply sea night grass fourth day sea lesser rule open subdue female fill which them Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser',
+        title: '商業施設など集客するイベント系全て1年休業要請商業施設など集客するイベン',
+        content: 'khong co giiii',
+        blogimg: 'https://seido.vn/wp-content/uploads/2020/12/Colorful-Geometric-Simple-Background-Image.jpg'
+    });
+    await models.BLOG.create({
+        uuid: uuidv4(),
+        USERId: 1,
+        CATEGORYId: 1,
+        description: 'Multiply sea night grass fourth day sea lesser rule open subdue female fill which them Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser',
+        title: '商業施設など集客するイベント系全て1年休業要請商業施設など集客するイベン',
+        content: 'khong co giiii',
+        blogimg: 'https://seido.vn/wp-content/uploads/2020/12/Colorful-Geometric-Simple-Background-Image.jpg'
+    });
+    await models.BLOG.create({
+        uuid: uuidv4(),
+        USERId: 1,
+        CATEGORYId: 1,
+        description: 'Multiply sea night grass fourth day sea lesser rule open subdue female fill which them Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser',
+        title: '商業施設など集客するイベント系全て1年休業要請商業施設など集客するイベン',
+        content: 'khong co giiii',
+        blogimg: 'https://seido.vn/wp-content/uploads/2020/12/Colorful-Geometric-Simple-Background-Image.jpg'
+    });
+    await models.BLOG.create({
+        uuid: uuidv4(),
+        USERId: 1,
         CATEGORYId: 2,
         description: 'Multiply sea night grass fourth day sea lesser rule open subdue female fill which them Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser',
         title: '商業施設など集客するイベント系全て1年休業要請商業施設など集客するイベン',

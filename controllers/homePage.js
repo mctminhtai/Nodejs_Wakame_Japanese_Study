@@ -24,6 +24,10 @@ exports.get_aboutPage = function (req, res, next) {
 
 }
 exports.get_blogPage = async function (req, res, next) {
+    var page = req.query.page || 1;
+    var itemPerPage = 4;
+    var begin = (page - 1) * itemPerPage;
+    var end = page * itemPerPage;
     var blogs = await models.BLOG.findAll({
         attributes: ['uuid', 'title', 'blogimg', 'content', 'description', 'createdAt'],
         include: ['blog_user', 'blog_comment'],
@@ -34,13 +38,14 @@ exports.get_blogPage = async function (req, res, next) {
     var categories = await models.CATEGORY.findAll({
         include: ['category_blog']
     });
-    console.log(categories);
+    var numOfPage = Math.ceil(blogs.length / itemPerPage);
     return res.render('blog', {
         Authenticated: req.isAuthenticated(),
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
-        blogs: blogs,
+        blogs: blogs.slice(begin, end),
         tags: tags,
         categories: categories,
+        numOfPage: numOfPage,
     });
 }
 exports.get_searchBlogPage = async function (req, res, next) {
