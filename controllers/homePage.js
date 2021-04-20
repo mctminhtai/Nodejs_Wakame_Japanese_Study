@@ -5,25 +5,43 @@ exports.get_homePage = function (req, res, next) {
 
     if (req.isAuthenticated()) {
         xacnhan = true;
-        return res.render('index', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+        return res.render('index', {
+            title: 'Express',
+            Authenticated: xacnhan,
+            user_name: req.user.dataValues.fullName,
+            email_user: req.user.dataValues.email
+        });
     }
     else {
-        return res.render('index', { title: 'Express', Authenticated: xacnhan });
+        return res.render('index', {
+            title: 'Express',
+            Authenticated: xacnhan
+        });
     }
 
 }
 exports.get_aboutPage = function (req, res, next) {
+    req.session.redirectTo = '/about';
     var xacnhan = false;
     if (req.isAuthenticated()) {
         xacnhan = true;
-        return res.render('about', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+        return res.render('about', {
+            title: 'Express',
+            Authenticated: xacnhan,
+            user_name: req.user.dataValues.fullName,
+            email_user: req.user.dataValues.email
+        });
     }
     else {
-        return res.render('about', { title: 'Express', Authenticated: xacnhan });
+        return res.render('about', {
+            title: 'Express',
+            Authenticated: xacnhan
+        });
     }
 
 }
 exports.get_blogPage = async function (req, res, next) {
+    req.session.redirectTo = '/blog';
     var page = req.query.page || 1;
     var itemPerPage = 4;
     var begin = (page - 1) * itemPerPage;
@@ -129,6 +147,7 @@ exports.get_blogDetailPage = async function (req, res, next) {
     var categories = await models.CATEGORY.findAll({
         include: ['category_blog']
     });
+    req.session.redirectTo = '/blog/' + blog.uuid;
     return res.render('blog_details', {
         Authenticated: req.isAuthenticated(),
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
@@ -157,19 +176,34 @@ exports.post_blogcmDetailPage = async function (req, res, next) {
 }
 exports.get_contactPage = function (req, res, next) {
     var xacnhan = false;
+    req.session.redirectTo = '/contact';
     if (req.isAuthenticated()) {
         xacnhan = true;
-        return res.render('contact', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+        return res.render('contact', {
+            title: 'Express',
+            Authenticated: xacnhan,
+            user_name: req.user.dataValues.fullName,
+            email_user: req.user.dataValues.email
+        });
     }
     else {
-        return res.render('contact', { title: 'Express', Authenticated: xacnhan });
+        return res.render('contact', {
+            title: 'Express',
+            Authenticated: xacnhan
+        });
     }
 }
 exports.get_coursesPage = function (req, res, next) {
     var xacnhan = false;
+    req.session.redirectTo = '/courses';
     if (req.isAuthenticated()) {
         xacnhan = true;
-        return res.render('courses', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+        return res.render('courses', {
+            title: 'Express',
+            Authenticated: xacnhan,
+            user_name: req.user.dataValues.fullName,
+            email_user: req.user.dataValues.email
+        });
     }
     else { return res.render('courses', { title: 'Express', Authenticated: xacnhan }); }
 
@@ -177,6 +211,7 @@ exports.get_coursesPage = function (req, res, next) {
 
 exports.get_profilePage = function (req, res, next) {
     var xacnhan = false;
+    req.session.redirectTo = '/profile';
     if (req.isAuthenticated()) {
         xacnhan = true;
         return res.render('profile', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });

@@ -11,9 +11,8 @@ router.post(
     '/login',
     body('email', 'Email không đúng định dạng').isEmail(),
     validate.checkErr,
-    passport.authenticate(
-        'local.login',
-        { successRedirect: '/', failureRedirect: '/accounts', failureFlash: false }));
+    loginRegister.post_login,
+);
 
 router.post(
     '/register',
@@ -27,10 +26,7 @@ router.post(
         return true;
     }),
     validate.checkErr,
-    passport.authenticate(
-        'local.signup',
-        { successRedirect: '/', failureRedirect: '/accounts', failureFlash: false }
-    )
+    loginRegister.post_register,
 );
 router.get('/logout', loginRegister.get_logout);
 router.get('/pwd_reset', loginRegister.get_resetToken);

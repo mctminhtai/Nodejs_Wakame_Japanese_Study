@@ -75,7 +75,28 @@ exports.get_accountsPage = function (req, res, next) {
 }
 
 
-
+exports.post_login = function (req, res, next) {
+    var redirectTo = req.session.redirectTo || '/'
+    passport.authenticate('local.login', (err, user, info) => {
+        if (err) { return next(err); }
+        if (!user) { return res.redirect('/accounts'); }
+        req.logIn(user, (err) => {
+            if (err) { return next(err); }
+            return res.redirect(redirectTo);
+        });
+    })(req, res, next);
+}
+exports.post_register = function (req, res, next) {
+    var redirectTo = req.session.redirectTo || '/'
+    passport.authenticate('local.signup', (err, user, info) => {
+        if (err) { return next(err); }
+        if (!user) { return res.redirect('/accounts'); }
+        req.logIn(user, (err) => {
+            if (err) { return next(err); }
+            return res.redirect(redirectTo);
+        });
+    })(req, res, next);
+}
 exports.get_logout = function (req, res, next) {
     req.logout();
     return res.redirect('/');

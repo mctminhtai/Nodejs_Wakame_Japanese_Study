@@ -131,7 +131,7 @@ block main
                 ul.list.cat-list
                   each val in categories
                     li
-                      a.d-flex(href='#')
+                      a.d-flex(href='/blog-search/'+val.name.replace(/ /g,'-'))
                         p #{val.name}
                         p &nbsp;(#{val.category_blog.length})
                   //- li
