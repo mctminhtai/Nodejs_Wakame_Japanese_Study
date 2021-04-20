@@ -240,9 +240,15 @@ exports.get_coursesPage = function (req, res, next) {
 
 }
 
-exports.get_profilePage = function (req, res, next) {
+exports.get_profilePage = async function (req, res, next) {
     var xacnhan = false;
     req.session.redirectTo = '/profile';
+    var user = await models.USER.findOne({
+        where: {
+            email: req.user.email,
+        }
+    })
+    console.log(user);
     if (req.isAuthenticated()) {
         xacnhan = true;
         return res.render('profile', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
