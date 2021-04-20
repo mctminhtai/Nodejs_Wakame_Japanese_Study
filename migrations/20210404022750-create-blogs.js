@@ -1,4 +1,7 @@
 'use strict';
+
+const { sequelize } = require("../models");
+
 module.exports = {
     up: async (queryInterface, Sequelize) => {
         await queryInterface.createTable('BLOG', {
@@ -17,6 +20,14 @@ module.exports = {
                 allowNull: false,
                 references: {
                     model: 'USER',
+                    key: 'id'
+                }
+            },
+            CATEGORYId: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                references: {
+                    model: 'CATEGORY',
                     key: 'id'
                 }
             },
