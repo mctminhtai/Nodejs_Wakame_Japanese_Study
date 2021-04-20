@@ -42,7 +42,9 @@ exports.get_blogPage = async function (req, res, next) {
     return res.render('blog', {
         Authenticated: req.isAuthenticated(),
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
-        blogs: blogs.slice(begin, end),
+        blogs: blogs,
+        begin: begin,
+        end: end,
         tags: tags,
         categories: categories,
         numOfPage: numOfPage,

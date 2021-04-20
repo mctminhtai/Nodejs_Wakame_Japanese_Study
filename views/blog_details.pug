@@ -155,8 +155,8 @@ block main
                   //-     p Sức khỏe
                   //-     p &nbsp;(09)
               aside.single_sidebar_widget.popular_post_widget
-                h3.widget_title(style='color: #2d2d2d;') Bài viết gần đây
-                each val in blogs.slice(0,4)
+                h3.widget_title(style='color: #2d2d2d;') Bài viết gợi ý
+                each val in blogs.slice(blogs.length - 5, blogs.length - 1)
                   .media.post_item
                     img(src=val.blogimg alt='post' style="width:100px;height:70px;margin-top:0px")
                     .media-body
