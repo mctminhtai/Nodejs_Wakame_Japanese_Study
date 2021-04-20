@@ -69,63 +69,94 @@ exports.get_blogPage = async function (req, res, next) {
     });
 }
 exports.get_searchBlogPage = async function (req, res, next) {
-    var words = req.query.q.split(" ");
-    blogs = await models.BLOG.findAll({
-        attributes: ['uuid', 'title', 'blogimg', 'content', 'description', 'createdAt'],
-        include: ['blog_user', 'blog_comment'],
-    });
-    foundBlogs = [];
+    var words = req.query.q ? req.query.q.split(" ") : '';
+    var itemPerPage = 4;
+    var page = req.query.page || 1;
+    var begin = (page - 1) * itemPerPage;
+    var end = page * itemPerPage;
+    var category = req.query.category ? req.query.category : '';
+    console.log(category);
+    var blogs = [];
+    var foundBlogs = [];
+    if (words.length > 0) {
+        blogs = await models.BLOG.findAll({
+            attributes: ['uuid', 'title', 'blogimg', 'content', 'description', 'createdAt'],
+            include: ['blog_user', 'blog_comment'],
+        });
+        blogs.forEach((blog) => {
+            if (search.multiSearchOr(blog.content, words) == "Found!") {
+                foundBlogs.push(blog);
+            }
+        });
+    }
+    if (category) {
+        blogs = await models.BLOG.findAll({
+            attributes: ['uuid', 'title', 'blogimg', 'content', 'description', 'createdAt'],
+            include: [
+                'blog_user',
+                'blog_comment',
+                {
+                    model: models.CATEGORY,
+                    as: 'blog_category',
+                    where: {
+                        name: category,
+                    }
+                }
+            ],
+        });
+        foundBlogs = blogs;
+    }
+
     var categories = await models.CATEGORY.findAll({
         include: ['category_blog']
     });
-    blogs.forEach((blog) => {
-        if (search.multiSearchOr(blog.content, words) == "Found!") {
-            foundBlogs.push(blog);
-        }
-    });
+
     var tags = await models.TAG.findAll({
         attributes: ['TEN_TAG']
     });
-    console.log(foundBlogs);
+    var numOfPage = Math.ceil(foundBlogs.length / itemPerPage);
     return res.render('blog', {
         Authenticated: req.isAuthenticated(),
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
         blogs: foundBlogs,
+        begin: begin,
+        end: end,
         tags: tags,
         categories: categories,
+        numOfPage: numOfPage,
     });
 }
-exports.get_searchCategoryBlogPage = async function (req, res, next) {
-    var word = req.param('category').replace(/-/g, ' ');
-    var blogs = await models.BLOG.findAll({
-        attributes: ['uuid', 'title', 'blogimg', 'content', 'description', 'createdAt'],
-        include: [
-            'blog_user',
-            'blog_comment',
-            {
-                model: models.CATEGORY,
-                as: 'blog_category',
-                where: {
-                    name: word,
-                }
-            }
-        ],
-    });
-    var categories = await models.CATEGORY.findAll({
-        include: ['category_blog']
-    });
-    var tags = await models.TAG.findAll({
-        attributes: ['TEN_TAG']
-    });
-    console.log(blogs);
-    return res.render('blog', {
-        Authenticated: req.isAuthenticated(),
-        user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
-        blogs: blogs,
-        tags: tags,
-        categories: categories,
-    });
-}
+// exports.get_searchCategoryBlogPage = async function (req, res, next) {
+//     var word = req.param('category').replace(/-/g, ' ');
+//     var blogs = await models.BLOG.findAll({
+//         attributes: ['uuid', 'title', 'blogimg', 'content', 'description', 'createdAt'],
+//         include: [
+//             'blog_user',
+//             'blog_comment',
+//             {
+//                 model: models.CATEGORY,
+//                 as: 'blog_category',
+//                 where: {
+//                     name: word,
+//                 }
+//             }
+//         ],
+//     });
+//     var categories = await models.CATEGORY.findAll({
+//         include: ['category_blog']
+//     });
+//     var tags = await models.TAG.findAll({
+//         attributes: ['TEN_TAG']
+//     });
+//     console.log(blogs);
+//     return res.render('blog', {
+//         Authenticated: req.isAuthenticated(),
+//         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
+//         blogs: blogs,
+//         tags: tags,
+//         categories: categories,
+//     });
+// }
 exports.get_blogDetailPage = async function (req, res, next) {
     var uuid = req.param('uuid');
     var blogs = await models.BLOG.findAll({
@@ -209,9 +240,15 @@ exports.get_coursesPage = function (req, res, next) {
 
 }
 
-exports.get_profilePage = function (req, res, next) {
+exports.get_profilePage = async function (req, res, next) {
     var xacnhan = false;
     req.session.redirectTo = '/profile';
+    var user = await models.USER.findOne({
+        where: {
+            email: req.user.email,
+        }
+    })
+    console.log(user);
     if (req.isAuthenticated()) {
         xacnhan = true;
         return res.render('profile', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
@@ -220,15 +257,6 @@ exports.get_profilePage = function (req, res, next) {
 
 }
 
-exports.get_editProfilePage = function (req, res, next) {
-    var xacnhan = false;
-    if (req.isAuthenticated()) {
-        xacnhan = true;
-        return res.render('editprofile', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
-    }
-    else { return res.render('editprofile', { title: 'Express', Authenticated: xacnhan }); }
-
-}
 
 exports.get_coursesDetailPage = function (req, res, next) {
     var xacnhan = false;
@@ -260,3 +288,45 @@ exports.get_resetpwPage = function (req, res, next) {
 
 }
 
+exports.get_booksPage = function (req, res, next) {
+    var xacnhan = false;
+    if (req.isAuthenticated()) {
+        xacnhan = true;
+        return res.render('books', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+    }
+    else { return res.render('books', { title: 'Express', Authenticated: xacnhan }); }
+
+}
+
+exports.get_booksdetailPage = function (req, res, next) {
+    var xacnhan = false;
+    if (req.isAuthenticated()) {
+        xacnhan = true;
+        return res.render('booksdetail', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+    }
+    else { return res.render('booksdetail', { title: 'Express', Authenticated: xacnhan }); }
+
+}
+
+exports.get_profileEditPage = function (req, res, next) {
+    var xacnhan = false;
+    if (req.isAuthenticated()) {
+        xacnhan = true;
+        return res.render('example', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+    }
+    else { return res.render('example', { title: 'Express', Authenticated: xacnhan }); }
+
+}
+
+exports.post_profileEditPage = function (req, res, next) {
+    // var xacnhan = false;
+    // if (req.isAuthenticated()) {
+    //     xacnhan = true;
+    //     return res.render('example', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+    // }
+    // else { return res.render('example', { title: 'Express', Authenticated: xacnhan }); }
+    console.log(req.body)
+    console.log(req.session.token)
+    res.send('ok');
+
+}
