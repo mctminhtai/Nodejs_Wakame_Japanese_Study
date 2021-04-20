@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       phonenumber: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       level: {
         type: Sequelize.STRING
@@ -30,7 +30,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       dob: {
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       },
       password: {
         type: Sequelize.STRING

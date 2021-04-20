@@ -236,8 +236,11 @@ exports.get_coursesPage = function (req, res, next) {
             email_user: req.user.dataValues.email
         });
     }
-    else { return res.render('courses', { title: 'Express', Authenticated: xacnhan }); }
-
+    else { 
+        return res.render('courses', { 
+        title: 'Express', Authenticated: xacnhan 
+        }); 
+    }
 }
 
 exports.get_profilePage = async function (req, res, next) {
@@ -251,7 +254,13 @@ exports.get_profilePage = async function (req, res, next) {
     console.log(user);
     if (req.isAuthenticated()) {
         xacnhan = true;
-        return res.render('profile', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+        return res.render('profile', { 
+            title: 'Express', 
+            Authenticated: xacnhan, 
+            user_name: req.user.dataValues.fullName, 
+            email_user: req.user.dataValues.email,
+            user: user
+        });
     }
     else { return res.render('profile', { title: 'Express', Authenticated: xacnhan }); }
 
@@ -262,60 +271,112 @@ exports.get_coursesDetailPage = function (req, res, next) {
     var xacnhan = false;
     if (req.isAuthenticated()) {
         xacnhan = true;
-        return res.render('coursesdetail', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+        return res.render('coursesdetail', { 
+            title: 'Express', 
+            Authenticated: xacnhan, 
+            user_name: req.user.dataValues.fullName, 
+            email_user: req.user.dataValues.email 
+        });
     }
-    else { return res.render('coursesdetail', { title: 'Express', Authenticated: xacnhan }); }
-
+    else { 
+        return res.render('coursesdetail', { 
+            title: 'Express', Authenticated: xacnhan 
+        }); 
+    }
 }
 
 exports.get_tkbPage = function (req, res, next) {
     var xacnhan = false;
     if (req.isAuthenticated()) {
         xacnhan = true;
-        return res.render('tkb', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+        return res.render('tkb', { 
+            title: 'Express', 
+            Authenticated: xacnhan, user_name: req.user.dataValues.fullName, 
+            email_user: req.user.dataValues.email 
+        });
     }
-    else { return res.render('tkb', { title: 'Express', Authenticated: xacnhan }); }
-
+    else { 
+        return res.render('tkb', { 
+            title: 'Express', 
+            Authenticated: xacnhan 
+        }); 
+    }
 }
 
 exports.get_resetpwPage = function (req, res, next) {
     var xacnhan = false;
     if (req.isAuthenticated()) {
         xacnhan = true;
-        return res.render('resetpw', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+        return res.render('resetpw', { 
+            title: 'Express', 
+            Authenticated: xacnhan, 
+            user_name: req.user.dataValues.fullName, 
+            email_user: req.user.dataValues.email 
+        });
     }
-    else { return res.render('resetpw', { title: 'Express', Authenticated: xacnhan }); }
-
+    else { 
+        return res.render('resetpw', { 
+            title: 'Express', 
+            Authenticated: xacnhan 
+        }); 
+    }
 }
 
 exports.get_booksPage = function (req, res, next) {
     var xacnhan = false;
     if (req.isAuthenticated()) {
         xacnhan = true;
-        return res.render('books', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+        return res.render('books', { 
+            title: 'Express', 
+            Authenticated: xacnhan, 
+            user_name: req.user.dataValues.fullName, 
+            email_user: req.user.dataValues.email 
+        });
     }
-    else { return res.render('books', { title: 'Express', Authenticated: xacnhan }); }
-
+    else { 
+        return res.render('books', { 
+            title: 'Express', 
+            Authenticated: xacnhan 
+        }); 
+    }
 }
 
 exports.get_booksdetailPage = function (req, res, next) {
     var xacnhan = false;
     if (req.isAuthenticated()) {
         xacnhan = true;
-        return res.render('booksdetail', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+        return res.render('booksdetail', { 
+            title: 'Express', 
+            Authenticated: xacnhan, 
+            user_name: req.user.dataValues.fullName, 
+            email_user: req.user.dataValues.email 
+        });
     }
-    else { return res.render('booksdetail', { title: 'Express', Authenticated: xacnhan }); }
-
+    else { 
+        return res.render('booksdetail', { 
+            title: 'Express', 
+            Authenticated: xacnhan 
+        }); 
+    }
 }
 
 exports.get_profileEditPage = function (req, res, next) {
     var xacnhan = false;
     if (req.isAuthenticated()) {
         xacnhan = true;
-        return res.render('example', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
+        return res.render('example', { 
+            title: 'Express', 
+            Authenticated: xacnhan, 
+            user_name: req.user.dataValues.fullName, 
+            email_user: req.user.dataValues.email 
+        });
     }
-    else { return res.render('example', { title: 'Express', Authenticated: xacnhan }); }
-
+    else { 
+        return res.render('example', { 
+            title: 'Express', 
+            Authenticated: xacnhan 
+        }); 
+    }
 }
 
 exports.post_profileEditPage = function (req, res, next) {
@@ -327,6 +388,21 @@ exports.post_profileEditPage = function (req, res, next) {
     // else { return res.render('example', { title: 'Express', Authenticated: xacnhan }); }
     console.log(req.body)
     console.log(req.session.token)
+    models.USER.update(
+        {
+            fullName: req.body.fullName,
+            gender: req.body.gender,
+            dob: req.body.dob,
+            phonenumber: req.body.phonenumber,
+            level:req.body.level,
+            country:req.body.country,
+            address:req.body.address
+        },
+        {
+            where: {
+                email: req.body.email,
+            }
+        }
+    );
     res.send('ok');
-
 }

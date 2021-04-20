@@ -28,7 +28,6 @@ head
   link(rel='stylesheet' href='assets/css/slick.css')
   link(rel='stylesheet' href='assets/css/nice-select.css')
   link(rel='stylesheet' href='assets/css/style.css')
-  link(rel="manifest" href="/favicons/manifest.json")
 
 // ? Preloader Start
 //- #preloader-active
@@ -154,16 +153,16 @@ main
                 .form-group.row
                   label.control-label.col-md-3.col-sm-3 Họ và tên
                   .col-md-9.col-sm-9
-                    input.form-control.input-size(type='text' name='hoten' value=`${user_name}`)
+                    input.form-control.input-size(type='text' name='fullname' value=`${user_name}`)
                 .form-group.row
                   label.col-md-3.col-sm-3.control-label Giới tính
                   .col-md-9.col-sm-9
                     .radio
                       label
-                        input.flat(type='radio' checked='' name='gioitinh' value='nam')
+                        input.flat(type='radio' checked='' name='gender' value='Nam')
                         |  &nbsp;Nam
                       label(style='margin-left:150px')
-                        input.flat(type='radio' name='gioitinh' value='nu')
+                        input.flat(type='radio' name='gender' value='Nữ')
                         |  &nbsp;Nữ
                 .form-group.row
                   label.control-label.col-md-3.col-sm-3 Ngày sinh
@@ -176,7 +175,7 @@ main
                 .form-group.row
                   label.control-label.col-md-3.col-sm-3 Số điện thoại
                   .col-md-9.col-sm-9
-                    input.form-control.input-size(type='number' name='sdt')
+                    input.form-control.input-size(type='number' name='phonenumber')
                 .form-group.row
                   label.control-label.col-md-3.col-sm-3 Trình độ tiếng Nhật
                   .col-md-9.col-sm-9
@@ -455,7 +454,7 @@ main
                   label.control-label.col-md-3.col-sm-3
                     | Địa chỉ
                   .col-md-9.col-sm-9
-                    textarea.form-control.input-size(rows='3' name='diachi')
+                    textarea.form-control.input-size(rows='3' name='address')
                 .ln_solid
                 .form-group
                   .col-md-9.col-sm-9.offset-md-3
