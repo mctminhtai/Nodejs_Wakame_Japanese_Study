@@ -69,63 +69,94 @@ exports.get_blogPage = async function (req, res, next) {
     });
 }
 exports.get_searchBlogPage = async function (req, res, next) {
-    var words = req.query.q.split(" ");
-    blogs = await models.BLOG.findAll({
-        attributes: ['uuid', 'title', 'blogimg', 'content', 'description', 'createdAt'],
-        include: ['blog_user', 'blog_comment'],
-    });
-    foundBlogs = [];
+    var words = req.query.q ? req.query.q.split(" ") : '';
+    var itemPerPage = 4;
+    var page = req.query.page || 1;
+    var begin = (page - 1) * itemPerPage;
+    var end = page * itemPerPage;
+    var category = req.query.category ? req.query.category : '';
+    console.log(category);
+    var blogs = [];
+    var foundBlogs = [];
+    if (words.length > 0) {
+        blogs = await models.BLOG.findAll({
+            attributes: ['uuid', 'title', 'blogimg', 'content', 'description', 'createdAt'],
+            include: ['blog_user', 'blog_comment'],
+        });
+        blogs.forEach((blog) => {
+            if (search.multiSearchOr(blog.content, words) == "Found!") {
+                foundBlogs.push(blog);
+            }
+        });
+    }
+    if (category) {
+        blogs = await models.BLOG.findAll({
+            attributes: ['uuid', 'title', 'blogimg', 'content', 'description', 'createdAt'],
+            include: [
+                'blog_user',
+                'blog_comment',
+                {
+                    model: models.CATEGORY,
+                    as: 'blog_category',
+                    where: {
+                        name: category,
+                    }
+                }
+            ],
+        });
+        foundBlogs = blogs;
+    }
+
     var categories = await models.CATEGORY.findAll({
         include: ['category_blog']
     });
-    blogs.forEach((blog) => {
-        if (search.multiSearchOr(blog.content, words) == "Found!") {
-            foundBlogs.push(blog);
-        }
-    });
+
     var tags = await models.TAG.findAll({
         attributes: ['TEN_TAG']
     });
-    console.log(foundBlogs);
+    var numOfPage = Math.ceil(foundBlogs.length / itemPerPage);
     return res.render('blog', {
         Authenticated: req.isAuthenticated(),
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
         blogs: foundBlogs,
+        begin: begin,
+        end: end,
         tags: tags,
         categories: categories,
+        numOfPage: numOfPage,
     });
 }
-exports.get_searchCategoryBlogPage = async function (req, res, next) {
-    var word = req.param('category').replace(/-/g, ' ');
-    var blogs = await models.BLOG.findAll({
-        attributes: ['uuid', 'title', 'blogimg', 'content', 'description', 'createdAt'],
-        include: [
-            'blog_user',
-            'blog_comment',
-            {
-                model: models.CATEGORY,
-                as: 'blog_category',
-                where: {
-                    name: word,
-                }
-            }
-        ],
-    });
-    var categories = await models.CATEGORY.findAll({
-        include: ['category_blog']
-    });
-    var tags = await models.TAG.findAll({
-        attributes: ['TEN_TAG']
-    });
-    console.log(blogs);
-    return res.render('blog', {
-        Authenticated: req.isAuthenticated(),
-        user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
-        blogs: blogs,
-        tags: tags,
-        categories: categories,
-    });
-}
+// exports.get_searchCategoryBlogPage = async function (req, res, next) {
+//     var word = req.param('category').replace(/-/g, ' ');
+//     var blogs = await models.BLOG.findAll({
+//         attributes: ['uuid', 'title', 'blogimg', 'content', 'description', 'createdAt'],
+//         include: [
+//             'blog_user',
+//             'blog_comment',
+//             {
+//                 model: models.CATEGORY,
+//                 as: 'blog_category',
+//                 where: {
+//                     name: word,
+//                 }
+//             }
+//         ],
+//     });
+//     var categories = await models.CATEGORY.findAll({
+//         include: ['category_blog']
+//     });
+//     var tags = await models.TAG.findAll({
+//         attributes: ['TEN_TAG']
+//     });
+//     console.log(blogs);
+//     return res.render('blog', {
+//         Authenticated: req.isAuthenticated(),
+//         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
+//         blogs: blogs,
+//         tags: tags,
+//         categories: categories,
+//     });
+// }
 exports.get_blogDetailPage = async function (req, res, next) {
     var uuid = req.param('uuid');
     var blogs = await models.BLOG.findAll({
