@@ -11,13 +11,13 @@
     });
 
 /* 2. sticky And Scroll UP */
-    $(window).on('scroll', function () {
+    $(document).on('scroll', function () {
       var scroll = $(window).scrollTop();
-      if (scroll < 400) {
-        $(".header-sticky").removeClass("sticky-bar");
+      if (scroll < 4000) {
+        $(".header-sticky").removeClass("sticky-bars");
         $('#back-top').fadeOut(500);
       } else {
-        $(".header-sticky").addClass("sticky-bar");
+        $(".header-sticky").addClass("sticky-bars");
         $('#back-top').fadeIn(500);
       }
     });

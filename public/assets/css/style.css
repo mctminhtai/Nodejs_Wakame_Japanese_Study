@@ -1,10 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Mulish:wght@400;500;600;700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300&display=swap');
 
 /* ------------------------------
 	Tùy chỉnh
 -------------------------------- */
+.visible{
+	display:none;
+}
+
+.h-48{
+	height:48px;
+}
+.h-120{
+	height: 120px;
+}
 .isDissabled {
 	cursor:pointer;
 	pointer-events: none;
@@ -19,7 +30,7 @@
     background-image: linear-gradient(-45deg, #90fd12 0%, #2966ce 100%);
 }
 .features-icon{
-	background-image: linear-gradient(315deg, #90fd12 0%, #2966ce 100%);
+	background-image: linear-gradient(315deg, rgba(90,253,12,0.8) 0%,rgba(29,66,206,0.8) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -68,6 +79,9 @@ a .user-size{
 }
 .jpgo{
 	font-family: 'Noto Sans JP', sans-serif;
+}
+.jpgo2{
+	font-family: 'Noto Serif JP', serif;
 }
 .logo{
 	font-size:24px;
@@ -543,7 +557,7 @@ hr{
 	top:0;
 	width:101%;
 	height:101%;
-	background:#2966ce;
+	background:#458aff;
 	z-index:1;
 	border-radius:5px;
 	transition:transform 0.5s;
@@ -563,7 +577,8 @@ hr{
 }
 .btn:hover.btn3{
 	background-position:top;
-	border:1px solid transparent
+	border:1px solid;
+	border-color:#458aff;
 }
 .btn.btn3{
 	background:none;
@@ -574,7 +589,7 @@ hr{
 }
 .btn.btn3::before{
 	border:1px solid transparent;
-	background-color:#2966ce;
+	background-color:#458aff;
 	border-radius:5px;
 	transition:transform 0.5s;
 	transition-timing-function:ease;
@@ -582,7 +597,7 @@ hr{
 	transition-timing-function:cubic-bezier(0.5, 1.6, 0.4, 0.7);
 }
 .btn.btn3:hover::before{
-	background:#2966ce;;
+	background:#458aff;;
 	border:1px solid transparent
 }
 @media only screen and (min-width: 768px) and (max-width: 991px){
@@ -805,7 +820,7 @@ hr{
 	-webkit-animation:300ms ease-in-out 0s normal none 1 running fadeInDown;
 	animation:300ms ease-in-out 0s normal none 1 running fadeInDown;
 	-webkit-box-shadow:0 10px 15px rgba(25,25,25,0.1);
-	background:#fff
+	background:#7a7a7a;
 }
 .mt-5{
 	margin-top:5px
@@ -2805,7 +2820,7 @@ to{
 }
 .slider-area,.slider-area2{
 	background-image:url(../img/hero/h1_hero.png);
-	background-image: linear-gradient(-45deg, #90fd12 0%, #2966ce 100%);
+	background-image: linear-gradient(-45deg, rgba(90,253,12,0.8) 0%,rgba(29,66,206,0.8) 100%);
 	background-size:cover;
 	background-repeat:no-repeat;
 	background-position:center center
@@ -3741,8 +3756,6 @@ to{
 	-moz-transition:.4s;
 	-o-transition:.4s;
 	transition:.4s;
-	height:100%;
-
 }
 .courses-area .properties__card:hover{
 	box-shadow:0px 8px 8px 0px rgba(2,25,65,0.08)
@@ -4108,12 +4121,27 @@ to{
 	text-align:center;
 	margin-right:8px
 }
-.footer-social a:hover{
+.footer-social a#tw:hover{
 	color:#fff;
-	background:#C86FFF
+	background:rgb(29, 161, 242);
 }
+.footer-social a#fb:hover{
+	color:#fff;
+	background:#1877F2
+
+}
+.footer-social a#yt:hover{
+	color:#fff;
+	background:#F00;
+}
+.footer-social a#ig:hover{
+	color:#fff;
+	background:rgb(237, 73, 86)
+}
+
 .footer-social a i{
-	display:inline-block
+	display:inline-block;
+	padding-top:13;
 }
 .footer-bg{
 	background:#4255A4
@@ -5556,9 +5584,9 @@ to{
 	justify-content:start
 }
 .theme-colors,.header-sticky.sticky-bar{
-	background:linear-gradient(45deg, #90fd12 0%, #2966ce 100%);
-	background:-moz-linear-gradient(45deg, #90fd12 0%, #2966ce 100%);
-	background:-webkit-linear-gradient(45deg, #90fd12 0%, #2966ce 100%);
+	background-image: linear-gradient(-45deg, rgba(90,253,12,0.8) 0%,rgba(29,66,206,0.8) 100%);
+	background-image:-moz-linear-gradient(-45deg, rgba(90,253,12,0.8) 0%,rgba(29,66,206,0.8) 100%);
+	background-image:-webkit-linear-gradient(-45deg, rgba(90,253,12,0.8) 0%,rgba(29,66,206,0.8) 100%);
 	/*background:linear-gradient(45deg, #90fd12 0%, #2966ce 100%);
 	/* background: linear-gradient(-45deg, #90fd12 0%, #2966ce 100%); */
 	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#c054ff', endColorstr='#5274ff',GradientType=0 )
