@@ -1,0 +1,24 @@
+extends layout.pug 
+block title 
+  title Mã xác nhận
+block main
+    main
+    #passcode
+        .flex-box
+            h1 Mã xác thực
+            br
+            p.info
+                | Một mã xác thực đã gửi tới địa chỉ&nbsp;
+                span UITĐHQGTPHCM@gm.uit.edu.vn
+                | .
+            p.info
+                | Vui lòng kiểm tra email và nhập mã.&nbsp;
+                span
+                input.info(type='button' value='Gửi lại mã')
+            .passcode-area
+                input(type='text' maxlength='6' placeholder='Mã xác thực')
+                input.fa-input(type='submit' value='&#xf105;')
+            a.exit-passcode(href='/')
+                i.fas.fa-sign-out-alt
+                | Thoát
+
