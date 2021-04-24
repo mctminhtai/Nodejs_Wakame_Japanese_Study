@@ -1,8 +1,17 @@
-extends layout.pug 
-block title 
-  title Mã xác nhận
-block main
-    main
+doctype html
+head
+  base(href='/')
+  meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+  meta(http-equiv='x-ua-compatible' content='ie=edge')
+  title Xác nhận tài khoản | Wakame
+  meta(name='description' content='')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico')
+  // CSS here
+  link(rel="stylesheet" href="assets/css/fontawesome.css")
+  link(rel="stylesheet" href="assets/css/fontawesome-all.min.css")
+  link(rel="stylesheet" href='assets/css/account.css')
+body(onload="fix()")
     #passcode
         .flex-box
             h1 Mã xác thực
@@ -17,8 +26,10 @@ block main
                 input.info(type='button' value='Gửi lại mã')
             .passcode-area
                 input(type='text' maxlength='6' placeholder='Mã xác thực')
-                input.fa-input(type='submit' value='&#xf105;')
+                button.fa-input(type="submit")
+                    i.fas.fa-angle-right.fa-2x
             a.exit-passcode(href='/')
                 i.fas.fa-sign-out-alt
                 | Thoát
 
+        

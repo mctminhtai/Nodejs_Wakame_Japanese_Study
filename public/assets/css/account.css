@@ -30,15 +30,22 @@
 input[type="button"]{
   font-weight: normal;
   transition: .4s ease-out;
+  border: 0px solid !important;
+  outline: none !important;
 }
 input[type="button"]:hover{
   font-weight: 600;
   color:#2966ce;
+  border: 0px;
+  outline: none;
   
 }
 
-.fa-input {
+.fa-input ,.fa-input::before{
   font-family: 'Font Awesome 5 Free';
+  height:64px;
+  width: 64px;
+  padding:12px;
   font-weight: 700;
   font-size: 20px;
   color: #323232;
@@ -60,7 +67,7 @@ input[type="button"]:hover{
   border:0px solid;
   border-radius:0px;
   text-align:center;
-  background-color:rgba(255,255,255,0.6);
+  background-color:rgba(255,255,255,0.3);
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
 }
@@ -81,15 +88,13 @@ input[type="button"]{
   line-height:1.5em;
   color:white;
 }
-.passcode-area > input[type="submit"]{
+.passcode-area > button.fa-input{
   width:66px; 
   height: 66px;
   border-radius:0px;
-  font-size:30px;
   color:black;
   border:0px;  
   cursor: pointer;
-
   outline: none;
   background: linear-gradient(to left, #fff 50%,rgb(49, 172, 11) 50%) right;
   background-size:200%;
@@ -97,7 +102,7 @@ input[type="button"]{
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
 }
-.passcode-area > input[type="submit"]:hover{
+.passcode-area > button.fa-input:hover{
   background-position: left;
   color:white;
 }
