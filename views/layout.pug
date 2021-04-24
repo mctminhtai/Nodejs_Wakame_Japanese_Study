@@ -22,7 +22,6 @@ head
   link(rel='stylesheet' href='assets/css/nice-select.css')
   link(rel='stylesheet' href='assets/css/style.css')
   link(rel='stylesheet' href='assets/css/all.css')
-
 // ? Preloader Start
 #preloader-active
   .preloader.d-flex.align-items-center.justify-content-center
@@ -32,9 +31,12 @@ head
         img(src='assets/img/logo/onion_logo.svg' alt='' style='width:120px; height:50px;')
 // Preloader Start
 header
+  
   // Header Start
   .header-area.header-transparent
     .main-header
+      .header-bottom.header-sticky#header-background.visible
+        p#out
       .header-bottom.header-sticky
         .container-fluid
           .row.align-items-center
@@ -141,16 +143,14 @@ footer
                     p(style="line-height: 2.2;") 熱意なしに偉大なことが達成されたことはない。Không có sự vĩ đại nào đạt được nếu không có sự nhiệt tình, nhiệt tâm.
                 // social
                 .footer-social
-                  a(href='https://twitter.com' target='_blank')
+                  a(href='https://twitter.com' target='_blank' id="tw")
                     i.fab.fa-twitter
-                  a(href='https://facebook.com' target='_blank')
+                  a(href='https://facebook.com' target='_blank' id="fb")
                     i.fab.fa-facebook-f
-                  a(href="https://www.youtube.com" target="blank")
+                  a(href="https://www.youtube.com" target="blank" id="yt")
                     i.fab.fa-youtube
-                  a(href="https://www.instagram.com" target="blank")
+                  a(href="https://www.instagram.com" target="blank" id="ig")
                     i.fab.fa-instagram
-                  a(href="https://www.plus.google.com" target="blank")
-                    i.fab.fa-google-plus-g
           .col-xl-4.col-lg-3.col-md-4.col-sm-6(style="max-width:100%")
             .single-footer-caption.mb-50
               .footer-tittle(style="margin-bottom: 50px;")
@@ -195,7 +195,7 @@ footer
                     | &nbsp;Nhóm 1
     // Footer End
 // Scroll Up
-#back-top
+#back-top.visible
   a(title='Go to Top' href='#')
     i.fas.fa-level-up-alt
 // JS here

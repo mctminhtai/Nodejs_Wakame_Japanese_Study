@@ -1,0 +1,60 @@
+extends layout.pug 
+block title 
+  title Thông tin tài liệu | Wakame
+block main 
+  main
+    // ? slider Area Start
+    section.slider-area.slider-area2
+      .slider-active
+        // Single Slider
+        .single-slider.slider-height2
+          .container
+            .row
+              .col-xl-8.col-lg-11.col-md-12
+                .hero__caption.hero__caption2
+                  h1(data-animation='bounceIn' data-delay='0.2s') Thông tin tài liệu
+                  // breadcrumb Start
+                  nav(aria-label='breadcrumb')
+                    ol.breadcrumb
+                      li.breadcrumb-item
+                        a(href='/') Trang chủ
+                      li.breadcrumb-item
+                        a(href='/books') Tài liệu
+                  // breadcrumb End
+    .services-area.services-area2(style="padding-top:50px;padding-bottom:50px")
+      .container
+        .row.justify-content-sm-center
+          .col-lg-4.col-md-6.col-sm-8(style='margin-top:auto;margin-bottom:auto')
+            img(src='assets/img/gallery/book16.jpg' style='width:300px;height:400px;margin-top:0px')
+          .col-lg-8.col-md-6.col-sm-8(style='text-align:justify')
+            h2 Giới thiệu
+            p 
+                | Từ điển giảng dạy chữ tượng hình cho học sinh lớp 1-2 ở Nhật Bản. 
+                | Có tổng cộng 240 chữ tượng hình trong từ điển. Văn bản tượng hình 
+                | bao gồm đọc, thứ tự viết và số lượng tính năng, ví dụ về cách sử dụng 
+                | và nguồn gốc. Ngoài ra, đối với các chữ tượng hình trong năm đầu tiên 
+                | của nghiên cứu, có truyện ngắn dưới dạng truyện tranh. Đây là một lựa chọn 
+                | tuyệt vời để bắt đầu học chữ tượng hình. Kiến thức về bảng chữ cái là cần thiết 
+                | để sử dụng từ điển.
+            .row(style="width:700px;margin-top:30px;margin-bottom:20px")
+              .col-xl-6.col-lg-11.col-md-12
+                .features-caption
+                  h2 Ngôn ngữ
+                  p Tiếng Anh/Tiếng Nhật
+              .col-xl-6.col-lg-11.col-md-12
+                .features-caption
+                  h2 File
+                  p PDF
+            .row(style="width:700px")
+              .col-xl-6.col-lg-11.col-md-12
+                .features-caption
+                  h2 Số trang
+                  p 116
+              .col-xl-6.col-lg-11.col-md-12
+                .features-caption
+                  h3 Dung lượng
+                  p 85.23 MB
+            .row(style="width:700px;margin-left:0px")
+                a(href='assets/img/gallery/book16.jpg' style='color:#fff;background:#10285d;padding:10px 20px;border-radius:5px' download)
+                    i.fas.fa-download
+                    | &nbsp;Download
