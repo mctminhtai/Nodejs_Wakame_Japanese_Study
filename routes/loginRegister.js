@@ -43,6 +43,7 @@ router.post(
     }),
     validate.ResetPwd_checkErr,
     loginRegister.post_resetPwd);
+router.get('/active', loginRegister.get_active);
 router.get('/test', loginRegister.get_test);
 router.get('/captcha', loginRegister.get_captcha);
 router.post('/captcha', loginRegister.post_captcha);

@@ -241,7 +241,6 @@ exports.get_coursesPage = function (req, res, next) {
 }
 
 exports.get_profilePage = async function (req, res, next) {
-    var xacnhan = false;
     req.session.redirectTo = '/profile';
     var user = await models.USER.findOne({
         where: {
@@ -249,11 +248,12 @@ exports.get_profilePage = async function (req, res, next) {
         }
     })
     console.log(user);
-    if (req.isAuthenticated()) {
-        xacnhan = true;
-        return res.render('profile', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
-    }
-    else { return res.render('profile', { title: 'Express', Authenticated: xacnhan }); }
+    return res.render('profile', {
+        Authenticated: req.isAuthenticated(),
+        user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
+        user_email: req.isAuthenticated() ? req.user.dataValues.email : '',
+        user: user,
+    })
 
 }
 
