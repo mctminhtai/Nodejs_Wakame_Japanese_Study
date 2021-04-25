@@ -15,7 +15,6 @@ passport.use('local.login', new LocalStrategy({
 },
     function (username, password, done) {
         models.USER.findOne({
-            attributes: ['email', 'password', 'id'],
             where: { email: username }
         }).then((user) => {
             if (user) {
@@ -80,10 +79,33 @@ exports.post_login = function (req, res, next) {
     passport.authenticate('local.login', (err, user, info) => {
         if (err) { return next(err); }
         if (!user) { return res.redirect('/accounts'); }
-        req.logIn(user, (err) => {
-            if (err) { return next(err); }
-            return res.redirect(redirectTo);
-        });
+        if (user.actived) {
+            req.logIn(user, (err) => {
+                if (err) { return next(err); }
+                return res.redirect(redirectTo);
+            });
+        } else {
+            models.PASSCODE.destroy({
+                where: {
+                    email: user.email,
+                }
+            });
+            var randToken = randomString.password({
+                length: 100,
+                string: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            });
+            var randString = randomString.password({
+                length: 6,
+                string: "0123456789"
+            });
+            mailer.sendMail(user.email, 'Ma xac thuc WAKAME', randString);
+            models.PASSCODE.create({
+                token: randToken,
+                email: user.email,
+                passcode: randString,
+            })
+            return res.redirect('/active?token=' + randToken);
+        }
     })(req, res, next);
 }
 exports.post_register = function (req, res, next) {
@@ -121,6 +143,9 @@ exports.get_active = function (req, res, next) {
 }
 exports.post_active = async function (req, res, next) {
     var redirectTo = req.session.redirectTo || '/';
+    if (!req.query.token) {
+        return res.redirect(redirectTo);
+    }
     var passcode_info = await models.PASSCODE.findOne({
         where: {
             token: req.query.token,

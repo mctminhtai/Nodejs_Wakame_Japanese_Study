@@ -11,9 +11,9 @@ head
   link(rel="stylesheet" href="assets/css/fontawesome.css")
   link(rel="stylesheet" href="assets/css/fontawesome-all.min.css")
   link(rel="stylesheet" href='assets/css/account.css')
-body(onload="fix()")
+body(onload="showForm()")
     #passcode
-        .flex-box
+        form.flex-box#form(method="post")
             h1 Mã xác thực
             br
             p.info
@@ -24,12 +24,12 @@ body(onload="fix()")
                 | Vui lòng kiểm tra email và nhập mã.&nbsp;
                 span
                 input.info(type='button' value='Gửi lại mã')
-            form(method="post").passcode-area
+            .passcode-area
                 input(type='text' name='active_code' maxlength='6' placeholder='Mã xác thực')
                 button.fa-input(type="submit")
                     i.fas.fa-angle-right.fa-2x
             a.exit-passcode(href='/')
                 i.fas.fa-sign-out-alt
                 | Thoát
-
+script(src="assets/js/account.js")
         
