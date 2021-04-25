@@ -87,23 +87,41 @@ exports.post_login = function (req, res, next) {
     })(req, res, next);
 }
 exports.post_register = function (req, res, next) {
-    var redirectTo = req.session.redirectTo || '/'
     passport.authenticate('local.signup', (err, user, info) => {
         if (err) { return next(err); }
         if (!user) { return res.redirect('/accounts'); }
-        req.logIn(user, (err) => {
-            if (err) { return next(err); }
-            req.session.destroy();
-            var randString = randomString.password({
-                length: 100,
-                string: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-            });
-            return res.redirect('/active?q=' + randString);
+        var randToken = randomString.password({
+            length: 100,
+            string: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         });
+        var randString = randomString.password({
+            length: 6,
+            string: "0123456789"
+        });
+        //mailer.sendMail(user.email, 'Ma xac thuc WAKAME', randString);
+        models.PASSCODE.create({
+            token: randToken,
+            email: user.email,
+            passcode: randString,
+        })
+        return res.redirect('/active?token=' + randToken);
+        // req.logIn(user, (err) => {
+        //     if (err) { return next(err); }
+        //     req.session.destroy();
+        //     var randString = randomString.password({
+        //         length: 100,
+        //         string: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        //     });
+        //     return res.redirect('/active?q=' + randString);
+        // });
     })(req, res, next);
 }
 exports.get_active = function (req, res, next) {
     return res.render('passcode');
+}
+exports.post_active = function (req, res, next) {
+    var redirectTo = req.session.redirectTo || '/';
+    return res.redirect(redirectTo);
 }
 exports.get_logout = function (req, res, next) {
     req.logout();

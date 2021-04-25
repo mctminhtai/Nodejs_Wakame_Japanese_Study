@@ -24,7 +24,7 @@ body(onload="fix()")
                 | Vui lòng kiểm tra email và nhập mã.&nbsp;
                 span
                 input.info(type='button' value='Gửi lại mã')
-            .passcode-area
+            form(action="/active", method="post").passcode-area
                 input(type='text' maxlength='6' placeholder='Mã xác thực')
                 button.fa-input(type="submit")
                     i.fas.fa-angle-right.fa-2x
