@@ -98,7 +98,7 @@ exports.post_register = function (req, res, next) {
             length: 6,
             string: "0123456789"
         });
-        //mailer.sendMail(user.email, 'Ma xac thuc WAKAME', randString);
+        mailer.sendMail(user.email, 'Ma xac thuc WAKAME', randString);
         models.PASSCODE.create({
             token: randToken,
             email: user.email,
@@ -119,9 +119,37 @@ exports.post_register = function (req, res, next) {
 exports.get_active = function (req, res, next) {
     return res.render('passcode');
 }
-exports.post_active = function (req, res, next) {
+exports.post_active = async function (req, res, next) {
     var redirectTo = req.session.redirectTo || '/';
-    return res.redirect(redirectTo);
+    var passcode_info = await models.PASSCODE.findOne({
+        where: {
+            token: req.query.token,
+        }
+    })
+    var received_code = req.body.active_code || ''
+    if (passcode_info.passcode != received_code) {
+        return res.redirect('/active?token=' + req.query.token);
+    } else {
+        models.PASSCODE.destroy({
+            where: {
+                token: passcode_info.token,
+            }
+        });
+        await models.USER.update({ actived: true }, {
+            where: {
+                email: passcode_info.email,
+            }
+        });
+        var user = await models.USER.findOne({
+            where: {
+                email: passcode_info.email,
+            },
+        })
+        req.logIn(user, (err) => {
+            if (err) { return next(err); }
+            return res.redirect(redirectTo);
+        });
+    }
 }
 exports.get_logout = function (req, res, next) {
     req.logout();

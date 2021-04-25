@@ -35,7 +35,7 @@ module.exports = {
       password: {
         type: Sequelize.STRING
       },
-      status: {
+      actived: {
         type: Sequelize.BOOLEAN,
         defaultValue: false,
       },
