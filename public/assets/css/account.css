@@ -11,6 +11,10 @@
   min-height: 100vh;
   padding-top:150px;
 }
+#form{
+  opacity: 0;
+  transition: 1s;
+}
 
 .flex-box {
   color:white;
@@ -54,6 +58,7 @@ input[type="button"]:hover{
   margin:35px auto;
   text-align: center;
   display:flex;
+  flex-direction: row;
 }
 .passcode-action{
   margin-top:0px;
