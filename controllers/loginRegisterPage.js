@@ -9,6 +9,35 @@ let randomString = new randostring();
 var mailer = require('../utils/mailer');
 
 var LocalStrategy = require('passport-local').Strategy;
+var FacebookStrategy = require('passport-facebook').Strategy;
+
+
+passport.use(new FacebookStrategy({
+    clientID: '1273803272829936',
+    clientSecret: 'bdf4de8add92ebaf42d93e533cc44973',
+    profileFields: ['email', 'displayName'],
+    callbackURL: "http://localhost:3000/auth/facebook/callback",
+    passReqToCallback: true,
+},
+    function (accessToken, refreshToken, req, profile, done) {
+        console.log(profile._json.email);
+        models.USER.findOne({
+            where: { email: profile._json.email }
+        }).then((user) => {
+            if (user) {
+                return done(null, user);
+            } else {
+                models.USER.create({
+                    fullName: profile._json.name,
+                    email: profile._json.email
+                }).then((newUser) => {
+                    console.log(newUser);
+                    return done(null, newUser);
+                });
+            }
+        });
+    }
+));
 passport.use('local.login', new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'
@@ -104,6 +133,7 @@ exports.post_login = function (req, res, next) {
                 email: user.email,
                 passcode: randString,
             })
+            console.log('Ma xac thuc ' + randString);
             return res.redirect('/active?token=' + randToken);
         }
     })(req, res, next);
@@ -126,6 +156,7 @@ exports.post_register = function (req, res, next) {
             email: user.email,
             passcode: randString,
         })
+        console.log('Ma xac thuc ' + randString);
         return res.redirect('/active?token=' + randToken);
         // req.logIn(user, (err) => {
         //     if (err) { return next(err); }
