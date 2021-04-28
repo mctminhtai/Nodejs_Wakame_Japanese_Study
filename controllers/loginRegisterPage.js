@@ -303,7 +303,7 @@ exports.get_test = async function (req, res, next) {
     // }).then((user) => {
     //     console.log(user.dataValues.email);
     // })
-    await models.USER.create({ fullName: 'minhtai33', actived: true, email: 'mct.minhtai@gmail.com', password: '$2a$10$VZZVEldp4B.FEFxP2uci9.3s.QiLEpC05m9aTbXa.v6tPzDlNLAmu' });
+    // await models.USER.create({ fullName: 'minhtai33', actived: true, email: 'mct.minhtai@gmail.com', password: '$2a$10$VZZVEldp4B.FEFxP2uci9.3s.QiLEpC05m9aTbXa.v6tPzDlNLAmu' });
     // await models.USER.create({ fullName: 'VietAnhJav', email: 'JavIsNumberOne@gmail.com', password: 'vietanh' });
     // await models.USER.create({ fullName: 'VietAnhLoveJAV', email: 'JavIsNumber1@gmail.com', password: 'vietanh' });
     await models.TAG.create({ TEN_TAG: 'SuKien' });
