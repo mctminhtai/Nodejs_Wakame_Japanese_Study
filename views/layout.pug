@@ -22,7 +22,11 @@ head
   link(rel='stylesheet' href='assets/css/nice-select.css')
   link(rel='stylesheet' href='assets/css/style.css')
   link(rel='stylesheet' href='assets/css/all.css')
+  script 
+    include GoogleTagManager.js
 // ? Preloader Start
+noscript
+  iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-54RB25S' height='0' width='0' style='display:none;visibility:hidden')
 #preloader-active
   .preloader.d-flex.align-items-center.justify-content-center
     .preloader-inner.position-relative
@@ -31,7 +35,6 @@ head
         img(src='assets/img/logo/onion_logo.svg' alt='' style='width:120px; height:50px;')
 // Preloader Start
 header
-  
   // Header Start
   .header-area.header-transparent
     .main-header
