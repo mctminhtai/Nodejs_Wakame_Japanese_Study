@@ -194,7 +194,7 @@ exports.post_active = async function (req, res, next) {
     //     }
     // })
     var passcode_info = req.session.active_info;
-    var received_code = req.body.active_code || ''
+    var received_code = req.body.active_code || '';
     if (passcode_info.passcode != received_code) {
         return res.redirect('/active?token=' + req.query.token);
     } else {
