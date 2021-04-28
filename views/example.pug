@@ -48,7 +48,9 @@ header
             // Logo
             .col-xl-2.col-lg-2
               .logo
-                a(href='/') WAKAME
+                a(href='/') 
+                  img(src='assets/img/logo/LogoWeb.png') 
+                  p WAKAME
             .col-xl-10.col-lg-10
               .menu-wrapper.d-flex.align-items-center.justify-content-end
                 // Main-menu
@@ -104,14 +106,6 @@ main
             .col-xl-8.col-lg-11.col-md-12
               .hero__caption.hero__caption2
                 h1(data-animation='bounceIn' data-delay='0.2s') Chỉnh sửa 
-                // breadcrumb Start
-                nav(aria-label='breadcrumb')
-                  ol.breadcrumb
-                    li.breadcrumb-item
-                      a(href='/') Trang chủ
-                    li.breadcrumb-item
-                      a(href='/contact') Thông tin
-                // breadcrumb End
   // ?  Contact Area start
   .services-area.services-area2(style="padding-top:50px;padding-bottom:50px")
     .container
@@ -168,10 +162,10 @@ main
                   label.control-label.col-md-3.col-sm-3 Ngày sinh
                   .col-md-9.col-sm-9
                     input.form-control.input-size(type='date' name='dob')
-                //- .form-group.row
-                //-   label.control-label.col-md-3.col-sm-3 Email
-                //-   .col-md-9.col-sm-9
-                input.form-control.input-size(type='hidden' name='email' value=`${email_user}` style='height:0; padding: 10px 12px;')
+                .form-group.row
+                  label.control-label.col-md-3.col-sm-3 Email
+                  .col-md-9.col-sm-9
+                    input.form-control.input-size(readonly name='email' value=`${user_email}`)
                 .form-group.row
                   label.control-label.col-md-3.col-sm-3 Số điện thoại
                   .col-md-9.col-sm-9
@@ -179,7 +173,7 @@ main
                 .form-group.row
                   label.control-label.col-md-3.col-sm-3 Trình độ tiếng Nhật
                   .col-md-9.col-sm-9
-                    select.form-control(name='level')
+                    select.form-control.input-size(name='level' style='padding-left: 5px;')
                       option Chọn cấp độ
                       option(value='N1') N1
                       option(value='N2') N2
@@ -190,9 +184,9 @@ main
                 .form-group.row
                   label.control-label.col-md-3.col-sm-3 Quốc gia
                   .col-md-9.col-sm-9
-                    select#country.select2_group.form-control(name='country')
+                    select#country.select2_group.form-control.input-size(name='country'  style='padding-left: 5px;')
                       option(value='0' label='Chọn quốc gia ' selected='selected') Chọn quốc gia
-                      optgroup#country-optgroup-Africa(label='Africa')
+                      optgroup#country-optgroup-Africa(label='--Africa--')
                         option(value='DZ' label='Algeria') Algeria
                         option(value='AO' label='Angola') Angola
                         option(value='BJ' label='Benin') Benin
@@ -250,7 +244,7 @@ main
                         option(value='EH' label='Western Sahara') Western Sahara
                         option(value='ZM' label='Zambia') Zambia
                         option(value='ZW' label='Zimbabwe') Zimbabwe
-                      optgroup#country-optgroup-Americas(label='Americas')
+                      optgroup#country-optgroup-Americas(label='--America--')
                         option(value='AI' label='Anguilla') Anguilla
                         option(value='AG' label='Antigua and Barbuda') Antigua and Barbuda
                         option(value='AR' label='Argentina') Argentina
@@ -304,7 +298,7 @@ main
                         option(value='US' label='United States') United States
                         option(value='UY' label='Uruguay') Uruguay
                         option(value='VE' label='Venezuela') Venezuela
-                      optgroup#country-optgroup-Asia(label='Asia')
+                      optgroup#country-optgroup-Asia(label='--Asia--')
                         option(value='AF' label='Afghanistan') Afghanistan
                         option(value='AM' label='Armenia') Armenia
                         option(value='AZ' label='Azerbaijan') Azerbaijan
@@ -358,7 +352,7 @@ main
                         option(value='UZ' label='Uzbekistan') Uzbekistan
                         option(value='VN' label='Vietnam') Vietnam
                         option(value='YE' label='Yemen') Yemen
-                      optgroup#country-optgroup-Europe(label='Europe')
+                      optgroup#country-optgroup-Europe(label='--Europe--')
                         option(value='AL' label='Albania') Albania
                         option(value='AD' label='Andorra') Andorra
                         option(value='AT' label='Austria') Austria
@@ -415,7 +409,7 @@ main
                         option(value='GB' label='United Kingdom') United Kingdom
                         option(value='VA' label='Vatican City') Vatican City
                         option(value='AX' label='Åland Islands') &angst;land Islands
-                      optgroup#country-optgroup-Oceania(label='Oceania')
+                      optgroup#country-optgroup-Oceania(label='--Oceania--')
                         option(value='AS' label='American Samoa') American Samoa
                         option(value='AQ' label='Antarctica') Antarctica
                         option(value='AU' label='Australia') Australia
