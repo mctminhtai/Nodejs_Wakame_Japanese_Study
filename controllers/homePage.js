@@ -398,5 +398,15 @@ exports.post_profileEditPage = function (req, res, next) {
             }
         }
     );
-    res.send('ok');
+    if (res.send(req.user.email) == req.user.dataValues.email) {
+        res.send(req.user.email);
+    }
+    else {
+        res.send('not ok');
+
+    }
+    // return res.render('profile', {
+    //     title: 'Express',
+    //     Authenticated: xacnhan
+    // });
 }
