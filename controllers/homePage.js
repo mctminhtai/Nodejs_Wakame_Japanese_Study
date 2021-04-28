@@ -2,7 +2,7 @@ const models = require('../models');
 const search = require('../utils/multiSearch');
 exports.get_homePage = function (req, res, next) {
     var xacnhan = false;
-
+    req.session.ten = 'tai';
     if (req.isAuthenticated()) {
         xacnhan = true;
         return res.render('index', {

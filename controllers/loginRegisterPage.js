@@ -10,6 +10,7 @@ var mailer = require('../utils/mailer');
 
 var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
+const { session } = require('passport');
 
 
 passport.use(new FacebookStrategy({
@@ -128,11 +129,16 @@ exports.post_login = function (req, res, next) {
                 string: "0123456789"
             });
             mailer.sendMail(user.email, 'Ma xac thuc WAKAME', randString);
-            models.PASSCODE.create({
+            // models.PASSCODE.create({
+            //     token: randToken,
+            //     email: user.email,
+            //     passcode: randString,
+            // })
+            req.session.active_info = {
                 token: randToken,
                 email: user.email,
                 passcode: randString,
-            })
+            }
             console.log('Ma xac thuc ' + randString);
             return res.redirect('/active?token=' + randToken);
         }
@@ -151,11 +157,16 @@ exports.post_register = function (req, res, next) {
             string: "0123456789"
         });
         mailer.sendMail(user.email, 'Ma xac thuc WAKAME', randString);
-        models.PASSCODE.create({
+        // models.PASSCODE.create({
+        //     token: randToken,
+        //     email: user.email,
+        //     passcode: randString,
+        // })
+        req.session.active_info = {
             token: randToken,
             email: user.email,
             passcode: randString,
-        })
+        }
         console.log('Ma xac thuc ' + randString);
         return res.redirect('/active?token=' + randToken);
         // req.logIn(user, (err) => {
@@ -177,20 +188,21 @@ exports.post_active = async function (req, res, next) {
     if (!req.query.token) {
         return res.redirect(redirectTo);
     }
-    var passcode_info = await models.PASSCODE.findOne({
-        where: {
-            token: req.query.token,
-        }
-    })
+    // var passcode_info = await models.PASSCODE.findOne({
+    //     where: {
+    //         token: req.query.token,
+    //     }
+    // })
+    var passcode_info = req.session.active_info;
     var received_code = req.body.active_code || ''
     if (passcode_info.passcode != received_code) {
         return res.redirect('/active?token=' + req.query.token);
     } else {
-        models.PASSCODE.destroy({
-            where: {
-                token: passcode_info.token,
-            }
-        });
+        // models.PASSCODE.destroy({
+        //     where: {
+        //         token: passcode_info.token,
+        //     }
+        // });
         await models.USER.update({ actived: true }, {
             where: {
                 email: passcode_info.email,
@@ -226,12 +238,17 @@ exports.post_resetToken = async function (req, res, next) {
             string: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         });
         var resetPwdUrl = req.headers.origin + '/pwd_reset' + '/' + randString;
-        console.log(resetPwdUrl);
+        // console.log(resetPwdUrl);
         mailer.sendMail(req.body.email, 'test thử email CLB', resetPwdUrl);
-        models.RESETTOKEN.create({
+        // models.RESETTOKEN.create({
+        //     token: randString,
+        //     email: req.body.email,
+        // });
+        req.session.rsPwdToken = {
             token: randString,
             email: req.body.email,
-        });
+        }
+        console.log(req.session);
         res.render('sendToken_login', {
             noti: 'Đã gửi email reset mật khẩu thành công',
         });
@@ -244,10 +261,12 @@ exports.post_resetToken = async function (req, res, next) {
 }
 exports.get_resetPwd = async function (req, res, next) {
     var received_token = req.param('token');
-    savedToken = await models.RESETTOKEN.findOne({
-        where: { token: received_token }
-    });
-    if (savedToken) {
+    // console.log(req.session);
+    // savedToken = await models.RESETTOKEN.findOne({
+    //     where: { token: received_token }
+    // });
+    var savedToken = req.session.rsPwdToken;
+    if (savedToken.token == received_token) {
         res.render('resetPwd_login', {
             token: savedToken.token,
             email: savedToken.email,
@@ -258,10 +277,11 @@ exports.get_resetPwd = async function (req, res, next) {
 }
 exports.post_resetPwd = async function (req, res, next) {
     var received_token = req.param('token');
-    savedToken = await models.RESETTOKEN.findOne({
-        where: { token: received_token }
-    });
-    if (savedToken) {
+    // savedToken = await models.RESETTOKEN.findOne({
+    //     where: { token: received_token }
+    // });
+    var savedToken = req.session.rsPwdToken;
+    if (savedToken.token == received_token) {
         var hashPwd = bcrypt.hashSync(req.body.password, 10);
         models.USER.update(
             { password: hashPwd },
@@ -271,11 +291,11 @@ exports.post_resetPwd = async function (req, res, next) {
                 }
             }
         );
-        models.RESETTOKEN.destroy({
-            where: {
-                email: req.body.email,
-            }
-        });
+        // models.RESETTOKEN.destroy({
+        //     where: {
+        //         email: req.body.email,
+        //     }
+        // });
         res.redirect('/accounts');
     } else {
         res.send('token khong dung');
