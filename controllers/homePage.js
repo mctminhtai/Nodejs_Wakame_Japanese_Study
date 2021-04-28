@@ -9,7 +9,7 @@ exports.get_homePage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -29,7 +29,7 @@ exports.get_aboutPage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -214,7 +214,7 @@ exports.get_contactPage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -233,7 +233,7 @@ exports.get_coursesPage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
