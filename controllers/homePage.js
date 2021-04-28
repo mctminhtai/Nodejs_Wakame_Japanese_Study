@@ -269,7 +269,7 @@ exports.get_coursesDetailPage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -286,7 +286,7 @@ exports.get_tkbPage = function (req, res, next) {
         return res.render('tkb', {
             title: 'Express',
             Authenticated: xacnhan, user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -305,7 +305,7 @@ exports.get_resetpwPage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -324,7 +324,7 @@ exports.get_booksPage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -343,7 +343,7 @@ exports.get_booksdetailPage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -362,7 +362,7 @@ exports.get_profileEditPage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
