@@ -8,6 +8,6 @@
     "\\public",
     "\\routes"
   ],
-  "SelectedNode": "\\models\\lophoc.js",
+  "SelectedNode": "\\migrations\\20210405155341-create-lophoc.js",
   "PreviewInSolutionExplorer": false
 }
