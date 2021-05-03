@@ -1,19 +1,12 @@
 'use strict';
-
-const { sequelize } = require("../models");
-
 module.exports = {
     up: async (queryInterface, Sequelize) => {
-        await queryInterface.createTable('BLOG', {
+        await queryInterface.createTable('USER_UPGRADE_BLOG', {
             id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
                 type: Sequelize.INTEGER
-            },
-            uuid: {
-                type: Sequelize.UUID,
-                defaultValue: Sequelize.UUIDV4
             },
             USERId: {
                 type: Sequelize.INTEGER,
@@ -23,33 +16,13 @@ module.exports = {
                     key: 'id'
                 }
             },
-            CATEGORYId: {
+            BLOGId: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
                 references: {
-                    model: 'CATEGORY',
+                    model: 'BLOG',
                     key: 'id'
                 }
-            },
-            blogimg: {
-                type: Sequelize.STRING(1024)
-            },
-            title: {
-                type: Sequelize.STRING(1024)
-            },
-            description: {
-                type: Sequelize.STRING(1024)
-            },
-            numberlike: {
-                type: Sequelize.INTEGER,
-                defaultValue: 77
-            },
-            draft: {
-                type: Sequelize.BOOLEAN,
-                defaultValue: true,
-            },
-            content: {
-                type: Sequelize.TEXT('long')
             },
             createdAt: {
                 allowNull: false,
@@ -62,6 +35,6 @@ module.exports = {
         });
     },
     down: async (queryInterface, Sequelize) => {
-        await queryInterface.dropTable('BLOG');
+        await queryInterface.dropTable('USER_UPGRADE_BLOG');
     }
 };

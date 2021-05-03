@@ -325,7 +325,7 @@ exports.get_test = async function (req, res, next) {
     // })
     // await models.USER.create({ fullName: 'minhtai33', actived: true, email: 'mct.minhtai@gmail.com', password: '$2a$10$VZZVEldp4B.FEFxP2uci9.3s.QiLEpC05m9aTbXa.v6tPzDlNLAmu' });
     // await models.USER.create({ fullName: 'VietAnhJav', email: 'JavIsNumberOne@gmail.com', password: 'vietanh' });
-    // await models.USER.create({ fullName: 'VietAnhLoveJAV', email: 'JavIsNumber1@gmail.com', password: 'vietanh' });
+    await models.USER.create({ fullName: 'VietAnhLoveJAV', email: 'JavIsNumber1@gmail.com', password: 'vietanh' });
     await models.TAG.create({ TEN_TAG: 'SuKien' });
     await models.TAG.create({ TEN_TAG: 'Viet Anh JAV' });
     await models.TAG.create({ TEN_TAG: 'JAV is Viet Anh life' });
@@ -335,16 +335,17 @@ exports.get_test = async function (req, res, next) {
     await models.CATEGORY.create({ name: 'la la la' });
     await models.CATEGORY.create({ name: 'ha ha ha' });
     await models.CATEGORY.create({ name: 'ho ho ho' });
+    ///*
+    await models.BLOG.create({
+        uuid: uuidv4(),
+        USERId: 1,
+        CATEGORYId: 1,
+        description: 'Multiply sea night grass fourth day sea lesser rule open subdue female fill which them Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser',
+        title: '商業施設など集客するイベント系全て1年休業要請商業施設など集客するイベン',
+        content: 'khong co giiii',
+        blogimg: 'https://seido.vn/wp-content/uploads/2020/12/Colorful-Geometric-Simple-Background-Image.jpg'
+    });
     /*
-        await models.BLOG.create({
-            uuid: uuidv4(),
-            USERId: 1,
-            CATEGORYId: 1,
-            description: 'Multiply sea night grass fourth day sea lesser rule open subdue female fill which them Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser',
-            title: '商業施設など集客するイベント系全て1年休業要請商業施設など集客するイベン',
-            content: 'khong co giiii',
-            blogimg: 'https://seido.vn/wp-content/uploads/2020/12/Colorful-Geometric-Simple-Background-Image.jpg'
-        });
         await models.BLOG.create({
             uuid: uuidv4(),
             USERId: 1,
@@ -455,12 +456,14 @@ exports.get_test = async function (req, res, next) {
     // models.USER.findByPk(1, { include: ['binhluan'] }).then((user) => {
     //     console.log(user.binhluan);
     // })
+    await models.USER_UPGRADE_BLOG.create({ USERId: 1, BLOGId: 1 });
     await models.TAGKH.create({ TEN_TAG_KH: 'Abyss' });
     await models.KHOAHOC.create({ TENKH: 'No God Please', KH_IMG: 'Care', DESCRIPTION: 'No God Please,NOOO', SO_BAI_HOC: 15, THONG_TIN_KH: 'ABC', GIANGVIENId: '1' })
     await models.TAGKH_KHOAHOC.create({ KHOAHOCId: 1, TAGKHId: 1 });
     await models.CHUDEKH.create({ TEN_CHU_DE: 'Hello...' });
     await models.CHUDE_KHOAHOC.create({ KHOAHOCId: '1', CHUDEKHId: '1' });
     await models.BAIHOC.create({ KHOAHOCId: 1, TEN_BAI_HOC: 'Ranh Roi Sinh Nong Noi', LINK: 'xxx' })
+    await models.GOP_Y.create({ NAME: 'God', EMAIL: 'GodIsTheBest@gmail.com', SUBJECT: '1 2 3 5', MESSENGER: 'Rơi số 4 rồi' });
     users = []
     await models.USER.findAll({ attributes: ['fullName', 'email', 'password'] }).then((all) => {
         all.forEach((item, index) => {

@@ -1,13 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\config",
     "\\controllers",
     "\\migrations",
     "\\models",
-    "\\public",
     "\\routes"
   ],
-  "SelectedNode": "\\migrations\\20210405155341-create-lophoc.js",
+  "SelectedNode": "\\migrations\\20210502132347-create-khoahoc.js",
   "PreviewInSolutionExplorer": false
 }

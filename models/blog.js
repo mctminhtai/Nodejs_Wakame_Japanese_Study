@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
             this.belongsToMany(models.TAG, { through: models.TAG_BLOG, foreignKey: 'BLOGId', as: 'blog_tag' });
             this.hasMany(models.COMMENT, { as: 'blog_comment' });
             this.belongsTo(models.CATEGORY, { foreignKey: 'CATEGORYId', as: 'blog_category' });
-            // this.belongsToMany(models.USER, { through: models.COMMENT, foreignKey: 'BLOGId', as: 'blog_comment_user' });
+            this.belongsToMany(models.USER, { through: models.USER_UPGRADE_BLOG, foreignKey: 'BLOGId', as: 'blog_user2' });
         }
     };
     BLOG.init({
@@ -26,10 +26,12 @@ module.exports = (sequelize, DataTypes) => {
         uuid: DataTypes.UUID,
         content: DataTypes.TEXT('long'),
         description: DataTypes.STRING(1024),
+        numberlike: DataTypes.INTEGER,
+        draft: DataTypes.BOOLEAN
     }, {
-        sequelize,
-        modelName: 'BLOG',
-        freezeTableName: true,
-    });
+            sequelize,
+            modelName: 'BLOG',
+            freezeTableName: true,
+        });
     return BLOG;
 };
