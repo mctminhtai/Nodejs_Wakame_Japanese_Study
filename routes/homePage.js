@@ -15,8 +15,10 @@ router.get('/profile', homePage.get_profilePage);
 router.get('/coursesdetail', homePage.get_coursesDetailPage);
 router.get('/tkb', homePage.get_tkbPage);
 router.get('/resetpw', homePage.get_resetpwPage);
+router.post('/resetpw', homePage.post_change_pw);
 router.get('/books', homePage.get_booksPage);
 router.get('/booksdetail', homePage.get_booksdetailPage);
 router.get('/example', homePage.get_profileEditPage);
 router.post('/profile', homePage.post_profileEditPage);
+
 module.exports = router;
