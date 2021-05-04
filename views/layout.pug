@@ -3,6 +3,22 @@ head
   base(href='/')
   meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
   meta(http-equiv='x-ua-compatible' content='ie=edge')
+  meta(http-equiv='content-language' content='vi')
+  meta(name='description' content='Luyện thi JLPT cùng Wakame, với hơn 50 khóa học cùng với các giáo viên người Việt và người bản địa có kinh nghiệm lâu năm trong lĩnh vực dạy tiếng Nhật')
+  meta(name='keywords' content='Wakame, khóa học, tiếng Nhật trực tuyến' <meta='')
+  meta(name='robots' content='index, follow')
+  meta(property='og:title' content='Wakame - Học tiếng Nhật trực tuyến')
+  meta(property='og:site_name' content='Wakame')
+  meta(property='og:url' content='https://www.wakame-uit.online/')
+  meta(property='og:description' content='Luyện thi JLPT cùng Wakame, với hơn 50 khóa học cùng với các giáo viên người Việt và người bản địa có kinh nghiệm lâu năm trong lĩnh vực dạy tiếng Nhật.')
+  meta(property='og:locale' content='vi_VN')
+  meta(property='og:type' content='article')
+  meta(property='og:image' content='')
+  meta(name='DC.title' content='Wakame; tiếng Nhật trực tuyến')
+  meta(name='geo.region' content='VN-SG')
+  meta(name='geo.placename' content='Sài Gòn')
+  meta(name='geo.position' content='10.869699;106.803153')
+  meta(name='ICBM' content='10.869699, 106.803153')
   block title
   meta(name='description' content='')
   meta(name='viewport' content='width=device-width, initial-scale=1')
@@ -71,7 +87,7 @@ header
                           li
                             a(href='/courses') Khóa học
                           li
-                            a(href='/') Tài liệu
+                            a(href='/books') Tài liệu
                       li.nav-item
                         a(href='/blog') Tin tức
                       li.nav-item
@@ -199,8 +215,8 @@ footer
                   script.
                     document.write(new Date().getFullYear());
                   |  | This template is made by 
-                  a(href="https://github.com/mctminhtai/Nodejs_Wakame_Japanese_Study" target="blank")
-                    i.fab.fa-github(style="color:white")
+                  a.github-hover(href="https://github.com/mctminhtai/Nodejs_Wakame_Japanese_Study" target="blank")
+                    i.fab.fa-github(style='color:white')
                     | &nbsp;Nhóm 1
     // Footer End
 // Scroll Up
@@ -208,6 +224,7 @@ footer
   a(title='Go to Top' href='#')
     i.fas.fa-level-up-alt
 // JS here
+script(src='./assets/js/check_pw.js')
 script(src='./assets/js/vendor/modernizr-3.5.0.min.js')
 // Jquery, Popper, Bootstrap
 script(src='./assets/js/vendor/jquery-1.12.4.min.js')
