@@ -1,0 +1,114 @@
+@charset "utf-8";
+.nav-wrapper .nav .nav-item .nav-link {
+  font-size: 16px;
+}
+.main-navbar .navbar div {
+  font-size: 25px;
+}
+.nav-item .nav-link span.d-md-inline-block {
+  font-size: 20px;
+}
+.list-group-item strong {
+  width: 100px;
+  font-size: 15px;
+}
+
+.list-group-item select,
+.list-group-item input[type="date"] {
+  border: 0px solid;
+  outline: none;
+  width: 100%;
+}
+.list-group-item .select {
+  width: 100%;
+  font-size: 15px;
+}
+.list-group-item input.form-control {
+  padding: 0 0 !important;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: -2px;
+}
+div.card.card-small button,
+div.card.card-small strong,
+div.card.card-small button {
+  font-size: 15px;
+}
+.w-100px {
+  width: 100px;
+}
+
+.radio {
+  margin: 16px 0;
+  display: block;
+  cursor: pointer;
+}
+.radio input {
+  display: none;
+}
+.radio input + span {
+  line-height: 22px;
+  height: 22px;
+  padding-left: 22px;
+  display: block;
+  position: relative;
+}
+.radio input + span:not(:empty) {
+  padding-left: 30px;
+}
+.radio input + span:before,
+.radio input + span:after {
+  content: "";
+  width: 22px;
+  height: 22px;
+  display: block;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+.radio input + span:before {
+  background: #d1d7e3;
+  transition: background 0.2s ease,
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);
+}
+.radio input + span:after {
+  background: #fff;
+  transform: scale(0.78);
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+}
+.radio input:checked + span:before {
+  transform: scale(1.04);
+  background: #5d9bfb;
+}
+.radio input:checked + span:after {
+  transform: scale(0.4);
+  transition: transform 0.3s ease;
+}
+.radio:hover input + span:before {
+  transform: scale(0.92);
+}
+.radio:hover input + span:after {
+  transform: scale(0.74);
+}
+.radio:hover input:checked + span:after {
+  transform: scale(0.4);
+}
+
+select.decorated option:hover {
+  box-shadow: 0 0 10px 100px #1882a8 inset;
+}
+.btn-outline-none {
+  outline: none;
+}
+
+.nav-link {
+  display: block;
+}
+.align-top {
+  vertical-align: top;
+}
+
+.d-md-inline {
+  display: inline !important;
+}

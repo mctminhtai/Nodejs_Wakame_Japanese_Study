@@ -1,0 +1,166 @@
+<!doctype html>
+<!-- Bắt đầu phần layout -->
+<html>
+
+<head>
+      <meta charset="utf-8">
+
+
+      <title>Add_blog</title>
+      <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="../assets/css/admin_page.1.1.0.min.css">
+      <link rel="stylesheet" href="../assets/css/extras.1.1.0.min.css">
+      <link rel="stylesheet" href="../assets/css/admin_page.css">
+      <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+      <link rel="stylesheet" href="../assets/css/font-awesome.css">
+      <link rel="stylesheet" href="../assets/css/all.css">
+</head>
+
+<body class="h-100">
+      <div class="container-fluid">
+            <div class="row">
+                  <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
+                        <div class="main-navbar">
+                              <nav
+                                    class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
+                                    <a class="navbar-brand w-100 mr-0" href="#">
+                                          <div class="d-table m-auto">
+                                                <img class="d-inline-block align-top mr-1 mt-0" style="max-width: 30px;"
+                                                      src="../assets/img/logo/LogoWeb.png">
+                                                <span class="d-none d-md-inline ml-1">WAKAME</span>
+                                          </div>
+                                    </a>
+                              </nav>
+                              <div class="nav-wrapper">
+                                    <ul class="nav flex-column">
+                                          <li class="nav-item">
+                                                <a class="nav-link" href="index.html">
+                                                      <i class="fas fa-pen fa-2x"></i>
+                                                      <span>Thống kê</span>
+
+                                                </a>
+
+                                          </li>
+                                          <li class="nav-item">
+                                                <a class="nav-link" href="index.html">
+                                                      <i class="far fa-newspaper fa-2x"></i>
+                                                      <span>Bài đăng</span>
+
+                                                </a>
+
+                                          </li>
+                                          <li class="nav-item">
+                                                <a class="nav-link" href="index.html">
+                                                      <i class="fas fa-file-medical"></i>
+                                                      <span>Viết bài</span>
+
+                                                </a>
+
+                                          </li>
+                                          <li class="nav-item">
+                                                <a class="nav-link" href="index.html">
+                                                      <i class="far fa-newspaper fa-2x"></i>
+                                                      <span>Bài đăng</span>
+
+                                                </a>
+
+                                          </li>
+                                    </ul>
+
+                              </div>
+
+                        </div>
+                  </aside>
+                  <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
+                        <div class="main-navbar sticky-top bg-white align-right mb-5">
+                              <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
+                                    <div class="main-navbar w-100 d-none d-md-flex d-lg-flex"></div>
+                                    <ul class="navbar-nav border-left flex-row">
+                                          <li class="nav-item border-right dropdown notifications">
+                                                <a class="nav-link nav-link-icon text-center" href="#" role="button"
+                                                      onClick="show_noti()">
+                                                      <div class="nav-link-icon__wrapper">
+                                                            <i class="fas fa-bell"></i>
+                                                            <span class="badge badge-pill badge-danger">2</span>
+                                                      </div>
+                                                </a>
+                                                <div id="notification" class="dropdown-menu dropdown-menu-small">
+                                                      <a class="dropdown-item" href="#">
+                                                            <div class="notification__icon-wrapper">
+                                                                  <div class="notification__icon">
+                                                                        <i class="fas fa-comment-alt"></i>
+                                                                  </div>
+                                                                  <div class="notification__content">
+                                                                        <span class="notification__category">Bài
+                                                                              viết</span>
+                                                                        <p>Thầy Khoa đã bình luận bài viết của bạn</p>
+                                                                  </div>
+                                                            </div>
+                                                      </a>
+                                                      <a class="dropdown-item" href="#">
+                                                            <div class="notification__icon-wrapper">
+                                                                  <div class="notification__icon">
+                                                                        <i class="fas fa-comment-alt"></i>
+                                                                  </div>
+                                                                  <div class="notification__content">
+                                                                        <span class="notification__category">Tin
+                                                                              nhắn</span>
+                                                                        <p>Thầy Khoa đã nhắn tin cho bạn</p>
+                                                                  </div>
+                                                            </div>
+                                                      </a>
+                                                      <a class="dropdown-item notification__all text-center">Xem tất cả
+                                                            thông báo</a>
+                                                </div>
+                                          </li>
+                                          <li class="nav-item dropdown">
+                                                <a id="user" class="nav-link text-nowrap px-3" role="button"
+                                                      onClick="show()">
+                                                      <div class="d-table m-auto">
+                                                            <img class="d-inline-block align-top mr-1 mt-0 user-avatar rounded-circle"
+                                                                  style="max-width: 40px;"
+                                                                  src="../assets/img/post/post_1.png">
+                                                            <span class="d-none d-md-inline ml-1">UIT Admin</span>
+                                                            <i class="fas fa-sort-down align-top mt-1 ml-1 mr-1"></i>
+                                                      </div>
+                                                </a>
+                                                <div id="usertable" class="dropdown-menu dropdown-menu-small">
+                                                      <a class="dropdown-item text-danger" href="#">
+                                                            <i class="fas fa-sign-out-alt"></i>Logout </a>
+                                                </div>
+                                          </li>
+
+                                    </ul>
+
+                              </nav>
+
+                        </div>
+                        <!-- Kết thúc phần layout -->
+                        <!-- Bắt đầu phần thân -->
+                  </main>
+            </div>
+
+      </div>
+      <script>
+            function show() {
+                  var x = "none"
+                  if (document.getElementById("usertable").style.display == "block") {
+                        document.getElementById("usertable").style.display = "none";
+                  }
+                  else {
+                        document.getElementById("usertable").style.display = "block";
+                  }
+            }
+            function show_noti() {
+                  var x = "none"
+                  if (document.getElementById("notification").style.display == "block") {
+                        document.getElementById("notification").style.display = "none";
+                  }
+                  else {
+                        document.getElementById("notification").style.display = "block";
+                  }
+            }
+      </script>
+</body>
+
+</html>

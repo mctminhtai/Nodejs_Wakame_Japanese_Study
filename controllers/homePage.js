@@ -1,15 +1,16 @@
 const models = require('../models');
 const search = require('../utils/multiSearch');
+const bcrypt = require('bcryptjs');
 exports.get_homePage = function (req, res, next) {
     var xacnhan = false;
-
+    req.session.ten = 'tai';
     if (req.isAuthenticated()) {
         xacnhan = true;
         return res.render('index', {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -29,7 +30,7 @@ exports.get_aboutPage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -214,7 +215,7 @@ exports.get_contactPage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -233,7 +234,7 @@ exports.get_coursesPage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -269,7 +270,7 @@ exports.get_coursesDetailPage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -286,7 +287,7 @@ exports.get_tkbPage = function (req, res, next) {
         return res.render('tkb', {
             title: 'Express',
             Authenticated: xacnhan, user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -305,7 +306,7 @@ exports.get_resetpwPage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -315,7 +316,31 @@ exports.get_resetpwPage = function (req, res, next) {
         });
     }
 }
-
+exports.post_change_pw = function (req, res, next) {
+    console.log(req.body)
+    bcrypt.compare(req.body.currentpw, req.user.dataValues.password).then((result) => {
+       if(result && (req.body.newpw == req.body.re_newpw)){
+        bcrypt.hash(req.body.newpw, 10, function (err, hash) {
+        models.USER.update(
+            {
+                password:hash,
+            },
+            {
+                where: {
+                    email: req.user.dataValues.email,
+                }
+            }
+        );
+        res.send('Da thay doi pass');
+        })
+       }
+       else 
+       {
+        res.send('saimatkhau');
+       }
+    
+    })
+}
 exports.get_booksPage = function (req, res, next) {
     var xacnhan = false;
     if (req.isAuthenticated()) {
@@ -324,7 +349,7 @@ exports.get_booksPage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -343,7 +368,7 @@ exports.get_booksdetailPage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -362,7 +387,7 @@ exports.get_profileEditPage = function (req, res, next) {
             title: 'Express',
             Authenticated: xacnhan,
             user_name: req.user.dataValues.fullName,
-            email_user: req.user.dataValues.email
+            user_email: req.user.dataValues.email
         });
     }
     else {
@@ -374,13 +399,10 @@ exports.get_profileEditPage = function (req, res, next) {
 }
 
 exports.post_profileEditPage = function (req, res, next) {
-    // var xacnhan = false;
-    // if (req.isAuthenticated()) {
-    //     xacnhan = true;
-    //     return res.render('example', { title: 'Express', Authenticated: xacnhan, user_name: req.user.dataValues.fullName, email_user: req.user.dataValues.email });
-    // }
-    // else { return res.render('example', { title: 'Express', Authenticated: xacnhan }); }
+
+    console.log('dang body')
     console.log(req.body)
+    console.log('dang token')
     console.log(req.session.token)
     models.USER.update(
         {
@@ -398,5 +420,15 @@ exports.post_profileEditPage = function (req, res, next) {
             }
         }
     );
-    res.send('ok');
+    if (res.send(req.user.email) == req.user.dataValues.email) {
+        res.send(req.user.email);
+    }
+    else {
+        res.send('not ok');
+
+    }
+    // return res.render('profile', {
+    //     title: 'Express',
+    //     Authenticated: xacnhan
+    // });
 }

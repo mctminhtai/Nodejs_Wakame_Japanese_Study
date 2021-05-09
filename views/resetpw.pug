@@ -1,8 +1,10 @@
 extends layout
 block title 
-  title Thời khóa biểu | Wakame
+  title Thời khóa biểu | Wakame 
+  
 block main
   main
+
     // ? slider Area Start
     section.slider-area.slider-area2
       .slider-active
@@ -12,15 +14,7 @@ block main
             .row
               .col-xl-8.col-lg-11.col-md-12
                 .hero__caption.hero__caption2
-                  h1(data-animation='bounceIn' data-delay='0.2s') Thời khóa biểu
-                  // breadcrumb Start
-                  nav(aria-label='breadcrumb')
-                    ol.breadcrumb
-                      li.breadcrumb-item
-                        a(href='/') Trang chủ
-                      li.breadcrumb-item
-                        a(href='/resetpw') Thời khóa biểu
-                  // breadcrumb End
+                  h1(data-animation='bounceIn' data-delay='0.2s') Tài khoản
     .services-area.services-area2(style="padding-top:50px;padding-bottom:50px")
       .container
         .row.justify-content-sm-center
@@ -38,28 +32,34 @@ block main
               .col-xl-12.col-lg-11.col-md-12
                 h1 Đổi mật khẩu
                 p Bạn nên sử dụng mật khẩu mạnh mà mình chưa sử dụng ở đâu khác
-            .row(style="width:700px;margin-bottom:20px")
-              .col-xl-4.col-lg-11.col-md-12
-                .features-caption
-                  label(for="currentpw") Mật khẩu hiện tại                
-              .col-xl-6.col-lg-11.col-md-12
-                .features-caption
-                  input(type='password' name='currentpw' )
-            .row(style="width:700px;margin-bottom:20px")
-              .col-xl-4.col-lg-11.col-md-12
-                .features-caption
-                  label(for="newpw") Mật khẩu mới                
-              .col-xl-6.col-lg-11.col-md-12
-                .features-caption
-                  input(type='password' name='newpw' )
-            .row(style="width:700px;margin-bottom:20px")
-              .col-xl-4.col-lg-11.col-md-12
-                .features-caption
-                  label(for="re_newpw") Nhập lại mật khẩu mới               
-              .col-xl-6.col-lg-11.col-md-12
-                .features-caption
-                  input(type='password' name='re_newpw' )
-            a.forget(href='#' style="color:#4255a4;text-decoration:underline;margin-bottom:20px") Quên mật khẩu
-            br
-            button#sign-in-btn.btn(style="margin-top:20px")
-                    | Lưu thay đổi
+            form(action='/resetpw' method='POST')    
+              .form-group.row
+                .row(style="width:700px;margin-bottom:20px")
+                  .col-xl-4.col-lg-11.col-md-12
+                    .features-caption
+                      label(for="currentpw") Mật khẩu hiện tại                
+                  .col-xl-6.col-lg-11.col-md-12
+                    .features-caption
+                      input(type='password' name='currentpw' )
+              .form-group.row      
+                .row(style="width:700px;margin-bottom:20px")
+                  .col-xl-4.col-lg-11.col-md-12
+                    .features-caption
+                      label(for="newpw") Mật khẩu mới                
+                  .col-xl-6.col-lg-11.col-md-12
+                    .features-caption
+                      input(type='password' name='newpw' minlength="8" )#pass_new
+              .form-group.row
+                .row(style="width:700px;margin-bottom:20px")
+                  .col-xl-4.col-lg-11.col-md-12
+                    .features-caption
+                      label(for="re_newpw") Nhập lại mật khẩu mới               
+                  .col-xl-6.col-lg-11.col-md-12
+                    .features-caption
+                      input(type='password' name='re_newpw' minlength="8" )#re_pass_new
+              .form-group.row
+                a.forget(href='#' style="color:#4255a4;text-decoration:underline;margin-bottom:20px") Quên mật khẩu
+              .form-group.row
+                br
+                br
+                button.button.button-contactForm.boxed-btn(type='submit' style='border-radius:5px;padding:10px 30px') Lưu 

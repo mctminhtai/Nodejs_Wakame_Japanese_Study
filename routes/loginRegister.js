@@ -13,7 +13,12 @@ router.post(
     validate.checkErr,
     loginRegister.post_login,
 );
-
+router.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));
+router.get('/auth/facebook/callback',
+    passport.authenticate('facebook', {
+        successRedirect: '/',
+        failureRedirect: '/accounts'
+    }));
 router.post(
     '/register',
     body('name', 'tên phải lớn hơn 5 ký tự').isLength({ min: 5 }),

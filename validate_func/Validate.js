@@ -23,10 +23,11 @@ exports.checkErr = function (req, res, next) {
 }
 exports.ResetPwd_checkErr = async function (req, res, next) {
     var received_token = req.param('token');
-    savedToken = await models.RESETTOKEN.findOne({
-        where: { token: received_token }
-    });
-    if (savedToken) {
+    // savedToken = await models.RESETTOKEN.findOne({
+    //     where: { token: received_token }
+    // });
+    var savedToken = req.session.rsPwdToken;
+    if (savedToken.token == received_token) {
         const arrerrors = validationResult(req);
         var errors = {}
         console.log(arrerrors);

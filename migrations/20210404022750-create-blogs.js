@@ -40,6 +40,14 @@ module.exports = {
             description: {
                 type: Sequelize.STRING(1024)
             },
+            numberlike: {
+                type: Sequelize.INTEGER,
+                defaultValue: 77
+            },
+            draft: {
+                type: Sequelize.BOOLEAN,
+                defaultValue: true,
+            },
             content: {
                 type: Sequelize.TEXT('long')
             },
