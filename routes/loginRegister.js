@@ -51,6 +51,6 @@ router.post(
 router.get('/active', loginRegister.get_active);
 router.post('/active', loginRegister.post_active);
 router.get('/test', loginRegister.get_test);
-router.get('/captcha', loginRegister.get_captcha);
-router.post('/captcha', loginRegister.post_captcha);
+router.get('/dangbai', loginRegister.get_captcha);
+router.post('/dangbai', loginRegister.post_captcha);
 module.exports = router;

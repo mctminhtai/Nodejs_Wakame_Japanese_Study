@@ -325,24 +325,35 @@ exports.get_test = async function (req, res, next) {
     // })
     // await models.USER.create({ fullName: 'minhtai33', actived: true, email: 'mct.minhtai@gmail.com', password: '$2a$10$VZZVEldp4B.FEFxP2uci9.3s.QiLEpC05m9aTbXa.v6tPzDlNLAmu' });
     // await models.USER.create({ fullName: 'VietAnhJav', email: 'JavIsNumberOne@gmail.com', password: 'vietanh' });
-    await models.USER.create({ fullName: 'VietAnhLoveJAV', email: 'JavIsNumber1@gmail.com', password: 'vietanh' });
-    await models.TAG.create({ TEN_TAG: 'SuKien' });
-    await models.TAG.create({ TEN_TAG: 'Viet Anh JAV' });
-    await models.TAG.create({ TEN_TAG: 'JAV is Viet Anh life' });
-    await models.TAG.create({ TEN_TAG: 'Viet Anh Love JAV' });
-    await models.TAG.create({ TEN_TAG: 'Viet Anh hontoni JAV wo aishiteiru' });
-    await models.TAG.create({ TEN_TAG: 'Viet Anh la fan cua Tokuda' });
-    await models.CATEGORY.create({ name: 'la la la' });
-    await models.CATEGORY.create({ name: 'ha ha ha' });
-    await models.CATEGORY.create({ name: 'ho ho ho' });
+    // await models.USER.create({ fullName: 'VietAnhLoveJAV', email: 'JavIsNumber1@gmail.com', password: 'vietanh' });
+    await models.TAG.create({ TEN_TAG: 'Tiếng Nhật' });
+    await models.TAG.create({ TEN_TAG: 'Đời sống' });
+    await models.TAG.create({ TEN_TAG: 'Tài liệu' });
+    await models.TAG.create({ TEN_TAG: 'Mẹo học tập' });
+    await models.CATEGORY.create({ name: 'Luyện Nghe' });
+    await models.CATEGORY.create({ name: 'Luyện Đọc' });
+    await models.CATEGORY.create({ name: 'N1' });
+    await models.CATEGORY.create({ name: 'N2' });
+    await models.CATEGORY.create({ name: 'N3' });
+    await models.CATEGORY.create({ name: 'N4' });
+    await models.CATEGORY.create({ name: 'N5' });
     ///*
     await models.BLOG.create({
         uuid: uuidv4(),
         USERId: 1,
         CATEGORYId: 1,
-        description: 'Multiply sea night grass fourth day sea lesser rule open subdue female fill which them Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser',
-        title: '商業施設など集客するイベント系全て1年休業要請商業施設など集客するイベン',
-        content: 'khong co giiii',
+        description: 'Việc học một ngôn ngữ chưa bao giờ là thừa trong thời đại ngày nay khi chỉ biết mỗi tiếng Anh là chưa đủ. Trong môi trường làm việc cạnh tranh như hiện nay, việc học thêm tiếng nhật là cần thiết để tăng cơ hội việc làm',
+        title: 'Học tiếng Nhật để tìm kiếm cơ hội việc làm, du học, sinh sống tại Nhật',
+        content: '<p><strong><em><u>VÌ SAO NÊN LỰA CHỌN HỌC TIẾNG NHẬT</u></em></strong>(title)</p><p>(MB)Việc học một ngôn ngữ chưa bao giờ là thừa trong thời đại ngày nay khi chỉ biết mỗi tiếng Anh là chưa đủ. Trong môi trường làm việc cạnh tranh như hiện nay, việc học thêm tiếng nhật là cần thiết để tăng cơ hội việc làm, có được mức lương mong muốn. Hãy cùng wakame chỉ ra 5 lợi ích mà tiếng nhật mang lại cho người học nhé.</p><ol><li><strong> Học tiếng nhật để tìm kiếm mức lương cao (heading 1)</strong></li></ol><p style="text-align: left;" data-mce-style="text-align: left;">Với sự đầu tư ngày càng tăng từ Nhật Bản cũng như sự hợp tác&nbsp;của các doanh nghiệp Việt Nam với Nhật Bản, nhu cầu công việc cho người biết tiếng Nhật là tương đối cao. Ví dụ như ngành IT, một sinh viên mới tốt nghiệp ra trường <em>biết tiếng Nhậ</em>t cũng đã có mức lương từ 500 – 600 USD/ tháng. Trong khi đó, một nhân viên IT đã <em>thành thạo tiếng Nhật</em>, thì mức lương sẽ không bao giờ dưới 1000 USD. <br>Vì số lượng người biết tiếng Nhật là hạn chế, nên việc học tiếng Nhật sẽ giúp bạn trở nên hấp dẫn hơn trong mắt nhà tuyển dụng, dễ dàng kiếm dược mức lương tốt.</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><ol start="2"><li><strong> Học tiếng Nhật để tìm kiếm cơ hội việc làm, du học, sinh sống tại Nhật</strong></li></ol><p><br><em>&nbsp;Đầu tư cho tiếng Nhật</em> mang lại lợi thế không hề nhỏ cho tương lai.</p><p><img src="https://drive.google.com/uc?export=download&amp;id=1EkOLhiLR1vO78P7_2U3la8jnCxb2Eo5k" width="500" height="300" alt="Đầu tư cho tiếng Nhật" data-mce-src="https://drive.google.com/uc?export=download&amp;id=1EkOLhiLR1vO78P7_2U3la8jnCxb2Eo5k"><br></p><p>Việc học tiếng Nhật giúp tăng thêm khả năng giành học bổng tại các trường đại học của Nhật Bản, mở ra cơ hội du học, trải nghiệm tuyệt vời tại xứ sở hoa anh đào.. Nếu bạn học tiếng Nhật một cách thực sự tập trung và cố gắng thì việc đạt được <em>bằng tiếng Nhật N3, N4 hay N5</em> là không khó. Có bằng cấp, giao tiếp tốt mà lại vững kinh nghiệm thì chuyện việc làm là hiển nhiên. Hơn nữa, việc giao tiếp tiếng Nhật tốt sẽ giúp bạn tự tin hoà nhập, vượt qua những trở ngại nơi đất khách quê người. (link cơ hội du học - link học bổng - làm sau)</p>',
+        blogimg: 'https://seido.vn/wp-content/uploads/2020/12/Colorful-Geometric-Simple-Background-Image.jpg'
+    });
+    await models.BLOG.create({
+        uuid: uuidv4(),
+        USERId: 1,
+        CATEGORYId: 1,
+        description: 'Việc học một ngôn ngữ chưa bao giờ là thừa trong thời đại ngày nay khi chỉ biết mỗi tiếng Anh là chưa đủ. Trong môi trường làm việc cạnh tranh như hiện nay, việc học thêm tiếng nhật là cần thiết để tăng cơ hội việc làm',
+        title: 'Học tiếng Nhật để tìm kiếm cơ hội việc làm, du học, sinh sống tại Nhật',
+        content: '<p><strong><em><u>VÌ SAO NÊN LỰA CHỌN HỌC TIẾNG NHẬT</u></em></strong>(title)</p><p>(MB)Việc học một ngôn ngữ chưa bao giờ là thừa trong thời đại ngày nay khi chỉ biết mỗi tiếng Anh là chưa đủ. Trong môi trường làm việc cạnh tranh như hiện nay, việc học thêm tiếng nhật là cần thiết để tăng cơ hội việc làm, có được mức lương mong muốn. Hãy cùng wakame chỉ ra 5 lợi ích mà tiếng nhật mang lại cho người học nhé.</p><ol><li><strong> Học tiếng nhật để tìm kiếm mức lương cao (heading 1)</strong></li></ol><p style="text-align: left;" data-mce-style="text-align: left;">Với sự đầu tư ngày càng tăng từ Nhật Bản cũng như sự hợp tác&nbsp;của các doanh nghiệp Việt Nam với Nhật Bản, nhu cầu công việc cho người biết tiếng Nhật là tương đối cao. Ví dụ như ngành IT, một sinh viên mới tốt nghiệp ra trường <em>biết tiếng Nhậ</em>t cũng đã có mức lương từ 500 – 600 USD/ tháng. Trong khi đó, một nhân viên IT đã <em>thành thạo tiếng Nhật</em>, thì mức lương sẽ không bao giờ dưới 1000 USD. <br>Vì số lượng người biết tiếng Nhật là hạn chế, nên việc học tiếng Nhật sẽ giúp bạn trở nên hấp dẫn hơn trong mắt nhà tuyển dụng, dễ dàng kiếm dược mức lương tốt.</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><ol start="2"><li><strong> Học tiếng Nhật để tìm kiếm cơ hội việc làm, du học, sinh sống tại Nhật</strong></li></ol><p><br><em>&nbsp;Đầu tư cho tiếng Nhật</em> mang lại lợi thế không hề nhỏ cho tương lai.</p><p><img src="https://drive.google.com/uc?export=download&amp;id=1EkOLhiLR1vO78P7_2U3la8jnCxb2Eo5k" width="500" height="300" alt="Đầu tư cho tiếng Nhật" data-mce-src="https://drive.google.com/uc?export=download&amp;id=1EkOLhiLR1vO78P7_2U3la8jnCxb2Eo5k"><br></p><p>Việc học tiếng Nhật giúp tăng thêm khả năng giành học bổng tại các trường đại học của Nhật Bản, mở ra cơ hội du học, trải nghiệm tuyệt vời tại xứ sở hoa anh đào.. Nếu bạn học tiếng Nhật một cách thực sự tập trung và cố gắng thì việc đạt được <em>bằng tiếng Nhật N3, N4 hay N5</em> là không khó. Có bằng cấp, giao tiếp tốt mà lại vững kinh nghiệm thì chuyện việc làm là hiển nhiên. Hơn nữa, việc giao tiếp tiếng Nhật tốt sẽ giúp bạn tự tin hoà nhập, vượt qua những trở ngại nơi đất khách quê người. (link cơ hội du học - link học bổng - làm sau)</p>',
         blogimg: 'https://seido.vn/wp-content/uploads/2020/12/Colorful-Geometric-Simple-Background-Image.jpg'
     });
     /*
@@ -448,7 +459,7 @@ exports.get_test = async function (req, res, next) {
     // await models.THU.create({ TEN_THU: 'Thu 2' });
     // await models.TIET.create({ TEN_TIET: 'Tiet 3' });
     // await models.TIET_THU.create({ THUId: 1, TIETId: 1 });
-    await models.GIANGVIEN.create({ TEN_GV: 'God' });
+    // await models.GIANGVIEN.create({ TEN_GV: 'God' });
     // await models.DS_LOP_HOC.create({ LOPHOCId: 1, GIANGVIENId: 1, THUId: 1, TIETId: 1 });
     // await models.TKB_DU_KIEN.create({ USERId: 1, LOPHOCId: 1, THUId: 1, TIETId: 1 });
     // await models.DS_MON_DA_HOC.create({ USERId: 1, MONHOCId: 1 });
@@ -456,14 +467,14 @@ exports.get_test = async function (req, res, next) {
     // models.USER.findByPk(1, { include: ['binhluan'] }).then((user) => {
     //     console.log(user.binhluan);
     // })
-    await models.USER_UPGRADE_BLOG.create({ USERId: 1, BLOGId: 1 });
-    await models.TAGKH.create({ TEN_TAG_KH: 'Abyss' });
-    await models.KHOAHOC.create({ TENKH: 'No God Please', KH_IMG: 'Care', DESCRIPTION: 'No God Please,NOOO', SO_BAI_HOC: 15, THONG_TIN_KH: 'ABC', GIANGVIENId: '1' })
-    await models.TAGKH_KHOAHOC.create({ KHOAHOCId: 1, TAGKHId: 1 });
-    await models.CHUDEKH.create({ TEN_CHU_DE: 'Hello...' });
-    await models.CHUDE_KHOAHOC.create({ KHOAHOCId: '1', CHUDEKHId: '1' });
-    await models.BAIHOC.create({ KHOAHOCId: 1, TEN_BAI_HOC: 'Ranh Roi Sinh Nong Noi', LINK: 'xxx' })
-    await models.GOP_Y.create({ NAME: 'God', EMAIL: 'GodIsTheBest@gmail.com', SUBJECT: '1 2 3 5', MESSENGER: 'Rơi số 4 rồi' });
+    // await models.USER_UPGRADE_BLOG.create({ USERId: 1, BLOGId: 1 });
+    // await models.TAGKH.create({ TEN_TAG_KH: 'Abyss' });
+    // await models.KHOAHOC.create({ TENKH: 'No God Please', KH_IMG: 'Care', DESCRIPTION: 'No God Please,NOOO', SO_BAI_HOC: 15, THONG_TIN_KH: 'ABC', GIANGVIENId: '1' })
+    // await models.TAGKH_KHOAHOC.create({ KHOAHOCId: 1, TAGKHId: 1 });
+    // await models.CHUDEKH.create({ TEN_CHU_DE: 'Hello...' });
+    // await models.CHUDE_KHOAHOC.create({ KHOAHOCId: '1', CHUDEKHId: '1' });
+    // await models.BAIHOC.create({ KHOAHOCId: 1, TEN_BAI_HOC: 'Ranh Roi Sinh Nong Noi', LINK: 'xxx' })
+    // await models.GOP_Y.create({ NAME: 'God', EMAIL: 'GodIsTheBest@gmail.com', SUBJECT: '1 2 3 5', MESSENGER: 'Rơi số 4 rồi' });
     users = []
     await models.USER.findAll({ attributes: ['fullName', 'email', 'password'] }).then((all) => {
         all.forEach((item, index) => {
