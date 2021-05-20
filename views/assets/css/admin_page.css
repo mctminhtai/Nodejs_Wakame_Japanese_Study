@@ -9,7 +9,6 @@
   font-size: 20px;
 }
 .list-group-item strong {
-  width: 100px;
   font-size: 15px;
 }
 
@@ -36,6 +35,22 @@ div.card.card-small button {
 }
 .w-100px {
   width: 100px;
+}
+.w-70px {
+  width: 70px;
+}
+.mt--3 {
+  margin-top: -1.5rem;
+}
+.w-30px {
+  width: 30px !important;
+}
+.w-fit {
+  width: fit-content !important;
+}
+.border-width-1 {
+  border-width: 0.1rem !important;
+  border-color: black !important;
 }
 
 .radio {
