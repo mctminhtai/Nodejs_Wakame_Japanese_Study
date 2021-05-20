@@ -1,0 +1,229 @@
+//  Bắt đầu phần layout 
+meta(charset="utf-8")
+title Manage_blog
+link(rel="stylesheet", href="../assets/css/bootstrap.min.css")
+link(rel="stylesheet", href="../assets/css/admin_page.1.1.0.min.css")
+link(rel="stylesheet", href="../assets/css/extras.1.1.0.min.css")
+link(rel="stylesheet", href="../assets/css/admin_page.css")
+link(rel="stylesheet", href="../assets/css/fontawesome-all.min.css")
+link(rel="stylesheet", href="../assets/css/font-awesome.css")
+link(rel="stylesheet", href="../assets/css/all.css")
+.container-fluid
+  .row
+    aside.main-sidebar.col-12.col-md-3.col-lg-2.px-0
+      .main-navbar
+        nav.navbar.align-items-stretch.navbar-light.bg-white.flex-md-nowrap.border-bottom.p-0
+          a.navbar-brand.w-100.mr-0(href="#")
+            .d-table.m-auto
+              img.d-inline-block.align-top.mr-1.mt-0(style="max-width: 30px;", src="../assets/img/logo/LogoWeb.png")
+              span.d-none.d-md-inline.ml-1 WAKAME
+        .nav-wrapper
+          ul.nav.flex-column
+            li.nav-item
+              a.nav-link(href="index.html")
+                i.fas.fa-pen.fa-2x
+                span Thống kê
+            li.nav-item
+              a.nav-link(href="index.html")
+                i.far.fa-newspaper.fa-2x
+                span Bài đăng
+            li.nav-item
+              a.nav-link(href="./add_blog.html")
+                i.fas.fa-file-medical
+                span Viết bài
+            li.nav-item
+              a.nav-link(href="index.html")
+                i.far.fa-newspaper.fa-2x
+                span Bài đăng
+    main.main-content.col-lg-10.col-md-9.col-sm-12.p-0.offset-lg-2.offset-md-3
+      .main-navbar.sticky-top.bg-white.align-right.mb-5
+        nav.navbar.align-items-stretch.navbar-light.flex-md-nowrap.p-0
+          .main-navbar.w-100.d-none.d-md-flex.d-lg-flex
+          ul.navbar-nav.border-left.flex-row
+            li.nav-item.border-right.dropdown.notifications
+              a.nav-link.nav-link-icon.text-center(href="#", role="button", onclick="show_noti()")
+                .nav-link-icon__wrapper
+                  i.fas.fa-bell
+                  span.badge.badge-pill.badge-danger 2
+              #notification.dropdown-menu.dropdown-menu-small
+                a.dropdown-item(href="#")
+                  .notification__icon-wrapper
+                    .notification__icon
+                      i.fas.fa-comment-alt
+                    .notification__content
+                      span.notification__category Bài viết
+                      p Thầy Khoa đã bình luận bài viết của bạn
+                a.dropdown-item(href="#")
+                  .notification__icon-wrapper
+                    .notification__icon
+                      i.fas.fa-comment-alt
+                    .notification__content
+                      span.notification__category Tin nhắn
+                      p Thầy Khoa đã nhắn tin cho bạn
+                a.dropdown-item.notification__all.text-center Xem tất cả thông báo
+            li.nav-item.dropdown
+              a#user.nav-link.text-nowrap.px-3(role="button", onclick="show()")
+                .d-table.m-auto
+                  img.d-inline-block.align-top.mr-1.mt-0.user-avatar.rounded-circle(style="max-width: 40px;", src="../assets/img/post/post_1.png")
+                  span.d-none.d-md-inline.ml-1 UIT Admin
+                  i.fas.fa-sort-down.align-top.mt-1.ml-1.mr-1
+              #usertable.dropdown-menu.dropdown-menu-small
+                a.dropdown-item.text-danger(href="#")
+                  i.fas.fa-sign-out-alt
+                  | Logout 
+      //  Kết thúc phần layout 
+      //  Bắt đầu phần thân 
+      .main-content-container.container-fluid.px-4
+        .col-lg-12.col-md-12.col-sm-12.mb-4.mt--3.px-0
+          .card.mb-3.list-group.list-group-flush
+            form.card-header.list-group-item.d-flex.rounded.px-3.pt-2.pb-2.d-flex.mt-2.mb-2.border-0
+              .ml-3.d-flex.border-right.mt-1.pr-3.border-width-1
+                i.fas.fa-filter.mt-1.mr-1
+                strong.mr-4.w-fit Bộ lọc
+              .pl-3.d-flex.mt-1.border-right.pr-3.border-width-1
+                strong.mr-1.w-fit Từ
+                input.mr-1.form-control.w-fit.border(type="date", onclick="noti();")
+                strong.mr-1.w-fit đến
+                input#setdate.form-control.w-fit.border(type="date")
+              .pl-3.d-flex.border-right.mt-1.pr-3.border-width-1
+                strong.mr-1.w-70px Chủ đề
+                .select.border.rounded
+                  select#slct(name="slct")
+                    option(value="1", selected).
+                      全部
+                      
+                    option(value="2") Học tập
+                    option(value="3") Văn hóa
+                    option(value="4") Việc làm
+                    option(value="5") Thông báo
+              .pl-3.d-flex.pr-3.mt-1.border-right.border-width-1
+                strong.mr-1.w-70px Tác giả
+                .select.border.rounded
+                  select#slct(name="slct")
+                    option(value="1", selected).
+                      全部
+                      
+                    option(value="2") Lê Minh Tài
+                    option(value="3") Nguyễn Phương Nam
+                    option(value="4") Phạm Vũ Kiều Tiên
+                    option(value="5") UIT Admin
+              .pl-3.d-flex
+                button.mr-1.rounded.border-0.btn-success(type="submit", style="opacity: 0.8")
+                  i.far.fa-check-circle.mr-1
+                  | Lọc
+                button.btn-danger.rounded.border-0(type="submit", style="opacity: 0.8")
+                  i.far.fa-times-circle.mr-1
+                  | Hủy lọc
+        .row
+          .col-lg-3.col-md-6.col-sm-12.mb-4
+            .card.card-small.card-post--1
+              .card-post__image(style="background-image: url(\'../assets/img/blog/blog_talkshow.jpg\');")
+                a.card-post__category.badge.badge-pill.badge-dark(href="#") Business
+                .card-post__author.d-flex
+                  a.card-post__author-avatar.card-post__author-avatar--small(href="#", style="background-image: url(\'../assets/img/blog/author.jpg\');") Written by Lê Minh Tài
+              .card-body
+                h5.card-title
+                  a.text-fiord-blue(href="#") Quản lý bài viết
+                p.card-text.d-inline-block.mb-3 However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...
+                span.text-muted 09/05/2021
+          .col-lg-3.col-md-6.col-sm-12.mb-4
+            .card.card-small.card-post--1
+              .card-post__image(style="background-image: url(\'../assets/img/blog/blog_talkshow.jpg\');")
+                a.card-post__category.badge.badge-pill.badge-dark(href="#") Business
+                .card-post__author.d-flex
+                  a.card-post__author-avatar.card-post__author-avatar--small(href="#", style="background-image: url(\'../assets/img/blog/author.jpg\');") Written by Lê Minh Tài
+              .card-body
+                h5.card-title
+                  a.text-fiord-blue(href="#") Quản lý bài viết
+                p.card-text.d-inline-block.mb-3 However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...
+                span.text-muted 09/05/2021
+          .col-lg-3.col-md-6.col-sm-12.mb-4
+            .card.card-small.card-post--1
+              .card-post__image(style="background-image: url(\'../assets/img/blog/blog_talkshow.jpg\');")
+                a.card-post__category.badge.badge-pill.badge-dark(href="#") Business
+                .card-post__author.d-flex
+                  a.card-post__author-avatar.card-post__author-avatar--small(href="#", style="background-image: url(\'../assets/img/blog/author.jpg\');") Written by Lê Minh Tài
+              .card-body
+                h5.card-title
+                  a.text-fiord-blue(href="#") Quản lý bài viết
+                p.card-text.d-inline-block.mb-3 However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...
+                span.text-muted 09/05/2021
+          .col-lg-3.col-md-6.col-sm-12.mb-4
+            .card.card-small.card-post--1
+              .card-post__image(style="background-image: url(\'../assets/img/blog/blog_talkshow.jpg\');")
+                a.card-post__category.badge.badge-pill.badge-dark(href="#") Business
+                .card-post__author.d-flex
+                  a.card-post__author-avatar.card-post__author-avatar--small(href="#", style="background-image: url(\'../assets/img/blog/author.jpg\');") Written by Lê Minh Tài
+              .card-body
+                h5.card-title
+                  a.text-fiord-blue(href="#") Quản lý bài viết
+                p.card-text.d-inline-block.mb-3 However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...
+                span.text-muted 09/05/2021
+          .col-lg-3.col-md-6.col-sm-12.mb-4
+            .card.card-small.card-post--1
+              .card-post__image(style="background-image: url(\'../assets/img/blog/blog_talkshow.jpg\');")
+                a.card-post__category.badge.badge-pill.badge-dark(href="#") Business
+                .card-post__author.d-flex
+                  a.card-post__author-avatar.card-post__author-avatar--small(href="#", style="background-image: url(\'../assets/img/blog/author.jpg\');") Written by Lê Minh Tài
+              .card-body
+                h5.card-title
+                  a.text-fiord-blue(href="#") Quản lý bài viết
+                p.card-text.d-inline-block.mb-3 However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...
+                span.text-muted 09/05/2021
+          .col-lg-3.col-md-6.col-sm-12.mb-4
+            .card.card-small.card-post--1
+              .card-post__image(style="background-image: url(\'../assets/img/blog/blog_talkshow.jpg\');")
+                a.card-post__category.badge.badge-pill.badge-dark(href="#") Business
+                .card-post__author.d-flex
+                  a.card-post__author-avatar.card-post__author-avatar--small(href="#", style="background-image: url(\'../assets/img/blog/author.jpg\');") Written by Lê Minh Tài
+              .card-body
+                h5.card-title
+                  a.text-fiord-blue(href="#") Quản lý bài viết
+                p.card-text.d-inline-block.mb-3 However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...
+                span.text-muted 09/05/2021
+          .col-lg-3.col-md-6.col-sm-12.mb-4
+            .card.card-small.card-post--1
+              .card-post__image(style="background-image: url(\'../assets/img/blog/blog_talkshow.jpg\');")
+                a.card-post__category.badge.badge-pill.badge-dark(href="#") Business
+                .card-post__author.d-flex
+                  a.card-post__author-avatar.card-post__author-avatar--small(href="#", style="background-image: url(\'../assets/img/blog/author.jpg\');") Written by Lê Minh Tài
+              .card-body
+                h5.card-title
+                  a.text-fiord-blue(href="#") Quản lý bài viết
+                p.card-text.d-inline-block.mb-3 However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...
+                span.text-muted 09/05/2021
+          .col-lg-3.col-md-6.col-sm-12.mb-4
+            .card.card-small.card-post--1
+              .card-post__image(style="background-image: url(\'../assets/img/blog/blog_talkshow.jpg\');")
+                a.card-post__category.badge.badge-pill.badge-dark(href="#") Business
+                .card-post__author.d-flex
+                  a.card-post__author-avatar.card-post__author-avatar--small(href="#", style="background-image: url(\'../assets/img/blog/author.jpg\');") Written by Lê Minh Tài
+              .card-body
+                h5.card-title
+                  a.text-fiord-blue(href="#") Quản lý bài viết
+                p.card-text.d-inline-block.mb-3 However venture pursuit he am mr cordial. Forming musical am hearing studied be luckily. But in for determine what would see...
+                span.text-muted 09/05/2021
+script.
+  
+  function show() {
+              var x = "none"
+              if (document.getElementById("usertable").style.display == "block") {
+                  document.getElementById("usertable").style.display = "none";
+              }
+              else {
+                  document.getElementById("usertable").style.display = "block";
+              }
+          }
+          function show_noti() {
+              var x = "none"
+              if (document.getElementById("notification").style.display == "block") {
+                  document.getElementById("notification").style.display = "none";
+              }
+              else {
+                  document.getElementById("notification").style.display = "block";
+              }
+          };
+            function noti(){
+                  alert("1")
+            }
+  
