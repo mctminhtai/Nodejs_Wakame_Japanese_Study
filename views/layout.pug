@@ -1,262 +1,262 @@
 doctype html
-head
-  base(href='/')
-  meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
-  meta(http-equiv='x-ua-compatible' content='ie=edge')
-  block title
-  meta(http-equiv='content-language' content='vi')
-  meta(name='description' content='Luyện thi JLPT cùng Wakame, với hơn 50 khóa học cùng với các giáo viên người Việt và người bản địa có kinh nghiệm lâu năm trong lĩnh vực dạy tiếng Nhật')
-  meta(name='keywords' content='Wakame UIT,Wakame-UIT, luyện thi JLPT Wakame UIT, tài liệu luyện thi JLPT,tài liệu học tập UIT, luyện thi cấp tốc, phương pháp học tiếng Nhật hiệu quả, ')
-  meta(name='robots' content='index, follow')
-  meta(property='og:title' content='Wakame - Học tiếng Nhật trực tuyến')
-  meta(property='og:site_name' content='Wakame')
-  meta(property='og:url' content='https://www.wakame-uit.online/')
-  meta(property='og:description' content='Luyện thi JLPT cùng Wakame, với hơn 50 khóa học cùng với các giáo viên người Việt và người bản địa có kinh nghiệm lâu năm trong lĩnh vực dạy tiếng Nhật.')
-  meta(property='og:locale' content='vi_VN')
-  meta(property='og:type' content='article')
-  meta(property='og:image' content='')
-  meta(name='DC.title' content='Wakame; tiếng Nhật trực tuyến')
-  meta(name='geo.region' content='VN-HCM')
-  meta(name='geo.placename' content='Tp Hồ Chí Minh')
-  meta(name='geo.position' content='10.869699;106.803153')
-  meta(name='ICBM' content='10.869699, 106.803153')
-  meta(name='viewport' content='width=device-width, initial-scale=1')
-  link(rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico')
-  // CSS here
-  link(rel='stylesheet' href='assets/css/bootstrap.min.css')
-  link(rel='stylesheet' href='assets/css/owl.carousel.min.css')
-  link(rel='stylesheet' href='assets/css/slicknav.css')
-  link(rel='stylesheet' href='assets/css/flaticon.css')
-  link(rel='stylesheet' href='assets/css/progressbar_barfiller.css')
-  link(rel='stylesheet' href='assets/css/gijgo.css')
-  link(rel='stylesheet' href='assets/css/animate.min.css')
-  link(rel='stylesheet' href='assets/css/animated-headline.css')
-  link(rel='stylesheet' href='assets/css/magnific-popup.css')
-  link(rel='stylesheet' href='assets/css/themify-icons.css')
-  link(rel='stylesheet' href='assets/css/slick.css')
-  link(rel='stylesheet' href='assets/css/nice-select.css')
-  link(rel='stylesheet' href='assets/css/style.css')
-  link(rel='stylesheet' href='assets/css/all.css')
-  script(async src="https://www.googletagmanager.com/gtag/js?id=G-M2GP21HT75")
-  script.
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-M2GP21HT75');
-  script 
-    include GoogleTagManager.js
-// ? Preloader Start
-noscript
-  iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-54RB25S' height='0' width='0' style='display:none;visibility:hidden')
-#preloader-active
-  .preloader.d-flex.align-items-center.justify-content-center
-    .preloader-inner.position-relative
-      .preloader-circle
-      .preloader-img.pere-text
-        img(src='assets/img/logo/onion_logo.svg' alt='' style='width:120px; height:50px;')
-// Preloader Start
-header
-  // Header Start
-  .header-area.header-transparent
-    .main-header
-      .header-bottom.header-sticky#header-background.visible
-        p#out
-      .header-bottom.header-sticky
-        .container-fluid
-          .row.align-items-center
-            // Logo
-            .col-xl-2.col-lg-2
-              .logo
-                a(href='/') 
-                  img(src='assets/img/logo/LogoWeb.png') 
-                  p WAKAME
-            .col-xl-10.col-lg-10
-              .menu-wrapper.d-flex.align-items-center.justify-content-end
-                // Main-menu
-                .main-menu.d-none.d-lg-block
-                  nav
-                    ul#navigation
-                      li.active.nav-item
-                        a(href='/') Trang chủ
-                      li.nav-item
-                        a(href='javascript:void(0)') 
-                          |Giảng dạy&nbsp; 
-                          i.fas.fa-caret-down
-                        ul.submenu
-                          li
-                            a(href='/courses') Khóa học
-                          li
-                            a(href='/') Tài liệu
-                      li.nav-item
-                        a(href='/blog') Tin tức
-                      li.nav-item
-                        a(href='/about') Về chúng tôi
-                      li.nav-item
-                        a(href='/contact') Liên hệ
-                      // Button
-                      if Authenticated=== false 
-                        li.button-header.margin-left
-                          a.btn(href='/accounts') Đăng ký
-                        li.button-header
-                          a.btn.btn3(href='/accounts') Đăng nhập
-                      else
-                        li.nav-item.user
-                          a.user(href='javascript:void(0)')
-                            i.far.fa-user-circle.user-size
-                            span Tài khoản
+html(lang="vi")
+  head
+    base(href='/')
+    meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+    meta(http-equiv='x-ua-compatible' content='ie=edge')
+    block title
+    meta(name='description' content='Luyện thi JLPT cùng Wakame, với hơn 50 khóa học cùng với các giáo viên người Việt và người bản địa có kinh nghiệm lâu năm trong lĩnh vực dạy tiếng Nhật')
+    meta(name='keywords' content='tiếng Nhật wakame, Wakame UIT,Wakame-UIT, luyện thi JLPT Wakame UIT, tài liệu luyện thi JLPT,tài liệu học tập UIT, luyện thi cấp tốc, phương pháp học tiếng Nhật hiệu quả, ')
+    meta(name='robots' content='index, follow')
+    meta(property='og:title' content='Wakame - Học tiếng Nhật trực tuyến')
+    meta(property='og:site_name' content='Wakame')
+    meta(property='og:url' content='https://www.wakame-uit.online/')
+    meta(property='og:description' content='Luyện thi JLPT cùng Wakame, với hơn 50 khóa học cùng với các giáo viên người Việt và người bản địa có kinh nghiệm lâu năm trong lĩnh vực dạy tiếng Nhật.')
+    meta(property='og:locale' content='vi_VN')
+    meta(property='og:type' content='article')
+    meta(property='og:image' content='')
+    meta(name='DC.title' content='Wakame; tiếng Nhật trực tuyến')
+    meta(name='geo.region' content='VN-HCM')
+    meta(name='geo.placename' content='Tp Hồ Chí Minh')
+    meta(name='geo.position' content='10.869699;106.803153')
+    meta(name='ICBM' content='10.869699, 106.803153')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico')
+    // CSS here
+    link(rel='stylesheet' href='assets/css/bootstrap.min.css')
+    link(rel='stylesheet' href='assets/css/owl.carousel.min.css')
+    link(rel='stylesheet' href='assets/css/slicknav.css')
+    link(rel='stylesheet' href='assets/css/flaticon.css')
+    link(rel='stylesheet' href='assets/css/progressbar_barfiller.css')
+    link(rel='stylesheet' href='assets/css/gijgo.css')
+    link(rel='stylesheet' href='assets/css/animate.min.css')
+    link(rel='stylesheet' href='assets/css/animated-headline.css')
+    link(rel='stylesheet' href='assets/css/magnific-popup.css')
+    link(rel='stylesheet' href='assets/css/themify-icons.css')
+    link(rel='stylesheet' href='assets/css/slick.css')
+    link(rel='stylesheet' href='assets/css/nice-select.css')
+    link(rel='stylesheet' href='assets/css/style.css')
+    link(rel='stylesheet' href='assets/css/all.css')
+    script(async src="https://www.googletagmanager.com/gtag/js?id=G-M2GP21HT75")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-M2GP21HT75');
+    script 
+      include GoogleTagManager.js
+  // ? Preloader Start
+  noscript
+    iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-54RB25S' height='0' width='0' style='display:none;visibility:hidden')
+  #preloader-active
+    .preloader.d-flex.align-items-center.justify-content-center
+      .preloader-inner.position-relative
+        .preloader-circle
+        .preloader-img.pere-text
+          img(src='assets/img/logo/onion_logo.svg' alt='' style='width:120px; height:50px;')
+  // Preloader Start
+  header
+    // Header Start
+    .header-area.header-transparent
+      .main-header
+        .header-bottom.header-sticky#header-background.visible
+          p#out
+        .header-bottom.header-sticky
+          .container-fluid
+            .row.align-items-center
+              // Logo
+              .col-xl-2.col-lg-2
+                .logo
+                  a(href='/') 
+                    img(src='assets/img/logo/LogoWeb.png' alt='logo wakame') 
+                    p WAKAME
+              .col-xl-10.col-lg-10
+                .menu-wrapper.d-flex.align-items-center.justify-content-end
+                  // Main-menu
+                  .main-menu.d-none.d-lg-block
+                    nav
+                      ul#navigation
+                        li.active.nav-item
+                          a(href='/') Trang chủ
+                        li.nav-item
+                          a(href='javascript:void(0)') 
+                            |Giảng dạy&nbsp; 
                             i.fas.fa-caret-down
                           ul.submenu
                             li
-                              a(href='/profile') Thông tin cá nhân
+                              a(href='/courses') Khóa học
                             li
-                              a(href='/') Thay đổi mật khẩu
-                            li
-                              a(href='/') Tạo TKB UIT                      
-                            li.signout
-                              a(href='/logout') Đăng xuất 
-                //- .account
-                //-   nav
-                //-     ul#naviagation      
-                //-       if Authenticated=== false 
-                //-         li.button-header.margin-left
-                //-           a.btn(href='/accounts') Đăng ký
-                //-         li.button-header
-                //-           a.btn.btn3(href='/accounts') Đăng nhập
-                //-       else
-                //-         li.nav-item.margin-left.button-header
-                //-           a.user-size(href='javascript:void(0)')
-                //-             #user-icon
-                //-               i.far.fa-user-circle
-                //-             #user-text
-                //-               p Giảng dạy
-                //-             #user-tail 
-                //-               i.fas.fa-caret-down
-                //-           ul.submenu
-                //-             li
-                //-               a(href='/profile') Thông tin cá nhân
-                //-             li
-                //-               a(href='/resetpw') Thay đổi mật khẩu
-                //-             li
-                //-               a(href='/') Tạo TKB UIT                      
-                //-             li.button-header
-                //-               a(href='/logout') Đăng xuất 
-                        
-            .col-12
-              .mobile_menu.d-block.d-lg-none
-  // Header End
-block main
+                              a(href='/') Tài liệu
+                        li.nav-item
+                          a(href='/blog') Tin tức
+                        li.nav-item
+                          a(href='/about') Về chúng tôi
+                        li.nav-item
+                          a(href='/contact') Liên hệ
+                        // Button
+                        if Authenticated=== false 
+                          li.button-header.margin-left
+                            a.btn(href='/accounts') Đăng ký
+                          li.button-header
+                            a.btn.btn3(href='/accounts') Đăng nhập
+                        else
+                          li.nav-item.user
+                            a.user(href='javascript:void(0)')
+                              i.far.fa-user-circle.user-size
+                              span Tài khoản
+                              i.fas.fa-caret-down
+                            ul.submenu
+                              li
+                                a(href='/profile') Thông tin cá nhân
+                              li
+                                a(href='/') Thay đổi mật khẩu
+                              li
+                                a(href='/') Tạo TKB UIT                      
+                              li.signout
+                                a(href='/logout') Đăng xuất 
+                  //- .account
+                  //-   nav
+                  //-     ul#naviagation      
+                  //-       if Authenticated=== false 
+                  //-         li.button-header.margin-left
+                  //-           a.btn(href='/accounts') Đăng ký
+                  //-         li.button-header
+                  //-           a.btn.btn3(href='/accounts') Đăng nhập
+                  //-       else
+                  //-         li.nav-item.margin-left.button-header
+                  //-           a.user-size(href='javascript:void(0)')
+                  //-             #user-icon
+                  //-               i.far.fa-user-circle
+                  //-             #user-text
+                  //-               p Giảng dạy
+                  //-             #user-tail 
+                  //-               i.fas.fa-caret-down
+                  //-           ul.submenu
+                  //-             li
+                  //-               a(href='/profile') Thông tin cá nhân
+                  //-             li
+                  //-               a(href='/resetpw') Thay đổi mật khẩu
+                  //-             li
+                  //-               a(href='/') Tạo TKB UIT                      
+                  //-             li.button-header
+                  //-               a(href='/logout') Đăng xuất 
+                          
+              .col-12
+                .mobile_menu.d-block.d-lg-none
+    // Header End
+  block main
 
-footer
-  .footer-wrappper.footer-bg
-    // Footer Start
-    .footer-area.footer-padding
-      .container
-        .row.justify-content-between
-          .col-xl-4.col-lg-5.col-md-4.col-sm-6
-            .single-footer-caption.mb-50
-              .single-footer-caption
-                // logo
-                .footer-logo.mb-25
-                  .logo
-                    a(href='/')
-                      img(src='assets/img/logo/LogoWeb.png') 
-                      p WAKAME
-                    
-                .footer-tittle
-                  .footer-pera
-                    p(style="line-height: 2.2;") 熱意なしに偉大なことが達成されたことはない。Không có sự vĩ đại nào đạt được nếu không có sự nhiệt tình, nhiệt tâm.
-                // social
-                .footer-social
-                  a(href='https://twitter.com' target='_blank' id="tw")
-                    i.fab.fa-twitter
-                  a(href='https://facebook.com' target='_blank' id="fb")
-                    i.fab.fa-facebook-f
-                  a(href="https://www.youtube.com" target="blank" id="yt")
-                    i.fab.fa-youtube
-                  a(href="https://www.instagram.com" target="blank" id="ig")
-                    i.fab.fa-instagram
-          .col-xl-4.col-lg-3.col-md-4.col-sm-6(style="max-width:100%")
-            .single-footer-caption.mb-50
-              .footer-tittle(style="margin-bottom: 50px;")
-                h4(style="margin-top: 45px;") Liên hệ
-                ul(style="margin-top: 50px;width: 400px;")
-                  li
-                    i.fa.fa-map-marker-alt(style="color:white") 
-                    a(style="text-decoration:none") &nbsp; Địa chỉ: Đại học Công nghệ Thông tin, ĐHQG-HCM
-                  li
-                    i.fa.fa-phone.fa-flip-horizontal(style="color:white") 
-                    a(style="text-decoration:none") &nbsp; Điện thoại: 0123 456 789
-                  li
-                    i.fa.fa-envelope(style="color:white") 
-                    a(style="text-decoration:none") &nbsp; Email: wakameuit@gmail.com
-          .col-xl-2.col-lg-4.col-md-4.col-sm-6
-            .single-footer-caption.mb-50
-              .footer-tittle(style="margin-bottom: 50px;")
-                h4(style="margin-top: 45px;") Hỗ trợ
-                ul(style="margin-top: 50px;")
-                  li
-                    a(href='#') FAQ
-                  li
-                    a(href='#') Tuyển dụng                
-                  li
-                    a(href='#') Điều khoản sử dụng
-                  li
-                    a(href='#') Chính sách bảo mật 
-    // footer-bottom area
-    .footer-bottom-area
-      .container
-        .footer-border
-          .row.d-flex.align-items-center
-            .col-xl-12
-              .footer-copy-right.text-center
-                p
-                  | Copyright &copy;
-                  script.
-                    document.write(new Date().getFullYear());
-                  |  | This template is made by 
-                  a(href="https://github.com/mctminhtai/Nodejs_Wakame_Japanese_Study" target="blank")
-                    i.fab.fa-github(style="color:white")
-                    | &nbsp;Nhóm 1
-    // Footer End
-// Scroll Up
-#back-top.visible
-  a(title='Go to Top' href='#')
-    i.fas.fa-level-up-alt
-// JS here
-script(src='./assets/js/vendor/modernizr-3.5.0.min.js')
-// Jquery, Popper, Bootstrap
-script(src='./assets/js/vendor/jquery-1.12.4.min.js')
-script(src='./assets/js/popper.min.js')
-script(src='./assets/js/bootstrap.min.js')
-// Jquery Mobile Menu
-script(src='./assets/js/jquery.slicknav.min.js')
-// Jquery Slick , Owl-Carousel Plugins
-script(src='./assets/js/owl.carousel.min.js')
-script(src='./assets/js/slick.min.js')
-// One Page, Animated-HeadLin
-script(src='./assets/js/wow.min.js')
-script(src='./assets/js/animated.headline.js')
-script(src='./assets/js/jquery.magnific-popup.js')
-// Date Picker
-script(src='./assets/js/gijgo.min.js')
-// Nice-select, sticky
-script(src='./assets/js/jquery.nice-select.min.js')
-script(src='./assets/js/jquery.sticky.js')
-// Progress
-script(src='./assets/js/jquery.barfiller.js')
-// counter , waypoint,Hover Direction
-script(src='./assets/js/jquery.counterup.min.js')
-script(src='./assets/js/waypoints.min.js')
-script(src='./assets/js/jquery.countdown.min.js')
-script(src='./assets/js/hover-direction-snake.min.js')
-// contact js
-script(src='./assets/js/contact.js')
-script(src='./assets/js/jquery.form.js')
-script(src='./assets/js/jquery.validate.min.js')
-script(src='./assets/js/mail-script.js')
-script(src='./assets/js/jquery.ajaxchimp.min.js')
-// Jquery Plugins, main Jquery
-script(src='./assets/js/plugins.js')
-script(src='./assets/js/main.js')
-script(src='./assets/js/customBlogPage.js')
-block jscustom
+  footer
+    .footer-wrappper.footer-bg
+      // Footer Start
+      .footer-area.footer-padding
+        .container
+          .row.justify-content-between
+            .col-xl-4.col-lg-5.col-md-4.col-sm-6
+              .single-footer-caption.mb-50
+                .single-footer-caption
+                  // logo
+                  .footer-logo.mb-25
+                    .logo
+                      a(href='/')
+                        img(src='assets/img/logo/LogoWeb.png' alt='logo wakame') 
+                        p WAKAME
+                      
+                  .footer-tittle
+                    .footer-pera
+                      p(style="line-height: 2.2;") 熱意なしに偉大なことが達成されたことはない。Không có sự vĩ đại nào đạt được nếu không có sự nhiệt tình, nhiệt tâm.
+                  // social
+                  .footer-social
+                    a(href='https://twitter.com' target='_blank' id="tw")
+                      i.fab.fa-twitter
+                    a(href='https://facebook.com' target='_blank' id="fb")
+                      i.fab.fa-facebook-f
+                    a(href="https://www.youtube.com" target="blank" id="yt")
+                      i.fab.fa-youtube
+                    a(href="https://www.instagram.com" target="blank" id="ig")
+                      i.fab.fa-instagram
+            .col-xl-4.col-lg-3.col-md-4.col-sm-6(style="max-width:100%")
+              .single-footer-caption.mb-50
+                .footer-tittle(style="margin-bottom: 50px;")
+                  h4(style="margin-top: 45px;") Liên hệ
+                  ul(style="margin-top: 50px;width: 400px;")
+                    li
+                      i.fa.fa-map-marker-alt(style="color:white") 
+                      a(style="text-decoration:none") &nbsp; Địa chỉ: Đại học Công nghệ Thông tin, ĐHQG-HCM
+                    li
+                      i.fa.fa-phone.fa-flip-horizontal(style="color:white") 
+                      a(style="text-decoration:none") &nbsp; Điện thoại: 0123 456 789
+                    li
+                      i.fa.fa-envelope(style="color:white") 
+                      a(style="text-decoration:none") &nbsp; Email: wakameuit@gmail.com
+            .col-xl-2.col-lg-4.col-md-4.col-sm-6
+              .single-footer-caption.mb-50
+                .footer-tittle(style="margin-bottom: 50px;")
+                  h4(style="margin-top: 45px;") Hỗ trợ
+                  ul(style="margin-top: 50px;")
+                    li
+                      a(href='#') FAQ
+                    li
+                      a(href='#') Tuyển dụng                
+                    li
+                      a(href='#') Điều khoản sử dụng
+                    li
+                      a(href='#') Chính sách bảo mật 
+      // footer-bottom area
+      .footer-bottom-area
+        .container
+          .footer-border
+            .row.d-flex.align-items-center
+              .col-xl-12
+                .footer-copy-right.text-center
+                  p
+                    | Copyright &copy;
+                    script.
+                      document.write(new Date().getFullYear());
+                    |  | This template is made by 
+                    a(href="https://github.com/mctminhtai/Nodejs_Wakame_Japanese_Study" target="blank")
+                      i.fab.fa-github(style="color:white")
+                      | &nbsp;Nhóm 1
+      // Footer End
+  // Scroll Up
+  #back-top.visible
+    a(title='Go to Top' href='#')
+      i.fas.fa-level-up-alt
+  // JS here
+  script(src='./assets/js/vendor/modernizr-3.5.0.min.js')
+  // Jquery, Popper, Bootstrap
+  script(src='./assets/js/vendor/jquery-1.12.4.min.js')
+  script(src='./assets/js/popper.min.js')
+  script(src='./assets/js/bootstrap.min.js')
+  // Jquery Mobile Menu
+  script(src='./assets/js/jquery.slicknav.min.js')
+  // Jquery Slick , Owl-Carousel Plugins
+  script(src='./assets/js/owl.carousel.min.js')
+  script(src='./assets/js/slick.min.js')
+  // One Page, Animated-HeadLin
+  script(src='./assets/js/wow.min.js')
+  script(src='./assets/js/animated.headline.js')
+  script(src='./assets/js/jquery.magnific-popup.js')
+  // Date Picker
+  script(src='./assets/js/gijgo.min.js')
+  // Nice-select, sticky
+  script(src='./assets/js/jquery.nice-select.min.js')
+  script(src='./assets/js/jquery.sticky.js')
+  // Progress
+  script(src='./assets/js/jquery.barfiller.js')
+  // counter , waypoint,Hover Direction
+  script(src='./assets/js/jquery.counterup.min.js')
+  script(src='./assets/js/waypoints.min.js')
+  script(src='./assets/js/jquery.countdown.min.js')
+  script(src='./assets/js/hover-direction-snake.min.js')
+  // contact js
+  script(src='./assets/js/contact.js')
+  script(src='./assets/js/jquery.form.js')
+  script(src='./assets/js/jquery.validate.min.js')
+  script(src='./assets/js/mail-script.js')
+  script(src='./assets/js/jquery.ajaxchimp.min.js')
+  // Jquery Plugins, main Jquery
+  script(src='./assets/js/plugins.js')
+  script(src='./assets/js/main.js')
+  script(src='./assets/js/customBlogPage.js')
+  block jscustom
