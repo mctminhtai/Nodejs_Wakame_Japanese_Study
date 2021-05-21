@@ -65,12 +65,12 @@ html(lang="vi")
           .container-fluid
             .row.align-items-center
               // Logo
-              .col-xl-2.col-lg-2
+              .col-xl-3.col-lg-3
                 .logo
                   a(href='/') 
                     img(src='assets/img/logo/LogoWeb.png' alt='logo wakame') 
-                    p WAKAME
-              .col-xl-10.col-lg-10
+                    p CLB WAKAME
+              .col-xl-9.col-lg-9
                 .menu-wrapper.d-flex.align-items-center.justify-content-end
                   // Main-menu
                   .main-menu.d-none.d-lg-block
@@ -79,14 +79,9 @@ html(lang="vi")
                         li.active.nav-item
                           a(href='/') Trang chủ
                         li.nav-item
-                          a(href='javascript:void(0)') 
-                            |Giảng dạy&nbsp; 
-                            i.fas.fa-caret-down
-                          ul.submenu
-                            li
-                              a(href='/courses') Khóa học
-                            li
-                              a(href='/') Tài liệu
+                          a(href='/courses') Khóa học
+                        li.nav-item
+                          a(href='/courses') Tài liệu 
                         li.nav-item
                           a(href='/blog') Tin tức
                         li.nav-item
@@ -96,9 +91,7 @@ html(lang="vi")
                         // Button
                         if Authenticated=== false 
                           li.button-header.margin-left
-                            a.btn(href='/accounts') Đăng ký
-                          li.button-header
-                            a.btn.btn3(href='/accounts') Đăng nhập
+                            a.btn(href='/accounts') Đăng nhập
                         else
                           li.nav-item.user
                             a.user(href='javascript:void(0)')
@@ -160,20 +153,20 @@ html(lang="vi")
                     .logo
                       a(href='/')
                         img(src='assets/img/logo/LogoWeb.png' alt='logo wakame') 
-                        p WAKAME
+                        p CLB WAKAME
                       
                   .footer-tittle
                     .footer-pera
                       p(style="line-height: 2.2;") 熱意なしに偉大なことが達成されたことはない。Không có sự vĩ đại nào đạt được nếu không có sự nhiệt tình, nhiệt tâm.
                   // social
                   .footer-social
-                    a(href='https://twitter.com' target='_blank' id="tw")
+                    a(href='#' target='_blank' id="tw")
                       i.fab.fa-twitter
-                    a(href='https://facebook.com' target='_blank' id="fb")
+                    a(href='https://www.facebook.com/hcmuit.wakame' target='_blank' id="fb")
                       i.fab.fa-facebook-f
-                    a(href="https://www.youtube.com" target="blank" id="yt")
+                    a(href="#" target="blank" id="yt")
                       i.fab.fa-youtube
-                    a(href="https://www.instagram.com" target="blank" id="ig")
+                    a(href="#" target="blank" id="ig")
                       i.fab.fa-instagram
             .col-xl-4.col-lg-3.col-md-4.col-sm-6(style="max-width:100%")
               .single-footer-caption.mb-50
@@ -209,14 +202,14 @@ html(lang="vi")
             .row.d-flex.align-items-center
               .col-xl-12
                 .footer-copy-right.text-center
-                  p
+                  p(style="font-size:15px;")
                     | Copyright &copy;
                     script.
                       document.write(new Date().getFullYear());
-                    |  | This template is made by 
+                    |  | Website thuộc sở hữu của CLB Wakame 
                     a(href="https://github.com/mctminhtai/Nodejs_Wakame_Japanese_Study" target="blank")
                       i.fab.fa-github(style="color:white")
-                      | &nbsp;Nhóm 1
+                      | &nbsp;Đơn vị phát triển Nhóm 1
       // Footer End
   // Scroll Up
   #back-top.visible

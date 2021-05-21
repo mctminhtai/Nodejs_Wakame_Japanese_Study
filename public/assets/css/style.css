@@ -48,13 +48,9 @@
 	margin-bottom:0px;
 	color:white;
 }
-li.user{
-	margin-top:0px !important;
-	margin-right:109.335px !important;
-	margin-left: 25px !important;
-}
+
 a.user{
-	padding-top:22px !important;
+	padding-top:6px !important;
 	padding-bottom:0px !important;
 	display:flex !important;
 }
@@ -529,7 +525,7 @@ hr{
 	background:#FF9F67;
 	font-family:"Fira Sans",sans-serif;
 	text-transform:capitalize;
-	padding:22px 25px !important;
+	padding:22px 15px !important;
 	color:#fff;
 	cursor:pointer;
 	display:inline-blockc !important;
@@ -2551,24 +2547,24 @@ to{
 	display:inline-block;
 	position:relative;
 	z-index:1;
-	margin:0 27px
+	margin:17px 0px
 }
-@media only screen and (min-width: 1200px) and (max-width: 1600px){
+@media only screen and (min-width: 1240px) and (max-width: 1600px){
 	.main-header .main-menu ul li{
-	margin:0 14px
+	margin:17px 0px
 }
 
 }
-@media only screen and (min-width: 992px) and (max-width: 1199px){
+@media only screen and (min-width: 992px) and (max-width: 1235px){
 	.main-header .main-menu ul li{
-	margin:0 8px
+	margin:17px 0px
 }
 
 }
 .main-header .main-menu ul li a{
 	color:#fff;
 	font-weight:0;
-	padding:27px 2px;
+	padding:10px 15px;
 	display:block;
 	font-size:17px;
 	-webkit-transition:.3s;
