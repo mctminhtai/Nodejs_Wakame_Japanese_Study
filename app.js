@@ -80,9 +80,9 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-console.log("===============================================")
-console.log("Example app listening at http://127.0.0.1:"+PORT)
-console.log("===============================================\n\n\n")
+
+
+
 
 
 
@@ -204,6 +204,8 @@ console.log("===============================================\n\n\n")
 
 
 app.listen(process.env.PORT || PORT, () => {
+  console.log("===============================================")
   console.log(`Example app listening at http://localhost:${PORT}`)
+  console.log("===============================================")
 })
 module.exports = app;
