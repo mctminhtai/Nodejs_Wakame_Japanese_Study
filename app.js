@@ -16,6 +16,7 @@ var redisClient = redis.createClient(process.env.REDIS_URL);
 
 var homePageRouter = require('./routes/homePage');
 var loginRegisterRouter = require('./routes/loginRegister');
+var adminRouter = require('./routes/adminPages');
 var webhookRouter = require('./routes/webhook');
 
 
@@ -59,6 +60,7 @@ app.use(passport.session());
 
 app.use('/', homePageRouter);
 app.use('/', loginRegisterRouter);
+app.use('/', adminRouter);
 
 app.use('/webhook', webhookRouter);
 
