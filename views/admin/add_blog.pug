@@ -100,7 +100,7 @@ head
                       i.fas.fa-flag.mt-1.mr-1
                       strong.mr-1.w-100px Loại bản:
                       .select
-                        select#slct(name="slct")
+                        select#slct(name="slcttype")
                           option(value="1", selected).
                             Nháp
                             
@@ -156,11 +156,6 @@ head
                     strong.mr-1.w-100px Các thẻ tag:
                     input.border-left-0.border-top-0.border-right-0.border-bottom-1.btn-outline-none(type="text")
 button(onclick = "getdata()") GetCode
-form(action="/dangbai", method="post") 
-  input(type='text' name='title' placeholder='title')
-  input(type='text' name='description' placeholder='description')
-  input(type='text' name='content' placeholder='content')
-  button(type="submit") Lưu vào DB
 
 script.
   tinymce.init({
