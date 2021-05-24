@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>COVID Fake News</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        html{
+            overflow: hidden;
+        }
+
+        body{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #378df1;
+        }
+
+        .field p{
+            font-size: 25px;
+        }
+
+        .field button{
+            width: 40%;
+            margin-left: 50px;
+            font-size: 20px;
+        }
+
+        textarea.input{
+            font-size: 25px;
+        }
+
+        h1, h5{
+            position: relative;
+            margin-top: 100px;
+            margin-left: 340px;
+            color: white;
+        }
+
+        h1{
+            font-size: 50px;
+        }
+
+        h5{
+            font-style: italic;
+            margin-top: 50px;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: auto;
+            height: 300px;
+        }
+
+        .field img.center.output{
+            display: none;
+        }
+
+        .row{
+            margin-left: 15%;
+            margin-top: 50px;
+        }
+
+        .card{
+            width: 100%;
+        }
+
+        .input{
+            height: 400px; 
+            width:100%; 
+            padding-left:18px;
+        }
+        #output-label{
+            width:200px; 
+            padding-left:18px;
+            border-color: #dbdbdb;
+            box-shadow: inset 0 0.0625em 0.125em rgb(10 10 10 / 5%);
+            text-align: center; width: 100%; 
+            text-transform: uppercase;
+            font-weight: bold;
+            height: 70px;
+        }
+    </style>
+</head>	
+<body>
+    <h1>I'm a Natural Language Processing model.</h1>
+    <h5>You can teach me how to recognize Covid fake news.<br>Use the below input field to type a tweet about COVID and I'll predict this tweet is FAKE or REAL.</h5>
+    <div class="row">
+        <div class="col-md-6">
+            <form action="classify" method="GET">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content">
+                            <div class="field">
+                                <p><strong>INPUT</strong></p>
+                                <textarea class="input" name="txt" id="txt" cols="30" row="9" placeholder="Paste/Type your Tweet here ... ">{{sentence}}</textarea>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <button class="button is-light" type="reset" onclick="retry()">Retry</button>
+                            <button class="button is-success">Predict</button>
+                        </div>  
+                    </div>
+                </div>
+            </form>  
+
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <div class="field">
+                            <p><strong>OUTPUT</strong></p>
+                            <img src ="/static/{{image}}" class="center output" style="display: {{display}};">
+                            <textarea class="{{label_class}}" id="output-label" readonly>{{ label }}</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
