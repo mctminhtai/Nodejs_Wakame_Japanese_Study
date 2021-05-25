@@ -355,6 +355,7 @@ exports.post_captcha = async function (req, res, next) {
     await models.BLOG.create({
         uuid: uuidv4(),
         USERId: 1,
+        slug: convert.stringToSlug(req.body.title),
         CATEGORYId: 1,
         description: req.body.description,
         title: req.body.title,
