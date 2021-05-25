@@ -135,18 +135,19 @@ head
                 h6.m-0 Chủ đề
               .card-body.p-0
                 .px-3.pb-2
-                  label.radio
-                    input(type="radio", name="categories", value="1", checked)
-                    span Học tập
-                  label.radio
-                    input(type="radio", name="categories", value="2")
-                    span Văn hóa
-                  label.radio
-                    input(type="radio", name="categories", value="3")
-                    span Việc làm
-                  label.radio
-                    input(type="radio", name="categories", value="4")
-                    span Thông báo
+                  each category in categories
+                    label.radio
+                      input(type="radio", name="categories", value=category.id)
+                      span #{category.name}
+                  //- label.radio
+                  //-   input(type="radio", name="categories", value="2")
+                  //-   span Văn hóa
+                  //- label.radio
+                  //-   input(type="radio", name="categories", value="3")
+                  //-   span Việc làm
+                  //- label.radio
+                  //-   input(type="radio", name="categories", value="4")
+                  //-   span Thông báo
             .card.card-small.mb-3
               .card-header.border-bottom
                 h6.m-0 Tag
