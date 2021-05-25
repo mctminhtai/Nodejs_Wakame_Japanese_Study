@@ -81,16 +81,17 @@ head
             .card.card-small.mb-3
               .card-body
                 .add-new-post
-                  input.form-control.form-control-lg.mb-3(type="text", placeholder="Tiêu đề bài viết")
-                  input.form-control.form-control-lg.mb-3.mt-2(type="text", placeholder="Mô tả bài viết")
+                  input#blogImg.form-control.form-control-lg.mb-3(type="text", placeholder="Ảnh đại diện cho bài viết")
+                  input#title.form-control.form-control-lg.mb-3(type="text", placeholder="Tiêu đề bài viết")
+                  input#description.form-control.form-control-lg.mb-3.mt-2(type="text", placeholder="Mô tả bài viết")
                   textarea(id="basic-conf")
-                    | Welcome to TinyMCE!
+                    | <p style="text-align: center;" data-mce-style="text-align: center;"><em><strong>Welcome to TinyMCE!</strong></em></p>
           .col-lg-3.col-md-12
             //  Post Overview 
             .card.card-small.mb-3
               .card-header.border-bottom.d-flex
                 h5.m-2 Trạng thái
-                button.btn.btn-sm.btn-accent.ml-auto.m-0(onclick = "getdata()")
+                button.btn.btn-sm.btn-accent.ml-auto.m-0(onclick = "getdata(event)")
                   i.fas.fa-paper-plane.mr-2
                   |  Đăng bài
               .card-body.p-0
@@ -177,15 +178,20 @@ script.
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
   paste_block_drop: false
   });
-  function getdata(){
-    let data = tinyMCE.activeEditor.getContent({format : 'raw'});
+  function getdata(event){
+    event.preventDefault()
+    var data = {}
+    data.content = tinyMCE.activeEditor.getContent({format : 'raw'});
+    data.tieude = document.getElementById("title").value;
+    data.description = document.getElementById("description").value;
+    data.blogImg = document.getElementById("blogImg").value;
     //var xhr = new XMLHttpRequest();
     //xhr.open("POST", 'http://localhost:3000/dangbai', true);
     //xhr.setRequestHeader('Content-Type', 'application/json');
     //xhr.send(JSON.stringify({
     //content: data
   //}));
-    console.log(data)
+    console.log(data);
   }
 script.  
   var date = new Date();

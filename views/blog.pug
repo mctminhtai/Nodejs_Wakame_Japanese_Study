@@ -35,7 +35,7 @@ block main
                       h3 #{val.dataValues.createdAt.getFullYear().toString().substr(2,2)}
                       p #{val.dataValues.createdAt.getMonth()}月
                   .blog_details
-                    a.d-inline-block(href='/blog/' + val.dataValues.uuid)
+                    a.d-inline-block(href='/blog/' + val.dataValues.slug)
                       h2.blog-head(style='color: #2d2d2d;') #{val.dataValues.title}
                     p
                       | #{val.dataValues.description}
@@ -218,7 +218,7 @@ block main
                   .media.post_item
                     img(src=val.blogimg alt='post' style="width:100px;height:70px;margin-top:0px")
                     .media-body
-                      a(href='/blog/' + val.dataValues.uuid)
+                      a(href='/blog/' + val.dataValues.slug)
                         if val.title.length < 20
                           h3(style='color: #2d2d2d;') #{val.title} 
                         else

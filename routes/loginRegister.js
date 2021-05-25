@@ -37,6 +37,8 @@ router.get('/logout', loginRegister.get_logout);
 router.get('/pwd_reset', loginRegister.get_resetToken);
 router.post('/pwd_reset', loginRegister.post_resetToken);
 router.get('/pwd_reset/:token', loginRegister.get_resetPwd);
+router.get('/resetpw', loginRegister.get_resetpwPage);
+router.post('/resetpw', loginRegister.post_change_pw);
 router.post(
     '/pwd_reset/:token',
     body('password', 'password phải từ 8 ký tự trở lên').isLength({ min: 8 }),

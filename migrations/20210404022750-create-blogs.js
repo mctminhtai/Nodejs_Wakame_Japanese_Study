@@ -15,6 +15,10 @@ module.exports = {
                 type: Sequelize.UUID,
                 defaultValue: Sequelize.UUIDV4
             },
+            slug: {
+                type: Sequelize.STRING(1024),
+                allowNull: false,
+            },
             USERId: {
                 type: Sequelize.INTEGER,
                 allowNull: false,

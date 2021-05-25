@@ -24,14 +24,15 @@ module.exports = (sequelize, DataTypes) => {
         title: DataTypes.STRING(1024),
         blogimg: DataTypes.STRING(1024),
         uuid: DataTypes.UUID,
+        slug: DataTypes.STRING(1024),
         content: DataTypes.TEXT('long'),
         description: DataTypes.STRING(1024),
         numberlike: DataTypes.INTEGER,
         draft: DataTypes.BOOLEAN
     }, {
-            sequelize,
-            modelName: 'BLOG',
-            freezeTableName: true,
-        });
+        sequelize,
+        modelName: 'BLOG',
+        freezeTableName: true,
+    });
     return BLOG;
 };

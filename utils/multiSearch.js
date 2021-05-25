@@ -1,4 +1,5 @@
 exports.multiSearchOr = function (text, searchWords) {
+    text = text.toLowerCase()
     if (text && searchWords) {
         var filteredText = text.match(/[^_\W]+/g);
         if (filteredText !== null) {
@@ -6,7 +7,8 @@ exports.multiSearchOr = function (text, searchWords) {
                 return word.toLowerCase();
             });
             for (var i = 0; i < searchWords.length; i++) {
-                if (lowerCaseText.indexOf(searchWords[i].toLowerCase()) === -1) {
+                //var vt = text.indexOf(searchWords[i].toLowerCase());
+                if (text.indexOf(searchWords[i].toLowerCase()) === -1) {
                     return "Not found!";
                 }
             }
