@@ -136,16 +136,16 @@ head
               .card-body.p-0
                 .px-3.pb-2
                   label.radio
-                    input(type="radio", name="r", value="1", checked)
+                    input(type="radio", name="categories", value="1", checked)
                     span Học tập
                   label.radio
-                    input(type="radio", name="r", value="2")
+                    input(type="radio", name="categories", value="2")
                     span Văn hóa
                   label.radio
-                    input(type="radio", name="r", value="3")
+                    input(type="radio", name="categories", value="3")
                     span Việc làm
                   label.radio
-                    input(type="radio", name="r", value="3")
+                    input(type="radio", name="categories", value="4")
                     span Thông báo
             .card.card-small.mb-3
               .card-header.border-bottom
@@ -155,7 +155,7 @@ head
                   span.d-flex.mb-2
                     i.fas.fa-tag.mt-1.mr-1
                     strong.mr-1.w-100px Các thẻ tag:
-                    input.border-left-0.border-top-0.border-right-0.border-bottom-1.btn-outline-none(type="text")
+                    input#tags.border-left-0.border-top-0.border-right-0.border-bottom-1.btn-outline-none(type="text")
 
 
 script.
@@ -185,6 +185,8 @@ script.
     data.tieude = document.getElementById("title").value;
     data.description = document.getElementById("description").value;
     data.blogImg = document.getElementById("blogImg").value;
+    data.tags = document.getElementById("tags").value;
+    data.categories = document.querySelector('input[name="categories"]:checked').value;
     //var xhr = new XMLHttpRequest();
     //xhr.open("POST", 'http://localhost:3000/dangbai', true);
     //xhr.setRequestHeader('Content-Type', 'application/json');
