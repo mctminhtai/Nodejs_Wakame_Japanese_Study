@@ -42,5 +42,6 @@ exports.postAdminAddBlog = async function (req, res, next) {
             BLOGId: blog.id,
         })
     });
+    // return res.redirect('blog/' + blog.slug);
     return res.status(200);
 }
