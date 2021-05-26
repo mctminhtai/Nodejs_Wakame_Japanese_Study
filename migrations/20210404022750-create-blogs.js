@@ -44,6 +44,9 @@ module.exports = {
             description: {
                 type: Sequelize.STRING(1024)
             },
+            kwlist: {
+                type: Sequelize.STRING(1024)
+            },
             numberlike: {
                 type: Sequelize.INTEGER,
                 defaultValue: 77

@@ -84,6 +84,7 @@ head
                   input#blogImg.form-control.form-control-lg.mb-3(type="text", placeholder="Ảnh đại diện cho bài viết")
                   input#title.form-control.form-control-lg.mb-3(type="text", placeholder="Tiêu đề bài viết")
                   input#description.form-control.form-control-lg.mb-3.mt-2(type="text", placeholder="Mô tả bài viết")
+                  input#kwlist.form-control.form-control-lg.mb-3.mt-2(type="text", placeholder="Danh sách keywords cho bài viết")
                   textarea(id="basic-conf")
                     | <p style="text-align: center;" data-mce-style="text-align: center;"><em><strong>Welcome to TinyMCE!</strong></em></p>
           .col-lg-3.col-md-12
@@ -153,10 +154,12 @@ head
                 h6.m-0 Tag
               .card-body.p-0
                 .px-3.pb-2.mt-3
-                  span.d-flex.mb-2
+                  span.mb-2
                     i.fas.fa-tag.mt-1.mr-1
                     strong.mr-1.w-100px Các thẻ tag:
-                    input#tags.border-left-0.border-top-0.border-right-0.border-bottom-1.btn-outline-none(type="text")
+                    each tag in tags 
+                      span= '#' + tag.TEN_TAG + ' '
+                    input#tags.mt-3.border-left-0.border-top-0.border-right-0.border-bottom-1.btn-outline-none(type="text")
 
 
 script.
@@ -183,17 +186,18 @@ script.
     event.preventDefault()
     var data = {}
     data.content = tinyMCE.activeEditor.getContent({format : 'raw'});
-    data.tieude = document.getElementById("title").value;
+    data.title = document.getElementById("title").value;
     data.description = document.getElementById("description").value;
+    data.kwlist = document.getElementById("kwlist").value;
     data.blogImg = document.getElementById("blogImg").value;
     data.tags = document.getElementById("tags").value;
-    data.categories = document.querySelector('input[name="categories"]:checked').value;
-    //var xhr = new XMLHttpRequest();
-    //xhr.open("POST", 'http://localhost:3000/dangbai', true);
-    //xhr.setRequestHeader('Content-Type', 'application/json');
-    //xhr.send(JSON.stringify({
-    //content: data
-  //}));
+    data.category = document.querySelector('input[name="categories"]:checked').value;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", 'http://localhost:3000/admin/addBlog', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+    content: data
+  }));
     console.log(data);
   }
 script.  

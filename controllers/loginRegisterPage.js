@@ -2,7 +2,7 @@ const models = require('../models');
 var svgCaptcha = require('svg-captcha');
 const bcrypt = require('bcryptjs');
 var passport = require('passport');
-const { v4: uuidv4 } = require('uuid');
+
 const randostring = require('randostrings/server');
 let randomString = new randostring();
 //add ham gui email

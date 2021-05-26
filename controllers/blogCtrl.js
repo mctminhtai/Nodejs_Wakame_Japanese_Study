@@ -91,7 +91,7 @@ exports.get_searchBlogPage = async function (req, res, next) {
 exports.get_blogDetailPage = async function (req, res, next) {
     var slug = req.param('slug');
     var blogs = await models.BLOG.findAll({
-        attributes: ['uuid', 'slug', 'title', 'blogimg', 'content', 'description', 'createdAt'],
+        attributes: ['uuid', 'kwlist', 'slug', 'title', 'blogimg', 'content', 'description', 'createdAt'],
         include: ['blog_user', 'blog_comment'],
     });
     var blog = await models.BLOG.findOne({
@@ -124,7 +124,7 @@ exports.get_blogDetailPage = async function (req, res, next) {
 exports.post_blogcmDetailPage = async function (req, res, next) {
     var blog = await models.BLOG.findOne({
         //attributes: ['id', 'USERId', 'blogimg', 'title', 'content', 'createdAt'],
-        where: { uuid: req.body.bloguuid },
+        where: { slug: req.body.blogslug },
     });
     var user = await models.USER.findOne({
         where: { email: req.body.useremail },
@@ -134,5 +134,6 @@ exports.post_blogcmDetailPage = async function (req, res, next) {
         USERId: user.id,
         cmcontent: req.body.comment,
     });
-    return res.redirect('/blog/' + req.body.bloguuid);
+    // return res.status(200)
+    return res.redirect('/blog/' + req.body.blogslug);
 }

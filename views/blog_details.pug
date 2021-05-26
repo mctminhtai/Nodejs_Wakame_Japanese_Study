@@ -3,7 +3,7 @@ block title
   title #{blog.title}
 block SEO-tag 
     meta(name='description' content=blog.description)
-    meta(name='keywords' content='CLB Wakame, uit-wakame, tiếng Nhật wakame, Wakame Japanese Club, Wakame-UIT, luyện thi JLPT Wakame UIT, tài liệu luyện thi JLPT,tài liệu học tập UIT, luyện thi cấp tốc, phương pháp học tiếng Nhật hiệu quả, ')
+    meta(name='keywords' content=blog.kwlist)
 block main
   main
     section.slider-area.slider-area2
@@ -27,7 +27,7 @@ block main
                   li
                     i.fa.fa-tag
                     each val in blog.blog_tag 
-                      a(href='#') #{val.dataValues.TEN_TAG}
+                      a(href='#') #{val.dataValues.TEN_TAG + " "}
                   li
                     i.fa.fa-calendar
                     |  #{blog.createdAt.getDate()}/#{blog.createdAt.getMonth()}/#{blog.createdAt.getFullYear()}
@@ -55,10 +55,10 @@ block main
                   li
                     a(href='#')
                       i.fab.fa-behance
-            .comments-area
+            #commentArea.comments-area
               h4 #{comments.length} Comments
               each val in comments
-                .comment-list
+                #commentList.comment-list
                   .single-comment.justify-content-between.d-flex
                     .user.justify-content-between.d-flex
                       .thumb
@@ -115,12 +115,12 @@ block main
                         textarea#comment.form-control.w-100(name='comment' cols='30' rows='9' placeholder='Nội dung bình luận')
                     .col-sm-6
                       .form-group
-                        input#name.form-control(name='bloguuid' type='hidden' value=blog.uuid)
+                        input#name.form-control(name='blogslug' type='hidden' value=blog.slug)
                     .col-sm-6
                       .form-group
                         input#email.form-control(name='useremail' type='hidden' value=user_email)
                   .form-group
-                    button.button.button-contactForm.btn_1.boxed-btn(type='submit') Gửi
+                    button.button.button-contactForm.btn_1.boxed-btn(type="submit") Gửi
           .col-lg-3
             .blog_right_sidebar
               aside.single_sidebar_widget.search_widget
@@ -218,4 +218,24 @@ block main
                     input.form-control(type='email' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email của bạn'" placeholder='Enter email' required='')
                   button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Subscribe
     // Blog Area End
-  
+block jscustom
+  script.
+    function sendComment(event){
+      event.preventDefault();
+      var data = {};
+      data.comment = document.querySelector('textarea[name="comment"]').value;
+      data.blogslug = document.querySelector('input[name="blogslug"]').value;
+      data.useremail = document.querySelector('input[name="useremail"]').value;
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", '/blog/post_comment', true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify({
+      content: data
+      }));
+      var element = document.createElement('div');
+      element.classList.add('comment-list');
+      element.innerHTML=`<div class="single-comment justify-content-between d-flex"><div class="user justify-content-between d-flex"><div class="thumb"><img src="assets/img/blog/comment_1.png" alt=""></div><div class="desc"><p class="comment">${data.comment}</p><div class="d-flex justify-content-between"><div class="d-flex align-items-center"><h5><a href="#">minhtai</a></h5><p class="date">26/4/2021</p></div><div class="reply-btn"><a class="btn-reply text-uppercase" href="#">reply</a></div></div></div></div></div>`
+      commentList = document.getElementById("commentArea");
+      commentList.appendChild(element);
+      document.querySelector('textarea[name="comment"]').value = ""
+    }

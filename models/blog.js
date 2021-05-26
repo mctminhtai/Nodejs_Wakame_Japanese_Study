@@ -27,6 +27,7 @@ module.exports = (sequelize, DataTypes) => {
         slug: DataTypes.STRING(1024),
         content: DataTypes.TEXT('long'),
         description: DataTypes.STRING(1024),
+        kwlist: DataTypes.STRING(1024),
         numberlike: DataTypes.INTEGER,
         draft: DataTypes.BOOLEAN
     }, {
