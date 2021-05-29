@@ -6,6 +6,15 @@
 /* ------------------------------
 	Tùy chỉnh
 -------------------------------- */
+input:-webkit-autofill{
+	background-color: none;
+}
+.onpage{
+	box-shadow: 0px 3px white;
+}
+.onpage:hover{
+	color:white !important;
+}
 .visible{
 	display:none;
 }

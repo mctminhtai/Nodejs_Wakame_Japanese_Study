@@ -4,6 +4,13 @@
 @import "fontawesome.css";
 @import "fontawesome-all.min.css";
 /* Custom */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000000s ease-in-out 0s;
+}
+
 
 #passcode { 
   background-image: linear-gradient(-135deg, rgba(90,253,12,0.8) 0%,rgba(29,66,206,0.8) 100%);
