@@ -6,6 +6,6 @@
     "\\models",
     "\\routes"
   ],
-  "SelectedNode": "\\migrations\\20210502132347-create-khoahoc.js",
+  "SelectedNode": "\\controllers\\loginRegisterPage.js",
   "PreviewInSolutionExplorer": false
 }

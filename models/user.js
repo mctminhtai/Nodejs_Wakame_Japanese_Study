@@ -13,8 +13,6 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
             this.hasMany(models.BLOG, { as: 'user_blog' });
             this.hasMany(models.COMMENT, { as: 'user_comment' });
-            this.hasMany(models.TKB_DU_KIEN, { as: 'user_tkb' });
-            this.belongsToMany(models.MONHOC, { through: models.DS_MON_DA_HOC, foreignKey: 'USERId', as: 'user_monhoc' });
             this.belongsToMany(models.BLOG, { through: models.USER_UPGRADE_BLOG, foreignKey: 'USERId', as: 'user_blog2' });
         }
     };

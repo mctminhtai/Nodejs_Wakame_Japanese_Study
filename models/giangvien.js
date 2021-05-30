@@ -10,9 +10,6 @@ module.exports = (sequelize, DataTypes) => {
          * The `models/index` file will call this method automatically.
          */
         static associate(models) {
-            // define association here
-            //this.belongsToMany(models.TIET, { through: models.DS_LOP_HOC, as: 'dayhoc3' });
-            this.hasMany(models.DS_LOP_HOC, { as: 'giangvien_dslophoc' });
         }
     };
     GIANGVIEN.init({
