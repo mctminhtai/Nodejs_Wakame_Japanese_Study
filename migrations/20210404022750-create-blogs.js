@@ -11,10 +11,10 @@ module.exports = {
                 primaryKey: true,
                 type: Sequelize.INTEGER
             },
-            uuid: {
-                type: Sequelize.UUID,
-                defaultValue: Sequelize.UUIDV4
-            },
+            // uuid: {
+            //     type: Sequelize.UUID,
+            //     defaultValue: Sequelize.UUIDV4
+            // },
             slug: {
                 type: Sequelize.STRING(1024),
                 allowNull: false,
@@ -56,7 +56,7 @@ module.exports = {
                 defaultValue: true,
             },
             content: {
-                type: Sequelize.TEXT('long')
+                type: Sequelize.TEXT,
             },
             createdAt: {
                 allowNull: false,

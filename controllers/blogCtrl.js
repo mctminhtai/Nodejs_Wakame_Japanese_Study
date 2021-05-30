@@ -7,7 +7,7 @@ exports.get_blogPage = async function (req, res, next) {
     var begin = (page - 1) * itemPerPage;
     var end = page * itemPerPage;
     var blogs = await models.BLOG.findAll({
-        attributes: ['uuid', 'slug', 'title', 'blogimg', 'content', 'description', 'createdAt'],
+        attributes: ['slug', 'title', 'blogimg', 'content', 'description', 'createdAt'],
         include: ['blog_user', 'blog_comment'],
     });
     var tags = await models.TAG.findAll({
@@ -40,7 +40,7 @@ exports.get_searchBlogPage = async function (req, res, next) {
     var foundBlogs = [];
     if (words.length > 0) {
         blogs = await models.BLOG.findAll({
-            attributes: ['uuid', 'slug', 'title', 'blogimg', 'content', 'description', 'createdAt'],
+            attributes: ['slug', 'title', 'blogimg', 'content', 'description', 'createdAt'],
             include: ['blog_user', 'blog_comment'],
         });
         blogs.forEach((blog) => {
@@ -52,7 +52,7 @@ exports.get_searchBlogPage = async function (req, res, next) {
     }
     if (category) {
         blogs = await models.BLOG.findAll({
-            attributes: ['uuid', 'slug', 'title', 'blogimg', 'content', 'description', 'createdAt'],
+            attributes: ['slug', 'title', 'blogimg', 'content', 'description', 'createdAt'],
             include: [
                 'blog_user',
                 'blog_comment',
@@ -91,7 +91,7 @@ exports.get_searchBlogPage = async function (req, res, next) {
 exports.get_blogDetailPage = async function (req, res, next) {
     var slug = req.param('slug');
     var blogs = await models.BLOG.findAll({
-        attributes: ['uuid', 'kwlist', 'slug', 'title', 'blogimg', 'content', 'description', 'createdAt'],
+        attributes: ['kwlist', 'slug', 'title', 'blogimg', 'content', 'description', 'createdAt'],
         include: ['blog_user', 'blog_comment'],
     });
     var blog = await models.BLOG.findOne({
