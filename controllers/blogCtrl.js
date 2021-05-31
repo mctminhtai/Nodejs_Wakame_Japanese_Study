@@ -122,18 +122,17 @@ exports.get_blogDetailPage = async function (req, res, next) {
     })
 }
 exports.post_blogcmDetailPage = async function (req, res, next) {
-    var blog = await models.BLOG.findOne({
-        //attributes: ['id', 'USERId', 'blogimg', 'title', 'content', 'createdAt'],
-        where: { slug: req.body.blogslug },
-    });
-    var user = await models.USER.findOne({
-        where: { email: req.body.useremail },
-    });
-    await models.COMMENT.create({
-        BLOGId: blog.id,
-        USERId: user.id,
-        cmcontent: req.body.comment,
-    });
-    // return res.status(200)
-    return res.redirect('/blog/' + req.body.blogslug);
+    // var blog = await models.BLOG.findOne({
+    //     where: { slug: req.body.content.blogslug },
+    // });
+    // var user = await models.USER.findOne({
+    //     where: { email: req.body.content.useremail },
+    // });
+    // await models.COMMENT.create({
+    //     BLOGId: blog.id,
+    //     USERId: user.id,
+    //     cmcontent: req.body.content.comment,
+    // });
+    console.log(req.body);
+    return res.send('OK');
 }
