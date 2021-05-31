@@ -6,6 +6,96 @@
 /* ------------------------------
 	Tùy chỉnh
 -------------------------------- */
+#gear{
+	bottom: -220px;
+    right: -160px;
+    top: auto;
+    left: auto;
+	width: 662px;
+    height: 662px;
+    background: url("../img/icon/gear_2.png") no-repeat center;
+    background-size: contain;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -webkit-animation: gear 30s linear infinite;
+    -moz-animation: gear 30s linear infinite;
+    animation: gear 30s linear infinite;
+    position: absolute;
+    z-index: -1;
+}
+
+.profile-item p{
+	margin: 0;
+}
+.profile-img {
+	width: 250px;
+}
+.profile-img img{
+	width: 250px;
+    background-position: center;
+    background-size: 100% auto;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    border-radius: 15px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	background-repeat: no-repeat;
+	border: 3px solid #81c4f8;
+}
+.badge {
+    position: absolute;
+    width: 85px;
+    left: 25px;
+    top: -25px;
+}
+.ph .badge img{
+	background-size: 150% !important;
+	border:0px;
+}
+.txtSide{
+	margin:20px 0 0;
+}
+.profile .name{
+	font-size: 18px;
+}
+.profile:hover .name{
+	color: #024095
+}
+.profile .job{
+	color: #81c4f8;
+	word-wrap: break-word;
+}
+.profile img{
+	transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+}
+.profile:hover img {
+    background-size: 110% auto;
+    -moz-background-size: 110% auto;
+    -webkit-background-size: 110% auto;
+}
+.ph img{
+	width: 100%;
+    background-position: center;
+    background-size: 100% auto;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    border-radius: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	background-repeat: no-repeat;
+	border: 3px solid #81c4f8;
+}
+.user-account{
+	margin: 0px !important;
+	margin-top: 17px !important;
+	padding-bottom: 19px;
+	padding-left: 0px;
+	padding-right:0px;
+}
 input:-webkit-autofill{
 	background-color: none;
 }

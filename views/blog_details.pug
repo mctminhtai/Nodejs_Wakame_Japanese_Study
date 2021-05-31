@@ -11,9 +11,9 @@ block main
         // Single Slider
         .single-slider.slider-height2
     section.blog_area.single-post-area.section-padding
-      .container-fluid
+      .container
         .row
-          .col-lg-7.posts-list.offset-1
+          .col-xl-8.col-lg-8.posts-list
             .single-post
               .feature-img
                 img.img-fluid(src=blog.dataValues.blogimg alt='')
@@ -121,7 +121,7 @@ block main
                         input#email.form-control(name='useremail' type='hidden' value=user_email)
                   .form-group
                     button.button.button-contactForm.btn_1.boxed-btn(type="submit") Gửi
-          .col-lg-3
+          .col-xl-4.col-lg-4
             .blog_right_sidebar
               aside.single_sidebar_widget.search_widget
                 form(action='/blog-search' method='GET')
