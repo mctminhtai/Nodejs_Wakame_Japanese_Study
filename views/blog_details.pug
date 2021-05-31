@@ -239,6 +239,8 @@ block jscustom
       var yyyy = today.getFullYear();
       today = dd + '/' + mm + '/' + yyyy;
       fullName = document.querySelector('input[name="userFullName"]').value;
+      countComment = (Number(document.querySelector('#commentArea h4').innerHTML.split(' ')[0]) + 1) + ' Comments';
+      document.querySelector('#commentArea h4').innerHTML = countComment;
       var element = document.createElement('div');
       element.classList.add('comment-list');
       element.innerHTML=`<div class="single-comment justify-content-between d-flex"><div class="user justify-content-between d-flex"><div class="thumb"><img src="assets/img/blog/comment_1.png" alt=""></div><div class="desc"><p class="comment">${data.comment}</p><div class="d-flex justify-content-between"><div class="d-flex align-items-center"><h5><a href="#">${fullName}</a></h5><p class="date">${today}</p></div><div class="reply-btn"><a class="btn-reply text-uppercase" href="#">reply</a></div></div></div></div></div>`

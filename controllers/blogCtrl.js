@@ -122,17 +122,17 @@ exports.get_blogDetailPage = async function (req, res, next) {
     })
 }
 exports.post_blogcmDetailPage = async function (req, res, next) {
-    // var blog = await models.BLOG.findOne({
-    //     where: { slug: req.body.content.blogslug },
-    // });
-    // var user = await models.USER.findOne({
-    //     where: { email: req.body.content.useremail },
-    // });
-    // await models.COMMENT.create({
-    //     BLOGId: blog.id,
-    //     USERId: user.id,
-    //     cmcontent: req.body.content.comment,
-    // });
+    var blog = await models.BLOG.findOne({
+        where: { slug: req.body.content.blogslug },
+    });
+    var user = await models.USER.findOne({
+        where: { email: req.body.content.useremail },
+    });
+    await models.COMMENT.create({
+        BLOGId: blog.id,
+        USERId: user.id,
+        cmcontent: req.body.content.comment,
+    });
     console.log(req.body);
     return res.send('OK');
 }
