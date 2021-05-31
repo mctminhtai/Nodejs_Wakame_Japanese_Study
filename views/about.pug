@@ -1,427 +1,118 @@
 extends layout.pug 
-block title 
-  title Về chúng tôi | Wakame
+block title
+  title Về chúng tôi | Wakame 
 block main 
-  main
-    // ? slider Area Start
-    section.slider-area.slider-area2
-      .slider-active
-        // Single Slider
+  main 
+    section.slider-area.slider-area2 
+      .slider-active 
         .single-slider.slider-height2
-          //- .container
-          //-   .row
-          //-     .col-xl-8.col-lg-11.col-md-12
-          //-       .hero__caption.hero__caption2
-          //-         h1(data-animation='bounceIn' data-delay='0.2s') Về chúng tôi
-    // ? About Area-1 Start
-    section.about-area1.fix.pt-10
-      img(src='assets/img/gallery/wakame.png' style='width:1400px;height:1000px;margin-left:250px;margin-top:-70px')
-      .support-wrapper.align-items-center
-        .left-content1
-          // section tittle
-          .section-tittle.section-tittle2.mb-55
-            .front-text
+    section
+      .container-fluid 
+        .row.justify-content-end
+          .col-xl-9.col-lg-9.algin-self-start
+            .text-center
+              img.img-fluid(src="assets/img/gallery/wakame.png")
+    section.section-tittle.section-tittle2.mb-5 
+      .container-fluid
+        .row 
+          .col-xl-5.col-lg-5.offset-1
+            .front-text 
               h2 
-                | Phương châm của Wakame 
+                | Phương châm của Wakame
                 br
                 | - 若芽の教育方法 -
-            section.py-5
-              .container
-                .row
-                  .col-lg-6.mx-auto
-                    // CUSTOM BLOCKQUOTE
-                    blockquote.blockquote.blockquote-custom.bg-white.p-5.shadow.rounded
-                      .blockquote-custom-icon.shadow-sm(style='background-color:#68c25c')
-                        i.fa.fa-quote-left.text-white
-                      p.mb-0.mt-2.font-italic
-                        | &quot;Học tiếng Nhật không phải để trở thành người giỏi nhất, mà để làm chủ cuộc đời mình.
-                        | .&quot;
-                      footer.blockquote-footer.pt-4.mt-4.border-top(style='font-style:italic;font-size:13px')
-                        | Wakame
-                    // END
-                
-              p(style='text-align:justify')
+            fieldset.border.m-3.shadow(style="width:82%; border:2px solid #68c25c !important")
+              legend.ml-5.rounded-circle.align-middle.mb-0(style="width:50px; height:50px;background-color:#68c25c")
+                .text-center.p-2(style="height:100%")
+                  i.fa.fa-quote-left.text-white
+              .pt-3.pl-5.pr-5.pb-5
+                p.mb-0.mt-2.font-italic 
+                  | "Học tiếng Nhật không phải để trở thành người giỏi nhất, mà để làm chủ cuộc đời mình."
+                footer.blockquote-footer.pt-4.mt-4.border-top 
+                  | Wakame
+            section.section-tittle.mt-5.mr-4
+              p.text-justify
                 | Tại Wakame, chúng tôi không cố gắng nhồi nhét kiến thức vào đầu học viên, 
                 | mà là cố gắng giúp các bạn hiểu được niềm vui trong việc học tập. 
                 | Thông qua việc học dần tạo nên thói quen tư duy và tính cách chủ động, kỉ luật.  
                 | Đây cũng chính là thứ mà học sinh, sinh viên Việt Nam chúng ta thiếu. 
-                | Chính vì vậy, chúng tôi rất hy vọng có thể đem lại cho các bạn những điều này.  
-        .right-content1
-          // img
-          .right-img
-            img(src='assets/img/gallery/about.png' alt='')
-            .video-icon
-              a.popup-video.btn-icon(href='https://fb.watch/593EKzK3qX/' style='background:#68c25c;')
-                i.fas.fa-play.fa-7x
-    // About Area End
-
-    // ? About Area-3 Start
-    section.about-area3.fix
-      .support-wrapper.align-items-center
-        .right-content3
-          // img
-          img(src='assets/img/icon/advantage.png' alt='' style='width:550px; height:300px; margin-top:0px; margin-left: 250px;')
-        .left-content3(style='margin-left:100px')
-          // section tittle
-          .section-tittle.section-tittle2.mb-20
-            .front-text
-              h2 Lợi ích khi tham gia khóa học
-          .single-features
-            .features-icon
-              img(src='assets/img/icon/right-icon.svg' alt='')
-            .features-caption
-              p(style='text-align:justify') Được truy cập vào kho dữ liệu khổng lồ về kiến thức và kinh nghiệm phong phú khác.
-          .single-features
-            .features-icon
-              img(src='assets/img/icon/right-icon.svg' alt='')
-            .features-caption
-              p(style='text-align:justify') Cơ hội tiếp xúc học tập cùng với các chuyên gia ngôn ngữ Nhật hàng đầu trong nước và nước ngoài.
-          .single-features
-            .features-icon
-              img(src='assets/img/icon/right-icon.svg' alt='')
-            .features-caption
-              p(style='text-align:justify') Cơ hội nhận học bổng du học tại các trường đại học nổi tiếng và được giới thiệu việc làm với các công ty có văn hóa Nhật.
-    // About Area End
-    // ? Team
-    section.team-area.section-padding40.fix
-      .container
+                | Chính vì vậy, chúng tôi rất hy vọng có thể đem lại cho các bạn những điều này.
+    section.section-title.pb-5
+      .container-fluid
+        .row 
+          .col-xl-4.col-lg-4.offset-3
+            .text-center
+              img.img-fluid(src="assets/img/icon/advantage.png")
+          .col-xl-4.col-lg-4.mt-5
+            .section-tittle.section-tittle2
+              h2 
+                | Lợi ích khi tham gia
+            .single-features.mb-3
+              .features-icon.pt-2 
+                i.fas.fa-check.fa-2x
+              .features-caption
+                p.text-justify.m-0(style="font-size:16px")
+                  | Được truy cập vào kho dữ liệu khổng lồ về kiến thức và kinh nghiệm phong phú khác.
+            .single-features.mb-3
+              .features-icon.pt-2  
+                i.fas.fa-check.fa-2x
+              .features-caption
+                p.text-justify.m-0(style="font-size:16px")
+                  | Cơ hội tiếp xúc học tập cùng với các chuyên gia ngôn ngữ Nhật hàng đầu trong nước và nước ngoài.
+            .single-features.mb-3
+              .features-icon.pt-2  
+                i.fas.fa-check.fa-2x
+              .features-caption
+                p.text-justify.m-0(style="font-size:16px")
+                  | Cơ hội nhận học bổng du học tại các trường đại học nổi tiếng và được giới thiệu việc làm với các công ty có văn hóa Nhật.
+          .offset-1
+    section.team-area.mt-5.pt-5.pb-5.mb-5
+      .container 
+        .row.justify-content-center 
+          .col-xl-7.col-lg-7 
+            .section-tittle.text-center.mb-5 
+              h2 Đội ngũ thiết kế
         .row.justify-content-center
-          .col-xl-7.col-lg-8
-            .section-tittle.text-center.mb-55
-              h2 Đội ngũ chuyên gia
-        .row(style='margin-bottom:50px')
-          .col-md-4
-            .profile-card-4.text-center
-              img.img.img-responsive(src='assets/img/gallery/MsJunko-info.jpg')
-              .profile-content
-                .profile-name
-                  | Junko Hirayama
-                  p @junko
-                .profile-description
-                  | Đạt chứng chỉ JLPT N1.
-                .profile-description
-                  | Kinh nghiệm giảng dạy 7 năm.
-                .profile-description
-                  | Giảng viên bản ngữ, Ōsaka. 
-                .row
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p COURSES
-                      h4 2
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p VIDEOS
-                      h4 24
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p RATING
-                      h4 5.0
-                .row
-                  .col-xs-4(style='margin-left:50px;margin-top:15px')                
-                    .footer-social
-                      a(href='' target='_blank' id="dt" style='background-color:#03ac13;margin-right:15px;padding-top:3px')
-                        i.fas.fa-phone-alt.fa-lg
-                      a(href='https://facebook.com' target='_blank' id="fb" style='background-color:#1877F2;margin-right:15px;padding-top:2px')
-                        i.fab.fa-facebook-f.fa-lg
-                      a(href="https://www.gmail.com" target="blank" id="gm" style='background-color:#ff0800;margin-right:15px;padding-top:2px')
-                        i.fas.fa-envelope.fa-lg
-                      a(href="https://www.instagram.com" target="blank" id="ig" style='background-color:rgb(209,84,0);margin-right:15px;padding-top:2px')
-                        i.fab.fa-instagram.fa-lg
-          .col-md-4
-            .profile-card-4.text-center
-              img.img.img-responsive(src='assets/img/gallery/MsThuong-info.jpg')
-              .profile-content
-                .profile-name
-                  | Dương Thị Thương
-                  p @thuongdt
-                .profile-description
-                  | Đạt chứng chỉ JLPT N1.
-                .profile-description
-                  | Kinh nghiệm giảng dạy 4 năm.
-                .profile-description
-                  | Giảng viên tiếng Nhật, UIT-HCM. 
-                .row
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p COURSES
-                      h4 3
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p VIDEOS
-                      h4 10
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p RATING
-                      h4 5.0
-                .row
-                  .col-xs-4(style='margin-left:50px;margin-top:15px')                
-                    .footer-social
-                      a(href='' target='_blank' id="dt" style='background-color:#03ac13;margin-right:15px;padding-top:3px')
-                        i.fas.fa-phone-alt.fa-lg
-                      a(href='https://facebook.com' target='_blank' id="fb" style='background-color:#1877F2;margin-right:15px;padding-top:2px')
-                        i.fab.fa-facebook-f.fa-lg
-                      a(href="https://www.gmail.com" target="blank" id="gm" style='background-color:#ff0800;margin-right:15px;padding-top:2px')
-                        i.fas.fa-envelope.fa-lg
-                      a(href="https://www.instagram.com" target="blank" id="ig" style='background-color:rgb(209,84,0);margin-right:15px;padding-top:2px')
-                        i.fab.fa-instagram.fa-lg
-          .col-md-4
-            .profile-card-4.text-center
-              img.img.img-responsive(src='assets/img/gallery/MsLe-info.jpg')
-              .profile-content
-                .profile-name
-                  | Phan Thanh Lệ
-                  p @lept
-                .profile-description
-                  | Đạt chứng chỉ JLPT N1.
-                .profile-description
-                  | Kinh nghiệm giảng dạy 5 năm.
-                .profile-description
-                  | Giảng viên tiếng Nhật, UIT-HCM. 
-                .row
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p COURSES
-                      h4 6
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p VIDEOS
-                      h4 15
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p RATING
-                      h4 5.0
-                .row
-                  .col-xs-4(style='margin-left:50px;margin-top:15px')                
-                    .footer-social
-                      a(href='' target='_blank' id="dt" style='background-color:#03ac13;margin-right:15px;padding-top:3px')
-                        i.fas.fa-phone-alt.fa-lg
-                      a(href='https://facebook.com' target='_blank' id="fb" style='background-color:#1877F2;margin-right:15px;padding-top:2px')
-                        i.fab.fa-facebook-f.fa-lg
-                      a(href="https://www.gmail.com" target="blank" id="gm" style='background-color:#ff0800;margin-right:15px;padding-top:2px')
-                        i.fas.fa-envelope.fa-lg
-                      a(href="https://www.instagram.com" target="blank" id="ig" style='background-color:rgb(209,84,0);margin-right:15px;padding-top:2px')
-                        i.fab.fa-instagram.fa-lg
-        .row(style='margin-bottom:50px')
-          .col-md-4
-            .profile-card-4.text-center
-              img.img.img-responsive(src='assets/img/gallery/MrTai-info.jpeg')
-              .profile-content
-                .profile-name
-                  | Lê Minh Tài
-                  p @tailm
-                .profile-description
-                  | Đạt chứng chỉ JLPT N2.
-                .profile-description
-                  | Kinh nghiệm du học 2 năm.
-                .profile-description
-                  | Sinh viên CNTT định hướng Nhật, UIT-HCM. 
-                .row
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p COURSES
-                      h4 5
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p VIDEOS
-                      h4 53
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p RATING
-                      h4 5.0
-                .row
-                  .col-xs-4(style='margin-left:50px;margin-top:15px')                
-                    .footer-social
-                      a(href='' target='_blank' id="dt" style='background-color:#03ac13;margin-right:15px;padding-top:3px')
-                        i.fas.fa-phone-alt.fa-lg
-                      a(href='https://facebook.com' target='_blank' id="fb" style='background-color:#1877F2;margin-right:15px;padding-top:2px')
-                        i.fab.fa-facebook-f.fa-lg
-                      a(href="https://www.gmail.com" target="blank" id="gm" style='background-color:#ff0800;margin-right:15px;padding-top:2px')
-                        i.fas.fa-envelope.fa-lg
-                      a(href="https://www.instagram.com" target="blank" id="ig" style='background-color:rgb(209,84,0);margin-right:15px;padding-top:2px')
-                        i.fab.fa-instagram.fa-lg
-          .col-md-4
-            .profile-card-4.text-center
-              img.img.img-responsive(src='assets/img/gallery/MrShin-info.jpg')
-              .profile-content
-                .profile-name
-                  | Suzuki Shin
-                  p @shin
-                .profile-description
-                  | Đạt chứng chỉ JLPT N1.
-                .profile-description
-                  | Kinh nghiệm giảng dạy 7 năm.
-                .profile-description
-                  | Giảng viên bản ngữ, Tagata-gun, Shizuoka. 
-                .row
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p COURSES
-                      h4 10
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p VIDEOS
-                      h4 124
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p RATING
-                      h4 5.0
-                .row
-                  .col-xs-4(style='margin-left:50px;margin-top:15px')                
-                    .footer-social
-                      a(href='' target='_blank' id="dt" style='background-color:#03ac13;margin-right:15px;padding-top:3px')
-                        i.fas.fa-phone-alt.fa-lg
-                      a(href='https://facebook.com' target='_blank' id="fb" style='background-color:#1877F2;margin-right:15px;padding-top:2px')
-                        i.fab.fa-facebook-f.fa-lg
-                      a(href="https://www.gmail.com" target="blank" id="gm" style='background-color:#ff0800;margin-right:15px;padding-top:2px')
-                        i.fas.fa-envelope.fa-lg
-                      a(href="https://www.instagram.com" target="blank" id="ig" style='background-color:rgb(209,84,0);margin-right:15px;padding-top:2px')
-                        i.fab.fa-instagram.fa-lg
-          .col-md-4
-            .profile-card-4.text-center
-              img.img.img-responsive(src='assets/img/gallery/MsHoa-info1.jpg')
-              .profile-content
-                .profile-name
-                  | Nguyễn Thị Hoa
-                  p @hoant
-                .profile-description
-                  | Đạt chứng chỉ JLPT N1.
-                .profile-description
-                  | Kinh nghiệm giảng dạy 5 năm.
-                .profile-description
-                  | Giảng viên tiếng Nhật, UIT-HCM. 
-                .row
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p COURSES
-                      h4 5
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p VIDEOS
-                      h4 55
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p RATING
-                      h4 5.0
-                .row
-                  .col-xs-4(style='margin-left:50px;margin-top:15px')                
-                    .footer-social
-                      a(href='' target='_blank' id="dt" style='background-color:#03ac13;margin-right:15px;padding-top:3px')
-                        i.fas.fa-phone-alt.fa-lg
-                      a(href='https://facebook.com' target='_blank' id="fb" style='background-color:#1877F2;margin-right:15px;padding-top:2px')
-                        i.fab.fa-facebook-f.fa-lg
-                      a(href="https://www.gmail.com" target="blank" id="gm" style='background-color:#ff0800;margin-right:15px;padding-top:2px')
-                        i.fas.fa-envelope.fa-lg
-                      a(href="https://www.instagram.com" target="blank" id="ig" style='background-color:rgb(209,84,0);margin-right:15px;padding-top:2px')
-                        i.fab.fa-instagram.fa-lg
-        .row(style='margin-bottom:50px')
-          .col-md-4
-            .profile-card-4.text-center
-              img.img.img-responsive(src='assets/img/gallery/MsAkai-info.jpg')
-              .profile-content
-                .profile-name
-                  | Aika Hamasaki
-                  p @aika
-                .profile-description
-                  | Đạt chứng chỉ JLPT N1.
-                .profile-description
-                  | Kinh nghiệm giảng dạy 7 năm.
-                .profile-description
-                  | Giảng viên bản ngữ, Ōsaka.
-                .row
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p COURSES
-                      h4 7
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p VIDEOS
-                      h4 92
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p RATING
-                      h4 5.0
-                .row
-                  .col-xs-4(style='margin-left:50px;margin-top:15px')                
-                    .footer-social
-                      a(href='' target='_blank' id="dt" style='background-color:#03ac13;margin-right:15px;padding-top:3px')
-                        i.fas.fa-phone-alt.fa-lg
-                      a(href='https://facebook.com' target='_blank' id="fb" style='background-color:#1877F2;margin-right:15px;padding-top:2px')
-                        i.fab.fa-facebook-f.fa-lg
-                      a(href="https://www.gmail.com" target="blank" id="gm" style='background-color:#ff0800;margin-right:15px;padding-top:2px')
-                        i.fas.fa-envelope.fa-lg
-                      a(href="https://www.instagram.com" target="blank" id="ig" style='background-color:rgb(209,84,0);margin-right:15px;padding-top:2px')
-                        i.fab.fa-instagram.fa-lg
-          .col-md-4
-            .profile-card-4.text-center
-              img.img.img-responsive(src='assets/img/gallery/MrShin-info.jpg')
-              .profile-content
-                .profile-name
-                  | Suzuki Shin
-                  p @shin
-                .profile-description
-                  | Đạt chứng chỉ JLPT N1.
-                .profile-description
-                  | Kinh nghiệm giảng dạy 7 năm.
-                .profile-description
-                  | Giảng viên bản ngữ, Tagata-gun, Shizuoka. 
-                .row
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p COURSES
-                      h4 10
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p VIDEOS
-                      h4 124
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p RATING
-                      h4 5.0
-                .row
-                  .col-xs-4(style='margin-left:50px;margin-top:15px')                
-                    .footer-social
-                      a(href='' target='_blank' id="dt" style='background-color:#03ac13;margin-right:15px;padding-top:3px')
-                        i.fas.fa-phone-alt.fa-lg
-                      a(href='https://facebook.com' target='_blank' id="fb" style='background-color:#1877F2;margin-right:15px;padding-top:2px')
-                        i.fab.fa-facebook-f.fa-lg
-                      a(href="https://www.gmail.com" target="blank" id="gm" style='background-color:#ff0800;margin-right:15px;padding-top:2px')
-                        i.fas.fa-envelope.fa-lg
-                      a(href="https://www.instagram.com" target="blank" id="ig" style='background-color:rgb(209,84,0);margin-right:15px;padding-top:2px')
-                        i.fab.fa-instagram.fa-lg
-          .col-md-4
-            .profile-card-4.text-center
-              img.img.img-responsive(src='assets/img/gallery/MsHoa-info1.jpg')
-              .profile-content
-                .profile-name
-                  | Nguyễn Thị Hoa
-                  p @hoant
-                .profile-description
-                  | Đạt chứng chỉ JLPT N1.
-                .profile-description
-                  | Kinh nghiệm giảng dạy 5 năm.
-                .profile-description
-                  | Giảng viên tiếng Nhật, UIT-HCM. 
-                .row
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p COURSES
-                      h4 5
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p VIDEOS
-                      h4 55
-                  .col-xs-4(style='margin-left:50px')
-                    .profile-overview
-                      p RATING
-                      h4 5.0
-                .row
-                  .col-xs-4(style='margin-left:50px;margin-top:15px')                
-                    .footer-social
-                      a(href='' target='_blank' id="dt" style='background-color:#03ac13;margin-right:15px;padding-top:3px')
-                        i.fas.fa-phone-alt.fa-lg
-                      a(href='https://facebook.com' target='_blank' id="fb" style='background-color:#1877F2;margin-right:15px;padding-top:2px')
-                        i.fab.fa-facebook-f.fa-lg
-                      a(href="https://www.gmail.com" target="blank" id="gm" style='background-color:#ff0800;margin-right:15px;padding-top:2px')
-                        i.fas.fa-envelope.fa-lg
-                      a(href="https://www.instagram.com" target="blank" id="ig" style='background-color:rgb(209,84,0);margin-right:15px;padding-top:2px')
-                        i.fab.fa-instagram.fa-lg
+          .col-xl-3.col-lg-3.col-md-6.pl-5.pr-5.profile
+            p.ph.w-100
+              span.badge.rounded-circle 
+                img.img-fluid(src="assets/img/icon/ph_badge_captain.png")
+              img.w-100.rounded-circle(src="assets/img/blog/dummy.png" style="background-image:url(assets/img/gallery/ATai.jpg);")
+            .txtSide.text-center 
+              p.name
+                | Lê Minh Tài 
+              p.job
+                | Kỹ sư Full-Stack
+          .col-xl-3.col-lg-3.col-md-6.pl-5.pr-5.offset-1.profile
+            p.ph.w-100
+              img.w-100.rounded-circle(src="assets/img/blog/dummy.png" style="background-image:url(assets/img/gallery/PNam.jpg);")
+            .txtSide.text-center 
+              p.name
+                | Nguyễn Phương Nam 
+              p.job
+                | Kỹ sư Front-End
+          .col-xl-3.col-lg-3.col-md-6.pl-5.pr-5.offset-1.profile
+            p.ph.w-100
+              img.w-100.rounded-circle(src="assets/img/blog/dummy.png" style="background-image:url(assets/img/gallery/KTien.jpg);")
+            .txtSide.text-center 
+              p.name
+                | Phạm Vũ Kiều Tiên 
+              p.job
+                | Kỹ sư Front-End
+          .col-xl-3.col-lg-3.col-md-6.pl-5.pr-5.profile
+            p.ph.w-100
+              img.w-100.rounded-circle(src="assets/img/blog/dummy.png" style="background-image:url(assets/img/gallery/HThien.jpg);")
+            .txtSide.text-center 
+              p.name
+                | Võ Hồng Thiên 
+              p.job
+                | Kỹ sư Back-End
+          .col-xl-3.col-lg-3.col-md-6.pl-5.pr-5.offset-1.profile
+            p.ph.w-100
+              img.w-100.rounded-circle(src="assets/img/blog/dummy.png" style="background-image:url(assets/img/gallery/VAnh.jpg);")
+            .txtSide.text-center 
+              p.name
+                | Trần Việt Anh 
+              p.job
+                | Kỹ sư Back-End
+        

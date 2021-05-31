@@ -14,12 +14,13 @@ block main
           //-       .hero__caption.hero__caption2
           //-         h1(data-animation='bounceIn' data-delay='0.2s') Thông tin 
     // ?  Contact Area start
-    .services-area.services-area2(style="padding-top:50px;padding-bottom:50px")
-      .container
-        .row.justify-content-sm-center
-          .col-lg-4.col-md-6.col-sm-8
-            #profile-container
-              image#profileImage(src='assets/img/logo/onion_logo.svg')
+    .pb-5
+    section.services-area.services-area2.mt-5.mb-5 
+      .container 
+        .row.justify-content-sm-center 
+          .col-xl-4.col-lg-4.pl-5.pr-5
+            .profile-img.m-auto
+              img.img-fluid#profileImage(src="assets/img/blog/dummy.png" style="background-image: url(assets/img/logo/onion_logo.svg)")
             input#imageUpload(type='file' name='profile_photo' placeholder='Photo' required='' capture='')
             script.
               $("#profileImage").click(function(e) {
@@ -34,57 +35,61 @@ block main
               $("#imageUpload").change(function(){
               fasterPreview( this );
               });
-            
-            .single-services.mb-30(style="box-shadow:none;padding-left:0px;padding-top:0px")
-                .features-caption(style="padding-left:0px")
-                    a(href="/profile")
-                        h3 Thông tin cá nhân
-                    a(href="/resetpw")
-                        h3 Thay đổi mật khẩu
-                    a(href="/tkb")
-                        h3 Tạo TKB UIT
-          .col-lg-8.col-md-6.col-sm-8
-            .x_panel
-              .x_title.row
-                .col
-                  h1 Thông tin cá nhân
-                .col-lg-2(style='padding-top:3px')
-                  a(href='/example' style='color:#0380A0') 
-                    i.far.fa-edit
-                    | &nbsp;Chỉnh sửa
-                .clearfix
-              .x_content
-                br
-                form.form-horizontal.form-label-left(action='/profile' method='GET')
-                  .form-group.row.mb-0
-                    label.control-label.col-md-3.col-sm-3.mt-05 Họ và tên
-                    .col-md-9.col-sm-9
-                      p.mt-08 #{user_name}
-                  .form-group.row.mb-0
-                    label.col-md-3.col-sm-3.control-label.mt-05 Giới tính
-                    .col-md-9.col-sm-9
-                      p.mt-08 #{user.gender}
-                  .form-group.row.mb-0
-                    label.control-label.col-md-3.col-sm-3.mt-05 Ngày sinh
-                    .col-md-9.col-sm-9
-                      p.mt-08 #{user.dob}
-                  .form-group.row.mb-0
-                    label.control-label.col-md-3.col-sm-3.mt-05 Email
-                    .col-md-9.col-sm-9
-                      p.mt-08 #{user_email}
-                  .form-group.row.mb-0
-                    label.control-label.col-md-3.col-sm-3.mt-05 Số điện thoại
-                    .col-md-9.col-sm-9
-                      p.mt-08 #{user.phonenumber}
-                  .form-group.row.mb-0
-                    label.control-label.col-md-3.col-sm-3.mt-05 Trình độ tiếng Nhật
-                    .col-md-9.col-sm-9
-                      p.mt-08 #{user.level}
-                  .form-group.row.mb-0
-                    label.control-label.col-md-3.col-sm-3.mt-05 Quốc gia
-                    .col-md-9.col-sm-9
-                      p.mt-08 #{user.country}
-                  .form-group.row.mb-0
-                    label.control-label.col-md-3.col-sm-3.mt-05 Địa chỉ
-                    .col-md-9.col-sm-9
-                      p.mt-08 #{user.address}
+            .single-services.bg-none.m-auto.w-100.shadow-none
+              .feature-caption.text-center.pl-2
+                a(href="/resetpw")
+                  p Thay đổi mật khẩu
+          .col-xl-5.col-lg-5
+            .profile-header
+              .row 
+                .col 
+                  h3 Thông tin cá nhân 
+                .col-xl-3.col-lg-3.text-right 
+                  a(href="example" style="color:#0380A0;")
+                    i.far.fa-edit.pt-2
+                      | &nbsp;Chỉnh sửa
+            .profile-info
+              form.form-horizontal.form-label-left(action='/profile' method='GET')
+                .row.pt-2.pb-2.border-bottom.profile-item
+                  .col
+                    p Họ và tên
+                  .col-xl-7.col-lg-7.text-right
+                    p #{user_name}
+                .row.pt-2.pb-2.border-bottom.profile-item
+                  .col
+                    p Giới tính
+                  .col-xl-7.col-lg-7.text-right 
+                    p #{user.gender}
+                .row.pt-2.pb-2.border-bottom.profile-item
+                  .col
+                    p Ngày sinh
+                  .col-xl-7.col-lg-7.text-right 
+                    p #{user.dob}
+                .row.pt-2.pb-2.border-bottom.profile-item
+                  .col
+                    p Email
+                  .col-xl-7.col-lg-7.text-right 
+                    p #{user_email}
+                .row.pt-2.pb-2.border-bottom.profile-item
+                  .col
+                    p Số điện thoại
+                  .col-xl-7.col-lg-7.text-right 
+                    p #{user.phonenumber}
+                .row.pt-2.pb-2.border-bottom.profile-item
+                  .col
+                    p Trình độ tiếng Nhật
+                  .col-xl-7.col-lg-7.text-right 
+                    p #{user.level}
+                .row.pt-2.pb-2.border-bottom.profile-item
+                  .col
+                    p Quốc gia
+                  .col-xl-7.col-lg-7.text-right 
+                    p #{user.country}
+                .row.pt-2.pb-2.border-bottom.profile-item
+                  .col
+                    p Địa chỉ
+                  .col-xl-7.col-lg-7.text-right
+                    p #{user.address}  
+    .pt-xl-5.pb-xl-5
+    .pt-xl-5.pb-xl-5
+      #gear            
