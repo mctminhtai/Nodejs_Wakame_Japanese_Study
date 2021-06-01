@@ -109,17 +109,13 @@ exports.post_login = function (req, res, next) {
     passport.authenticate('local.login', (err, user, info) => {
         if (err) { return next(err); }
         if (!user) { return res.redirect('/accounts'); }
+        req.session.user_email = user.email;
         if (user.actived) {
             req.logIn(user, (err) => {
                 if (err) { return next(err); }
                 return res.redirect(redirectTo);
             });
         } else {
-            models.PASSCODE.destroy({
-                where: {
-                    email: user.email,
-                }
-            });
             var randToken = randomString.password({
                 length: 100,
                 string: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -129,16 +125,12 @@ exports.post_login = function (req, res, next) {
                 string: "0123456789"
             });
             mailer.sendMail(user.email, 'Ma xac thuc WAKAME', randString);
-            // models.PASSCODE.create({
-            //     token: randToken,
-            //     email: user.email,
-            //     passcode: randString,
-            // })
             req.session.active_info = {
                 token: randToken,
                 email: user.email,
                 passcode: randString,
             }
+            req.session.failPasscode = 0;
             console.log('Ma xac thuc ' + randString);
             return res.redirect('/active?token=' + randToken);
         }
@@ -148,6 +140,7 @@ exports.post_register = function (req, res, next) {
     passport.authenticate('local.signup', (err, user, info) => {
         if (err) { return next(err); }
         if (!user) { return res.redirect('/accounts'); }
+        req.session.user_email = user.email;
         var randToken = randomString.password({
             length: 100,
             string: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -157,27 +150,14 @@ exports.post_register = function (req, res, next) {
             string: "0123456789"
         });
         mailer.sendMail(user.email, 'Ma xac thuc WAKAME', randString);
-        // models.PASSCODE.create({
-        //     token: randToken,
-        //     email: user.email,
-        //     passcode: randString,
-        // })
         req.session.active_info = {
             token: randToken,
             email: user.email,
             passcode: randString,
         }
+        req.session.failPasscode = 0;
         console.log('Ma xac thuc ' + randString);
         return res.redirect('/active?token=' + randToken);
-        // req.logIn(user, (err) => {
-        //     if (err) { return next(err); }
-        //     req.session.destroy();
-        //     var randString = randomString.password({
-        //         length: 100,
-        //         string: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        //     });
-        //     return res.redirect('/active?q=' + randString);
-        // });
     })(req, res, next);
 }
 exports.get_active = function (req, res, next) {
@@ -188,21 +168,36 @@ exports.post_active = async function (req, res, next) {
     if (!req.query.token) {
         return res.redirect(redirectTo);
     }
-    // var passcode_info = await models.PASSCODE.findOne({
-    //     where: {
-    //         token: req.query.token,
-    //     }
-    // })
     var passcode_info = req.session.active_info;
     var received_code = req.body.active_code || '';
     if (passcode_info.passcode != received_code) {
-        return res.redirect('/active?token=' + req.query.token);
+        if (req.session.failPasscode == undefined) {
+            req.session.failPasscode = 1;
+        } else {
+            req.session.failPasscode = req.session.failPasscode + 1;
+        }
+        if (req.session.failPasscode >= 3) {
+            var randToken = randomString.password({
+                length: 100,
+                string: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+            });
+            var randString = randomString.password({
+                length: 6,
+                string: "0123456789"
+            });
+            mailer.sendMail(req.session.user_email, 'Ma xac thuc WAKAME', randString);
+            req.session.active_info = {
+                token: randToken,
+                email: req.session.user_email,
+                passcode: randString,
+            }
+            req.session.failPasscode = 0;
+            console.log('Ma xac thuc ' + randString);
+            return res.redirect('/active?token=' + randToken);
+        } else {
+            return res.redirect('/active?token=' + req.query.token);
+        }
     } else {
-        // models.PASSCODE.destroy({
-        //     where: {
-        //         token: passcode_info.token,
-        //     }
-        // });
         await models.USER.update({ actived: true }, {
             where: {
                 email: passcode_info.email,

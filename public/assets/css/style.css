@@ -6,13 +6,116 @@
 /* ------------------------------
 	Tùy chỉnh
 -------------------------------- */
+#headerWave{
+	height: 25px;
+}
+#headerWave .w01{
+	background-image: url("../img/icon/bg_wave_nav_f_2.png");
+		background-repeat: repeat-x;
+	background-size: 140px 71px;
+	-webkit-background-size: 140px 71px;
+	-moz-background-size: 140px 71px;
+	-webkit-animation: wave02 40s linear infinite;
+	-moz-animation: wave02 40s linear infinite;
+	animation: wave02 40s linear infinite;
+	position:relative;
+	top: 0;
+}
+#headerWave .w02{
+	background-image: url("../img/icon/bg_wave_nav_m.png");
+		background-repeat: repeat-x;
+	background-size: 140px 71px;
+	-webkit-background-size: 140px 71px;
+	-moz-background-size: 140px 71px;
+	-webkit-animation: wave01 48s linear infinite;
+	-moz-animation: wave01 48s linear infinite;
+	animation: wave01 48s linear infinite;
+	position:relative;
+	top: 5px;
+}
+#headerWave .w03{
+	background-image: url("../img/icon/bg_wave_nav_b.png");
+	background-repeat: repeat-x;
+	background-size: 140px 71px;
+	-webkit-background-size: 140px 71px;
+	-moz-background-size: 140px 71px;
+	-webkit-animation: wave03 64s linear infinite;
+	-moz-animation: wave03 64s linear infinite;
+	animation: wave03 64s linear infinite;
+	position: relative;
+	top: -5px;
+}
+#headerWave div, #footerWave div {
+	width: 100%;
+	height: 100%;
+	background: repeat-x bottom center;
+}
+#bottomWave{
+	width: 100%;
+	height: 25px;
+	background: url("../img/icon/bg_wave_footer.png") repeat-x bottom center;
+	background-size: 160px 100px;
+	-webkit-background-size: 160px 100px;
+	-moz-background-size: 160px 100px;
+	-webkit-animation: wave04 500s linear infinite;
+	-moz-animation: wave04 500s linear infinite;
+	animation: wave04 500s linear infinite;
+}
+@-webkit-keyframes wave01 {
+	0%{background-position:0% 0;}
+	100%{background-position:500% 0;}
+}
+@-moz-keyframes wave01 {
+	0%{background-position:0% 0;}
+	100%{background-position:500% 0;}
+}
+@keyframes wave01 {
+	0%{background-position:0% 0;}
+	100%{background-position:500% 0;}
+}
+@-webkit-keyframes wave02 {
+	0%{background-position: 0 0;}
+	100%{background-position: -500% 0;}
+}
+@-moz-keyframes wave02 {
+	0%{background-position: 0 0;}
+	100%{background-position: -500% 0;}
+}
+@keyframes wave02 {
+	0%{background-position: 0 0;}
+	100%{background-position: -500% 0;}
+}
+@-webkit-keyframes wave03  {
+	0%{background-position:250% 0;}
+	100%{background-position:900% 0;}
+}
+@-moz-keyframes wave03 {
+	0%{background-position:250% 0;}
+	100%{background-position:900% 0;}
+}
+@keyframes wave03 {
+	0%{background-position:250% 0;}
+	100%{background-position:900% 0;}
+}
+@-webkit-keyframes wave04 {
+	0%{background-position:0 0;}
+	100%{background-position:2000% 0;}
+}
+@-moz-keyframes wave04 {
+	0%{background-position:0 0;}
+	100%{background-position:2000% 0;}
+}
+@keyframes wave04 {
+	0%{background-position:0 0;}
+	100%{background-position:2000% 0;}
+}
 #gear{
-	bottom: -220px;
-    right: -160px;
+	bottom: 150px;
+    right: 260px;
     top: auto;
     left: auto;
-	width: 662px;
-    height: 662px;
+	width: 680px;
+    height: 680px;
     background: url("../img/icon/gear_2.png") no-repeat center;
     background-size: contain;
     -webkit-background-size: contain;
@@ -22,6 +125,18 @@
     animation: gear 30s linear infinite;
     position: absolute;
     z-index: -1;
+}
+@-webkit-keyframes gear {
+	0%{transform: rotate(0deg); -webkit-transform: rotate(0deg);}
+	100%{transform: rotate(360deg);-webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes gear {
+	0%{transform: rotate(0deg); -webkit-transform: rotate(0deg);}
+	100%{transform: rotate(360deg); -webkit-transform: rotate(360deg);}
+}
+@keyframes gear {
+	0%{transform: rotate(0deg); -webkit-transform: rotate(0deg);}
+	100%{transform: rotate(360deg); -webkit-transform: rotate(360deg);}
 }
 
 .profile-item p{
@@ -6567,7 +6682,7 @@ b,sup,sub,u,del{
 	right:20px
 }
 .form-select{
-	height:40px;
+	height:30px;
 	width:100%
 }
 .form-select .nice-select{

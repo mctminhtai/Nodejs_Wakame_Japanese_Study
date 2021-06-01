@@ -1,7 +1,6 @@
 const models = require('../models');
 exports.get_homePage = function (req, res, next) {
     var xacnhan = false;
-    req.session.ten = 'tai';
     if (req.isAuthenticated()) {
         xacnhan = true;
         return res.render('index', {
