@@ -35,7 +35,7 @@ block main
               $("#imageUpload").change(function(){
               fasterPreview( this );
               });
-            .single-services.bg-none.m-auto.w-100.shadow-none
+            .single-services.bg-none.m-auto.w-100.shadow-none(style="background:none;")
               .feature-caption.text-center.pl-2
                 a(href="/resetpw")
                   p Thay đổi mật khẩu
@@ -47,7 +47,7 @@ block main
                 .col-xl-3.col-lg-3.text-right 
                   a(href="example" style="color:#0380A0;")
                     i.far.fa-edit.pt-2
-                      | &nbsp;Chỉnh sửa
+                    | &nbsp;Chỉnh sửa
             .profile-info
               form.form-horizontal.form-label-left(action='/profile' method='GET')
                 .row.pt-2.pb-2.border-bottom.profile-item
@@ -91,5 +91,6 @@ block main
                   .col-xl-7.col-lg-7.text-right
                     p #{user.address}  
     .pt-xl-5.pb-xl-5
+      #gear
     .pt-xl-5.pb-xl-5
-      #gear            
+                 

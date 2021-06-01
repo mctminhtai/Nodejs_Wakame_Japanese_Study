@@ -29,6 +29,7 @@ html(lang="vi")
     link(rel='stylesheet' href='assets/css/style.css')
     link(rel='stylesheet' href='assets/css/all.css')
     link(rel='stylesheet' href='assets/css/themify-icons.css')
+    script(src='./assets/js/vendor/jquery-1.12.4.min.js')
     
     
     
@@ -139,6 +140,7 @@ html(lang="vi")
   block main
 
   footer
+    #bottomWave
     .footer-wrappper.footer-bg
       // Footer Start
       .footer-area.footer-padding
@@ -232,7 +234,7 @@ html(lang="vi")
   // Date Picker
   script(src='./assets/js/gijgo.min.js')
   // Nice-select, sticky
-  script(src='./assets/js/jquery.nice-select.min.js')
+  //- script(src='./assets/js/jquery.nice-select.min.js')
   script(src='./assets/js/jquery.sticky.js')
   // Progress
   script(src='./assets/js/jquery.barfiller.js')
@@ -252,4 +254,10 @@ html(lang="vi")
   script(src='./assets/js/main.js')
   script(src='./assets/js/test.js')
   //- script(src='./assets/js/customBlogPage.js')
+  script.
+    $(document).ready(function()){
+        $("#proflieImage").click(function () {
+            alert("Ngu");
+        };
+    };
   block jscustom
