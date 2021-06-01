@@ -1,65 +1,57 @@
-extends layout
+extends layout.pug
 block title 
-  title Thời khóa biểu | Wakame 
-  
+	title Thời khóa biểu | Wakame 
+	 
 block main
-  main
+	main 
+		section.slider-area.slider-area2
+			.slider-active 
+				.single-slider.slider-height2
+		section.services-area.services-area2.mt-5.pt-5.pb-5.mb-5
+			.container
+				.row.justify-content-sm-center
+					.col.pt-5.mt-5
+						.m-auto.pr-5.pl-5.pt-2
+							img.img-fluid.pr-5.pl-5(src="assets/img/icon/Ship.png")
+						.pr-5.pl-5(style="margin-top:-15px;")
+							#headerWave.w-100 
+								.w03 
+									.w02 
+										.w01
+					.col-xl-6.col-lg-6.pt-5
+						.profile-header.pt-5 
+							.row 
+								.col 
+									h3 Đổi mật khẩu
+									p Mật khẩu phải bao gồm chữ thường, chữ hoa, số và ít nhất 1 ký tự đặc biệt
+						.profile-info 
+							form(action="/resetpw" method="POST")
+								.row.pt-2.border-bottom.pofile-item 
+									.col.pt-1 
+										p Mật khẩu hiện tại 
+									.col-xl-8.col-lg-8
+										input.w-100.text-left.form-control(type="password" name="currentpw" minlength="8")
+								.row.pt-2.border-bottom.pofile-item 
+									.col.pt-1 
+										p Mật khẩu mới 
+									.col-xl-8.col-lg-8
+										input.w-100.text-left.form-control(type="password" name="newpw" minlength="8")
+								.row.pt-2.border-bottom.pofile-item 
+									.col.pt-1 
+										p Nhập lại mật khẩu mới 
+									.col-xl-8.col-lg-8
+										input.w-100.text-left.form-control(type="password" name="re_newpw" minlength="8")
+								.row.pt-3
+									.col.pt-2
+										a(href="#") 
+											p 
+												u Quên mật khẩu 
+									.col-xl-8.col-lg-8.text-right
+										button.button.boxed-btn.rounded(type="submit") Lưu
+		.pt-xl-5.pb-xl-5 
+			#gear(style="bottom:150px;right:150px") 
+		.pt-xl-5.pb-xl-5
 
-    // ? slider Area Start
-    section.slider-area.slider-area2
-      .slider-active
-        // Single Slider
-        .single-slider.slider-height2
-          .container
-            .row
-              .col-xl-8.col-lg-11.col-md-12
-                .hero__caption.hero__caption2
-                  h1(data-animation='bounceIn' data-delay='0.2s') Tài khoản
-    .services-area.services-area2(style="padding-top:50px;padding-bottom:50px")
-      .container
-        .row.justify-content-sm-center
-          .col-lg-4.col-md-6.col-sm-8
-            .single-services.mb-30(style="box-shadow:none;padding-left:0px;padding-top:0px")
-                .features-caption(style="padding-left:0px")
-                    a(href="/profile")
-                        h3 Thông tin cá nhân
-                    a(href="/resetpw")
-                        h3 Thay đổi mật khẩu
-                    a(href="/tkb")
-                        h3 Tạo TKB UIT
-          .col-lg-8.col-md-6.col-sm-8
-            .row(style="width:700px;margin-bottom:30px")
-              .col-xl-12.col-lg-11.col-md-12
-                h1 Đổi mật khẩu
-                p Bạn nên sử dụng mật khẩu mạnh mà mình chưa sử dụng ở đâu khác
-            form(action='/resetpw' method='POST')    
-              .form-group.row
-                .row(style="width:700px;margin-bottom:20px")
-                  .col-xl-4.col-lg-11.col-md-12
-                    .features-caption
-                      label(for="currentpw") Mật khẩu hiện tại                
-                  .col-xl-6.col-lg-11.col-md-12
-                    .features-caption
-                      input(type='password' name='currentpw' )
-              .form-group.row      
-                .row(style="width:700px;margin-bottom:20px")
-                  .col-xl-4.col-lg-11.col-md-12
-                    .features-caption
-                      label(for="newpw") Mật khẩu mới                
-                  .col-xl-6.col-lg-11.col-md-12
-                    .features-caption
-                      input(type='password' name='newpw' minlength="8" )#pass_new
-              .form-group.row
-                .row(style="width:700px;margin-bottom:20px")
-                  .col-xl-4.col-lg-11.col-md-12
-                    .features-caption
-                      label(for="re_newpw") Nhập lại mật khẩu mới               
-                  .col-xl-6.col-lg-11.col-md-12
-                    .features-caption
-                      input(type='password' name='re_newpw' minlength="8" )#re_pass_new
-              .form-group.row
-                a.forget(href='#' style="color:#4255a4;text-decoration:underline;margin-bottom:20px") Quên mật khẩu
-              .form-group.row
-                br
-                br
-                button.button.button-contactForm.boxed-btn(type='submit' style='border-radius:5px;padding:10px 30px') Lưu 
+								
+
+
