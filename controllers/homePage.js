@@ -169,56 +169,52 @@ exports.get_booksdetailPage = function (req, res, next) {
     }
 }
 
-exports.get_profileEditPage = function (req, res, next) {
-    var xacnhan = false;
-    if (req.isAuthenticated()) {
-        xacnhan = true;
-        return res.render('example', {
-            title: 'Express',
-            Authenticated: xacnhan,
-            user_name: req.user.dataValues.fullName,
-            user_email: req.user.dataValues.email
-        });
-    }
-    else {
-        return res.render('example', {
-            title: 'Express',
-            Authenticated: xacnhan
-        });
-    }
+exports.get_profileEditPage = async function (req, res, next) {
+    var user = await models.USER.findOne({
+        where: {
+            email: req.user.email,
+        }
+    })
+    console.log(user);
+    return res.render('profile_edit', {
+        Authenticated: req.isAuthenticated(),
+        user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
+        user_email: req.isAuthenticated() ? req.user.dataValues.email : '',
+        user: user,
+    })
 }
-
+var CountryCodeToName = require('../utils/convertCountryCodeToCountryName');
 exports.post_profileEditPage = function (req, res, next) {
-
-    console.log('dang body')
     console.log(req.body)
-    console.log('dang token')
-    console.log(req.session.token)
+    // console.log(CountryCodeToName.getCountryName(req.body.country));
+    var saveObj = {
+        fullName: req.body.fullName,
+        gender: req.body.gender,
+        phonenumber: req.body.phonenumber,
+        level: req.body.level,
+        country: CountryCodeToName.getCountryName(req.body.country),
+        address: req.body.address,
+    };
+    for (const key in saveObj) {
+        if (!saveObj[key]) {
+            delete saveObj[key];
+        }
+    }
+    delete saveObj.dobDate;
+    delete saveObj.dobMonth;
+    delete saveObj.dobYear;
+    if (req.body.dobDate && req.body.dobMonth && req.body.dobYear) {
+        saveObj.dob = new Date(req.body.dobYear, Number(req.body.dobMonth) - 1, req.body.dobDate.padStart(2, '0'));
+        // saveObj.dob = req.body.dobDate.padStart(2, '0') + '/' + req.body.dobMonth + '/' + req.body.dobYear;
+    }
+    console.log(saveObj);
     models.USER.update(
-        {
-            fullName: req.body.fullName,
-            gender: req.body.gender,
-            dob: req.body.dob,
-            phonenumber: req.body.phonenumber,
-            level: req.body.level,
-            country: req.body.country,
-            address: req.body.address
-        },
+        saveObj,
         {
             where: {
-                email: req.body.email,
+                email: req.user.email,
             }
         }
     );
-    if (res.send(req.user.email) == req.user.dataValues.email) {
-        res.send(req.user.email);
-    }
-    else {
-        res.send('not ok');
-
-    }
-    // return res.render('profile', {
-    //     title: 'Express',
-    //     Authenticated: xacnhan
-    // });
+    return res.redirect('/profile');
 }

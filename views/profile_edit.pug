@@ -45,19 +45,19 @@ block main
                 .col 
                   h3 Thông tin cá nhân 
             .profile-info
-              form(action='/profile' method='POST')
+              form(action='/profileEdit' method='POST')
                 .row.pt-2.pb-2.border-bottom.profile-item
                   .col.pt-1
                     p Họ và tên
                   .col-xl-8.col-lg-8.text-left
-                    input.w-100.text-left.form-control(type='text' name='fullname' value=`${user_name}`)
+                    input.w-100.text-left.form-control(type='text' name='fullName' value=`${user_name}`)
                 .row.pt-2.pb-2.border-bottom.profile-item
                   .col
                     p Giới tính
                   .col-xl-8.col-lg-8.text-left.pt-1 
                     .radio
                       label.mb-0.pr-5
-                        input.flat(type='radio' checked='' name='gender' value='Nam')
+                        input.flat(type='radio' name='gender' value='Nam')
                         |  &nbsp;Nam
                       label.mb-0.pl-5
                         input.flat(type='radio' name='gender' value='Nữ')
@@ -68,29 +68,23 @@ block main
                   .col-xl-8.col-lg-8.text-right
                     .row
                         .col-xl-4.col-lg-4.col-mb-4.col-sm-4.pr-1
-                            input.form-control.w-100(pattern="((0?[1-9])|([12][0-9])|(3[01]))" id="dob-date" placeholder="Ngày") 
+                            input.form-control.w-100(pattern="((0?[1-9])|([12][0-9])|(3[01]))" name='dobDate' id="dob-date" placeholder="Ngày") 
                         .col-xl-4.col-lg-4.col-mb-4.col-sm-4.pl-1.pr-1
-                            select.w-100.form-control(id="dob-month" name="dob-month" placeholder="Tháng")
-                                option(value="MON" selected) Tháng
-                                option(value="january") 01
-                                option(value="february") 02
-                                option(value="march") 03
-                                option(value="april") 04
-                                option(value="may") 05
-                                option(value="june") 06
-                                option(value="july") 07
-                                option(value="august") 08
-                                option(value="september") 09
-                                option(value="october") 10
-                                option(value="november") 11
-                                option(value="december") 12
+                            select.w-100.form-control(id="dob-month" name='dobMonth')
+                                option(value="01") 01
+                                option(value="02") 02
+                                option(value="03") 03
+                                option(value="04") 04
+                                option(value="05") 05
+                                option(value="06") 06
+                                option(value="07") 07
+                                option(value="08") 08
+                                option(value="09") 09
+                                option(value="10") 10
+                                option(value="11") 11
+                                option(value="12") 12
                         .col-xl-4.col-lg-4.col-mb-4.pl-1
-                            input.w-100.form-control(id="dob-year" placeholder="Năm") 
-                .row.pt-2.pb-2.border-bottom.profile-item
-                  .col.pt-1
-                    p Email
-                  .col-xl-8.col-lg-8.text-right 
-                    input.w-100.text-left.form-control(type='text' name='email' value=`${user_email}`)
+                            input.w-100.form-control(id="dob-year" name='dobYear' placeholder="Năm") 
                 .row.pt-2.pb-2.border-bottom.profile-item
                   .col.pt-1
                     p Số điện thoại
