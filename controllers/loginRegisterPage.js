@@ -222,6 +222,7 @@ exports.get_resetToken = function (req, res, next) {
     res.render('sendToken_login');
 }
 exports.post_resetToken = async function (req, res, next) {
+    req.logout();
     storedEmail = await models.USER.findOne({
         where: {
             email: req.body.email,
@@ -233,12 +234,7 @@ exports.post_resetToken = async function (req, res, next) {
             string: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         });
         var resetPwdUrl = req.headers.origin + '/pwd_reset' + '/' + randString;
-        // console.log(resetPwdUrl);
-        mailer.sendMail(req.body.email, 'test thử email CLB', resetPwdUrl);
-        // models.RESETTOKEN.create({
-        //     token: randString,
-        //     email: req.body.email,
-        // });
+        mailer.sendMail(req.body.email, 'Đặt lại mật khẩu', resetPwdUrl);
         req.session.rsPwdToken = {
             token: randString,
             email: req.body.email,
@@ -256,10 +252,6 @@ exports.post_resetToken = async function (req, res, next) {
 }
 exports.get_resetPwd = async function (req, res, next) {
     var received_token = req.param('token');
-    // console.log(req.session);
-    // savedToken = await models.RESETTOKEN.findOne({
-    //     where: { token: received_token }
-    // });
     var savedToken = req.session.rsPwdToken;
     if (savedToken.token == received_token) {
         res.render('resetPwd_login', {
@@ -272,9 +264,6 @@ exports.get_resetPwd = async function (req, res, next) {
 }
 exports.post_resetPwd = async function (req, res, next) {
     var received_token = req.param('token');
-    // savedToken = await models.RESETTOKEN.findOne({
-    //     where: { token: received_token }
-    // });
     var savedToken = req.session.rsPwdToken;
     if (savedToken.token == received_token) {
         var hashPwd = bcrypt.hashSync(req.body.password, 10);
@@ -286,11 +275,6 @@ exports.post_resetPwd = async function (req, res, next) {
                 }
             }
         );
-        // models.RESETTOKEN.destroy({
-        //     where: {
-        //         email: req.body.email,
-        //     }
-        // });
         res.redirect('/accounts');
     } else {
         res.send('token khong dung');
@@ -315,7 +299,7 @@ exports.get_resetpwPage = function (req, res, next) {
     }
 }
 exports.post_change_pw = function (req, res, next) {
-    console.log(req.body)
+    var redirectTo = req.session.redirectTo || '/'
     bcrypt.compare(req.body.currentpw, req.user.dataValues.password).then((result) => {
         if (result && (req.body.newpw == req.body.re_newpw)) {
             bcrypt.hash(req.body.newpw, 10, function (err, hash) {
@@ -329,19 +313,16 @@ exports.post_change_pw = function (req, res, next) {
                         }
                     }
                 );
-                res.send('Da thay doi pass');
+                res.redirect(redirectTo);
             })
         }
         else {
             res.send('saimatkhau');
         }
-
     })
 }
 exports.get_captcha = function (req, res, next) {
     var captcha = svgCaptcha.create();
-    //console.log(captcha);
-    //mailer.sendMail('tailm0796@gmail.com', 'test thử email CLB', 'không có gì đâu nha');
     console.log(uuidv4());
     return res.render('captcha', { captcha: captcha.data });
 }
