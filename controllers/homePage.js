@@ -76,7 +76,7 @@ exports.get_coursesPage = function (req, res, next) {
         });
     }
 }
-
+var CountryCodeToName = require('../utils/convertCountryCodeToCountryName');
 exports.get_profilePage = async function (req, res, next) {
     req.session.redirectTo = '/profile';
     var user = await models.USER.findOne({
@@ -90,6 +90,7 @@ exports.get_profilePage = async function (req, res, next) {
         user_name: req.isAuthenticated() ? req.user.dataValues.fullName : '',
         user_email: req.isAuthenticated() ? req.user.dataValues.email : '',
         user: user,
+        user_country: CountryCodeToName.getCountryName(user.country),
     })
 
 }
@@ -192,7 +193,8 @@ exports.post_profileEditPage = function (req, res, next) {
         gender: req.body.gender,
         phonenumber: req.body.phonenumber,
         level: req.body.level,
-        country: CountryCodeToName.getCountryName(req.body.country),
+        // country: CountryCodeToName.getCountryName(req.body.country),
+        country:req.body.country,
         address: req.body.address,
     };
     for (const key in saveObj) {

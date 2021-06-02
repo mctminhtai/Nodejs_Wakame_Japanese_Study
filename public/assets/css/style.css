@@ -110,21 +110,21 @@
 	100%{background-position:2000% 0;}
 }
 #gear{
-	bottom: 150px;
-    right: 260px;
-    top: auto;
-    left: auto;
-	width: 680px;
-    height: 680px;
-    background: url("../img/icon/gear_2.png") no-repeat center;
-    background-size: contain;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -webkit-animation: gear 30s linear infinite;
-    -moz-animation: gear 30s linear infinite;
-    animation: gear 30s linear infinite;
-    position: absolute;
-    z-index: -1;
+	height: 100% !important;
+	width: 100% !important;
+}
+#gear::before{
+	margin-top:-11%;
+	margin-left:-7%;
+	width: 650px;
+	height: 650px;
+	background: url("https://www.stu48.com/static/stu48/official/common/gear_2.png") no-repeat center;
+	background-size: contain;
+	content: ''; 
+	-webkit-animation: gear 30s linear infinite;
+	animation: gear 30s linear infinite;
+	position: absolute;
+    
 }
 @-webkit-keyframes gear {
 	0%{transform: rotate(0deg); -webkit-transform: rotate(0deg);}
