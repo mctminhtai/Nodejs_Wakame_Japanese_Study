@@ -18,12 +18,14 @@ block main
 								.w03 
 									.w02 
 										.w01
-					.col-xl-6.col-lg-6.pt-5
+					.col-xl-6.col-lg-6.pt-5#gear
 						.profile-header.pt-5 
 							.row 
 								.col 
 									h3 Đổi mật khẩu
 									p Mật khẩu phải bao gồm chữ thường, chữ hoa, số và ít nhất 1 ký tự đặc biệt
+									if message 
+										p(style='color:red')=message
 						.profile-info 
 							form(action="/resetpw" method="POST")
 								.row.pt-2.border-bottom.pofile-item 
@@ -49,7 +51,6 @@ block main
 									.col-xl-8.col-lg-8.text-right
 										button.button.boxed-btn.rounded(type="submit") Lưu
 		.pt-xl-5.pb-xl-5 
-			#gear(style="bottom:150px;right:150px") 
 		.pt-xl-5.pb-xl-5
 
 								

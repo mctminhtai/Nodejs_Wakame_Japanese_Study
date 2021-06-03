@@ -1,5 +1,6 @@
 doctype html
 head
+  base(href="/")
   title Add_blog
   link(rel="stylesheet", href="../assets/css/bootstrap.min.css")
   link(rel="stylesheet", href="../assets/css/admin_page.1.1.0.min.css")
@@ -81,12 +82,12 @@ head
             .card.card-small.mb-3
               .card-body
                 .add-new-post
-                  input#blogImg.form-control.form-control-lg.mb-3(type="text", placeholder="Ảnh đại diện cho bài viết")
-                  input#title.form-control.form-control-lg.mb-3(type="text", placeholder="Tiêu đề bài viết")
-                  input#description.form-control.form-control-lg.mb-3.mt-2(type="text", placeholder="Mô tả bài viết")
-                  input#kwlist.form-control.form-control-lg.mb-3.mt-2(type="text", placeholder="Danh sách keywords cho bài viết")
+                  input#blogImg.form-control.form-control-lg.mb-3(type="text", placeholder="Ảnh đại diện cho bài viết", value=blog.blogimg)
+                  input#title.form-control.form-control-lg.mb-3(type="text", placeholder="Tiêu đề bài viết", value=blog.title)
+                  input#description.form-control.form-control-lg.mb-3.mt-2(type="text", placeholder="Mô tả bài viết", value=blog.description)
+                  input#kwlist.form-control.form-control-lg.mb-3.mt-2(type="text", placeholder="Danh sách keywords cho bài viết", value=blog.kwlist)
                   textarea(id="basic-conf")
-                    | <p style="text-align: center;" data-mce-style="text-align: center;"><em><strong>Welcome to TinyMCE!</strong></em></p>
+                    | #{blog.content}
           .col-lg-3.col-md-12
             //  Post Overview 
             .card.card-small.mb-3
@@ -135,9 +136,14 @@ head
               .card-body.p-0
                 .px-3.pb-2
                   each category in categories
-                    label.radio
-                      input(type="radio", name="categories", value=category.id)
-                      span #{category.name}
+                    if category.id == blog.blog_category.id
+                      label.radio
+                        input(type="radio", name="categories", value=category.id, checked)
+                        span #{category.name}
+                    else
+                      label.radio
+                        input(type="radio", name="categories", value=category.id)
+                        span #{category.name}
                   //- label.radio
                   //-   input(type="radio", name="categories", value="2")
                   //-   span Văn hóa
@@ -147,6 +153,9 @@ head
                   //- label.radio
                   //-   input(type="radio", name="categories", value="4")
                   //-   span Thông báo
+            - var tags_blog = ''
+            each temp in blog.blog_tag 
+              - tags_blog += '#' + temp.TEN_TAG + ' '
             .card.card-small.mb-3
               .card-header.border-bottom
                 h6.m-0 Tag
@@ -157,7 +166,7 @@ head
                     strong.mr-1.w-100px Các thẻ tag:
                     each tag in tags 
                       span= '#' + tag.TEN_TAG + ' '
-                    input#tags.mt-3.border-left-0.border-top-0.border-right-0.border-bottom-1.btn-outline-none(type="text")
+                    input#tags.mt-3.border-left-0.border-top-0.border-right-0.border-bottom-1.btn-outline-none(type="text" value=tags_blog)
 
 
 script.
@@ -190,14 +199,16 @@ script.
     data.blogImg = document.getElementById("blogImg").value;
     data.tags = document.getElementById("tags").value;
     data.category = document.querySelector('input[name="categories"]:checked').value;
+    var slug = location.pathname.split('/');
+    slug = slug[slug.length - 1];
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", '/admin/addBlog', true);
+    xhr.open("POST", `/admin/editBlog/${slug}`, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({
     content: data
   }));
     console.log(data);
-    window.location.href = "/blog";
+    window.location.href = "/admin/manageBlog";
   }
 script.  
   var date = new Date();

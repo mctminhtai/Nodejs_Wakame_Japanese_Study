@@ -5,6 +5,7 @@ var adminCtrl = require('../controllers/adminCtrl');
 router.get('/admin', checkAuth.checkAuthenticated, adminCtrl.getAdminPage);
 router.get('/admin/manageBlog', checkAuth.checkAuthenticated, adminCtrl.getAdminManageBlog);
 router.get('/admin/addBlog', checkAuth.checkAuthenticated, adminCtrl.getAdminAddBlog);
-router.get('/admin/editBlog', checkAuth.checkAuthenticated, adminCtrl.getAdminEditBlog);
+router.get('/admin/editBlog/:blogslug', checkAuth.checkAuthenticated, adminCtrl.getAdminEditBlog);
+router.post('/admin/editBlog/:blogslug', checkAuth.checkAuthenticated, adminCtrl.postAdminEditBlog);
 router.post('/admin/addBlog', checkAuth.checkAuthenticated, adminCtrl.postAdminAddBlog);
 module.exports = router;

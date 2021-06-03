@@ -39,7 +39,7 @@ block main
               .feature-caption.text-center.pl-2
                 a(href="/resetpw")
                   p Thay đổi mật khẩu
-          .col-xl-6.col-lg-6
+          .col-xl-6.col-lg-6#gear
             .profile-header
               .row 
                 .col 
@@ -50,18 +50,23 @@ block main
                   .col.pt-1
                     p Họ và tên
                   .col-xl-8.col-lg-8.text-left
-                    input.w-100.text-left.form-control(type='text' name='fullName' value=`${user_name}`)
+                    input.w-100.text-left.form-control(type='text' name='fullName' value=`${user.fullName}`)
                 .row.pt-2.pb-2.border-bottom.profile-item
                   .col
                     p Giới tính
                   .col-xl-8.col-lg-8.text-left.pt-1 
-                    .radio
+                    .radio.gender(id=`${user.gender}`)
                       label.mb-0.pr-5
                         input.flat(type='radio' name='gender' value='Nam')
                         |  &nbsp;Nam
                       label.mb-0.pl-5
                         input.flat(type='radio' name='gender' value='Nữ')
                         |  &nbsp;Nữ
+                    script.   
+                      $(".gender").ready(function(){
+                      var sel = $(".gender").attr("id").toString();
+                        $(".gender input").val([sel]);
+                      }); 
                 .row.pt-2.pb-2.border-bottom.profile-item
                   .col.pt-1
                     p Ngày sinh
@@ -89,25 +94,31 @@ block main
                   .col.pt-1
                     p Số điện thoại
                   .col-xl-8.col-lg-8.text-right 
-                    input.w-100.text-left.form-control(type='text' name='phonenumber')
+                    input.w-100.text-left.form-control(type='text' name='phonenumber' value=`${user.phonenumber}`)
                 .row.pt-2.pb-2.border-bottom.profile-item
                   .col.pt-1
                     p Trình độ tiếng Nhật
                   .col-xl-8.col-lg-8.text-right.text-center 
-                    select.w-100.form-control(id="dob-month" name="level")
-                        option(value="" selected) Trình độ
+                    select.w-100.form-control(id=`${user.level}` class="level" name="level" value=`${user.level}`)
+                        option(value="null" selected) Trình độ
                         option(value="N1") N1
                         option(value="N2") N2
                         option(value="N3") N3
                         option(value="N4") N4
                         option(value="N5") N5
                         option(value="newbie") Nhập môn
+                  script.   
+                    $("select.level").ready(function(){
+                    var sel = $("select.level").attr("id").toString();
+                      $("select.level").val(sel);
+                    });      
+                  
                 .row.pt-2.pb-2.border-bottom.profile-item
                   .col.pt-1
                     p Quốc gia
                   .col-xl-8.col-lg-8.text-right 
-                    select.form-control(name='country')
-                        option(value='' label='Chọn quốc gia ' selected='selected') Chọn quốc gia
+                    select.form-control(name='country' id=`${user.country}` class="country")
+                        option(value='null' label='Chọn quốc gia ' selected='selected') Chọn quốc gia
                         optgroup#country-optgroup-Africa(label='--Africa--')
                             option(value='DZ' label='Algeria') Algeria
                             option(value='AO' label='Angola') Angola
@@ -366,6 +377,11 @@ block main
                             option(value='UM' label='U.S. Minor Outlying Islands') U.S. Minor Outlying Islands
                             option(value='VU' label='Vanuatu') Vanuatu
                             option(value='WF' label='Wallis and Futuna') Wallis and Futunaw
+                    script.   
+                      $("select.country").ready(function(){
+                      var sel = $("select.country").attr("id").toString();
+                        $("select.country").val(sel);
+                      });  
                 .row.pt-2.pb-2.border-bottom.profile-item
                   .col.pt-1
                     p Địa chỉ
@@ -375,6 +391,6 @@ block main
                   .col-xl-2.col-lg-2.text-center
                     button.button.boxed-btn.rounded(type='submit') Lưu  
     .pt-xl-5.pb-xl-5
-      #gear
     .pt-xl-5.pb-xl-5
+    
                  

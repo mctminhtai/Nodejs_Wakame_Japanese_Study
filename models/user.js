@@ -27,10 +27,11 @@ module.exports = (sequelize, DataTypes) => {
         country: DataTypes.STRING,
         address: DataTypes.STRING,
         dob: DataTypes.DATEONLY,
+        role: DataTypes.STRING,
     }, {
-            sequelize,
-            modelName: 'USER',
-            freezeTableName: true,
-        });
+        sequelize,
+        modelName: 'USER',
+        freezeTableName: true,
+    });
     return USER;
 };

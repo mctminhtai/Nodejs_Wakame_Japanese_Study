@@ -1,0 +1,72 @@
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
+
+html, body {
+   margin: 0;
+   width: 100%;
+   height: 100%;
+}
+
+body {
+   background: #000;
+}
+
+#record {
+   width: 300px;
+   height: 300px;
+   position: relative;
+   overflow: hidden;
+   
+   /* Center text */
+   text-align: center;
+   -webkit-align-items: center;
+   -ms-flex-align: center;
+   align-items: center;
+   display: -webkit-flex;
+   display: flex;
+}
+
+#record::before {
+   background: url("https://www.stu48.com/static/stu48/official/common/gear_2.png")
+      no-repeat center;
+   background-size: contain;
+   content: "";
+   width: 540px;
+   height: 540px;
+   position: absolute;
+   animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+.content {
+   font-family: 'Roboto Slab', serif;
+   font-size: 1.5vw;
+   line-height: 0;
+   color: #fff;
+   position: relative;
+   margin: 0 auto;
+}
+
+.rock {
+   margin: 0;
+   padding: 0;
+   font-weight: bold;
+   font-size: 4vw;
+   line-height: 3vw;
+}
+</style>
+
+<div id="record">
+  <div class="content">
+     <p class="rock">ROCK!</p>
+     <p>Like, totally.</p>
+  </div>
+</div>
