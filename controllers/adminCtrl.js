@@ -3,8 +3,11 @@ var convert = require('../utils/VNeseStrToSlug');
 exports.getAdminPage = function (req, res, next) {
     res.render('admin/layout_admin');
 }
-exports.getAdminManagBlog = function (req, res, next) {
+exports.getAdminManageBlog = function (req, res, next) {
     res.render('admin/manage_blog');
+}
+exports.getAdminEditBlog = function (req, res, next) {
+    res.render('admin/edit_blog');
 }
 exports.getAdminAddBlog = async function (req, res, next) {
     categories = await models.CATEGORY.findAll();
