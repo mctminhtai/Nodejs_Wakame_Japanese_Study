@@ -78,6 +78,7 @@ passport.use('local.signup', new LocalStrategy({
                 // Store hash in your password DB.
                 models.USER.create({
                     fullName: req.body.name,
+                    role: 'normal',
                     email: req.body.email,
                     password: hash
                 }).then(user => {

@@ -7,6 +7,7 @@ exports.getAdminManageBlog = async function (req, res, next) {
     var blogs = await models.BLOG.findAll();
     res.render('admin/manage_blog', {
         blogs: blogs,
+        user: req.user,
     });
 }
 exports.getAdminEditBlog = async function (req, res, next) {
@@ -17,9 +18,25 @@ exports.getAdminEditBlog = async function (req, res, next) {
         include: ['blog_category', 'blog_tag'],
     });
     res.render('admin/edit_blog', {
+        user: req.user,
         categories: categories,
         tags: tags,
         blog: blog,
+    });
+}
+exports.getAdminDeleteBlog = async function (req, res, next) {
+    var blog = await models.BLOG.findOne({
+        where: {
+            slug: req.param('blogslug'),
+        }
+    });
+    await models.TAG_BLOG.destroy({
+        where: {
+            BLOGId: blog.id,
+        }
+    });
+    await models.BLOG.destroy({
+        where: { slug: req.param('blogslug') },
     });
 }
 exports.postAdminEditBlog = async function (req, res, next) {
@@ -79,6 +96,7 @@ exports.getAdminAddBlog = async function (req, res, next) {
     var categories = await models.CATEGORY.findAll();
     var tags = await models.TAG.findAll();
     res.render('admin/add_blog', {
+        user: req.user,
         categories: categories,
         tags: tags,
     });

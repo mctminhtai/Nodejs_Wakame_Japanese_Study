@@ -1,5 +1,6 @@
 const models = require('../models');
 exports.get_homePage = function (req, res, next) {
+    req.session.redirectTo = '/';
     var xacnhan = false;
     if (req.isAuthenticated()) {
         xacnhan = true;
@@ -97,6 +98,7 @@ exports.get_profilePage = async function (req, res, next) {
 
 
 exports.get_coursesDetailPage = function (req, res, next) {
+    req.session.redirectTo = '/coursesdetail';
     var xacnhan = false;
     if (req.isAuthenticated()) {
         xacnhan = true;

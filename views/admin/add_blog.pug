@@ -21,21 +21,17 @@ head
         .nav-wrapper
           ul.nav.flex-column
             li.nav-item
-              a.nav-link(href="index.html")
+              a.nav-link(href="/")
                 i.fas.fa-pen.fa-2x
-                span Thống kê
+                span Về trang chủ
             li.nav-item
-              a.nav-link(href="index.html")
+              a.nav-link(href="/admin/manageBlog")
                 i.far.fa-newspaper.fa-2x
-                span Bài đăng
+                span Các bài đăng
             li.nav-item
-              a.nav-link(href="index.html")
+              a.nav-link(href="/admin/addBlog")
                 i.fas.fa-file-medical
                 span Viết bài
-            li.nav-item
-              a.nav-link(href="index.html")
-                i.far.fa-newspaper.fa-2x
-                span Bài đăng
     main.main-content.col-lg-10.col-md-9.col-sm-12.p-0.offset-lg-2.offset-md-3
       .main-navbar.sticky-top.bg-white.align-right.mb-5
         nav.navbar.align-items-stretch.navbar-light.flex-md-nowrap.p-0
@@ -66,10 +62,10 @@ head
               a#user.nav-link.text-nowrap.px-3(role="button", onclick="show()")
                 .d-table.m-auto
                   img.d-inline-block.align-top.mr-1.mt-0.user-avatar.rounded-circle(style="max-width: 40px;", src="../assets/img/post/post_1.png")
-                  span.d-none.d-md-inline.ml-1 UIT Admin
+                  span.d-none.d-md-inline.ml-1 #{user.fullName}
                   i.fas.fa-sort-down.align-top.mt-1.ml-1.mr-1
               #usertable.dropdown-menu.dropdown-menu-small
-                a.dropdown-item.text-danger(href="#")
+                a.dropdown-item.text-danger(href="/logout")
                   i.fas.fa-sign-out-alt
                   | Logout 
       //  Kết thúc phần layout 
@@ -180,7 +176,7 @@ script.
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
   paste_block_drop: false
   });
-  function getdata(event){
+  async function getdata(event){
     event.preventDefault()
     var data = {}
     data.content = tinyMCE.activeEditor.getContent({format : 'raw'});
@@ -197,7 +193,8 @@ script.
     content: data
   }));
     console.log(data);
-    window.location.href = "/blog";
+    await new Promise(r => setTimeout(r, 1000));
+    window.location.href = "/admin/manageBlog";
   }
 script.  
   var date = new Date();

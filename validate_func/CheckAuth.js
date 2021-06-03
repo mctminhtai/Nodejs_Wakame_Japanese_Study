@@ -1,3 +1,4 @@
+var models = require('../models');
 exports.checkNotAuthenticated = function (req, res, next) {
     //console.log(req.isAuthenticated());
     // if (req.sessionID) {
@@ -17,4 +18,16 @@ exports.checkAuthenticated = function (req, res, next) {
     }
     var redirectTo = req.session.redirectTo || '/';
     return res.redirect(redirectTo);
+}
+exports.isEditor = async function (req, res, next) {
+    var redirectTo = req.session.redirectTo || '/';
+    var reqUser = await models.USER.findOne({
+        where: {
+            id: req.user.id,
+        }
+    });
+    if (reqUser.role != 'editor') {
+        res.redirect(redirectTo);
+    }
+    return next();
 }

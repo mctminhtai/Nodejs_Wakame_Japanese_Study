@@ -12,8 +12,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       role: {
-        type: Sequelize.STRING,
-        defaultValue: 'normal'
+        type: Sequelize.STRING
       },
       email: {
         type: Sequelize.STRING

@@ -20,21 +20,17 @@ link(rel="stylesheet", href="../assets/css/all.css")
         .nav-wrapper
           ul.nav.flex-column
             li.nav-item
-              a.nav-link(href="index.html")
+              a.nav-link(href="/")
                 i.fas.fa-pen.fa-2x
-                span Thống kê
+                span Về trang chủ
             li.nav-item
-              a.nav-link(href="index.html")
+              a.nav-link(href="/admin/manageBlog")
                 i.far.fa-newspaper.fa-2x
-                span Bài đăng
+                span Các bài đăng
             li.nav-item
-              a.nav-link(href="./add_blog.html")
+              a.nav-link(href="/admin/addBlog")
                 i.fas.fa-file-medical
                 span Viết bài
-            li.nav-item
-              a.nav-link(href="index.html")
-                i.far.fa-newspaper.fa-2x
-                span Bài đăng
     main.main-content.col-lg-10.col-md-9.col-sm-12.p-0.offset-lg-2.offset-md-3
       .main-navbar.sticky-top.bg-white.align-right.mb-5
         nav.navbar.align-items-stretch.navbar-light.flex-md-nowrap.p-0
@@ -65,10 +61,10 @@ link(rel="stylesheet", href="../assets/css/all.css")
               a#user.nav-link.text-nowrap.px-3(role="button", onclick="show()")
                 .d-table.m-auto
                   img.d-inline-block.align-top.mr-1.mt-0.user-avatar.rounded-circle(style="max-width: 40px;", src="../assets/img/post/post_1.png")
-                  span.d-none.d-md-inline.ml-1 UIT Admin
+                  span.d-none.d-md-inline.ml-1 #{user.fullName}
                   i.fas.fa-sort-down.align-top.mt-1.ml-1.mr-1
               #usertable.dropdown-menu.dropdown-menu-small
-                a.dropdown-item.text-danger(href="#")
+                a.dropdown-item.text-danger(href="/logout")
                   i.fas.fa-sign-out-alt
                   | Logout 
       //  Kết thúc phần layout 
@@ -76,44 +72,44 @@ link(rel="stylesheet", href="../assets/css/all.css")
       .main-content-container.container-fluid.px-4
         .col-lg-12.col-md-12.col-sm-12.mb-4.mt--3.px-0
           .card.mb-3.list-group.list-group-flush
-            form.card-header.list-group-item.d-flex.rounded.px-3.pt-2.pb-2.d-flex.mt-2.mb-2.border-0
-              .ml-3.d-flex.border-right.mt-1.pr-3.border-width-1
-                i.fas.fa-filter.mt-1.mr-1
-                strong.mr-4.w-fit Bộ lọc
-              .pl-3.d-flex.mt-1.border-right.pr-3.border-width-1
-                strong.mr-1.w-fit Từ
-                input.mr-1.form-control.w-fit.border(type="date", onclick="noti();")
-                strong.mr-1.w-fit đến
-                input#setdate.form-control.w-fit.border(type="date")
-              .pl-3.d-flex.border-right.mt-1.pr-3.border-width-1
-                strong.mr-1.w-70px Chủ đề
-                .select.border.rounded
-                  select#slct(name="slct")
-                    option(value="1", selected).
-                      全部
+            //- form.card-header.list-group-item.d-flex.rounded.px-3.pt-2.pb-2.d-flex.mt-2.mb-2.border-0
+            //-   .ml-3.d-flex.border-right.mt-1.pr-3.border-width-1
+            //-     i.fas.fa-filter.mt-1.mr-1
+            //-     strong.mr-4.w-fit Bộ lọc
+            //-   .pl-3.d-flex.mt-1.border-right.pr-3.border-width-1
+            //-     strong.mr-1.w-fit Từ
+            //-     input.mr-1.form-control.w-fit.border(type="date", onclick="noti();")
+            //-     strong.mr-1.w-fit đến
+            //-     input#setdate.form-control.w-fit.border(type="date")
+            //-   .pl-3.d-flex.border-right.mt-1.pr-3.border-width-1
+            //-     strong.mr-1.w-70px Chủ đề
+            //-     .select.border.rounded
+            //-       select#slct(name="slct")
+            //-         option(value="1", selected).
+            //-           全部
                       
-                    option(value="2") Học tập
-                    option(value="3") Văn hóa
-                    option(value="4") Việc làm
-                    option(value="5") Thông báo
-              .pl-3.d-flex.pr-3.mt-1.border-right.border-width-1
-                strong.mr-1.w-70px Tác giả
-                .select.border.rounded
-                  select#slct(name="slct")
-                    option(value="1", selected).
-                      全部
+            //-         option(value="2") Học tập
+            //-         option(value="3") Văn hóa
+            //-         option(value="4") Việc làm
+            //-         option(value="5") Thông báo
+            //-   .pl-3.d-flex.pr-3.mt-1.border-right.border-width-1
+            //-     strong.mr-1.w-70px Tác giả
+            //-     .select.border.rounded
+            //-       select#slct(name="slct")
+            //-         option(value="1", selected).
+            //-           全部
                       
-                    option(value="2") Lê Minh Tài
-                    option(value="3") Nguyễn Phương Nam
-                    option(value="4") Phạm Vũ Kiều Tiên
-                    option(value="5") UIT Admin
-              .pl-3.d-flex
-                button.mr-1.rounded.border-0.btn-success(type="submit", style="opacity: 0.8")
-                  i.far.fa-check-circle.mr-1
-                  | Lọc
-                button.btn-danger.rounded.border-0(type="submit", style="opacity: 0.8")
-                  i.far.fa-times-circle.mr-1
-                  | Hủy lọc
+            //-         option(value="2") Lê Minh Tài
+            //-         option(value="3") Nguyễn Phương Nam
+            //-         option(value="4") Phạm Vũ Kiều Tiên
+            //-         option(value="5") UIT Admin
+            //-   .pl-3.d-flex
+            //-     button.mr-1.rounded.border-0.btn-success(type="submit", style="opacity: 0.8")
+            //-       i.far.fa-check-circle.mr-1
+            //-       | Lọc
+            //-     button.btn-danger.rounded.border-0(type="submit", style="opacity: 0.8")
+            //-       i.far.fa-times-circle.mr-1
+            //-       | Hủy lọc
         .row
           //- .col-lg-3.col-md-6.col-sm-12.mb-4
           //-   .card.card-small.card-post--1

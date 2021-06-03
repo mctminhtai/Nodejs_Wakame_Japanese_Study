@@ -8,26 +8,56 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico')
   // CSS here
+  link(rel='stylesheet' href='assets/css/bootstrap.min.css')
   link(rel="stylesheet" href="assets/css/fontawesome.css")
   link(rel="stylesheet" href="assets/css/fontawesome-all.min.css")
-  link(rel="stylesheet" href='assets/css/account.css')
+  
+  //-link(rel="stylesheet" href='assets/css/account.css')
+  link(rel="stylesheet" href='assets/css/style.css')
+  
 body(onload="showForm()")
-    #passcode
-        form.flex-box#form(method="post")
-            h1 Mã xác thực
-            br
-            p.info
-                | Một mã xác thực đã gửi tới địa chỉ email của bạn.
-            p.info
-                | Vui lòng kiểm tra email và nhập mã.&nbsp;
-                span
-                input.info(type='button' value='Gửi lại mã')
-            .passcode-area
-                input(type='text' name='active_code' maxlength='6' placeholder='Mã xác thực')
+  //- #passcode
+  //-     form.flex-box#form(method="post")
+  //-         h1 Mã xác thực
+  //-         br
+  //-         p.info
+  //-             | Một mã xác thực đã gửi tới địa chỉ email của bạn.
+  //-         p.info
+  //-             | Vui lòng kiểm tra email và nhập mã.&nbsp;
+  //-             span
+  //-             input.info(type='button' value='Gửi lại mã')
+  //-         .passcode-area
+  //-             input(type='text' name='active_code' maxlength='6' placeholder='Mã xác thực')
+  //-             button.fa-input(type="submit")
+  //-                 i.fas.fa-angle-right.fa-2x
+  //-         a.exit-passcode(href='/')
+  //-             i.fas.fa-sign-out-alt
+  //-             | Thoát
+  #passcode
+    .container
+      .row.justify-content-sm-center
+        .col-xl-6.col-lg-6.pt-5.pb-5
+          form#form(method="post")
+            .row
+              .col.text-center#passcode-title
+                h1.text-center Mã xác thực
+                p.p-0.m-0 Một mã xác thực đã được gửi tới địa chỉ email của bạn.
+                p.p-0.m-0 Vui lòng kiểm tra email và nhập mã.
+            .row.mt-4.pb-2
+              .col-xl-3.p-0.text-right 
+                //- Gửi lại mã
+                button.fa-input.fa-input-2(type="submit" id="resend_code")
+                  i.fas.fa-redo-alt
+              .col-xl-6.p-0
+                input.passcode-area.w-100.form-control.border-0.rounded-0.h-100(type='text' name='active_code' maxlength='6' placeholder='Mã xác thực')
+              .col-xl-3.p-0 
                 button.fa-input(type="submit")
-                    i.fas.fa-angle-right.fa-2x
-            a.exit-passcode(href='/')
-                i.fas.fa-sign-out-alt
-                | Thoát
+                  i.fas.fa-angle-right.fa-2x
+            .row.mt-4
+              .col.text-center
+                a.exit-passcode(href="/")
+                  i.fas.fa-sign-out-alt 
+                  | Thoát
+
 script(src="assets/js/account.js")
         

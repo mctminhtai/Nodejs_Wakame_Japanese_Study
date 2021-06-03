@@ -22,21 +22,17 @@ head
         .nav-wrapper
           ul.nav.flex-column
             li.nav-item
-              a.nav-link(href="index.html")
+              a.nav-link(href="/")
                 i.fas.fa-pen.fa-2x
-                span Thống kê
+                span Về trang chủ
             li.nav-item
-              a.nav-link(href="index.html")
+              a.nav-link(href="/admin/manageBlog")
                 i.far.fa-newspaper.fa-2x
-                span Bài đăng
+                span Các bài đăng
             li.nav-item
-              a.nav-link(href="index.html")
+              a.nav-link(href="/admin/addBlog")
                 i.fas.fa-file-medical
                 span Viết bài
-            li.nav-item
-              a.nav-link(href="index.html")
-                i.far.fa-newspaper.fa-2x
-                span Bài đăng
     main.main-content.col-lg-10.col-md-9.col-sm-12.p-0.offset-lg-2.offset-md-3
       .main-navbar.sticky-top.bg-white.align-right.mb-5
         nav.navbar.align-items-stretch.navbar-light.flex-md-nowrap.p-0
@@ -67,10 +63,10 @@ head
               a#user.nav-link.text-nowrap.px-3(role="button", onclick="show()")
                 .d-table.m-auto
                   img.d-inline-block.align-top.mr-1.mt-0.user-avatar.rounded-circle(style="max-width: 40px;", src="../assets/img/post/post_1.png")
-                  span.d-none.d-md-inline.ml-1 UIT Admin
+                  span.d-none.d-md-inline.ml-1 #{user.fullName}
                   i.fas.fa-sort-down.align-top.mt-1.ml-1.mr-1
               #usertable.dropdown-menu.dropdown-menu-small
-                a.dropdown-item.text-danger(href="#")
+                a.dropdown-item.text-danger(href="/logout")
                   i.fas.fa-sign-out-alt
                   | Logout 
       //  Kết thúc phần layout 
@@ -122,9 +118,9 @@ head
                       strong.mr-1.w-100px Lên lịch:
                       input#setdate.form-control(type="date")
                   li.list-group-item.d-flex.px-3
-                    button.btn.btn-sm.btn-outline-accent
+                    button.btn.btn-sm.btn-outline-accent(onclick = "deleteBlog(event)")
                       i.far.fa-save.mr-2
-                      | Lưu nháp
+                      | Xoá bài
                     button.btn.btn-sm.btn-accent.ml-auto.m-0(onclick = "getdata(event)")
                       i.fas.fa-paper-plane.mr-2
                       | Cập Nhật
@@ -189,7 +185,18 @@ script.
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
   paste_block_drop: false
   });
-  function getdata(event){
+  async function deleteBlog(event){
+    event.preventDefault();
+    var slug = location.pathname.split('/');
+    slug = slug[slug.length - 1];
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", `/admin/deleteBlog/${slug}`, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send();
+    await new Promise(r => setTimeout(r, 1000));
+    window.location.href = "/admin/manageBlog";
+  }
+  async function getdata(event){
     event.preventDefault()
     var data = {}
     data.content = tinyMCE.activeEditor.getContent({format : 'raw'});
@@ -208,6 +215,7 @@ script.
     content: data
   }));
     console.log(data);
+    await new Promise(r => setTimeout(r, 1000));
     window.location.href = "/admin/manageBlog";
   }
 script.  
