@@ -32,7 +32,7 @@ if(type)
           input.btn.solid(type='submit' value='Đăng nhập')
           p.social-text Đăng nhập với tài khoản xã hội
           .social-media
-            a.social-icon(href='#')
+            a.social-icon(href='/auth/facebook')
               i.fab.fa-facebook-f
             a.social-icon(href='#')
               i.fab.fa-google
@@ -53,7 +53,7 @@ if(type)
           input.btn(type='submit' value='Đăng ký')
           p.social-text Đăng ký với tài khoản xã hội
           .social-media
-            a.social-icon(href='#')
+            a.social-icon(href='/auth/facebook')
               i.fab.fa-facebook-f
             a.social-icon(href='#')
               i.fab.fa-google
@@ -67,14 +67,18 @@ if(type)
             | Nếu là sinh viên của UIT hãy dùng tài khoản Gmail của trường để nhận những tiện ích đặc quyền.
           button#sign-up-btn.btn.transparent
             | Đăng ký
+          br
+          a#back-home-btn(href="/") Về trang chủ
         img.image(src='img/log.svg' alt='')
       .panel.right-panel
         .content
-          h3 Đã có tài khoản?
+          h3 Đã có tài khoản????
           p
             | Hãy đăng nhập và bắt đầu sử dụng thôi nào
           button#sign-in-btn.btn.transparent
             | Đăng nhập
+          br
+          a#back-home-btn(href="/") Về trang chủ
         img.image(src='img/register.svg' alt='')
 else 
   .container
@@ -111,10 +115,9 @@ else
             i.fas.fa-lock
             input(type='password' name='re_password' placeholder='Nhập lại mật khẩu')
           input.btn(type='submit' value='Đăng ký')
-          a.social-text(href='/pwd_reset') Quên mật khẩu
           p.social-text Đăng ký với tài khoản xã hội
           .social-media
-            a.social-icon(href='#')
+            a.social-icon(href='/auth/facebook')
               i.fab.fa-facebook-f
             a.social-icon(href='#')
               i.fab.fa-google
@@ -128,6 +131,8 @@ else
             | Nếu là sinh viên của UIT hãy dùng tài khoản Gmail của trường để nhận những tiện ích đặc quyền.
           button#sign-up-btn.btn.transparent
             | Đăng ký
+          br
+          a#back-home-btn(href="/") Về trang chủ
         img.image(src='img/log.svg' alt='')
       .panel.right-panel
         .content
@@ -136,6 +141,8 @@ else
             | Hãy đăng nhập và bắt đầu sử dụng thôi nào
           button#sign-in-btn.btn.transparent
             | Đăng nhập
+          br
+          a#back-home-btn(href="/") Về trang chủ
         img.image(src='img/register.svg' alt='')
 script(src='/assets/js/account.js')
 

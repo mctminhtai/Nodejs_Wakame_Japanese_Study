@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Mulish:wght@400;500;600;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap");
 @import "fontawesome.css";
 @import "fontawesome-all.min.css";
 /* Custom */
@@ -8,64 +8,63 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    transition: background-color 5000000s ease-in-out 0s;
+  transition: background-color 5000000s ease-in-out 0s;
 }
 
-.flag{
+.flag {
   display: block !important;
 }
-.pop-up{
-  display:none;
-  position: fixed; 
-  z-index: 999; 
+.pop-up {
+  display: none;
+  position: fixed;
+  z-index: 999;
   padding-top: 200px;
   left: 0;
   top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.9); 
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
 }
-.messenger{
+.messenger {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
   padding-bottom: 0px;
   border: 1px solid #888;
   width: 25rem;
-  height:fit-content;
+  height: fit-content;
   text-align: center;
-  border-radius:30px;
-  color:red
+  border-radius: 30px;
+  color: red;
 }
 
-.errors{
-  margin:15px auto;
-  font-size:20px;
-  height:50px;
+.errors {
+  margin: 15px auto;
+  font-size: 20px;
+  height: 50px;
 }
-.messenger a{
-  display:block;
-  border:1px solid #4481eb;
-  color:red;
-  border-radius:100px;
+.messenger a {
+  display: block;
+  border: 1px solid #4481eb;
+  color: red;
+  border-radius: 100px;
   text-decoration: none;
   margin: 10px auto;
-  padding:10px 15px;
+  padding: 10px 15px;
   width: 110px;
   cursor: pointer;
   transition: 0.5s;
 }
-.messenger a:hover{
-  background-color:rgba(255,0,0,0.5);
-  border-color:red;
-  color:white;
+.messenger a:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+  border-color: red;
+  color: white;
 }
-.messenger a span{
-  padding-left:10px;
+.messenger a span {
+  padding-left: 10px;
 }
-
 
 /*-------------*/
 
@@ -284,7 +283,18 @@ form.sign-in-form {
   font-size: 0.95rem;
   padding: 0.7rem 0;
 }
-
+#back-home-btn {
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  text-decoration: none;
+  height: 41px;
+  font-family: Arial;
+  font-size: 25px;
+  margin-top: 30px;
+}
+#back-home-btn:hover {
+  text-decoration: underline solid #fff;
+}
 .btn.transparent {
   margin: 0;
   background: none;
