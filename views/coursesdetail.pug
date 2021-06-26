@@ -14,9 +14,9 @@ block main
         //-       .hero__caption.hero__caption2
         //-         h1(data-animation='bounceIn' data-delay='0.2s') Khóa học
   section.blog_area.single-post-area.section-padding
-    .container-fluid
+    .container
       .row
-        .col-lg-7.posts-list.offset-1
+        .col-lg-8.posts-list
           .single-post
             .feature-img
               img.img-fluid(src='assets/img/gallery/course_business.jpg' alt='' style="margin-top:0")
@@ -87,7 +87,7 @@ block main
               section
                 .row.justify-content-center
                   .col
-                    img(src='assets/img/gallery/MsThuong.jpg' alt='' style='width:230px;height:230px')
+                    img(src='assets/img/gallery/MsThuong.jpg' alt='' style='width:200px')
                   .col-xl-8.col-lg-8
                     .comments-area(style='border-top:none;margin-top:0px;padding:0')
                       h1(style="margin-bottom:20px;border-bottom:2px solid #eee;padding-bottom:10px") ThS. Dương Thị Thương
@@ -213,17 +213,14 @@ block main
                           input#email.form-control(name='email' type='email' placeholder='Email của bạn')
                     .form-group
                       button.button.button-contactForm.btn_1.boxed-btn(type='submit') Gửi
-        .col-lg-3
+        .col-lg-4
           .blog_right_sidebar
             aside.single_sidebar_widget.search_widget
-              form(action='#')
-                .form-group
-                  .input-group.mb-3
-                    input.form-control(type='text' placeholder='Tìm từ khóa' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tìm từ khóa'")
-                    .input-group-append
-                      button.btns(type='button')
-                        i.ti-search
-                button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Tìm kiếm
+                form(action='/blog-search' method='GET')
+                  .form-group
+                    .input-group.mb-3
+                      input.form-control(type='text' name='q' placeholder='Tìm kiếm từ khóa' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tìm kiếm từ khóa'")
+                  button.button.rounded-0.primary-bg.text-white.w-100.btn_1.boxed-btn(type='submit') Tìm kiếm
             aside.single_sidebar_widget.post_category_widget
               h4.widget_title(style='color: #2d2d2d;') Chủ đề
               ul.list.cat-list

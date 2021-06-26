@@ -22,6 +22,8 @@ if(type)
     .forms-container
       .signin-signup
         form.sign-in-form(action='/login' method='POST')
+          a(href='/') 
+            img(src='assets/img/logo/LogoWeb.png' alt='logo wakame' style="width:80px")
           h2.title Đăng nhập
           .input-field
             i.fas.fa-user
@@ -34,9 +36,11 @@ if(type)
           .social-media
             a.social-icon(href='/auth/facebook')
               i.fab.fa-facebook-f
-            a.social-icon(href='#')
+            a.social-icon(href='/')
               i.fab.fa-google
         form.sign-up-form(action='/register' method='POST')
+          a(href='/') 
+            img(src='assets/img/logo/LogoWeb.png' alt='logo wakame' style="width:80px")
           h2.title Đăng ký
           .input-field
             i.fas.fa-user
@@ -55,7 +59,7 @@ if(type)
           .social-media
             a.social-icon(href='/auth/facebook')
               i.fab.fa-facebook-f
-            a.social-icon(href='#')
+            a.social-icon(href='/')
               i.fab.fa-google
     .panels-container
       .panel.left-panel
@@ -85,6 +89,8 @@ else
     .forms-container
       .signin-signup
         form.sign-in-form(action='/login' method='POST')
+          a(href='/') 
+            img(src='assets/img/logo/LogoWeb.png' alt='logo wakame' style="width:80px")
           h2.title Đăng nhập
           .input-field
             i.fas.fa-user
@@ -98,9 +104,11 @@ else
           .social-media
             a.social-icon(href='/auth/facebook')
               i.fab.fa-facebook-f
-            a.social-icon(href='#')
+            a.social-icon(href='/')
               i.fab.fa-google
         form.sign-up-form(action='/register' method='POST')
+          a(href='/') 
+            img(src='assets/img/logo/LogoWeb.png' alt='logo wakame' style="width:80px")
           h2.title Đăng ký
           .input-field
             i.fas.fa-user
@@ -119,7 +127,7 @@ else
           .social-media
             a.social-icon(href='/auth/facebook')
               i.fab.fa-facebook-f
-            a.social-icon(href='#')
+            a.social-icon(href='/')
               i.fab.fa-google
     .panels-container
       .panel.left-panel

@@ -28,7 +28,7 @@
     "pg-hstore": "^2.3.3",
     "pug": "^3.0.2",
     "randostrings": "^0.1.6",
-    "redis": "^3.1.0",
+    "redis": "^3.1.2",
     "request": "^2.88.2",
     "sequelize": "^6.5.1",
     "sequelize-cli": "^6.2.0",
