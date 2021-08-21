@@ -1,4 +1,4 @@
-const models = require('../models');
+const models = require('../models')
 var convert = require('../utils/VNeseStrToSlug');
 exports.getAdminPage = function (req, res, next) {
     res.render('admin/layout_admin');
